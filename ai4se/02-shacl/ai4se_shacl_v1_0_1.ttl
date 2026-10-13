@@ -7,11 +7,13 @@
 
 <http://ai4se.org/ontology/v5/shacl> a owl:Ontology ;
     rdfs:label "AI4SE ontology, edition 5.0: shapes"@en ;
-    dcterms:creator "AI4SE Research Community" ;
+    dcterms:contributor "Yusuf Altunel (curator)" ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    dcterms:provenance "An AI product: developed with various Claude models (Anthropic) under the curation of Yusuf Altunel."@en ;
     rdfs:comment "Constraints for the AI4SE package: every class, property and individual carries a human label; every module is complete; a definition is requested for classes (advisory)."@en ;
     owl:imports <http://ai4se.org/ontology/v5> ;
-    owl:versionIRI <http://ai4se.org/ontology/v5/shacl/1.0.0> ;
-    owl:versionInfo "1.0.0" .
+    owl:versionIRI <http://ai4se.org/ontology/v5/shacl/1.0.1> ;
+    owl:versionInfo "1.0.1" .
 
 <http://ai4se.org/ontology/v5/shape/ClassDefinitionShape> a sh:NodeShape ;
     sh:property [ sh:message "Advisory: a class should carry a skos:definition. A Warning is not conformance (L-66)."@en ;

@@ -32476,7 +32476,7 @@ v5:MachineLearning a owl:Class ;
     dcterms:identifier "Phase15Final" ;
     dcterms:isPartOf <http://ai4se.org/ontology/v5> ;
     rdfs:comment "Module of the AI4SE package; 11 named terms were defined in this module's source."@en ;
-    owl:versionInfo "5.0.0" .
+    owl:versionInfo "5.0.1" .
 
 v5:SecurityTesting a owl:Class ;
     rdfs:label "Security Testing"@en ;
@@ -32592,51 +32592,53 @@ v5:FashionRetailDomain a owl:Class ;
     dcterms:identifier "Phase11Final" ;
     dcterms:isPartOf <http://ai4se.org/ontology/v5> ;
     rdfs:comment "Module of the AI4SE package; 18 named terms were defined in this module's source."@en ;
-    owl:versionInfo "5.0.0" .
+    owl:versionInfo "5.0.1" .
 
 <http://ai4se.org/ontology/v5/module/Phase2Security> rdfs:label "Phase 2 security enrichment: security engineering and security testing classes"@en ;
     dcterms:identifier "Phase2Security" ;
     dcterms:isPartOf <http://ai4se.org/ontology/v5> ;
     rdfs:comment "Module of the AI4SE package; 19 named terms were defined in this module's source."@en ;
-    owl:versionInfo "5.0.0" .
+    owl:versionInfo "5.0.1" .
 
 <http://ai4se.org/ontology/v5/module/Phase7Advanced> rdfs:label "Phase 7 advanced enrichment: advanced retail and analytics classes"@en ;
     dcterms:identifier "Phase7Advanced" ;
     dcterms:isPartOf <http://ai4se.org/ontology/v5> ;
     rdfs:comment "Module of the AI4SE package; 19 named terms were defined in this module's source."@en ;
-    owl:versionInfo "5.0.0" .
+    owl:versionInfo "5.0.1" .
 
 <http://ai4se.org/ontology/v5/module/Phase13AdvancedTech> rdfs:label "Phase 13 advanced technology: advanced technology classes"@en ;
     dcterms:identifier "Phase13AdvancedTech" ;
     dcterms:isPartOf <http://ai4se.org/ontology/v5> ;
     rdfs:comment "Module of the AI4SE package; 21 named terms were defined in this module's source."@en ;
-    owl:versionInfo "5.0.0" .
+    owl:versionInfo "5.0.1" .
 
 <http://ai4se.org/ontology/v5> a owl:Ontology ;
     rdfs:label "AI4SE ontology, edition 5.0: terminology"@en ;
-    dcterms:creator "AI4SE Research Community" ;
+    dcterms:contributor "Yusuf Altunel (curator)" ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    dcterms:provenance "An AI product: developed with various Claude models (Anthropic) under the curation of Yusuf Altunel."@en ;
     rdfs:comment "Every class and property of the AI4SE ontology: the 4.5 Enterprise concept hierarchy plus the 5.0 enrichment modules, consolidated into one T-Box. Each former source file is a module (dcterms:isPartOf)."@en ;
     owl:priorVersion <http://ai4se.org/ontology/v4> ;
-    owl:versionIRI <http://ai4se.org/ontology/v5/5.0.0> ;
-    owl:versionInfo "5.0.0" .
+    owl:versionIRI <http://ai4se.org/ontology/v5/5.0.1> ;
+    owl:versionInfo "5.0.1" .
 
 <http://ai4se.org/ontology/v5/module/Phase12EnterpriseSystems> rdfs:label "Phase 12 enterprise systems: ERP, CRM, supply-chain and related system classes"@en ;
     dcterms:identifier "Phase12EnterpriseSystems" ;
     dcterms:isPartOf <http://ai4se.org/ontology/v5> ;
     rdfs:comment "Module of the AI4SE package; 23 named terms were defined in this module's source."@en ;
-    owl:versionInfo "5.0.0" .
+    owl:versionInfo "5.0.1" .
 
 <http://ai4se.org/ontology/v5/module/Phase14SpecializedDomains> rdfs:label "Phase 14 specialised domains: domain-specific engineering classes"@en ;
     dcterms:identifier "Phase14SpecializedDomains" ;
     dcterms:isPartOf <http://ai4se.org/ontology/v5> ;
     rdfs:comment "Module of the AI4SE package; 23 named terms were defined in this module's source."@en ;
-    owl:versionInfo "5.0.0" .
+    owl:versionInfo "5.0.1" .
 
 <http://ai4se.org/ontology/v5/module/Phase2Enrichment> rdfs:label "Phase 2 enrichment: enriched classes for e-commerce platform engineering"@en ;
     dcterms:identifier "Phase2Enrichment" ;
     dcterms:isPartOf <http://ai4se.org/ontology/v5> ;
     rdfs:comment "Module of the AI4SE package; 23 named terms were defined in this module's source."@en ;
-    owl:versionInfo "5.0.0" .
+    owl:versionInfo "5.0.1" .
 
 :BayesianOptimization a owl:Class ;
     rdfs:label "Bayesian Optimization"@en ;
@@ -32687,7 +32689,7 @@ v5:SEConcept a owl:Class ;
     dcterms:identifier "DataEngineering" ;
     dcterms:isPartOf <http://ai4se.org/ontology/v5> ;
     rdfs:comment "Module of the AI4SE package; 41 named terms were defined in this module's source."@en ;
-    owl:versionInfo "5.0.0" .
+    owl:versionInfo "5.0.1" .
 
 :Kubernetes a :Tool,
         owl:Class ;
@@ -32718,7 +32720,7 @@ v5:SEConcept a owl:Class ;
     dcterms:identifier "Phase2MultiDomain" ;
     dcterms:isPartOf <http://ai4se.org/ontology/v5> ;
     rdfs:comment "Module of the AI4SE package; 29 named terms were defined in this module's source."@en ;
-    owl:versionInfo "5.0.0" .
+    owl:versionInfo "5.0.1" .
 
 :PatternMatching a owl:Class ;
     rdfs:label "Pattern Matching"@en ;
@@ -32739,7 +32741,7 @@ v5:SEConcept a owl:Class ;
     dcterms:identifier "HybridSystems" ;
     dcterms:isPartOf <http://ai4se.org/ontology/v5> ;
     rdfs:comment "Module of the AI4SE package; 45 named terms were defined in this module's source."@en ;
-    owl:versionInfo "5.0.0" .
+    owl:versionInfo "5.0.1" .
 
 :SentimentAnalysis a owl:Class ;
     rdfs:label "Sentiment Analysis"@en ;
@@ -32750,7 +32752,7 @@ v5:SEConcept a owl:Class ;
     dcterms:identifier "TestingTaxonomy" ;
     dcterms:isPartOf <http://ai4se.org/ontology/v5> ;
     rdfs:comment "Module of the AI4SE package; 41 named terms were defined in this module's source."@en ;
-    owl:versionInfo "5.0.0" .
+    owl:versionInfo "5.0.1" .
 
 :UserModeling a owl:Class ;
     rdfs:label "User Modeling"@en ;
@@ -32761,19 +32763,19 @@ v5:SEConcept a owl:Class ;
     dcterms:identifier "DomainEngineering" ;
     dcterms:isPartOf <http://ai4se.org/ontology/v5> ;
     rdfs:comment "Module of the AI4SE package; 39 named terms were defined in this module's source."@en ;
-    owl:versionInfo "5.0.0" .
+    owl:versionInfo "5.0.1" .
 
 <http://ai4se.org/ontology/v5/module/HybridBase> rdfs:label "Hybrid base: the first edition 5.0 classes and annotation properties for Turkish fashion retail and marketplace e-commerce"@en ;
     dcterms:identifier "HybridBase" ;
     dcterms:isPartOf <http://ai4se.org/ontology/v5> ;
     rdfs:comment "Module of the AI4SE package; 38 named terms were defined in this module's source."@en ;
-    owl:versionInfo "5.0.0" .
+    owl:versionInfo "5.0.1" .
 
 :CloudContainerizationModule rdfs:label "Cloud and containers: service models, orchestration and cloud-native classes"@en ;
     dcterms:identifier "CloudContainerization" ;
     dcterms:isPartOf <http://ai4se.org/ontology/v5> ;
     rdfs:comment "Module of the AI4SE package; 37 named terms were defined in this module's source."@en ;
-    owl:versionInfo "5.0.0" .
+    owl:versionInfo "5.0.1" .
 
 :Fuzzing a owl:Class ;
     rdfs:label "Fuzzing"@en ;
@@ -32794,13 +32796,13 @@ v5:SEConcept a owl:Class ;
     dcterms:identifier "ArchitecturePatterns" ;
     dcterms:isPartOf <http://ai4se.org/ontology/v5> ;
     rdfs:comment "Module of the AI4SE package; 46 named terms were defined in this module's source."@en ;
-    owl:versionInfo "5.0.0" .
+    owl:versionInfo "5.0.1" .
 
 :CICDAutomationModule rdfs:label "Continuous integration and delivery: pipeline, stage, deployment-strategy and tool classes"@en ;
     dcterms:identifier "CICDAutomation" ;
     dcterms:isPartOf <http://ai4se.org/ontology/v5> ;
     rdfs:comment "Module of the AI4SE package; 40 named terms were defined in this module's source."@en ;
-    owl:versionInfo "5.0.0" .
+    owl:versionInfo "5.0.1" .
 
 :MetaLearning a owl:Class ;
     rdfs:label "Meta Learning"@en ;
@@ -32821,13 +32823,13 @@ v5:SEConcept a owl:Class ;
     dcterms:identifier "Phase3Relationships" ;
     dcterms:isPartOf <http://ai4se.org/ontology/v5> ;
     rdfs:comment "Module of the AI4SE package; 43 named terms were defined in this module's source."@en ;
-    owl:versionInfo "5.0.0" .
+    owl:versionInfo "5.0.1" .
 
 :SemanticTechnologiesModule rdfs:label "Semantic technologies: knowledge graphs, reasoners, query languages and serialisations"@en ;
     dcterms:identifier "SemanticTechnologies" ;
     dcterms:isPartOf <http://ai4se.org/ontology/v5> ;
     rdfs:comment "Module of the AI4SE package; 47 named terms were defined in this module's source."@en ;
-    owl:versionInfo "5.0.0" .
+    owl:versionInfo "5.0.1" .
 
 :BiasDetection a owl:Class ;
     rdfs:label "Bias Detection"@en ;
@@ -32863,7 +32865,7 @@ v5:SEConcept a owl:Class ;
     dcterms:identifier "ROIMetrics" ;
     dcterms:isPartOf <http://ai4se.org/ontology/v5> ;
     rdfs:comment "Module of the AI4SE package; 50 named terms were defined in this module's source."@en ;
-    owl:versionInfo "5.0.0" .
+    owl:versionInfo "5.0.1" .
 
 :DependencyParsing a owl:Class ;
     rdfs:label "Dependency Parsing"@en ;
@@ -32879,7 +32881,7 @@ v5:SEConcept a owl:Class ;
     dcterms:identifier "Phase3Structural" ;
     dcterms:isPartOf <http://ai4se.org/ontology/v5> ;
     rdfs:comment "Module of the AI4SE package; 73 named terms were defined in this module's source."@en ;
-    owl:versionInfo "5.0.0" .
+    owl:versionInfo "5.0.1" .
 
 :AutoML a owl:Class ;
     rdfs:label "Auto ML"@en ;
@@ -32895,7 +32897,7 @@ v5:SEConcept a owl:Class ;
     dcterms:identifier "ReferencedButUndefined" ;
     dcterms:isPartOf <http://ai4se.org/ontology/v5> ;
     rdfs:comment "Module of the AI4SE package; holds 631 stubs."@en ;
-    owl:versionInfo "5.0.0" .
+    owl:versionInfo "5.0.1" .
 
 :SEConcept a owl:Class ;
     rdfs:label "Software Engineering Concept"@en ;
@@ -32908,5 +32910,5 @@ v5:SEConcept a owl:Class ;
     dcterms:identifier "EnterpriseBase" ;
     dcterms:isPartOf <http://ai4se.org/ontology/v5> ;
     rdfs:comment "Module of the AI4SE package; 3307 named terms were defined in this module's source."@en ;
-    owl:versionInfo "5.0.0" .
+    owl:versionInfo "5.0.1" .
 

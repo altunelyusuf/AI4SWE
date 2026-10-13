@@ -1,12 +1,12 @@
-# AI4SE ontology, edition 5.0.0
+# AI4SE ontology, edition 5.0.1
 
 The ontology that accompanies the AI4X book series, volume 2 (AI for Software Engineering). It merges the 4.5 Enterprise concept hierarchy with the 5.0 enrichment modules into the three files the OE discipline requires: one T-Box, one A-Box, one SHACL file.
 
 | Folder | Contents |
 |---|---|
-| `01-ontologies/` | `ai4se_tbox_v5_0_0.ttl` (classes, properties, modules) and `ai4se_abox_v5_0_0.ttl` (named individuals) |
-| `02-shacl/` | `ai4se_shacl_v1_0_0.ttl` (the shapes) |
-| `03-tooling/` | `ai4se_verify_v1_0_0.py` (measures the package), `ai4se_build_v1_0_0.py` (the consolidation, kept as a record), a negative fixture the shapes must reject |
+| `01-ontologies/` | `ai4se_tbox_v5_0_1.ttl` (classes, properties, modules) and `ai4se_abox_v5_0_1.ttl` (named individuals) |
+| `02-shacl/` | `ai4se_shacl_v1_0_1.ttl` (the shapes) |
+| `03-tooling/` | `ai4se_verify_v1_0_0.py` (measures the package), `ai4se_build_v1_0_1.py` (the consolidation, kept as a record), a negative fixture the shapes must reject |
 | `04-documentation/` | the findings register, the repair log, the quarantine register, the book-to-ontology mapping with its appended correction, the provenance archive |
 
 ## What is in it (measured on the files, 2026-10-13)
@@ -24,8 +24,8 @@ Every line must say PASS. The check parses the three files, counts the ontology 
 
 ## Read this before you rely on it
 
-`04-documentation/FINDINGS_REGISTER_v1_0_0.md` states plainly what was wrong in the sources, what was repaired, what was moved out of the ontology and why, and what has not been checked. The ontology has not been run through an OWL reasoner.
+`04-documentation/FINDINGS_REGISTER_v1_0_1.md` states plainly what was wrong in the sources, what was repaired, what was moved out of the ontology and why, and what has not been checked. The ontology has not been run through an OWL reasoner.
 
-## Licence
+## Curator, provenance and licence
 
-Not yet set by the owner. Until it is, the repository is readable but not licensed for reuse.
+Curated by Yusuf Altunel. This is an AI product: it was developed with various Claude models (Anthropic) under his curation. The licences are those of the OE Method: CC BY 4.0 for the ontology, shapes and documentation, Apache-2.0 for the tooling. See `LICENSE.md` and `CITATION.cff`.

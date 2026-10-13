@@ -1,4 +1,4 @@
-# Findings register, AI4SE ontology 5.0.0
+# Findings register, AI4SE ontology 5.0.1
 
 Dated 2026-10-13. Every number below was measured on the files this session; the build report (`BUILD_REPORT_v1_0_0.json`) and the registers beside this file hold the rows behind them.
 
@@ -31,6 +31,9 @@ Of the 3,585 classes that the sources actually define, 3,131 (87%) carry a machi
 
 - No OWL reasoner has been run, so logical consistency is unverified.
 - The publisher of the OE discipline was not used for this repository (this session's GitHub access does not allow it), so there is no publish record and no release tag.
-- The creator named in the sources does not match the owner's name, so the headers name "AI4SE Research Community" instead. The owner should set the attribution.
-- The licence is not set.
+- Attribution and licence were set by the owner on 2026-10-13 (see the change note below).
 - The book-to-ontology mapping carried a "100% alignment" headline that its own table contradicts; the correction is appended to it in `Book_Ontology_Comprehensive_Mapping_v1_0_0.md`.
+
+## Change note, 5.0.1 (2026-10-13)
+
+The owner ruled: the licences are those of the OE Method; his name stays as the curator; the work is an AI product developed with various Claude models. Version 5.0.1 therefore adds, to the header of each of the three ontology files, the curator, the provenance statement and the licence link, and adds `LICENSE.md` and `CITATION.cff`. The terms are unchanged in content from 5.0.0; the files carry new version tokens because their bytes changed. The creator line naming "AI4SE Research Community" from 5.0.0 is replaced by the curator line, because the sources' creator name did not match the owner's.

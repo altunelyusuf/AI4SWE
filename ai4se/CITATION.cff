@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "If you use this ontology, please cite it as below."
+title: "AI4SE ontology (AI for Software Engineering)"
+version: 5.0.1
+date-released: 2026-10-13
+authors:
+  - name: "Yusuf Altunel (curator); an AI product developed with various Claude models"
+license: CC-BY-4.0
+repository-code: "https://github.com/altunelyusuf/AI4SWE"

@@ -277,11 +277,11 @@
     skos:definition "LLMs generate novel solutions"@en .
 
 :DVC a :Tool ;
-    rdfs:label "DVC (Data Version Control)"@en ;
+    rdfs:label "DVC"@en ;
     :hasCategory "MLOps"@en ;
     :hasToolURL "https://dvc.org"^^xsd:anyURI ;
     dcterms:isPartOf <http://ai4se.org/ontology/v4> ;
-    skos:altLabel "DVC"@en ;
+    skos:altLabel "DVC (Data Version Control)"@en ;
     skos:definition "Data version control"@en,
         "Version control system for ML projects"@en .
 
@@ -868,11 +868,11 @@ ORDER BY ?label
     rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
 
 :ScikitLearn a :Tool ;
-    rdfs:label "scikit-learn"@en ;
+    rdfs:label "ScikitLearn"@en ;
     :hasCategory "ML Frameworks"@en ;
     :hasToolURL "https://scikit-learn.org"^^xsd:anyURI ;
     dcterms:isPartOf <http://ai4se.org/ontology/v4> ;
-    skos:altLabel "ScikitLearn"@en ;
+    skos:altLabel "scikit-learn"@en ;
     skos:definition "Classical ML library"@en,
         "Machine learning library for Python"@en .
 
@@ -2401,11 +2401,13 @@ v5:spaCy a :Tool,
 
 <http://ai4se.org/ontology/v5/abox> a owl:Ontology ;
     rdfs:label "AI4SE ontology, edition 5.0: individuals"@en ;
-    dcterms:creator "AI4SE Research Community" ;
+    dcterms:contributor "Yusuf Altunel (curator)" ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    dcterms:provenance "An AI product: developed with various Claude models (Anthropic) under the curation of Yusuf Altunel."@en ;
     rdfs:comment "Every named individual of the AI4SE ontology (tools and scenario instances)."@en ;
     owl:imports <http://ai4se.org/ontology/v5> ;
-    owl:versionIRI <http://ai4se.org/ontology/v5/abox/5.0.0> ;
-    owl:versionInfo "5.0.0" .
+    owl:versionIRI <http://ai4se.org/ontology/v5/abox/5.0.1> ;
+    owl:versionInfo "5.0.1" .
 
 :ClaudeAPI a :Tool,
         owl:NamedIndividual ;

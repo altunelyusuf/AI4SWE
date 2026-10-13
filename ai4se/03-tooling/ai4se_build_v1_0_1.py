@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""ai4se_build_v1_0_0.py -- consolidate the repaired AI4SE source files into the three canonical files.
+"""ai4se_build_v1_0_1.py -- consolidate the repaired AI4SE source files into the three canonical files.
 
 Input : a folder with the repaired source Turtle files (one per former subject = module).
-Output: <out>/01-ontologies/ai4se_tbox_v5_0_0.ttl, ai4se_abox_v5_0_0.ttl, <out>/02-shacl/ai4se_shacl_v1_0_0.ttl
-        <out>/04-documentation/QUARANTINED_CLAIMS_v1_0_0.tsv, BUILD_REPORT_v1_0_0.json
+Output: <out>/01-ontologies/ai4se_tbox_v5_0_1.ttl, ai4se_abox_v5_0_1.ttl, <out>/02-shacl/ai4se_shacl_v1_0_1.ttl
+        <out>/04-documentation/QUARANTINED_CLAIMS_v1_0_0.tsv, BUILD_REPORT_v1_0_1.json
 
 Rules applied (every one is mechanical and counted in the report):
   Q1 template   a (property, string value) pair that repeats on >= 20 subjects is boilerplate, not knowledge
@@ -196,7 +196,7 @@ for s, mods in defined_in.items():
     for m in mods: member_count[m] += 1
 for fn, mid, miri, mlabel in MODULES + [(None,)+STUB_MOD]:
     mod_res.add((miri, DCTERMS.isPartOf, PKG)); mod_res.add((miri, DCTERMS.identifier, Literal(mid)))
-    mod_res.add((miri, RDFS.label, Literal(mlabel, lang="en"))); mod_res.add((miri, OWL.versionInfo, Literal("5.0.0")))
+    mod_res.add((miri, RDFS.label, Literal(mlabel, lang="en"))); mod_res.add((miri, OWL.versionInfo, Literal("5.0.1")))
     mod_res.add((miri, RDFS.comment, Literal(f"Module of the AI4SE package; {member_count[mid]} named terms were defined in this module's source." if mid!="ReferencedButUndefined" else f"Module of the AI4SE package; holds {member_count[mid]} stubs.", lang="en")))
 modiri = {m[1]: m[2] for m in MODULES}; modiri["ReferencedButUndefined"] = STUB_MOD[1]
 for s, mods in defined_in.items():
@@ -232,11 +232,13 @@ for t in mod_res: tg.add(t)
 # every individual's class must be reachable: individual types stay as written
 # ---- headers ------------------------------------------------------------------------------
 def header(g, iri, title, comment, imports=()):
-    g.add((iri, RDF.type, OWL.Ontology)); g.add((iri, OWL.versionInfo, Literal("5.0.0" if iri != PKG_S else "1.0.0")))
-    ver = "5.0.0" if iri != PKG_S else "1.0.0"
+    g.add((iri, RDF.type, OWL.Ontology)); g.add((iri, OWL.versionInfo, Literal("5.0.1" if iri != PKG_S else "1.0.1")))
+    ver = "5.0.1" if iri != PKG_S else "1.0.1"
     g.add((iri, OWL.versionIRI, URIRef(str(iri) + "/" + ver)))
     g.add((iri, RDFS.label, Literal(title, lang="en"))); g.add((iri, RDFS.comment, Literal(comment, lang="en")))
-    g.add((iri, DCTERMS.creator, Literal("AI4SE Research Community")))
+    g.add((iri, DCTERMS.contributor, Literal("Yusuf Altunel (curator)")))
+    g.add((iri, DCTERMS.provenance, Literal("An AI product: developed with various Claude models (Anthropic) under the curation of Yusuf Altunel.", lang="en")))
+    g.add((iri, DCTERMS.license, URIRef("https://creativecommons.org/licenses/by/4.0/")))
     for i in imports: g.add((iri, OWL.imports, i))
 tg.add((PKG, OWL.priorVersion, URIRef("http://ai4se.org/ontology/v4")))
 header(tg, PKG, "AI4SE ontology, edition 5.0: terminology",
@@ -283,9 +285,9 @@ def write(g, path):
         cg = g
     for pre, ns in g.namespaces(): cg.bind(pre, ns, override=True)
     cg.serialize(destination=path, format="turtle")
-write(tg, os.path.join(OUT, "01-ontologies", "ai4se_tbox_v5_0_0.ttl"))
-write(ag, os.path.join(OUT, "01-ontologies", "ai4se_abox_v5_0_0.ttl"))
-write(sg, os.path.join(OUT, "02-shacl", "ai4se_shacl_v1_0_0.ttl"))
+write(tg, os.path.join(OUT, "01-ontologies", "ai4se_tbox_v5_0_1.ttl"))
+write(ag, os.path.join(OUT, "01-ontologies", "ai4se_abox_v5_0_1.ttl"))
+write(sg, os.path.join(OUT, "02-shacl", "ai4se_shacl_v1_0_1.ttl"))
 
 def esc(x): return x.replace("\\", "\\\\").replace("\t", "\\t").replace("\n", "\\n").replace("\r", "")
 with open(os.path.join(OUT, "04-documentation", "QUARANTINED_CLAIMS_v1_0_0.tsv"), "w", encoding="utf-8") as f:
@@ -301,5 +303,5 @@ rep = {"modules": len(MODULES), "t_triples": len(tg), "a_triples": len(ag), "s_t
        "quarantined": dict(cnt), "quarantined_total": len(quarantine), "q1_pairs": len(Q1_PAIRS),
        "bridges": len(bridges), "stub_classes": len(stub_classes), "stub_tools": len(stub_tools), "stub_properties": len(stub_props),
        "bridge_names": bridges}
-json.dump(rep, open(os.path.join(OUT, "04-documentation", "BUILD_REPORT_v1_0_0.json"), "w"), indent=1)
+json.dump(rep, open(os.path.join(OUT, "04-documentation", "BUILD_REPORT_v1_0_1.json"), "w"), indent=1)
 print(json.dumps({k: v for k, v in rep.items() if k != "bridge_names"}, indent=1))
