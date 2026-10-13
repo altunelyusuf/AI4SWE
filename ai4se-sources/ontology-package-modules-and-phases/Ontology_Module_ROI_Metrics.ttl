@@ -1,0 +1,414 @@
+@prefix : <http://ai4se.org/ontology/v4#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#################################################################
+#    MODULE: ROI & METRICS
+#################################################################
+
+:ROIMetricsModule rdf:type owl:Ontology ;
+    dcterms:title "ROI and Metrics Module"@en ;
+    dcterms:description "Comprehensive ontology for Return on Investment calculations, business metrics, regional economic adjustments, and value measurement in AI4SE implementations"@en ;
+    dcterms:created "2025-11-17"^^xsd:date ;
+    dcterms:creator "AI4SE Research Team"@en ;
+    :hasBookReference "Chapters 31, 34: ROI Calculations, Validations & Regional Adaptations"^^xsd:string ;
+    :moduleVersion "1.0"^^xsd:string ;
+    owl:versionInfo "Initial release with Turkey-specific adjustments and comprehensive financial modeling" .
+
+#################################################################
+#    CLASSES
+#################################################################
+
+# Top-Level ROI Concept
+:ROIConcept rdf:type owl:Class ;
+    rdfs:subClassOf :AI4SEConcept ;
+    rdfs:label "ROI Concept"@en ;
+    skos:definition "Any concept related to measuring, calculating, or validating Return on Investment for AI4SE initiatives"@en ;
+    :hasBookReference "Chapter 31"^^xsd:string ;
+    :hasV4ID "V4_NEW_030"^^xsd:string .
+
+# Core Calculation Classes
+
+:ROICalculationMethod rdf:type owl:Class ;
+    rdfs:subClassOf :ROIConcept ;
+    rdfs:label "ROI Calculation Method"@en ;
+    skos:definition "Systematic approach to calculating Return on Investment, including formula, inputs, outputs, and validation criteria"@en ;
+    skos:example "Basic ROI = ((Benefits - Costs) / Costs) × 100%; Adjusted ROI incorporates NPV, payback period, risk factors"@en ;
+    :hasBookReference "Chapter 31, Part 1"^^xsd:string ;
+    :hasV4ID "V4_NEW_031"^^xsd:string ;
+    :hasFormula "ROI = ((Total Benefits - Total Costs) / Total Costs) × 100"^^xsd:string .
+
+:CostBenefitAnalysis rdf:type owl:Class ;
+    rdfs:subClassOf :ROICalculationMethod ;
+    rdfs:label "Cost-Benefit Analysis"@en ;
+    skos:definition "Systematic comparison of costs versus benefits of AI4SE initiative over specific time period"@en ;
+    skos:example "Test automation: Initial cost $50K, annual benefit $200K, payback 3 months, 5-year ROI 1,900%"@en ;
+    :hasBookReference "Chapter 31, Part 2"^^xsd:string ;
+    :hasV4ID "V4_NEW_032"^^xsd:string .
+
+:TCOModel rdf:type owl:Class ;
+    rdfs:subClassOf :ROICalculationMethod ;
+    rdfs:label "Total Cost of Ownership Model"@en ;
+    skos:definition "Comprehensive calculation of all direct and indirect costs over full lifecycle of AI4SE solution"@en ;
+    skos:example "TCO = Initial Investment + (Annual Operating Costs × Years) + Training + Support + Opportunity Costs"@en ;
+    skos:note "TCO reveals hidden costs like training, maintenance, integration that simple ROI misses"@en ;
+    :hasBookReference "Chapter 34, Part 5"^^xsd:string ;
+    :hasV4ID "V4_NEW_033"^^xsd:string .
+
+:NetPresentValue rdf:type owl:Class ;
+    rdfs:subClassOf :ROICalculationMethod ;
+    rdfs:label "Net Present Value"@en ;
+    skos:definition "Present value of future cash flows discounted at appropriate rate, accounting for time value of money"@en ;
+    :hasBookReference "Chapter 34"^^xsd:string ;
+    :hasV4ID "V4_NEW_034"^^xsd:string ;
+    :hasFormula "NPV = Σ (Cash Flow_t / (1 + r)^t) where r = discount rate"^^xsd:string .
+
+:PaybackPeriod rdf:type owl:Class ;
+    rdfs:subClassOf :ROICalculationMethod ;
+    rdfs:label "Payback Period"@en ;
+    skos:definition "Time required for cumulative benefits to equal initial investment"@en ;
+    skos:example "DevOps automation: $100K investment, $40K annual savings → 2.5 years payback"@en ;
+    :hasBookReference "Chapter 31"^^xsd:string ;
+    :hasV4ID "V4_NEW_035"^^xsd:string ;
+    :hasFormula "Payback Period = Initial Investment / Annual Net Cash Flow"^^xsd:string .
+
+:InternalRateOfReturn rdf:type owl:Class ;
+    rdfs:subClassOf :ROICalculationMethod ;
+    rdfs:label "Internal Rate of Return"@en ;
+    skos:definition "Discount rate at which NPV of investment equals zero, representing expected annual return"@en ;
+    :hasBookReference "Chapter 34"^^xsd:string ;
+    :hasV4ID "V4_NEW_036"^^xsd:string .
+
+# Cost Categories
+
+:CostCategory rdf:type owl:Class ;
+    rdfs:subClassOf :ROIConcept ;
+    rdfs:label "Cost Category"@en ;
+    skos:definition "Classification of costs for AI4SE implementation"@en ;
+    :hasBookReference "Chapter 31, Part 3"^^xsd:string ;
+    :hasV4ID "V4_NEW_037"^^xsd:string .
+
+:InitialInvestment rdf:type owl:Class ;
+    rdfs:subClassOf :CostCategory ;
+    rdfs:label "Initial Investment"@en ;
+    skos:definition "Upfront costs required to start AI4SE initiative including tools, training, consulting"@en ;
+    skos:example "Tool licenses $20K, Training $15K, Consulting $30K, Infrastructure $25K = $90K initial"@en ;
+    :hasV4ID "V4_NEW_038"^^xsd:string .
+
+:OngoingOperationalCost rdf:type owl:Class ;
+    rdfs:subClassOf :CostCategory ;
+    rdfs:label "Ongoing Operational Cost"@en ;
+    skos:definition "Recurring annual costs including maintenance, support, licenses, personnel"@en ;
+    skos:example "Annual: Tool maintenance $5K, Cloud costs $12K, Training $8K, Support $6K = $31K/year"@en ;
+    :hasV4ID "V4_NEW_039"^^xsd:string .
+
+:OpportunityCost rdf:type owl:Class ;
+    rdfs:subClassOf :CostCategory ;
+    rdfs:label "Opportunity Cost"@en ;
+    skos:definition "Value of foregone alternatives when resources allocated to AI4SE instead of other initiatives"@en ;
+    :hasV4ID "V4_NEW_040"^^xsd:string .
+
+# Benefit Categories
+
+:BenefitCategory rdf:type owl:Class ;
+    rdfs:subClassOf :ROIConcept ;
+    rdfs:label "Benefit Category"@en ;
+    skos:definition "Classification of benefits from AI4SE implementation"@en ;
+    :hasBookReference "Chapter 31, Part 2"^^xsd:string ;
+    :hasV4ID "V4_NEW_041"^^xsd:string .
+
+:ProductivityGain rdf:type owl:Class ;
+    rdfs:subClassOf :BenefitCategory ;
+    rdfs:label "Productivity Gain"@en ;
+    skos:definition "Increase in output or reduction in time required to complete tasks"@en ;
+    skos:example "AI code generation: 30% faster development = 15 hours saved per developer per week"@en ;
+    :hasV4ID "V4_NEW_042"^^xsd:string .
+
+:QualityImprovement rdf:type owl:Class ;
+    rdfs:subClassOf :BenefitCategory ;
+    rdfs:label "Quality Improvement"@en ;
+    skos:definition "Reduction in defects, improved reliability, better maintainability"@en ;
+    skos:example "Automated testing: 60% fewer production bugs = $200K annual savings in bug fixes"@en ;
+    :hasV4ID "V4_NEW_043"^^xsd:string .
+
+:CostReduction rdf:type owl:Class ;
+    rdfs:subClassOf :BenefitCategory ;
+    rdfs:label "Cost Reduction"@en ;
+    skos:definition "Direct reduction in operational expenses"@en ;
+    skos:example "Infrastructure automation: 40% reduction in cloud costs = $50K annual savings"@en ;
+    :hasV4ID "V4_NEW_044"^^xsd:string .
+
+:TimeToMarket rdf:type owl:Class ;
+    rdfs:subClassOf :BenefitCategory ;
+    rdfs:label "Time to Market Improvement"@en ;
+    skos:definition "Faster delivery of features and products to market"@en ;
+    skos:example "CI/CD automation: 50% faster releases = competitive advantage worth $300K annually"@en ;
+    :hasV4ID "V4_NEW_045"^^xsd:string .
+
+:RiskReduction rdf:type owl:Class ;
+    rdfs:subClassOf :BenefitCategory ;
+    rdfs:label "Risk Reduction"@en ;
+    skos:definition "Decreased probability or impact of negative events"@en ;
+    skos:example "Security automation: 70% fewer vulnerabilities = $500K saved in breach prevention"@en ;
+    :hasV4ID "V4_NEW_046"^^xsd:string .
+
+# Regional Adjustment Classes
+
+:RegionalEconomicAdjustment rdf:type owl:Class ;
+    rdfs:subClassOf :ROIConcept ;
+    rdfs:label "Regional Economic Adjustment"@en ;
+    skos:definition "Multiplier factors adjusting ROI calculations for regional economic differences including salaries, purchasing power, market conditions"@en ;
+    skos:note "Critical for accurate ROI comparison across countries and realistic expectations"@en ;
+    :hasBookReference "Chapter 31, Part 3"^^xsd:string ;
+    :hasV4ID "V4_NEW_047"^^xsd:string .
+
+:RegionalContext rdf:type owl:Class ;
+    rdfs:subClassOf :RegionalEconomicAdjustment ;
+    rdfs:label "Regional Context"@en ;
+    skos:definition "Geographic region with specific economic characteristics affecting AI4SE ROI"@en ;
+    :hasV4ID "V4_NEW_048"^^xsd:string .
+
+:TurkeyEconomicContext rdf:type owl:Class ;
+    rdfs:subClassOf :RegionalContext ;
+    rdfs:label "Turkey Economic Context"@en ;
+    skos:definition "Turkish market specifics: average software engineer salary, tool costs, market conditions for AI4SE"@en ;
+    skos:example "Average dev salary: $30K/year (vs $120K US), Tool cost multiplier: 0.6x, Benefit realization: 0.75x"@en ;
+    :hasBookReference "Chapters 31-35, 38"^^xsd:string ;
+    :hasV4ID "V4_NEW_049"^^xsd:string ;
+    :hasSalaryMultiplier "0.25"^^xsd:decimal ;
+    :hasToolCostMultiplier "0.6"^^xsd:decimal ;
+    :hasBenefitMultiplier "0.75"^^xsd:decimal .
+
+:USEconomicContext rdf:type owl:Class ;
+    rdfs:subClassOf :RegionalContext ;
+    rdfs:label "US Economic Context"@en ;
+    skos:definition "United States market: baseline for comparison"@en ;
+    :hasV4ID "V4_NEW_050"^^xsd:string ;
+    :hasSalaryMultiplier "1.0"^^xsd:decimal ;
+    :hasToolCostMultiplier "1.0"^^xsd:decimal ;
+    :hasBenefitMultiplier "1.0"^^xsd:decimal .
+
+:EUEconomicContext rdf:type owl:Class ;
+    rdfs:subClassOf :RegionalContext ;
+    rdfs:label "EU Economic Context"@en ;
+    skos:definition "European Union average market conditions"@en ;
+    :hasV4ID "V4_NEW_051"^^xsd:string ;
+    :hasSalaryMultiplier "0.8"^^xsd:decimal ;
+    :hasToolCostMultiplier "0.9"^^xsd:decimal ;
+    :hasBenefitMultiplier "0.85"^^xsd:decimal .
+
+# Organization Size Adjustments
+
+:OrganizationSizeMultiplier rdf:type owl:Class ;
+    rdfs:subClassOf :ROIConcept ;
+    rdfs:label "Organization Size Multiplier"@en ;
+    skos:definition "Adjustment factor based on company size affecting economies of scale and implementation complexity"@en ;
+    :hasBookReference "Chapter 31, Part 4"^^xsd:string ;
+    :hasV4ID "V4_NEW_052"^^xsd:string .
+
+:SmallOrganization rdf:type owl:Class ;
+    rdfs:subClassOf :OrganizationSizeMultiplier ;
+    rdfs:label "Small Organization"@en ;
+    skos:definition "1-50 developers"@en ;
+    :hasV4ID "V4_NEW_053"^^xsd:string ;
+    :hasComplexityMultiplier "0.7"^^xsd:decimal ;
+    :hasScaleMultiplier "0.6"^^xsd:decimal .
+
+:MediumOrganization rdf:type owl:Class ;
+    rdfs:subClassOf :OrganizationSizeMultiplier ;
+    rdfs:label "Medium Organization"@en ;
+    skos:definition "51-500 developers"@en ;
+    :hasV4ID "V4_NEW_054"^^xsd:string ;
+    :hasComplexityMultiplier "1.0"^^xsd:decimal ;
+    :hasScaleMultiplier "1.0"^^xsd:decimal .
+
+:LargeOrganization rdf:type owl:Class ;
+    rdfs:subClassOf :OrganizationSizeMultiplier ;
+    rdfs:label "Large Organization"@en ;
+    skos:definition "500+ developers"@en ;
+    :hasV4ID "V4_NEW_055"^^xsd:string ;
+    :hasComplexityMultiplier "1.3"^^xsd:decimal ;
+    :hasScaleMultiplier "1.5"^^xsd:decimal .
+
+# Industry Adjustments
+
+:IndustryAdjustmentFactor rdf:type owl:Class ;
+    rdfs:subClassOf :ROIConcept ;
+    rdfs:label "Industry Adjustment Factor"@en ;
+    skos:definition "Industry-specific multipliers reflecting regulatory requirements, risk tolerance, adoption rates"@en ;
+    :hasBookReference "Chapter 31, Part 4"^^xsd:string ;
+    :hasV4ID "V4_NEW_056"^^xsd:string .
+
+# Metrics and Measurement
+
+:ROIMetric rdf:type owl:Class ;
+    rdfs:subClassOf :Metric ;
+    rdfs:label "ROI Metric"@en ;
+    skos:definition "Quantitative measure for assessing return on investment"@en ;
+    :hasV4ID "V4_NEW_057"^^xsd:string .
+
+:SensitivityAnalysis rdf:type owl:Class ;
+    rdfs:subClassOf :ROIConcept ;
+    rdfs:label "Sensitivity Analysis"@en ;
+    skos:definition "Evaluation of how ROI changes when key assumptions are varied"@en ;
+    skos:example "If productivity gain varies from 20-40%, ROI ranges from 150% to 350%"@en ;
+    :hasBookReference "Chapter 34, Part 7"^^xsd:string ;
+    :hasV4ID "V4_NEW_058"^^xsd:string .
+
+:ROICalculator rdf:type owl:Class ;
+    rdfs:subClassOf :Tool ;
+    rdfs:label "ROI Calculator"@en ;
+    skos:definition "Tool for computing ROI with adjustments for region, size, industry"@en ;
+    :hasBookReference "Chapter 34"^^xsd:string ;
+    :hasV4ID "V4_NEW_059"^^xsd:string .
+
+#################################################################
+#    OBJECT PROPERTIES
+#################################################################
+
+:hasRegion rdf:type owl:ObjectProperty ;
+    rdfs:label "has region"@en ;
+    rdfs:domain :ROICalculationMethod ;
+    rdfs:range :RegionalContext .
+
+:hasOrganizationSize rdf:type owl:ObjectProperty ;
+    rdfs:label "has organization size"@en ;
+    rdfs:domain :ROICalculationMethod ;
+    rdfs:range :OrganizationSizeMultiplier .
+
+:hasIndustry rdf:type owl:ObjectProperty ;
+    rdfs:label "has industry"@en ;
+    rdfs:domain :ROICalculationMethod ;
+    rdfs:range :IndustryAdjustmentFactor .
+
+:hasCostCategory rdf:type owl:ObjectProperty ;
+    rdfs:label "has cost category"@en ;
+    rdfs:domain :ROICalculationMethod ;
+    rdfs:range :CostCategory .
+
+:hasBenefitCategory rdf:type owl:ObjectProperty ;
+    rdfs:label "has benefit category"@en ;
+    rdfs:domain :ROICalculationMethod ;
+    rdfs:range :BenefitCategory .
+
+#################################################################
+#    DATA PROPERTIES
+#################################################################
+
+:hasInitialInvestment rdf:type owl:DatatypeProperty ;
+    rdfs:label "has initial investment"@en ;
+    rdfs:domain :ROICalculationMethod ;
+    rdfs:range xsd:decimal .
+
+:hasAnnualBenefit rdf:type owl:DatatypeProperty ;
+    rdfs:label "has annual benefit"@en ;
+    rdfs:domain :ROICalculationMethod ;
+    rdfs:range xsd:decimal .
+
+:hasAnnualCost rdf:type owl:DatatypeProperty ;
+    rdfs:label "has annual cost"@en ;
+    rdfs:domain :ROICalculationMethod ;
+    rdfs:range xsd:decimal .
+
+:hasPaybackPeriod rdf:type owl:DatatypeProperty ;
+    rdfs:label "has payback period"@en ;
+    skos:definition "Time in months to recover initial investment"@en ;
+    rdfs:domain :ROICalculationMethod ;
+    rdfs:range xsd:integer .
+
+:hasExpectedROI rdf:type owl:DatatypeProperty ;
+    rdfs:label "has expected ROI"@en ;
+    skos:definition "Expected return on investment as percentage"@en ;
+    rdfs:domain :ROICalculationMethod ;
+    rdfs:range xsd:decimal .
+
+:hasNetPresentValue rdf:type owl:DatatypeProperty ;
+    rdfs:label "has net present value"@en ;
+    rdfs:domain :ROICalculationMethod ;
+    rdfs:range xsd:decimal .
+
+:hasDiscountRate rdf:type owl:DatatypeProperty ;
+    rdfs:label "has discount rate"@en ;
+    skos:definition "Interest rate used for NPV calculation"@en ;
+    rdfs:domain :NetPresentValue ;
+    rdfs:range xsd:decimal .
+
+:hasSalaryMultiplier rdf:type owl:DatatypeProperty ;
+    rdfs:label "has salary multiplier"@en ;
+    skos:definition "Regional salary adjustment factor (US = 1.0)"@en ;
+    rdfs:domain :RegionalContext ;
+    rdfs:range xsd:decimal .
+
+:hasToolCostMultiplier rdf:type owl:DatatypeProperty ;
+    rdfs:label "has tool cost multiplier"@en ;
+    skos:definition "Regional tool pricing adjustment factor"@en ;
+    rdfs:domain :RegionalContext ;
+    rdfs:range xsd:decimal .
+
+:hasBenefitMultiplier rdf:type owl:DatatypeProperty ;
+    rdfs:label "has benefit multiplier"@en ;
+    skos:definition "Regional benefit realization adjustment"@en ;
+    rdfs:domain :RegionalContext ;
+    rdfs:range xsd:decimal .
+
+:hasComplexityMultiplier rdf:type owl:DatatypeProperty ;
+    rdfs:label "has complexity multiplier"@en ;
+    rdfs:domain :OrganizationSizeMultiplier ;
+    rdfs:range xsd:decimal .
+
+:hasScaleMultiplier rdf:type owl:DatatypeProperty ;
+    rdfs:label "has scale multiplier"@en ;
+    skos:definition "Economies of scale factor"@en ;
+    rdfs:domain :OrganizationSizeMultiplier ;
+    rdfs:range xsd:decimal .
+
+:hasFormula rdf:type owl:DatatypeProperty ;
+    rdfs:label "has formula"@en ;
+    skos:definition "Mathematical formula for calculation"@en ;
+    rdfs:range xsd:string .
+
+#################################################################
+#    INDIVIDUALS (Examples)
+#################################################################
+
+:TestAutomationROI rdf:type owl:NamedIndividual, :ROICalculationMethod ;
+    rdfs:label "Test Automation ROI Example"@en ;
+    skos:definition "ROI calculation for test automation initiative"@en ;
+    :hasInitialInvestment "50000"^^xsd:decimal ;
+    :hasAnnualBenefit "200000"^^xsd:decimal ;
+    :hasAnnualCost "15000"^^xsd:decimal ;
+    :hasPaybackPeriod "3"^^xsd:integer ;
+    :hasExpectedROI "370"^^xsd:decimal ;
+    :hasRegion :USEconomicContext .
+
+:TurkeyTestAutomationROI rdf:type owl:NamedIndividual, :ROICalculationMethod ;
+    rdfs:label "Turkey Test Automation ROI"@en ;
+    skos:definition "Same initiative adjusted for Turkey"@en ;
+    :hasInitialInvestment "30000"^^xsd:decimal ;
+    :hasAnnualBenefit "150000"^^xsd:decimal ;
+    :hasAnnualCost "10000"^^xsd:decimal ;
+    :hasPaybackPeriod "2"^^xsd:integer ;
+    :hasExpectedROI "467"^^xsd:decimal ;
+    :hasRegion :TurkeyEconomicContext .
+
+#################################################################
+#    AXIOMS
+#################################################################
+
+# Every ROI Calculation must have initial investment
+:ROICalculationMethod rdfs:subClassOf [
+    rdf:type owl:Restriction ;
+    owl:onProperty :hasInitialInvestment ;
+    owl:minCardinality "1"^^xsd:nonNegativeInteger
+] .
+
+# Every ROI Calculation must have expected ROI
+:ROICalculationMethod rdfs:subClassOf [
+    rdf:type owl:Restriction ;
+    owl:onProperty :hasExpectedROI ;
+    owl:minCardinality "1"^^xsd:nonNegativeInteger
+] .

@@ -1,0 +1,460 @@
+@prefix : <http://ai4se.org/ontology/v4#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#################################################################
+#    MODULE: DOMAIN ENGINEERING
+#################################################################
+
+:DomainEngineeringModule rdf:type owl:Ontology ;
+    dcterms:title "Domain Engineering Module"@en ;
+    dcterms:description "Formal representation of domain engineering concepts for AI4SE, including LLM-powered domain discovery, single and multi-agent approaches, and ontology generation techniques"@en ;
+    dcterms:created "2025-11-17"^^xsd:date ;
+    dcterms:creator "AI4SE Research Team"@en ;
+    :hasBookReference "Chapter 1, Part 1.5: Domain Engineering Ontology & Semantic Modeling"^^xsd:string ;
+    :moduleVersion "1.0"^^xsd:string ;
+    owl:versionInfo "Initial release integrating book content with formal ontology" .
+
+#################################################################
+#    CLASSES
+#################################################################
+
+# Top-Level Domain Engineering Concept
+:DomainEngineeringConcept rdf:type owl:Class ;
+    rdfs:subClassOf :AI4SEConcept ;
+    rdfs:label "Domain Engineering Concept"@en ;
+    skos:definition "Any concept, process, technique, or artifact related to domain engineering in software development, encompassing systematic methods for collecting, organizing, and storing past experience in building systems within a particular domain"@en ;
+    skos:note "Domain engineering is fundamental to AI4SE as it provides the semantic foundation for intelligent automation"@en ;
+    :hasBookReference "Chapter 1, Part 1.5"^^xsd:string ;
+    :hasV4ID "V4_NEW_001"^^xsd:string .
+
+# Core Process Classes
+
+:DomainEngineeringProcess rdf:type owl:Class ;
+    rdfs:subClassOf :DomainEngineeringConcept ;
+    rdfs:label "Domain Engineering Process"@en ;
+    skos:definition "Systematic approach to analyzing, modeling, and documenting a problem domain, transforming from ad-hoc practice into rigorous, AI-assisted discipline"@en ;
+    skos:example "AI-enhanced domain discovery process using LLM-powered stakeholder interviews and automated concept extraction from business documents"@en ;
+    skos:note "Modern domain engineering integrates LLMs for natural language understanding with formal ontologies for structure and reasoning"@en ;
+    :hasBookReference "Chapter 1, Part 1.5"^^xsd:string ;
+    :hasV4ID "V4_NEW_002"^^xsd:string ;
+    :applicableLLMTechnique :PromptEngineering ;
+    :applicableLLMTechnique :InformationExtraction ;
+    :hasImplementationPattern """1. Domain Scoping: Define boundaries and objectives with stakeholder input
+2. Stakeholder Analysis: Identify and engage domain experts
+3. Knowledge Acquisition: Extract domain knowledge using interviews, documents, observation
+4. Concept Modeling: Create formal domain model using ontologies
+5. Validation: Verify with stakeholders through competency questions
+6. Iteration: Refine based on feedback and evolving requirements"""@en .
+
+:LLMDomainDiscovery rdf:type owl:Class ;
+    rdfs:subClassOf :DomainEngineeringProcess ;
+    rdfs:label "LLM-Powered Domain Discovery"@en ;
+    skos:definition "Using large language models to automate domain concept extraction, relationship identification, and initial ontology model generation from unstructured text sources"@en ;
+    skos:example "Using Claude Sonnet 4 to analyze 50 pages of stakeholder interviews, automatically extracting 120 domain concepts with definitions, 85 relationships, and generating initial OWL ontology in under 5 minutes"@en ;
+    skos:note "LLM domain discovery reduces domain engineering time from weeks to hours while maintaining 85-90% accuracy when validated by domain experts"@en ;
+    :hasBookReference "Chapter 1, Part 1.5, Stage 1-2"^^xsd:string ;
+    :hasV4ID "V4_NEW_003"^^xsd:string ;
+    :requiresTool :LLMPlatform ;
+    :produces :DomainModel ;
+    :hasAccuracyRange "85-90%"^^xsd:string ;
+    :hasTimeReduction "10-20x faster than manual"^^xsd:string ;
+    :hasCodeExample """from anthropic import Anthropic
+
+client = Anthropic(api_key="your-api-key")
+
+domain_discovery_prompt = '''
+Analyze these stakeholder interviews and business documents:
+
+Documents: {documents}
+
+Extract and output as JSON:
+1. Core domain concepts (20-50 concepts)
+   - name, definition, properties, examples
+2. Relationships between concepts
+   - source, relationship_type, target, cardinality
+3. Business rules and constraints
+4. Domain boundaries (in-scope / out-of-scope)
+
+Be precise and use domain expert terminology.
+'''
+
+response = client.messages.create(
+    model="claude-sonnet-4-20250514",
+    max_tokens=4000,
+    messages=[{"role": "user", "content": domain_discovery_prompt}]
+)
+
+domain_model = parse_json_response(response.content[0].text)
+generate_ontology_from_model(domain_model)"""@en .
+
+:SingleAgentDomainEngineering rdf:type owl:Class ;
+    rdfs:subClassOf :DomainEngineeringProcess ;
+    rdfs:label "Single-Agent Domain Engineering"@en ;
+    skos:definition "Domain engineering performed by a single AI agent with comprehensive capabilities handling all aspects from concept extraction to ontology generation"@en ;
+    skos:example "One Claude instance performs complete e-commerce domain analysis: extracting concepts (Customer, Product, Order), mapping relationships, generating OWL ontology, and validating with competency questions"@en ;
+    :hasBookReference "Chapter 1, Part 1.5, Single vs Multi-Agent"^^xsd:string ;
+    :hasV4ID "V4_NEW_004"^^xsd:string ;
+    :hasBenefit "Simpler architecture with consistent terminology"@en ;
+    :hasBenefit "Lower computational cost and API expenses"@en ;
+    :hasBenefit "Easier to implement and debug"@en ;
+    :hasBenefit "Faster for small to medium domains"@en ;
+    :hasLimitation "May lack specialized expertise for complex domains"@en ;
+    :hasLimitation "Single point of failure"@en ;
+    :hasLimitation "Limited parallelization capability"@en ;
+    :appropriateFor "Small to medium domains (< 100 concepts)"@en ;
+    :appropriateFor "Rapid prototyping and MVPs"@en ;
+    :appropriateFor "Resource-constrained projects"@en .
+
+:MultiAgentDomainEngineering rdf:type owl:Class ;
+    rdfs:subClassOf :DomainEngineeringProcess ;
+    rdfs:label "Multi-Agent Domain Engineering"@en ;
+    skos:definition "Domain engineering performed by multiple specialized AI agents working collaboratively, each expert in specific aspects of domain analysis"@en ;
+    skos:example "Coordinated team: ConceptExtractionAgent identifies entities, RelationshipMappingAgent discovers connections, OntologyEngineeringAgent formalizes in OWL, ValidationAgent runs competency questions"@en ;
+    skos:note "Multi-agent systems achieve 5-10% higher quality than single-agent but at 2-3x cost"@en ;
+    :hasBookReference "Chapter 1, Part 1.5, Single vs Multi-Agent"^^xsd:string ;
+    :hasV4ID "V4_NEW_005"^^xsd:string ;
+    :hasBenefit "Specialized expertise per task"@en ;
+    :hasBenefit "Higher quality output (90-95% accuracy)"@en ;
+    :hasBenefit "Parallel execution reduces wall-clock time"@en ;
+    :hasBenefit "Easier to optimize individual agents"@en ;
+    :hasLimitation "Complex coordination overhead"@en ;
+    :hasLimitation "Higher API costs (2-3x single agent)"@en ;
+    :hasLimitation "Potential consistency issues between agents"@en ;
+    :appropriateFor "Complex enterprise domains (> 100 concepts)"@en ;
+    :appropriateFor "Projects where quality is critical"@en ;
+    :appropriateFor "Large-scale domain engineering efforts"@en ;
+    :hasArchitecturePattern """AgentCoordinator (orchestrates workflow)
+├── ScopingAgent (defines domain boundaries)
+├── ConceptExtractionAgent (NER, keyphrase extraction)
+├── RelationshipMappingAgent (dependency parsing, relation extraction)
+├── OntologyEngineeringAgent (OWL generation, axiom creation)
+├── ValidationAgent (competency questions, consistency checking)
+└── VisualizationAgent (generates diagrams, documentation)"""@en .
+
+# Artifact Classes
+
+:DomainModel rdf:type owl:Class ;
+    rdfs:subClassOf :DomainEngineeringConcept ;
+    rdfs:label "Domain Model"@en ;
+    skos:definition "Formal or semi-formal representation of domain concepts, relationships, constraints, and business rules"@en ;
+    skos:example "E-commerce domain model with 45 concepts (Customer, Product, Order, Payment, Shipment), 67 relationships, 23 business rules"@en ;
+    :hasBookReference "Chapter 1, Part 1.5"^^xsd:string ;
+    :hasV4ID "V4_NEW_006"^^xsd:string ;
+    :hasRepresentationFormat :UMLClassDiagram ;
+    :hasRepresentationFormat :OWLOntology ;
+    :hasRepresentationFormat :EntityRelationshipDiagram ;
+    :hasRepresentationFormat :DomainSpecificLanguage .
+
+:DomainOntology rdf:type owl:Class ;
+    rdfs:subClassOf :DomainModel ;
+    rdfs:label "Domain Ontology"@en ;
+    skos:definition "Formal, machine-readable specification of domain concepts and relationships using OWL/RDF, enabling automated reasoning and semantic interoperability"@en ;
+    skos:example "Financial services ontology defining Account, Transaction, Customer with 156 classes, 89 object properties, 134 data properties, supporting SPARQL queries for compliance reporting"@en ;
+    skos:note "Domain ontologies serve as both documentation and executable knowledge bases for AI systems"@en ;
+    :hasBookReference "Chapter 1, Part 1.5; Chapter 15"^^xsd:string ;
+    :hasV4ID "V4_NEW_007"^^xsd:string ;
+    :serializedAs :TurtleSyntax ;
+    :serializedAs :RDFXML ;
+    :serializedAs :JSONLD ;
+    :queryLanguage :SPARQL ;
+    :reasonerSupport :Pellet ;
+    :reasonerSupport :HermiT ;
+    :reasonerSupport :FaCT++ .
+
+:DomainSpecificLanguage rdf:type owl:Class ;
+    rdfs:subClassOf :DomainModel ;
+    rdfs:label "Domain-Specific Language"@en ;
+    skos:definition "Custom language tailored to express solutions in a particular problem domain with specialized syntax and semantics"@en ;
+    skos:example "SQL for databases, Gradle/Maven for builds, Gherkin for BDD testing, HTML/CSS for web layout"@en ;
+    :hasBookReference "Chapter 1, Part 1.5"^^xsd:string ;
+    :hasV4ID "V4_NEW_008"^^xsd:string .
+
+:DomainConceptualization rdf:type owl:Class ;
+    rdfs:subClassOf :DomainEngineeringConcept ;
+    rdfs:label "Domain Conceptualization"@en ;
+    skos:definition "Abstract understanding of domain structure independent of implementation, focusing on what exists and how things relate rather than technical details"@en ;
+    :hasBookReference "Chapter 1, Part 1.5"^^xsd:string ;
+    :hasV4ID "V4_NEW_009"^^xsd:string ;
+    :precedesInWorkflow :DomainModel .
+
+:DomainKnowledgeGraph rdf:type owl:Class ;
+    rdfs:subClassOf :DomainModel ;
+    rdfs:label "Domain Knowledge Graph"@en ;
+    skos:definition "Graph-structured knowledge base instantiating domain ontology with actual data, combining schema (TBox) with instances (ABox)"@en ;
+    skos:example "Product catalog knowledge graph with 50,000 products (instances) conforming to Product ontology (schema), queryable via SPARQL for intelligent search"@en ;
+    :hasBookReference "Chapter 1, Part 1.5; Chapter 15; Chapter 16"^^xsd:string ;
+    :hasV4ID "V4_NEW_010"^^xsd:string .
+
+# Technique Classes
+
+:DomainAnalysisTechnique rdf:type owl:Class ;
+    rdfs:subClassOf :Technique ;
+    rdfs:label "Domain Analysis Technique"@en ;
+    skos:definition "Method for systematically analyzing a problem domain to extract concepts, relationships, and constraints"@en ;
+    :hasBookReference "Chapter 1, Part 1.5"^^xsd:string ;
+    :hasV4ID "V4_NEW_011"^^xsd:string ;
+    :appliesTo :DomainEngineeringProcess .
+
+:ConceptExtraction rdf:type owl:Class ;
+    rdfs:subClassOf :DomainAnalysisTechnique ;
+    rdfs:label "Concept Extraction"@en ;
+    skos:definition "Identifying and extracting key domain concepts from documentation, interviews, and expert knowledge using NLP and LLM techniques"@en ;
+    skos:example "Extracting 'Customer', 'Account', 'Transaction' concepts from 100 pages of banking requirements documents using named entity recognition"@en ;
+    :hasBookReference "Chapter 1, Part 1.5, Stage 2"^^xsd:string ;
+    :hasV4ID "V4_NEW_012"^^xsd:string ;
+    :applicableNLPTechnique :NamedEntityRecognition ;
+    :applicableNLPTechnique :KeyphraseExtraction ;
+    :applicableLLMTechnique :PromptEngineering ;
+    :produces :ConceptList .
+
+:RelationshipMapping rdf:type owl:Class ;
+    rdfs:subClassOf :DomainAnalysisTechnique ;
+    rdfs:label "Relationship Mapping"@en ;
+    skos:definition "Identifying and documenting semantic relationships between domain concepts including taxonomies, compositions, and associations"@en ;
+    skos:example "Discovering that 'Order contains OrderLine', 'Customer places Order', 'OrderLine references Product' through dependency parsing of requirements"@en ;
+    :hasBookReference "Chapter 1, Part 1.5, Stage 3"^^xsd:string ;
+    :hasV4ID "V4_NEW_013"^^xsd:string ;
+    :applicableNLPTechnique :DependencyParsing ;
+    :applicableNLPTechnique :RelationExtraction ;
+    :produces :RelationshipGraph .
+
+:DomainModelValidation rdf:type owl:Class ;
+    rdfs:subClassOf :DomainAnalysisTechnique ;
+    rdfs:label "Domain Model Validation"@en ;
+    skos:definition "Verifying that domain model accurately represents domain expert knowledge through competency questions, consistency checking, and stakeholder review"@en ;
+    skos:example "Validating e-commerce ontology with 20 competency questions like 'What products are in order #12345?' verified by SPARQL queries"@en ;
+    skos:note "Validation should occur iteratively throughout domain engineering, not just at the end"@en ;
+    :hasBookReference "Chapter 1, Part 1.5, Stage 5"^^xsd:string ;
+    :hasV4ID "V4_NEW_014"^^xsd:string ;
+    :usesMethod :CompetencyQuestions ;
+    :usesMethod :ConsistencyChecking ;
+    :usesMethod :StakeholderReview .
+
+:CompetencyQuestions rdf:type owl:Class ;
+    rdfs:subClassOf :DomainModelValidation ;
+    rdfs:label "Competency Questions"@en ;
+    skos:definition "Natural language questions that the domain ontology should be able to answer, serving as functional requirements for the ontology"@en ;
+    skos:example "CQ1: 'What are all testing techniques applicable to Python?' should be answerable by querying the AI4SE ontology"@en ;
+    :hasBookReference "Chapter 1, Part 1.5"^^xsd:string ;
+    :hasV4ID "V4_NEW_015"^^xsd:string .
+
+# Tool Classes
+
+:DomainEngineeringTool rdf:type owl:Class ;
+    rdfs:subClassOf :Tool ;
+    rdfs:label "Domain Engineering Tool"@en ;
+    skos:definition "Software tool supporting domain engineering activities including ontology editing, visualization, and validation"@en ;
+    :hasBookReference "Chapter 1, Part 1.5"^^xsd:string ;
+    :hasV4ID "V4_NEW_016"^^xsd:string ;
+    :supports :DomainEngineeringProcess .
+
+:OntologyEditor rdf:type owl:Class ;
+    rdfs:subClassOf :DomainEngineeringTool ;
+    rdfs:label "Ontology Editor"@en ;
+    skos:definition "Desktop or web-based application for creating, editing, and managing OWL ontologies with support for reasoning and visualization"@en ;
+    skos:example "Protégé, TopBraid Composer, WebVOWL, OntoGraf"@en ;
+    :hasBookReference "Chapter 1, Part 1.5; Chapter 15"^^xsd:string ;
+    :hasV4ID "V4_NEW_017"^^xsd:string ;
+    :hasToolURL "https://protege.stanford.edu/"^^xsd:anyURI .
+
+:OWLReasoner rdf:type owl:Class ;
+    rdfs:subClassOf :DomainEngineeringTool ;
+    rdfs:label "OWL Reasoner"@en ;
+    skos:definition "Software component that performs automated reasoning over OWL ontologies to infer implicit knowledge and detect inconsistencies"@en ;
+    skos:example "HermiT, Pellet, FaCT++, ELK"@en ;
+    :hasBookReference "Chapter 15, Part 2.5"^^xsd:string ;
+    :hasV4ID "V4_NEW_018"^^xsd:string .
+
+# Prompt Template Classes
+
+:DomainEngineeringPrompt rdf:type owl:Class ;
+    rdfs:subClassOf :DomainEngineeringConcept ;
+    rdfs:label "Domain Engineering Prompt Template"@en ;
+    skos:definition "Structured prompt for LLMs to assist with specific domain engineering tasks, including concept extraction, relationship mapping, and validation"@en ;
+    :hasBookReference "Chapter 1, Appendix A"^^xsd:string ;
+    :hasV4ID "V4_NEW_019"^^xsd:string .
+
+:ConceptExtractionPrompt rdf:type owl:Class ;
+    rdfs:subClassOf :DomainEngineeringPrompt ;
+    rdfs:label "Concept Extraction Prompt"@en ;
+    skos:definition "Prompt template for extracting domain concepts from unstructured text"@en ;
+    :hasBookReference "Chapter 1, Part 1.5"^^xsd:string ;
+    :hasV4ID "V4_NEW_020"^^xsd:string ;
+    :promptTemplate """You are a domain engineering expert. Analyze the following domain description and extract key concepts:
+
+Domain: {{domain_name}}
+Context: {{domain_context}}
+Stakeholder Input: {{stakeholder_input}}
+
+Extract and provide:
+1. Core Concepts: List 10-20 key domain concepts (nouns)
+2. Concept Definitions: Clear, concise definition for each
+3. Concept Properties: Identify 3-5 key attributes per concept
+4. Concept Hierarchies: Show is-a relationships (taxonomy)
+5. Examples: Provide 2-3 concrete examples per concept
+
+Output as structured JSON:
+{
+  "concepts": [
+    {
+      "name": "...",
+      "definition": "...",
+      "properties": ["...", "..."],
+      "parent_concept": "...",
+      "examples": ["...", "..."]
+    }
+  ]
+}"""@en .
+
+#################################################################
+#    OBJECT PROPERTIES
+#################################################################
+
+:produces rdf:type owl:ObjectProperty ;
+    rdfs:label "produces"@en ;
+    skos:definition "Relates a process or technique to the artifact it generates"@en ;
+    rdfs:domain :DomainEngineeringProcess ;
+    rdfs:range :DomainModel .
+
+:validatedBy rdf:type owl:ObjectProperty ;
+    rdfs:label "validated by"@en ;
+    skos:definition "Relates a domain model to the validation technique used"@en ;
+    rdfs:domain :DomainModel ;
+    rdfs:range :DomainModelValidation .
+
+:precedesInWorkflow rdf:type owl:ObjectProperty ;
+    rdfs:label "precedes in workflow"@en ;
+    skos:definition "Indicates ordering of domain engineering activities"@en ;
+    rdfs:domain :DomainEngineeringConcept ;
+    rdfs:range :DomainEngineeringConcept .
+
+:hasRepresentationFormat rdf:type owl:ObjectProperty ;
+    rdfs:label "has representation format"@en ;
+    skos:definition "Indicates format in which domain model can be represented"@en ;
+    rdfs:domain :DomainModel .
+
+:serializedAs rdf:type owl:ObjectProperty ;
+    rdfs:label "serialized as"@en ;
+    skos:definition "Indicates serialization format for ontology"@en ;
+    rdfs:domain :DomainOntology .
+
+:queryLanguage rdf:type owl:ObjectProperty ;
+    rdfs:label "query language"@en ;
+    skos:definition "Indicates query language supported for knowledge graph"@en ;
+    rdfs:domain :DomainKnowledgeGraph .
+
+:reasonerSupport rdf:type owl:ObjectProperty ;
+    rdfs:label "reasoner support"@en ;
+    skos:definition "Indicates OWL reasoner compatible with ontology"@en ;
+    rdfs:domain :DomainOntology ;
+    rdfs:range :OWLReasoner .
+
+:usesMethod rdf:type owl:ObjectProperty ;
+    rdfs:label "uses method"@en ;
+    skos:definition "Indicates specific method used within a technique"@en ;
+    rdfs:domain :DomainAnalysisTechnique .
+
+#################################################################
+#    DATA PROPERTIES
+#################################################################
+
+:hasArchitecturePattern rdf:type owl:DatatypeProperty ;
+    rdfs:label "has architecture pattern"@en ;
+    skos:definition "Describes architectural pattern for multi-agent system"@en ;
+    rdfs:domain :MultiAgentDomainEngineering ;
+    rdfs:range xsd:string .
+
+:promptTemplate rdf:type owl:DatatypeProperty ;
+    rdfs:label "prompt template"@en ;
+    skos:definition "Contains prompt template text with placeholders"@en ;
+    rdfs:domain :DomainEngineeringPrompt ;
+    rdfs:range xsd:string .
+
+:hasBenefit rdf:type owl:DatatypeProperty ;
+    rdfs:label "has benefit"@en ;
+    skos:definition "Describes advantage or benefit of approach"@en ;
+    rdfs:range xsd:string .
+
+:hasLimitation rdf:type owl:DatatypeProperty ;
+    rdfs:label "has limitation"@en ;
+    skos:definition "Describes limitation or constraint of approach"@en ;
+    rdfs:range xsd:string .
+
+:appropriateFor rdf:type owl:DatatypeProperty ;
+    rdfs:label "appropriate for"@en ;
+    skos:definition "Describes scenarios where approach is most suitable"@en ;
+    rdfs:range xsd:string .
+
+:hasAccuracyRange rdf:type owl:DatatypeProperty ;
+    rdfs:label "has accuracy range"@en ;
+    skos:definition "Indicates typical accuracy range for technique"@en ;
+    rdfs:range xsd:string .
+
+:hasTimeReduction rdf:type owl:DatatypeProperty ;
+    rdfs:label "has time reduction"@en ;
+    skos:definition "Indicates time savings compared to manual approach"@en ;
+    rdfs:range xsd:string .
+
+#################################################################
+#    INDIVIDUALS (Examples)
+#################################################################
+
+:ECommerceDomainOntology rdf:type owl:NamedIndividual, :DomainOntology ;
+    rdfs:label "E-Commerce Domain Ontology"@en ;
+    skos:definition "Formal ontology for e-commerce domain including products, orders, customers, payments, and shipments"@en ;
+    skos:example "45 classes: Customer, Product, Order, OrderLine, Payment, Shipment; 67 object properties; 89 data properties"@en ;
+    :hasV4ID "EXAMPLE_001"^^xsd:string ;
+    :serializedAs :TurtleSyntax ;
+    :queryLanguage :SPARQL ;
+    :hasCompleteness "85"^^xsd:integer .
+
+:FinancialServicesDomainOntology rdf:type owl:NamedIndividual, :DomainOntology ;
+    rdfs:label "Financial Services Domain Ontology"@en ;
+    skos:definition "Banking and financial services ontology with regulatory compliance support"@en ;
+    :hasV4ID "EXAMPLE_002"^^xsd:string ;
+    :serializedAs :RDFXML ;
+    :reasonerSupport :Pellet ;
+    :hasCompleteness "92"^^xsd:integer .
+
+:ClaudeAgentForDomainEngineering rdf:type owl:NamedIndividual, :SingleAgentDomainEngineering ;
+    rdfs:label "Claude Agent for Domain Engineering"@en ;
+    skos:definition "Single Claude Sonnet instance performing end-to-end domain engineering"@en ;
+    :requiresTool :ClaudeAPI ;
+    :produces :ECommerceDomainOntology ;
+    :hasAccuracyRange "85-90%"^^xsd:string .
+
+:MultiAgentDomainTeam rdf:type owl:NamedIndividual, :MultiAgentDomainEngineering ;
+    rdfs:label "Multi-Agent Domain Engineering Team"@en ;
+    skos:definition "Coordinated team of 5 specialized agents"@en ;
+    :hasAccuracyRange "90-95%"^^xsd:string ;
+    :hasArchitecturePattern "Coordinator + 5 specialist agents"^^xsd:string .
+
+#################################################################
+#    AXIOMS AND CONSTRAINTS
+#################################################################
+
+# Every DomainOntology must have at least one serialization format
+:DomainOntology rdfs:subClassOf [
+    rdf:type owl:Restriction ;
+    owl:onProperty :serializedAs ;
+    owl:minCardinality "1"^^xsd:nonNegativeInteger
+] .
+
+# Domain Engineering Process must produce at least one Domain Model
+:DomainEngineeringProcess rdfs:subClassOf [
+    rdf:type owl:Restriction ;
+    owl:onProperty :produces ;
+    owl:minCardinality "1"^^xsd:nonNegativeInteger
+] .
+
+# Every Domain Model should be validated
+:DomainModel rdfs:subClassOf [
+    rdf:type owl:Restriction ;
+    owl:onProperty :validatedBy ;
+    owl:minCardinality "1"^^xsd:nonNegativeInteger
+] .

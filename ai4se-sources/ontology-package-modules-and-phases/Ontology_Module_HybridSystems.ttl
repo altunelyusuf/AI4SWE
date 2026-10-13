@@ -1,0 +1,369 @@
+@prefix : <http://ai4se.org/ontology/v4#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#################################################################
+#    MODULE: HYBRID KNOWLEDGE SYSTEMS
+#################################################################
+
+:HybridSystemsModule rdf:type owl:Ontology ;
+    dcterms:title "Hybrid Knowledge Systems Module"@en ;
+    dcterms:description "Ontology for hybrid systems combining formal ontologies with Large Language Models, including architecture patterns, integration techniques, and best practices"@en ;
+    dcterms:created "2025-11-17"^^xsd:date ;
+    dcterms:creator "AI4SE Research Team"@en ;
+    :hasBookReference "Chapter 16, Part 5.5: Hybrid Knowledge Systems - Ontologies + LLMs"^^xsd:string ;
+    :moduleVersion "1.0"^^xsd:string ;
+    owl:versionInfo "Initial release covering three proven architecture patterns and implementation guidelines" .
+
+#################################################################
+#    CLASSES
+#################################################################
+
+# Top-Level Hybrid System Concept
+:HybridSystemConcept rdf:type owl:Class ;
+    rdfs:subClassOf :AI4SEConcept ;
+    rdfs:label "Hybrid System Concept"@en ;
+    skos:definition "Concept related to systems combining formal knowledge representation (ontologies) with statistical AI approaches (LLMs)"@en ;
+    :hasBookReference "Chapter 16, Part 5.5"^^xsd:string ;
+    :hasV4ID "V4_NEW_090"^^xsd:string .
+
+:HybridKnowledgeSystem rdf:type owl:Class ;
+    rdfs:subClassOf :HybridSystemConcept ;
+    rdfs:label "Hybrid Knowledge System"@en ;
+    skos:definition "AI system combining strengths of formal ontologies (structure, reasoning, consistency) with Large Language Models (flexibility, natural language understanding, creativity)"@en ;
+    skos:example "Requirements elicitation system using LLM to extract concepts from interviews, ontology to validate structure, knowledge graph to store, LLM to generate traceability matrix"@en ;
+    skos:note "Hybrid systems achieve 90-95% accuracy vs 75-85% for pure LLM or pure ontology approaches"@en ;
+    :hasBookReference "Chapter 16, Part 5.5, Introduction"^^xsd:string ;
+    :hasV4ID "V4_NEW_091"^^xsd:string ;
+    :combinesApproach :FormalKnowledgeRepresentation ;
+    :combinesApproach :StatisticalAI ;
+    :hasAccuracyRange "90-95%"^^xsd:string .
+
+# Architecture Patterns
+
+:HybridArchitecturePattern rdf:type owl:Class ;
+    rdfs:subClassOf :HybridSystemConcept ;
+    rdfs:label "Hybrid Architecture Pattern"@en ;
+    skos:definition "Proven design pattern for integrating ontologies with LLMs"@en ;
+    :hasBookReference "Chapter 16, Part 5.5"^^xsd:string ;
+    :hasV4ID "V4_NEW_092"^^xsd:string .
+
+:OntologyGuidedPrompting rdf:type owl:Class ;
+    rdfs:subClassOf :HybridArchitecturePattern ;
+    rdfs:label "Ontology-Guided Prompting"@en ;
+    skos:definition "Architecture pattern where ontology provides structure and context for LLM prompts, with ontology validation of LLM outputs to reduce hallucinations"@en ;
+    skos:example "Query ontology for relevant testing concepts → Inject into LLM prompt as context → LLM generates answer grounded in formal knowledge → Validate response mentions ontology concepts"@en ;
+    skos:note "Reduces LLM hallucinations by 60-70% through grounding in formal knowledge"@en ;
+    :hasBookReference "Chapter 16, Part 5.5, Pattern 1"^^xsd:string ;
+    :hasV4ID "V4_NEW_093"^^xsd:string ;
+    :hasArchitectureFlow "User Query → Ontology (extract concepts) → LLM (generate with context) → Ontology (validate) → User"@en ;
+    :hasBenefit "LLM responses grounded in formal knowledge"@en ;
+    :hasBenefit "Ontology provides structure and terminology"@en ;
+    :hasBenefit "Validation catches hallucinations"@en ;
+    :hasBenefit "Explainable reasoning path"@en ;
+    :hasLimitation "Requires ontology coverage of domain"@en ;
+    :hasLimitation "Additional latency from validation"@en ;
+    :hallucinationReduction "60-70%"^^xsd:string .
+
+:LLMOntologyPopulation rdf:type owl:Class ;
+    rdfs:subClassOf :HybridArchitecturePattern ;
+    rdfs:label "LLM-Enhanced Ontology Population"@en ;
+    skos:definition "Pattern using LLMs to extract structured information from unstructured text, with ontology schema validating and structuring the extracted data"@en ;
+    skos:example "LLM extracts requirements from interviews as JSON → Ontology validates structure and relationships → Store in knowledge graph"@en ;
+    skos:note "Automates ontology population with 85-90% accuracy, reducing manual effort by 10-20x"@en ;
+    :hasBookReference "Chapter 16, Part 5.5, Pattern 2"^^xsd:string ;
+    :hasV4ID "V4_NEW_094"^^xsd:string ;
+    :hasArchitectureFlow "Unstructured Text → LLM (extract entities/relationships) → Ontology Schema (validate) → Knowledge Graph (store)"@en ;
+    :hasBenefit "Automates ontology population from unstructured sources"@en ;
+    :hasBenefit "Scales knowledge extraction"@en ;
+    :hasBenefit "Maintains ontology structure and validation"@en ;
+    :hasBenefit "Reduces manual engineering effort by 10-20x"@en ;
+    :hasLimitation "Requires careful prompt engineering"@en ;
+    :hasLimitation "Need validation of LLM extractions"@en ;
+    :hasAccuracyRange "85-90%"^^xsd:string ;
+    :hasTimeReduction "10-20x faster than manual"^^xsd:string .
+
+:OntologyRAG rdf:type owl:Class ;
+    rdfs:subClassOf :HybridArchitecturePattern ;
+    rdfs:label "Ontology-Enhanced RAG"@en ;
+    skos:definition "Retrieval-Augmented Generation pattern using ontology for semantic retrieval of relevant concepts and facts, providing structured context to LLM for generation"@en ;
+    skos:example "User asks about chaos engineering → Semantic search via ontology finds related concepts → Retrieve from knowledge graph → LLM generates answer with retrieved context"@en ;
+    skos:note "Ontology relationships enrich retrieval beyond keyword matching, improving answer quality by 40-50%"@en ;
+    :hasBookReference "Chapter 16, Part 5.5, Pattern 3"^^xsd:string ;
+    :hasV4ID "V4_NEW_095"^^xsd:string ;
+    :hasArchitectureFlow "User Query → Ontology (semantic search) → Knowledge Graph (retrieve facts) → LLM (generate with context) → User"@en ;
+    :hasBenefit "Semantic retrieval more precise than keyword search"@en ;
+    :hasBenefit "Ontology relationships enrich context"@en ;
+    :hasBenefit "Reduces hallucinations by grounding in facts"@en ;
+    :hasBenefit "Explainable - can show retrieved concepts"@en ;
+    :hasLimitation "Requires comprehensive knowledge graph"@en ;
+    :hasLimitation "Ontology must cover query domain"@en ;
+    :answerQualityImprovement "40-50%"^^xsd:string .
+
+# Component Strengths and Weaknesses
+
+:ApproachCharacteristics rdf:type owl:Class ;
+    rdfs:subClassOf :HybridSystemConcept ;
+    rdfs:label "Approach Characteristics"@en ;
+    skos:definition "Strengths and weaknesses of different AI approaches"@en ;
+    :hasV4ID "V4_NEW_096"^^xsd:string .
+
+:LLMStrength rdf:type owl:Class ;
+    rdfs:subClassOf :ApproachCharacteristics ;
+    rdfs:label "LLM Strength"@en ;
+    skos:definition "Advantage of Large Language Model approach"@en ;
+    :hasV4ID "V4_NEW_097"^^xsd:string .
+
+:LLMWeakness rdf:type owl:Class ;
+    rdfs:subClassOf :ApproachCharacteristics ;
+    rdfs:label "LLM Weakness"@en ;
+    skos:definition "Limitation of Large Language Model approach"@en ;
+    :hasV4ID "V4_NEW_098"^^xsd:string .
+
+:OntologyStrength rdf:type owl:Class ;
+    rdfs:subClassOf :ApproachCharacteristics ;
+    rdfs:label "Ontology Strength"@en ;
+    skos:definition "Advantage of formal ontology approach"@en ;
+    :hasV4ID "V4_NEW_099"^^xsd:string .
+
+:OntologyWeakness rdf:type owl:Class ;
+    rdfs:subClassOf :ApproachCharacteristics ;
+    rdfs:label "Ontology Weakness"@en ;
+    skos:definition "Limitation of formal ontology approach"@en ;
+    :hasV4ID "V4_NEW_100"^^xsd:string .
+
+# Implementation Techniques
+
+:ValidationTechnique rdf:type owl:Class ;
+    rdfs:subClassOf :HybridSystemConcept ;
+    rdfs:label "Validation Technique"@en ;
+    skos:definition "Method for validating LLM outputs against ontology"@en ;
+    :hasBookReference "Chapter 16, Part 5.5"^^xsd:string ;
+    :hasV4ID "V4_NEW_101"^^xsd:string .
+
+:ConceptMentionValidation rdf:type owl:Class ;
+    rdfs:subClassOf :ValidationTechnique ;
+    rdfs:label "Concept Mention Validation"@en ;
+    skos:definition "Verify LLM response references concepts from provided ontology context"@en ;
+    :hasV4ID "V4_NEW_102"^^xsd:string .
+
+:StructuralConsistencyCheck rdf:type owl:Class ;
+    rdfs:subClassOf :ValidationTechnique ;
+    rdfs:label "Structural Consistency Check"@en ;
+    skos:definition "Verify LLM-generated structure conforms to ontology schema"@en ;
+    :hasV4ID "V4_NEW_103"^^xsd:string .
+
+:RelationshipValidation rdf:type owl:Class ;
+    rdfs:subClassOf :ValidationTechnique ;
+    rdfs:label "Relationship Validation"@en ;
+    skos:definition "Check that LLM-inferred relationships exist in ontology"@en ;
+    :hasV4ID "V4_NEW_104"^^xsd:string .
+
+# Integration Strategies
+
+:IntegrationStrategy rdf:type owl:Class ;
+    rdfs:subClassOf :HybridSystemConcept ;
+    rdfs:label "Integration Strategy"@en ;
+    skos:definition "Approach for connecting ontology components with LLM components"@en ;
+    :hasV4ID "V4_NEW_105"^^xsd:string .
+
+:ContextInjection rdf:type owl:Class ;
+    rdfs:subClassOf :IntegrationStrategy ;
+    rdfs:label "Context Injection"@en ;
+    skos:definition "Adding ontology knowledge directly into LLM prompt"@en ;
+    skos:example "Query ontology, format results as markdown, prepend to user query"@en ;
+    :hasV4ID "V4_NEW_106"^^xsd:string .
+
+:StructuredOutputParsing rdf:type owl:Class ;
+    rdfs:subClassOf :IntegrationStrategy ;
+    rdfs:label "Structured Output Parsing"@en ;
+    skos:definition "Requesting JSON/XML output from LLM for ontology ingestion"@en ;
+    :hasV4ID "V4_NEW_107"^^xsd:string .
+
+:SemanticRetrieval rdf:type owl:Class ;
+    rdfs:subClassOf :IntegrationStrategy ;
+    rdfs:label "Semantic Retrieval"@en ;
+    skos:definition "Using ontology and SPARQL for concept-based retrieval"@en ;
+    :hasV4ID "V4_NEW_108"^^xsd:string .
+
+# Case Study Classes
+
+:HybridSystemCaseStudy rdf:type owl:Class ;
+    rdfs:subClassOf :CaseStudy ;
+    rdfs:label "Hybrid System Case Study"@en ;
+    skos:definition "Real-world example of hybrid ontology+LLM system"@en ;
+    :hasBookReference "Chapter 16, Part 5.5"^^xsd:string ;
+    :hasV4ID "V4_NEW_109"^^xsd:string .
+
+:IntelligentRequirementsElicitation rdf:type owl:Class ;
+    rdfs:subClassOf :HybridSystemCaseStudy ;
+    rdfs:label "Intelligent Requirements Elicitation"@en ;
+    skos:definition "Hybrid system extracting formal requirements from stakeholder interviews using LLM + ontology"@en ;
+    skos:example "Interview → LLM extracts requirements → Ontology validates → KG stores → LLM generates traceability matrix"@en ;
+    :hasBookReference "Chapter 16, Part 5.5, Case Study"^^xsd:string ;
+    :hasV4ID "V4_NEW_110"^^xsd:string ;
+    :achievesAccuracy "90%+ requirement extraction"^^xsd:string ;
+    :hasTimeReduction "80% faster than manual"^^xsd:string .
+
+# Best Practices
+
+:HybridSystemBestPractice rdf:type owl:Class ;
+    rdfs:subClassOf :BestPractice ;
+    rdfs:label "Hybrid System Best Practice"@en ;
+    skos:definition "Recommended practice for building hybrid ontology+LLM systems"@en ;
+    :hasBookReference "Chapter 16, Part 5.5"^^xsd:string ;
+    :hasV4ID "V4_NEW_111"^^xsd:string .
+
+:OntologyFirst rdf:type owl:Class ;
+    rdfs:subClassOf :HybridSystemBestPractice ;
+    rdfs:label "Ontology First"@en ;
+    skos:definition "Define ontology schema before using LLMs"@en ;
+    skos:note "Provides structural foundation that LLM outputs must conform to"@en ;
+    :hasV4ID "V4_NEW_112"^^xsd:string .
+
+:ValidateEverything rdf:type owl:Class ;
+    rdfs:subClassOf :HybridSystemBestPractice ;
+    rdfs:label "Validate Everything"@en ;
+    skos:definition "Never trust LLM output without validation"@en ;
+    skos:note "Use multiple validation methods: schema, relationships, domain experts"@en ;
+    :hasV4ID "V4_NEW_113"^^xsd:string .
+
+:UseStructuredOutputs rdf:type owl:Class ;
+    rdfs:subClassOf :HybridSystemBestPractice ;
+    rdfs:label "Use Structured Outputs"@en ;
+    skos:definition "Request JSON/XML from LLMs for reliable parsing"@en ;
+    :hasV4ID "V4_NEW_114"^^xsd:string .
+
+#################################################################
+#    OBJECT PROPERTIES
+#################################################################
+
+:combinesApproach rdf:type owl:ObjectProperty ;
+    rdfs:label "combines approach"@en ;
+    skos:definition "Indicates which AI approaches are combined in hybrid system"@en ;
+    rdfs:domain :HybridKnowledgeSystem .
+
+:usesPattern rdf:type owl:ObjectProperty ;
+    rdfs:label "uses pattern"@en ;
+    rdfs:domain :HybridKnowledgeSystem ;
+    rdfs:range :HybridArchitecturePattern .
+
+:validatedBy rdf:type owl:ObjectProperty ;
+    rdfs:label "validated by"@en ;
+    rdfs:domain :HybridKnowledgeSystem ;
+    rdfs:range :ValidationTechnique .
+
+:implementsStrategy rdf:type owl:ObjectProperty ;
+    rdfs:label "implements strategy"@en ;
+    rdfs:domain :HybridArchitecturePattern ;
+    rdfs:range :IntegrationStrategy .
+
+#################################################################
+#    DATA PROPERTIES
+#################################################################
+
+:hasArchitectureFlow rdf:type owl:DatatypeProperty ;
+    rdfs:label "has architecture flow"@en ;
+    skos:definition "Describes data flow through hybrid system components"@en ;
+    rdfs:domain :HybridArchitecturePattern ;
+    rdfs:range xsd:string .
+
+:hallucinationReduction rdf:type owl:DatatypeProperty ;
+    rdfs:label "hallucination reduction"@en ;
+    skos:definition "Percentage reduction in LLM hallucinations"@en ;
+    rdfs:range xsd:string .
+
+:answerQualityImprovement rdf:type owl:DatatypeProperty ;
+    rdfs:label "answer quality improvement"@en ;
+    skos:definition "Improvement in answer quality compared to baseline"@en ;
+    rdfs:range xsd:string .
+
+:achievesAccuracy rdf:type owl:DatatypeProperty ;
+    rdfs:label "achieves accuracy"@en ;
+    skos:definition "Accuracy level achieved by system"@en ;
+    rdfs:range xsd:string .
+
+#################################################################
+#    INDIVIDUALS (Examples)
+#################################################################
+
+# LLM Strengths (Individuals)
+:NaturalLanguageUnderstanding rdf:type owl:NamedIndividual, :LLMStrength ;
+    rdfs:label "Natural Language Understanding"@en ;
+    skos:definition "LLMs excel at understanding human language nuances"@en .
+
+:ContextualReasoning rdf:type owl:NamedIndividual, :LLMStrength ;
+    rdfs:label "Contextual Reasoning"@en ;
+    skos:definition "LLMs apply common sense and context"@en .
+
+:CreativeProblemSolving rdf:type owl:NamedIndividual, :LLMStrength ;
+    rdfs:label "Creative Problem Solving"@en ;
+    skos:definition "LLMs generate novel solutions"@en .
+
+# LLM Weaknesses (Individuals)
+:Hallucinations rdf:type owl:NamedIndividual, :LLMWeakness ;
+    rdfs:label "Hallucinations"@en ;
+    skos:definition "LLMs generate plausible but incorrect information"@en .
+
+:NoFormalReasoning rdf:type owl:NamedIndividual, :LLMWeakness ;
+    rdfs:label "No Formal Reasoning"@en ;
+    skos:definition "LLMs cannot perform provable logical inference"@en .
+
+:ExpensiveAtScale rdf:type owl:NamedIndividual, :LLMWeakness ;
+    rdfs:label "Expensive at Scale"@en ;
+    skos:definition "API costs grow linearly with usage"@en .
+
+# Ontology Strengths (Individuals)
+:FormalStructure rdf:type owl:NamedIndividual, :OntologyStrength ;
+    rdfs:label "Formal Structure"@en ;
+    skos:definition "Ontologies provide rigorous logical structure"@en .
+
+:AutomatedReasoning rdf:type owl:NamedIndividual, :OntologyStrength ;
+    rdfs:label "Automated Reasoning"@en ;
+    skos:definition "Reasoners infer implicit knowledge"@en .
+
+:ConsistencyGuarantees rdf:type owl:NamedIndividual, :OntologyStrength ;
+    rdfs:label "Consistency Guarantees"@en ;
+    skos:definition "Formal constraints ensure logical consistency"@en .
+
+# Ontology Weaknesses (Individuals)
+:ExpensiveToCreate rdf:type owl:NamedIndividual, :OntologyWeakness ;
+    rdfs:label "Expensive to Create"@en ;
+    skos:definition "Manual ontology engineering is time-consuming"@en .
+
+:BrittleToChanges rdf:type owl:NamedIndividual, :OntologyWeakness ;
+    rdfs:label "Brittle to Changes"@en ;
+    skos:definition "Modifications require careful refactoring"@en .
+
+:PoorAtAmbiguity rdf:type owl:NamedIndividual, :OntologyWeakness ;
+    rdfs:label "Poor at Handling Ambiguity"@en ;
+    skos:definition "Formal systems struggle with vague concepts"@en .
+
+#################################################################
+#    AXIOMS
+#################################################################
+
+# Every Hybrid Knowledge System must use at least one pattern
+:HybridKnowledgeSystem rdfs:subClassOf [
+    rdf:type owl:Restriction ;
+    owl:onProperty :usesPattern ;
+    owl:minCardinality "1"^^xsd:nonNegativeInteger
+] .
+
+# Every Hybrid Architecture Pattern must have architecture flow
+:HybridArchitecturePattern rdfs:subClassOf [
+    rdf:type owl:Restriction ;
+    owl:onProperty :hasArchitectureFlow ;
+    owl:cardinality "1"^^xsd:nonNegativeInteger
+] .
+
+# Ontology-Guided Prompting must validate outputs
+:OntologyGuidedPrompting rdfs:subClassOf [
+    rdf:type owl:Restriction ;
+    owl:onProperty :validatedBy ;
+    owl:minCardinality "1"^^xsd:nonNegativeInteger
+] .

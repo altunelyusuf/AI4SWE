@@ -1,0 +1,304 @@
+@prefix : <http://ai4se.org/ontology/v4#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#################################################################
+#    MODULE: CLOUD & CONTAINERIZATION
+#################################################################
+
+:CloudContainerizationModule rdf:type owl:Ontology ;
+    dcterms:title "Cloud and Containerization Module"@en ;
+    dcterms:description "Ontology covering cloud computing, containerization, orchestration, and cloud-native technologies"@en ;
+    dcterms:created "2025-11-17"^^xsd:date ;
+    :hasBookReference "Chapters 20-21: Cloud, Containers, Kubernetes"^^xsd:string ;
+    :moduleVersion "1.0"^^xsd:string .
+
+#################################################################
+#    CLASSES
+#################################################################
+
+:CloudConcept rdf:type owl:Class ;
+    rdfs:subClassOf :AI4SEConcept ;
+    rdfs:label "Cloud Concept"@en ;
+    skos:definition "Concept related to cloud computing, containerization, and orchestration"@en ;
+    :hasV4ID "V4_NEW_240"^^xsd:string .
+
+# Cloud Service Models
+
+:CloudServiceModel rdf:type owl:Class ;
+    rdfs:subClassOf :CloudConcept ;
+    rdfs:label "Cloud Service Model"@en ;
+    skos:definition "Level of abstraction for cloud computing services"@en ;
+    :hasV4ID "V4_NEW_241"^^xsd:string .
+
+:IaaS rdf:type owl:Class ;
+    rdfs:subClassOf :CloudServiceModel ;
+    rdfs:label "Infrastructure as a Service"@en ;
+    skos:definition "Cloud computing offering virtualized computing resources over internet"@en ;
+    skos:example "AWS EC2, Azure Virtual Machines, Google Compute Engine"@en ;
+    :provides "Virtual machines, storage, networks"@en ;
+    :customerManages "OS, middleware, runtime, applications, data"@en ;
+    :hasV4ID "V4_NEW_242"^^xsd:string .
+
+:PaaS rdf:type owl:Class ;
+    rdfs:subClassOf :CloudServiceModel ;
+    rdfs:label "Platform as a Service"@en ;
+    skos:definition "Cloud platform providing environment for building, deploying applications"@en ;
+    skos:example "AWS Elastic Beanstalk, Azure App Service, Google App Engine, Heroku"@en ;
+    :provides "Runtime, middleware, OS, infrastructure"@en ;
+    :customerManages "Applications, data"@en ;
+    :hasV4ID "V4_NEW_243"^^xsd:string .
+
+:SaaS rdf:type owl:Class ;
+    rdfs:subClassOf :CloudServiceModel ;
+    rdfs:label "Software as a Service"@en ;
+    skos:definition "Software delivery model where applications hosted by provider, accessed via internet"@en ;
+    skos:example "Salesforce, Google Workspace, Microsoft 365, Slack"@en ;
+    :provides "Complete applications"@en ;
+    :customerManages "Configuration, user data"@en ;
+    :hasV4ID "V4_NEW_244"^^xsd:string .
+
+:FaaS rdf:type owl:Class ;
+    rdfs:subClassOf :CloudServiceModel ;
+    rdfs:label "Function as a Service"@en ;
+    skos:definition "Serverless computing executing code in response to events"@en ;
+    skos:example "AWS Lambda, Azure Functions, Google Cloud Functions"@en ;
+    :hasV4ID "V4_NEW_245"^^xsd:string .
+
+# Containerization
+
+:ContainerTechnology rdf:type owl:Class ;
+    rdfs:subClassOf :CloudConcept ;
+    rdfs:label "Container Technology"@en ;
+    skos:definition "OS-level virtualization packaging applications with dependencies"@en ;
+    :hasV4ID "V4_NEW_246"^^xsd:string .
+
+:Docker rdf:type owl:Class ;
+    rdfs:subClassOf :ContainerTechnology ;
+    rdfs:label "Docker"@en ;
+    skos:definition "Platform for developing, shipping, running containerized applications"@en ;
+    :hasBenefit "Consistent environments"@en ;
+    :hasBenefit "Rapid deployment"@en ;
+    :hasBenefit "Isolation"@en ;
+    :hasComponent :DockerImage ;
+    :hasComponent :DockerContainer ;
+    :hasComponent :Dockerfile ;
+    :hasV4ID "V4_NEW_247"^^xsd:string .
+
+:DockerImage rdf:type owl:Class ;
+    rdfs:subClassOf :ContainerTechnology ;
+    rdfs:label "Docker Image"@en ;
+    skos:definition "Read-only template with instructions for creating Docker container"@en ;
+    :hasV4ID "V4_NEW_248"^^xsd:string .
+
+:DockerContainer rdf:type owl:Class ;
+    rdfs:subClassOf :ContainerTechnology ;
+    rdfs:label "Docker Container"@en ;
+    skos:definition "Runnable instance of Docker image"@en ;
+    :hasV4ID "V4_NEW_249"^^xsd:string .
+
+:Dockerfile rdf:type owl:Class ;
+    rdfs:subClassOf :ContainerTechnology ;
+    rdfs:label "Dockerfile"@en ;
+    skos:definition "Text file containing commands to build Docker image"@en ;
+    :hasV4ID "V4_NEW_250"^^xsd:string .
+
+# Container Orchestration
+
+:ContainerOrchestration rdf:type owl:Class ;
+    rdfs:subClassOf :CloudConcept ;
+    rdfs:label "Container Orchestration"@en ;
+    skos:definition "Automated deployment, management, scaling, networking of containers"@en ;
+    :hasV4ID "V4_NEW_251"^^xsd:string .
+
+:Kubernetes rdf:type owl:Class ;
+    rdfs:subClassOf :ContainerOrchestration ;
+    rdfs:label "Kubernetes"@en ;
+    skos:definition "Open-source container orchestration platform automating deployment, scaling, management"@en ;
+    skos:altLabel "K8s"@en ;
+    :hasComponent :Pod ;
+    :hasComponent :Service ;
+    :hasComponent :Deployment ;
+    :hasComponent :Namespace ;
+    :hasComponent :Ingress ;
+    :hasBenefit "Automatic scaling"@en ;
+    :hasBenefit "Self-healing"@en ;
+    :hasBenefit "Load balancing"@en ;
+    :hasBenefit "Rolling updates"@en ;
+    :hasV4ID "V4_NEW_252"^^xsd:string .
+
+:Pod rdf:type owl:Class ;
+    rdfs:subClassOf :Kubernetes ;
+    rdfs:label "Kubernetes Pod"@en ;
+    skos:definition "Smallest deployable unit in Kubernetes, group of one or more containers"@en ;
+    :hasV4ID "V4_NEW_253"^^xsd:string .
+
+:KubernetesService rdf:type owl:Class ;
+    rdfs:subClassOf :Kubernetes ;
+    rdfs:label "Kubernetes Service"@en ;
+    skos:definition "Abstract way to expose application running on Pods"@en ;
+    :hasV4ID "V4_NEW_254"^^xsd:string .
+
+:Deployment rdf:type owl:Class ;
+    rdfs:subClassOf :Kubernetes ;
+    rdfs:label "Kubernetes Deployment"@en ;
+    skos:definition "Declarative updates for Pods and ReplicaSets"@en ;
+    :hasV4ID "V4_NEW_255"^^xsd:string .
+
+:DockerSwarm rdf:type owl:Class ;
+    rdfs:subClassOf :ContainerOrchestration ;
+    rdfs:label "Docker Swarm"@en ;
+    skos:definition "Native clustering and orchestration for Docker"@en ;
+    :hasV4ID "V4_NEW_256"^^xsd:string .
+
+# Service Mesh
+
+:ServiceMesh rdf:type owl:Class ;
+    rdfs:subClassOf :CloudConcept ;
+    rdfs:label "Service Mesh"@en ;
+    skos:definition "Infrastructure layer handling service-to-service communication in microservices"@en ;
+    :provides "Traffic management, security, observability"@en ;
+    :hasV4ID "V4_NEW_257"^^xsd:string .
+
+:Istio rdf:type owl:Class ;
+    rdfs:subClassOf :ServiceMesh ;
+    rdfs:label "Istio"@en ;
+    skos:definition "Open platform to connect, manage, secure microservices"@en ;
+    :hasFeature "Traffic management"@en ;
+    :hasFeature "Security (mTLS)"@en ;
+    :hasFeature "Observability"@en ;
+    :hasV4ID "V4_NEW_258"^^xsd:string .
+
+:Linkerd rdf:type owl:Class ;
+    rdfs:subClassOf :ServiceMesh ;
+    rdfs:label "Linkerd"@en ;
+    skos:definition "Lightweight, open-source service mesh for Kubernetes"@en ;
+    :hasV4ID "V4_NEW_259"^^xsd:string .
+
+# Cloud Providers
+
+:CloudProvider rdf:type owl:Class ;
+    rdfs:subClassOf :CloudConcept ;
+    rdfs:label "Cloud Provider"@en ;
+    skos:definition "Company providing cloud computing services"@en ;
+    :hasV4ID "V4_NEW_260"^^xsd:string .
+
+:AWS rdf:type owl:Class ;
+    rdfs:subClassOf :CloudProvider ;
+    rdfs:label "Amazon Web Services"@en ;
+    skos:definition "Amazon's comprehensive cloud platform"@en ;
+    :hasRegion "us-east-1, eu-central-1, eu-west-1"@en ;
+    :offersService :IaaS ;
+    :offersService :PaaS ;
+    :offersService :FaaS ;
+    :hasV4ID "V4_NEW_261"^^xsd:string .
+
+:Azure rdf:type owl:Class ;
+    rdfs:subClassOf :CloudProvider ;
+    rdfs:label "Microsoft Azure"@en ;
+    skos:definition "Microsoft's cloud computing platform"@en ;
+    :hasV4ID "V4_NEW_262"^^xsd:string .
+
+:GoogleCloud rdf:type owl:Class ;
+    rdfs:subClassOf :CloudProvider ;
+    rdfs:label "Google Cloud Platform"@en ;
+    skos:definition "Google's cloud computing services"@en ;
+    :hasV4ID "V4_NEW_263"^^xsd:string .
+
+# Cloud-Native Concepts
+
+:CloudNative rdf:type owl:Class ;
+    rdfs:subClassOf :CloudConcept ;
+    rdfs:label "Cloud-Native"@en ;
+    skos:definition "Approach to building and running applications exploiting cloud computing model"@en ;
+    :hasPrinciple "Microservices architecture"@en ;
+    :hasPrinciple "Containers"@en ;
+    :hasPrinciple "Dynamic orchestration"@en ;
+    :hasPrinciple "DevOps culture"@en ;
+    :hasV4ID "V4_NEW_264"^^xsd:string .
+
+:TwelveFactor rdf:type owl:Class ;
+    rdfs:subClassOf :CloudNative ;
+    rdfs:label "Twelve-Factor App"@en ;
+    skos:definition "Methodology for building SaaS applications"@en ;
+    :hasFactor "Codebase in version control"@en ;
+    :hasFactor "Explicit dependencies"@en ;
+    :hasFactor "Config in environment"@en ;
+    :hasFactor "Backing services as resources"@en ;
+    :hasFactor "Strict separation build/run"@en ;
+    :hasFactor "Stateless processes"@en ;
+    :hasV4ID "V4_NEW_265"^^xsd:string .
+
+:Helm rdf:type owl:Class ;
+    rdfs:subClassOf :CloudConcept ;
+    rdfs:label "Helm"@en ;
+    skos:definition "Package manager for Kubernetes"@en ;
+    :manages "Kubernetes applications via charts"@en ;
+    :hasV4ID "V4_NEW_266"^^xsd:string .
+
+:Kustomize rdf:type owl:Class ;
+    rdfs:subClassOf :CloudConcept ;
+    rdfs:label "Kustomize"@en ;
+    skos:definition "Template-free way to customize Kubernetes objects"@en ;
+    :hasV4ID "V4_NEW_267"^^xsd:string .
+
+#################################################################
+#    OBJECT PROPERTIES
+#################################################################
+
+:provides rdf:type owl:DatatypeProperty ;
+    rdfs:label "provides"@en ;
+    rdfs:domain :CloudServiceModel ;
+    rdfs:range xsd:string .
+
+:customerManages rdf:type owl:DatatypeProperty ;
+    rdfs:label "customer manages"@en ;
+    rdfs:range xsd:string .
+
+:hasComponent rdf:type owl:ObjectProperty ;
+    rdfs:label "has component"@en .
+
+:hasRegion rdf:type owl:DatatypeProperty ;
+    rdfs:label "has region"@en ;
+    rdfs:range xsd:string .
+
+:offersService rdf:type owl:ObjectProperty ;
+    rdfs:label "offers service"@en ;
+    rdfs:domain :CloudProvider .
+
+:hasFeature rdf:type owl:DatatypeProperty ;
+    rdfs:label "has feature"@en ;
+    rdfs:range xsd:string .
+
+:hasFactor rdf:type owl:DatatypeProperty ;
+    rdfs:label "has factor"@en ;
+    rdfs:domain :TwelveFactor ;
+    rdfs:range xsd:string .
+
+:manages rdf:type owl:DatatypeProperty ;
+    rdfs:label "manages"@en ;
+    rdfs:range xsd:string .
+
+#################################################################
+#    INDIVIDUALS
+#################################################################
+
+:StandardKubernetesCluster rdf:type owl:NamedIndividual, :Kubernetes ;
+    rdfs:label "Standard Kubernetes Cluster"@en ;
+    :hasComponent :Pod ;
+    :hasComponent :KubernetesService ;
+    :hasComponent :Deployment .
+
+#################################################################
+#    AXIOMS
+#################################################################
+
+:Kubernetes rdfs:subClassOf [
+    rdf:type owl:Restriction ;
+    owl:onProperty :hasComponent ;
+    owl:minCardinality "1"^^xsd:nonNegativeInteger
+] .

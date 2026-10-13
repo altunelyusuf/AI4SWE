@@ -1,0 +1,286 @@
+@prefix : <http://ai4se.org/ontology/v4#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#################################################################
+#    MODULE: DATA ENGINEERING & ANALYTICS
+#################################################################
+
+:DataEngineeringModule rdf:type owl:Ontology ;
+    dcterms:title "Data Engineering and Analytics Module"@en ;
+    dcterms:description "Ontology covering data engineering, analytics, ML pipelines, and data quality for software systems"@en ;
+    dcterms:created "2025-11-17"^^xsd:date ;
+    :hasBookReference "Chapter 25-27: Data, Analytics, ML Engineering"^^xsd:string ;
+    :moduleVersion "1.0"^^xsd:string .
+
+#################################################################
+#    CLASSES
+#################################################################
+
+:DataConcept rdf:type owl:Class ;
+    rdfs:subClassOf :AI4SEConcept ;
+    rdfs:label "Data Concept"@en ;
+    skos:definition "Concept related to data engineering, processing, quality, and analytics"@en ;
+    :hasV4ID "V4_NEW_270"^^xsd:string .
+
+# Data Pipeline
+
+:DataPipeline rdf:type owl:Class ;
+    rdfs:subClassOf :DataConcept ;
+    rdfs:label "Data Pipeline"@en ;
+    skos:definition "Automated workflow moving and transforming data from sources to destinations"@en ;
+    :hasStage :Ingestion ;
+    :hasStage :Transformation ;
+    :hasStage :Loading ;
+    :hasV4ID "V4_NEW_271"^^xsd:string .
+
+:ETLPipeline rdf:type owl:Class ;
+    rdfs:subClassOf :DataPipeline ;
+    rdfs:label "ETL Pipeline"@en ;
+    skos:definition "Extract, Transform, Load - traditional data integration pattern"@en ;
+    skos:example "Nightly batch extracting from OLTP, transforming, loading into data warehouse"@en ;
+    :hasV4ID "V4_NEW_272"^^xsd:string .
+
+:ELTPipeline rdf:type owl:Class ;
+    rdfs:subClassOf :DataPipeline ;
+    rdfs:label "ELT Pipeline"@en ;
+    skos:definition "Extract, Load, Transform - loads raw data first, transforms in destination"@en ;
+    :hasBenefit "Leverages destination compute power"@en ;
+    :appropriateFor "Cloud data warehouses with strong compute"@en ;
+    :hasV4ID "V4_NEW_273"^^xsd:string .
+
+:StreamingPipeline rdf:type owl:Class ;
+    rdfs:subClassOf :DataPipeline ;
+    rdfs:label "Streaming Pipeline"@en ;
+    skos:definition "Real-time data processing pipeline handling continuous data streams"@en ;
+    :usesTool :ApacheKafka ;
+    :usesTool :ApacheFlink ;
+    :hasV4ID "V4_NEW_274"^^xsd:string .
+
+# Data Storage
+
+:DataStorage rdf:type owl:Class ;
+    rdfs:subClassOf :DataConcept ;
+    rdfs:label "Data Storage"@en ;
+    skos:definition "System for persisting and retrieving data"@en ;
+    :hasV4ID "V4_NEW_275"^^xsd:string .
+
+:DataWarehouse rdf:type owl:Class ;
+    rdfs:subClassOf :DataStorage ;
+    rdfs:label "Data Warehouse"@en ;
+    skos:definition "Central repository of integrated data from multiple sources for analysis"@en ;
+    skos:example "Snowflake, Google BigQuery, Amazon Redshift"@en ;
+    :optimizedFor "OLAP queries, analytics"@en ;
+    :hasV4ID "V4_NEW_276"^^xsd:string .
+
+:DataLake rdf:type owl:Class ;
+    rdfs:subClassOf :DataStorage ;
+    rdfs:label "Data Lake"@en ;
+    skos:definition "Centralized repository storing structured and unstructured data at any scale"@en ;
+    :storesFormat "Raw, unprocessed data"@en ;
+    :hasBenefit "Schema-on-read flexibility"@en ;
+    :hasChallenge "Data swamp risk without governance"@en ;
+    :hasV4ID "V4_NEW_277"^^xsd:string .
+
+:DataLakehouse rdf:type owl:Class ;
+    rdfs:subClassOf :DataStorage ;
+    rdfs:label "Data Lakehouse"@en ;
+    skos:definition "Architecture combining benefits of data lakes and warehouses"@en ;
+    :combines :DataLake ;
+    :combines :DataWarehouse ;
+    :usesTool :DeltaLake ;
+    :usesTool :ApacheIceberg ;
+    :hasV4ID "V4_NEW_278"^^xsd:string .
+
+# Data Quality
+
+:DataQuality rdf:type owl:Class ;
+    rdfs:subClassOf :DataConcept ;
+    rdfs:label "Data Quality"@en ;
+    skos:definition "Measure of data fitness for intended use"@en ;
+    :hasDimension :Accuracy ;
+    :hasDimension :Completeness ;
+    :hasDimension :Consistency ;
+    :hasDimension :Timeliness ;
+    :hasV4ID "V4_NEW_279"^^xsd:string .
+
+:DataValidation rdf:type owl:Class ;
+    rdfs:subClassOf :DataQuality ;
+    rdfs:label "Data Validation"@en ;
+    skos:definition "Process of checking data correctness and quality"@en ;
+    :usesTool :GreatExpectations ;
+    :hasV4ID "V4_NEW_280"^^xsd:string .
+
+:DataProfiling rdf:type owl:Class ;
+    rdfs:subClassOf :DataQuality ;
+    rdfs:label "Data Profiling"@en ;
+    skos:definition "Statistical analysis examining data to understand structure, content, quality"@en ;
+    :hasV4ID "V4_NEW_281"^^xsd:string .
+
+# Analytics
+
+:DataAnalytics rdf:type owl:Class ;
+    rdfs:subClassOf :DataConcept ;
+    rdfs:label "Data Analytics"@en ;
+    skos:definition "Process of examining data to draw conclusions and support decision-making"@en ;
+    :hasV4ID "V4_NEW_282"^^xsd:string .
+
+:DescriptiveAnalytics rdf:type owl:Class ;
+    rdfs:subClassOf :DataAnalytics ;
+    rdfs:label "Descriptive Analytics"@en ;
+    skos:definition "What happened? - Historical data analysis"@en ;
+    skos:example "Monthly sales reports, website traffic dashboards"@en ;
+    :hasV4ID "V4_NEW_283"^^xsd:string .
+
+:DiagnosticAnalytics rdf:type owl:Class ;
+    rdfs:subClassOf :DataAnalytics ;
+    rdfs:label "Diagnostic Analytics"@en ;
+    skos:definition "Why did it happen? - Root cause analysis"@en ;
+    :hasV4ID "V4_NEW_284"^^xsd:string .
+
+:PredictiveAnalytics rdf:type owl:Class ;
+    rdfs:subClassOf :DataAnalytics ;
+    rdfs:label "Predictive Analytics"@en ;
+    skos:definition "What will happen? - Future outcome predictions using ML"@en ;
+    skos:example "Churn prediction, demand forecasting"@en ;
+    :hasV4ID "V4_NEW_285"^^xsd:string .
+
+:PrescriptiveAnalytics rdf:type owl:Class ;
+    rdfs:subClassOf :DataAnalytics ;
+    rdfs:label "Prescriptive Analytics"@en ;
+    skos:definition "What should we do? - Recommends actions based on predictions"@en ;
+    :hasV4ID "V4_NEW_286"^^xsd:string .
+
+# ML Engineering
+
+:MLPipeline rdf:type owl:Class ;
+    rdfs:subClassOf :DataPipeline ;
+    rdfs:label "ML Pipeline"@en ;
+    skos:definition "Automated workflow for training, deploying, monitoring ML models"@en ;
+    :hasStage :DataPreparation ;
+    :hasStage :FeatureEngineering ;
+    :hasStage :ModelTraining ;
+    :hasStage :ModelEvaluation ;
+    :hasStage :ModelDeployment ;
+    :hasV4ID "V4_NEW_287"^^xsd:string .
+
+:FeatureStore rdf:type owl:Class ;
+    rdfs:subClassOf :DataConcept ;
+    rdfs:label "Feature Store"@en ;
+    skos:definition "Centralized repository storing, managing, serving ML features"@en ;
+    :hasBenefit "Feature reuse across models"@en ;
+    :hasBenefit "Training-serving consistency"@en ;
+    :usesTool :Feast ;
+    :hasV4ID "V4_NEW_288"^^xsd:string .
+
+:ModelRegistry rdf:type owl:Class ;
+    rdfs:subClassOf :DataConcept ;
+    rdfs:label "Model Registry"@en ;
+    skos:definition "Centralized store for ML models with versioning and metadata"@en ;
+    :stores "Model artifacts, metrics, lineage"@en ;
+    :hasV4ID "V4_NEW_289"^^xsd:string .
+
+# Data Governance
+
+:DataGovernance rdf:type owl:Class ;
+    rdfs:subClassOf :DataConcept ;
+    rdfs:label "Data Governance"@en ;
+    skos:definition "Framework ensuring data quality, security, compliance"@en ;
+    :hasAspect "Data ownership"@en ;
+    :hasAspect "Data lineage"@en ;
+    :hasAspect "Access control"@en ;
+    :hasAspect "Compliance"@en ;
+    :hasV4ID "V4_NEW_290"^^xsd:string .
+
+:DataLineage rdf:type owl:Class ;
+    rdfs:subClassOf :DataGovernance ;
+    rdfs:label "Data Lineage"@en ;
+    skos:definition "Tracking data flow from origin through transformations to final destination"@en ;
+    :hasBenefit "Impact analysis"@en ;
+    :hasBenefit "Compliance documentation"@en ;
+    :hasBenefit "Debugging"@en ;
+    :hasV4ID "V4_NEW_291"^^xsd:string .
+
+:DataCatalog rdf:type owl:Class ;
+    rdfs:subClassOf :DataGovernance ;
+    rdfs:label "Data Catalog"@en ;
+    skos:definition "Searchable inventory of data assets with metadata"@en ;
+    :hasV4ID "V4_NEW_292"^^xsd:string .
+
+#################################################################
+#    INDIVIDUALS
+#################################################################
+
+:Accuracy rdf:type owl:NamedIndividual ;
+    rdfs:label "Accuracy"@en ;
+    skos:definition "Data correctly represents real-world entity"@en .
+
+:Completeness rdf:type owl:NamedIndividual ;
+    rdfs:label "Completeness"@en ;
+    skos:definition "All required data is present"@en .
+
+:Consistency rdf:type owl:NamedIndividual ;
+    rdfs:label "Consistency"@en ;
+    skos:definition "Data values consistent across datasets"@en .
+
+:Timeliness rdf:type owl:NamedIndividual ;
+    rdfs:label "Timeliness"@en ;
+    skos:definition "Data available when needed, up-to-date"@en .
+
+:Ingestion rdf:type owl:NamedIndividual ;
+    rdfs:label "Ingestion"@en ;
+    skos:definition "Reading data from source systems"@en .
+
+:Transformation rdf:type owl:NamedIndividual ;
+    rdfs:label "Transformation"@en ;
+    skos:definition "Cleaning, enriching, aggregating data"@en .
+
+:Loading rdf:type owl:NamedIndividual ;
+    rdfs:label "Loading"@en ;
+    skos:definition "Writing data to destination"@en .
+
+:DataPreparation rdf:type owl:NamedIndividual ;
+    rdfs:label "Data Preparation"@en .
+
+:FeatureEngineering rdf:type owl:NamedIndividual ;
+    rdfs:label "Feature Engineering"@en .
+
+:ModelTraining rdf:type owl:NamedIndividual ;
+    rdfs:label "Model Training"@en .
+
+:ModelEvaluation rdf:type owl:NamedIndividual ;
+    rdfs:label "Model Evaluation"@en .
+
+:ModelDeployment rdf:type owl:NamedIndividual ;
+    rdfs:label "Model Deployment"@en .
+
+#################################################################
+#    OBJECT PROPERTIES
+#################################################################
+
+:hasDimension rdf:type owl:ObjectProperty ;
+    rdfs:label "has dimension"@en ;
+    rdfs:domain :DataQuality .
+
+:combines rdf:type owl:ObjectProperty ;
+    rdfs:label "combines"@en .
+
+:storesFormat rdf:type owl:DatatypeProperty ;
+    rdfs:label "stores format"@en ;
+    rdfs:range xsd:string .
+
+:optimizedFor rdf:type owl:DatatypeProperty ;
+    rdfs:label "optimized for"@en ;
+    rdfs:range xsd:string .
+
+:stores rdf:type owl:DatatypeProperty ;
+    rdfs:label "stores"@en ;
+    rdfs:range xsd:string .
+
+:hasAspect rdf:type owl:DatatypeProperty ;
+    rdfs:label "has aspect"@en ;
+    rdfs:range xsd:string .

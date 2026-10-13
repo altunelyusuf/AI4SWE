@@ -1,0 +1,581 @@
+@prefix ai4se: <http://www.semanticweb.org/ontologies/2025/AI4SE#> .
+@prefix o4se: <http://www.semanticweb.org/ontologies/2025/O4SE#> .
+@prefix ai: <http://example.org/o4ai#> .
+@prefix meta: <http://example.org/ontology-engineering#> .
+@prefix qc: <http://example.org/quality#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+
+#=============================================================================
+# AI4SE - AI-ENHANCED SOFTWARE DEVELOPMENT LIFECYCLE
+# MODULE 2: LIFECYCLE PHASES WITH AI INTEGRATION
+#=============================================================================
+# This module defines how AI technologies enhance each phase of the software
+# development lifecycle, from requirements to maintenance and evolution.
+#=============================================================================
+
+<http://www.semanticweb.org/ontologies/2025/AI4SE/Lifecycle> rdf:type owl:Ontology ;
+    owl:imports <http://www.semanticweb.org/ontologies/2025/AI4SE> ;
+    dcterms:title "AI4SE Lifecycle - AI-Enhanced SDLC Module"@en ;
+    dcterms:created "2025-10-27"^^xsd:date ;
+    dcterms:description "Comprehensive representation of AI integration throughout the software development lifecycle"@en .
+
+#=============================================================================
+# SECTION 1: AI-ENHANCED REQUIREMENTS PHASE
+#=============================================================================
+
+# --- Requirements Intelligence ---
+
+ai4se:RequirementsIntelligence a owl:Class ;
+    rdfs:label "Requirements Intelligence"@en ;
+    rdfs:comment "AI-powered system for intelligent requirements management"@en ;
+    rdfs:subClassOf ai4se:IntelligentRequirementsEngineering ;
+    skos:definition "System using AI to elicit, analyze, validate, and manage software requirements"@en .
+
+ai4se:NLPRequirementsProcessor a owl:Class ;
+    rdfs:label "NLP Requirements Processor"@en ;
+    rdfs:comment "System using NLP to process natural language requirements"@en ;
+    rdfs:subClassOf ai4se:RequirementsIntelligence ,
+                    ai:NaturalLanguageProcessingSystem .
+
+ai4se:RequirementsClassifier a owl:Class ;
+    rdfs:label "Requirements Classifier"@en ;
+    rdfs:comment "AI system that classifies requirements by type, priority, or domain"@en ;
+    rdfs:subClassOf ai4se:RequirementsIntelligence ,
+                    ai:ClassificationSystem .
+
+ai4se:RequirementsConflictDetector a owl:Class ;
+    rdfs:label "Requirements Conflict Detector"@en ;
+    rdfs:comment "AI system detecting conflicts and inconsistencies in requirements"@en ;
+    rdfs:subClassOf ai4se:RequirementsIntelligence ;
+    owl:equivalentClass [ a owl:Class ;
+        owl:intersectionOf ( ai4se:RequirementsIntelligence
+                           [ a owl:Restriction ;
+                             owl:onProperty ai4se:detects ;
+                             owl:someValuesFrom o4se:RequirementsConflict ] ) ] .
+
+ai4se:RequirementsPrioritizer a owl:Class ;
+    rdfs:label "Requirements Prioritizer"@en ;
+    rdfs:comment "AI system for automatic requirements prioritization"@en ;
+    rdfs:subClassOf ai4se:RequirementsIntelligence ,
+                    ai:RankingSystem .
+
+ai4se:StakeholderAnalyzer a owl:Class ;
+    rdfs:label "Stakeholder Analyzer"@en ;
+    rdfs:comment "AI system analyzing stakeholder needs and preferences"@en ;
+    rdfs:subClassOf ai4se:RequirementsIntelligence ;
+    meta:hasCompetencyQuestion "How can AI identify stakeholder preferences?"@en .
+
+# --- Requirements Activities Enhanced by AI ---
+
+ai4se:AutomatedRequirementsElicitation a owl:Class ;
+    rdfs:label "Automated Requirements Elicitation"@en ;
+    rdfs:comment "Requirements gathering automated through AI analysis"@en ;
+    rdfs:subClassOf ai4se:IntelligentRequirementsEngineering ,
+                    o4se:RequirementsElicitation .
+
+ai4se:IntelligentRequirementsAnalysis a owl:Class ;
+    rdfs:label "Intelligent Requirements Analysis"@en ;
+    rdfs:comment "AI-enhanced analysis of requirements for completeness and consistency"@en ;
+    rdfs:subClassOf ai4se:IntelligentRequirementsEngineering ,
+                    o4se:RequirementsAnalysis .
+
+ai4se:RequirementsValidationWithAI a owl:Class ;
+    rdfs:label "Requirements Validation with AI"@en ;
+    rdfs:comment "AI-assisted validation of requirements against standards and best practices"@en ;
+    rdfs:subClassOf ai4se:IntelligentRequirementsEngineering ,
+                    o4se:RequirementsValidation .
+
+ai4se:RequirementsTraceabilityMining a owl:Class ;
+    rdfs:label "Requirements Traceability Mining"@en ;
+    rdfs:comment "AI-based extraction of traceability links between requirements and artifacts"@en ;
+    rdfs:subClassOf ai4se:IntelligentRequirementsEngineering .
+
+#=============================================================================
+# SECTION 2: AI-ENHANCED DESIGN PHASE
+#=============================================================================
+
+# --- Design Intelligence Systems ---
+
+ai4se:DesignIntelligence a owl:Class ;
+    rdfs:label "Design Intelligence"@en ;
+    rdfs:comment "AI system supporting software design activities"@en ;
+    rdfs:subClassOf ai4se:AIAssistedDesign ;
+    skos:definition "Intelligent system for generating, evaluating, and optimizing software designs"@en .
+
+ai4se:ArchitectureGenerator a owl:Class ;
+    rdfs:label "Architecture Generator"@en ;
+    rdfs:comment "AI system generating software architecture alternatives"@en ;
+    rdfs:subClassOf ai4se:DesignIntelligence ,
+                    ai:GenerativeAI .
+
+ai4se:PatternRecommender a owl:Class ;
+    rdfs:label "Pattern Recommender"@en ;
+    rdfs:comment "AI system recommending design patterns based on context"@en ;
+    rdfs:subClassOf ai4se:DesignIntelligence ,
+                    ai:RecommendationSystem .
+
+ai4se:DesignOptimizer a owl:Class ;
+    rdfs:label "Design Optimizer"@en ;
+    rdfs:comment "AI system optimizing software designs for quality attributes"@en ;
+    rdfs:subClassOf ai4se:DesignIntelligence ,
+                    ai:OptimizationSystem .
+
+ai4se:ComponentMatcher a owl:Class ;
+    rdfs:label "Component Matcher"@en ;
+    rdfs:comment "AI system matching design requirements to reusable components"@en ;
+    rdfs:subClassOf ai4se:DesignIntelligence .
+
+ai4se:InterfaceDesigner a owl:Class ;
+    rdfs:label "Interface Designer"@en ;
+    rdfs:comment "AI system for designing software interfaces"@en ;
+    rdfs:subClassOf ai4se:DesignIntelligence ;
+    owl:equivalentClass [ a owl:Class ;
+        owl:intersectionOf ( ai4se:DesignIntelligence
+                           [ a owl:Restriction ;
+                             owl:onProperty ai4se:generates ;
+                             owl:someValuesFrom o4se:InterfaceSpecification ] ) ] .
+
+# --- Design Activities with AI ---
+
+ai4se:AIGuidedArchitecturalDesign a owl:Class ;
+    rdfs:label "AI-Guided Architectural Design"@en ;
+    rdfs:comment "Architectural design process guided by AI recommendations"@en ;
+    rdfs:subClassOf ai4se:AIAssistedDesign ,
+                    o4se:ArchitecturalDesign .
+
+ai4se:AutomatedDesignPatternApplication a owl:Class ;
+    rdfs:label "Automated Design Pattern Application"@en ;
+    rdfs:comment "Automatic application of design patterns by AI"@en ;
+    rdfs:subClassOf ai4se:AIAssistedDesign .
+
+ai4se:IntelligentModularization a owl:Class ;
+    rdfs:label "Intelligent Modularization"@en ;
+    rdfs:comment "AI-driven decomposition of systems into modules"@en ;
+    rdfs:subClassOf ai4se:AIAssistedDesign ,
+                    o4se:ModularDesign .
+
+ai4se:QualityDrivenDesign a owl:Class ;
+    rdfs:label "Quality-Driven Design"@en ;
+    rdfs:comment "Design process optimized by AI for quality attributes"@en ;
+    rdfs:subClassOf ai4se:AIAssistedDesign .
+
+#=============================================================================
+# SECTION 3: AI-ENHANCED IMPLEMENTATION PHASE
+#=============================================================================
+
+# --- Code Intelligence Systems ---
+
+ai4se:CodingIntelligence a owl:Class ;
+    rdfs:label "Coding Intelligence"@en ;
+    rdfs:comment "AI system supporting code development activities"@en ;
+    rdfs:subClassOf ai4se:AutomatedCoding ;
+    skos:definition "Intelligent system for code generation, completion, and optimization"@en .
+
+ai4se:CodeSynthesizer a owl:Class ;
+    rdfs:label "Code Synthesizer"@en ;
+    rdfs:comment "AI system synthesizing code from specifications"@en ;
+    rdfs:subClassOf ai4se:CodingIntelligence ,
+                    ai:ProgramSynthesis .
+
+ai4se:CodeCompleter a owl:Class ;
+    rdfs:label "Code Completer"@en ;
+    rdfs:comment "AI system providing intelligent code completion"@en ;
+    rdfs:subClassOf ai4se:CodingIntelligence ;
+    skos:altLabel "AI Autocomplete"@en , "Intelligent Code Suggestion"@en .
+
+ai4se:CodeTranslator a owl:Class ;
+    rdfs:label "Code Translator"@en ;
+    rdfs:comment "AI system translating code between programming languages"@en ;
+    rdfs:subClassOf ai4se:CodingIntelligence ,
+                    ai:TranslationSystem .
+
+ai4se:RefactoringAssistant a owl:Class ;
+    rdfs:label "Refactoring Assistant"@en ;
+    rdfs:comment "AI system suggesting and performing code refactorings"@en ;
+    rdfs:subClassOf ai4se:CodingIntelligence .
+
+ai4se:CodeReviewer a owl:Class ;
+    rdfs:label "Code Reviewer"@en ;
+    rdfs:comment "AI system performing automated code reviews"@en ;
+    rdfs:subClassOf ai4se:CodingIntelligence ;
+    owl:equivalentClass [ a owl:Class ;
+        owl:intersectionOf ( ai4se:CodingIntelligence
+                           [ a owl:Restriction ;
+                             owl:onProperty ai4se:analyzes ;
+                             owl:someValuesFrom o4se:SourceCode ] ) ] .
+
+ai4se:BugFixer a owl:Class ;
+    rdfs:label "Bug Fixer"@en ;
+    rdfs:comment "AI system automatically fixing detected bugs"@en ;
+    rdfs:subClassOf ai4se:CodingIntelligence ,
+                    ai:AutomatedProgramRepair .
+
+# --- Implementation Activities with AI ---
+
+ai4se:AIAssistedProgramming a owl:Class ;
+    rdfs:label "AI-Assisted Programming"@en ;
+    rdfs:comment "Programming activity augmented by AI assistance"@en ;
+    rdfs:subClassOf ai4se:AutomatedCoding ,
+                    o4se:Programming .
+
+ai4se:PairProgrammingWithAI a owl:Class ;
+    rdfs:label "Pair Programming with AI"@en ;
+    rdfs:comment "Collaborative programming between human and AI"@en ;
+    rdfs:subClassOf ai4se:AIAssistedProgramming ,
+                    ai4se:CollaborationPattern .
+
+ai4se:TestDrivenDevelopmentWithAI a owl:Class ;
+    rdfs:label "Test-Driven Development with AI"@en ;
+    rdfs:comment "TDD practice enhanced with AI test generation"@en ;
+    rdfs:subClassOf ai4se:AIAssistedProgramming ,
+                    o4se:TestDrivenDevelopment .
+
+ai4se:ContinuousCodeImprovement a owl:Class ;
+    rdfs:label "Continuous Code Improvement"@en ;
+    rdfs:comment "Ongoing code quality improvement through AI analysis"@en ;
+    rdfs:subClassOf ai4se:AutomatedCoding .
+
+#=============================================================================
+# SECTION 4: AI-ENHANCED TESTING PHASE
+#=============================================================================
+
+# --- Testing Intelligence Systems ---
+
+ai4se:TestingIntelligence a owl:Class ;
+    rdfs:label "Testing Intelligence"@en ;
+    rdfs:comment "AI system enhancing software testing activities"@en ;
+    rdfs:subClassOf ai4se:IntelligentTesting ;
+    skos:definition "Intelligent system for test generation, execution, and analysis"@en .
+
+ai4se:TestGenerator a owl:Class ;
+    rdfs:label "Test Generator"@en ;
+    rdfs:comment "AI system generating test cases automatically"@en ;
+    rdfs:subClassOf ai4se:TestingIntelligence ,
+                    ai:GenerativeAI .
+
+ai4se:TestOracle a owl:Class ;
+    rdfs:label "Test Oracle"@en ;
+    rdfs:comment "AI system determining expected test outcomes"@en ;
+    rdfs:subClassOf ai4se:TestingIntelligence .
+
+ai4se:TestPrioritizer a owl:Class ;
+    rdfs:label "Test Prioritizer"@en ;
+    rdfs:comment "AI system prioritizing test cases for execution"@en ;
+    rdfs:subClassOf ai4se:TestingIntelligence ,
+                    ai:RankingSystem .
+
+ai4se:DefectPredictor a owl:Class ;
+    rdfs:label "Defect Predictor"@en ;
+    rdfs:comment "AI system predicting likely defect locations"@en ;
+    rdfs:subClassOf ai4se:TestingIntelligence ,
+                    ai:PredictiveAnalytics .
+
+ai4se:TestOptimizer a owl:Class ;
+    rdfs:label "Test Optimizer"@en ;
+    rdfs:comment "AI system optimizing test suites for coverage and efficiency"@en ;
+    rdfs:subClassOf ai4se:TestingIntelligence ,
+                    ai:OptimizationSystem .
+
+ai4se:RegressionTestSelector a owl:Class ;
+    rdfs:label "Regression Test Selector"@en ;
+    rdfs:comment "AI system selecting regression tests based on changes"@en ;
+    rdfs:subClassOf ai4se:TestingIntelligence .
+
+# --- Testing Activities with AI ---
+
+ai4se:AutomatedTestGeneration a owl:Class ;
+    rdfs:label "Automated Test Generation"@en ;
+    rdfs:comment "Test case generation automated by AI"@en ;
+    rdfs:subClassOf ai4se:IntelligentTesting ,
+                    o4se:TestDesign .
+
+ai4se:IntelligentTestExecution a owl:Class ;
+    rdfs:label "Intelligent Test Execution"@en ;
+    rdfs:comment "Test execution optimized by AI scheduling and resource allocation"@en ;
+    rdfs:subClassOf ai4se:IntelligentTesting ,
+                    o4se:TestExecution .
+
+ai4se:SmartTestMaintenance a owl:Class ;
+    rdfs:label "Smart Test Maintenance"@en ;
+    rdfs:comment "Test suite maintenance assisted by AI"@en ;
+    rdfs:subClassOf ai4se:IntelligentTesting ,
+                    o4se:TestMaintenance .
+
+ai4se:AdaptiveTestingStrategy a owl:Class ;
+    rdfs:label "Adaptive Testing Strategy"@en ;
+    rdfs:comment "Testing strategy that adapts based on AI analysis"@en ;
+    rdfs:subClassOf ai4se:IntelligentTesting .
+
+#=============================================================================
+# SECTION 5: AI-ENHANCED DEPLOYMENT AND OPERATIONS
+#=============================================================================
+
+# --- Deployment Intelligence ---
+
+ai4se:DeploymentIntelligence a owl:Class ;
+    rdfs:label "Deployment Intelligence"@en ;
+    rdfs:comment "AI system managing software deployment"@en ;
+    rdfs:subClassOf ai4se:AIEnhancedProcess ;
+    skos:definition "Intelligent system for deployment optimization and automation"@en .
+
+ai4se:IntelligentReleaseManager a owl:Class ;
+    rdfs:label "Intelligent Release Manager"@en ;
+    rdfs:comment "AI system managing software releases"@en ;
+    rdfs:subClassOf ai4se:DeploymentIntelligence .
+
+ai4se:DeploymentOrchestrator a owl:Class ;
+    rdfs:label "Deployment Orchestrator"@en ;
+    rdfs:comment "AI system orchestrating complex deployments"@en ;
+    rdfs:subClassOf ai4se:DeploymentIntelligence ,
+                    ai:OrchestrationSystem .
+
+ai4se:ConfigurationOptimizer a owl:Class ;
+    rdfs:label "Configuration Optimizer"@en ;
+    rdfs:comment "AI system optimizing deployment configurations"@en ;
+    rdfs:subClassOf ai4se:DeploymentIntelligence ,
+                    ai:OptimizationSystem .
+
+ai4se:RollbackPredictor a owl:Class ;
+    rdfs:label "Rollback Predictor"@en ;
+    rdfs:comment "AI system predicting deployment rollback risks"@en ;
+    rdfs:subClassOf ai4se:DeploymentIntelligence ,
+                    ai:RiskPredictionSystem .
+
+# --- Operations Intelligence ---
+
+ai4se:OperationsIntelligence a owl:Class ;
+    rdfs:label "Operations Intelligence"@en ;
+    rdfs:comment "AI system for intelligent IT operations"@en ;
+    rdfs:subClassOf ai4se:AIEnhancedProcess ;
+    skos:altLabel "AIOps"@en .
+
+ai4se:PerformanceMonitor a owl:Class ;
+    rdfs:label "Performance Monitor"@en ;
+    rdfs:comment "AI system monitoring system performance"@en ;
+    rdfs:subClassOf ai4se:OperationsIntelligence ,
+                    ai:MonitoringSystem .
+
+ai4se:AnomalyDetector a owl:Class ;
+    rdfs:label "Anomaly Detector"@en ;
+    rdfs:comment "AI system detecting operational anomalies"@en ;
+    rdfs:subClassOf ai4se:OperationsIntelligence ,
+                    ai:AnomalyDetectionSystem .
+
+ai4se:IncidentPredictor a owl:Class ;
+    rdfs:label "Incident Predictor"@en ;
+    rdfs:comment "AI system predicting operational incidents"@en ;
+    rdfs:subClassOf ai4se:OperationsIntelligence ,
+                    ai:PredictiveAnalytics .
+
+ai4se:AutoScaler a owl:Class ;
+    rdfs:label "Auto Scaler"@en ;
+    rdfs:comment "AI system automatically scaling resources"@en ;
+    rdfs:subClassOf ai4se:OperationsIntelligence .
+
+#=============================================================================
+# SECTION 6: AI-ENHANCED MAINTENANCE AND EVOLUTION
+#=============================================================================
+
+# --- Maintenance Intelligence ---
+
+ai4se:MaintenanceIntelligence a owl:Class ;
+    rdfs:label "Maintenance Intelligence"@en ;
+    rdfs:comment "AI system supporting software maintenance"@en ;
+    rdfs:subClassOf ai4se:PredictiveMaintenance ;
+    skos:definition "Intelligent system for predictive and adaptive maintenance"@en .
+
+ai4se:TechnicalDebtAnalyzer a owl:Class ;
+    rdfs:label "Technical Debt Analyzer"@en ;
+    rdfs:comment "AI system analyzing and quantifying technical debt"@en ;
+    rdfs:subClassOf ai4se:MaintenanceIntelligence .
+
+ai4se:MaintenanceEffortEstimator a owl:Class ;
+    rdfs:label "Maintenance Effort Estimator"@en ;
+    rdfs:comment "AI system estimating maintenance effort"@en ;
+    rdfs:subClassOf ai4se:MaintenanceIntelligence ,
+                    ai:EstimationSystem .
+
+ai4se:CodeAgeingPredictor a owl:Class ;
+    rdfs:label "Code Ageing Predictor"@en ;
+    rdfs:comment "AI system predicting code degradation over time"@en ;
+    rdfs:subClassOf ai4se:MaintenanceIntelligence ,
+                    ai:TimeSeriesPrediction .
+
+ai4se:DependencyAnalyzer a owl:Class ;
+    rdfs:label "Dependency Analyzer"@en ;
+    rdfs:comment "AI system analyzing and managing dependencies"@en ;
+    rdfs:subClassOf ai4se:MaintenanceIntelligence .
+
+# --- Evolution Intelligence ---
+
+ai4se:EvolutionIntelligence a owl:Class ;
+    rdfs:label "Evolution Intelligence"@en ;
+    rdfs:comment "AI system supporting software evolution"@en ;
+    rdfs:subClassOf ai4se:AIEnhancedProcess ;
+    skos:definition "Intelligent system for managing software evolution"@en .
+
+ai4se:FeatureEvolutionPredictor a owl:Class ;
+    rdfs:label "Feature Evolution Predictor"@en ;
+    rdfs:comment "AI system predicting feature evolution needs"@en ;
+    rdfs:subClassOf ai4se:EvolutionIntelligence ,
+                    ai:TrendAnalysis .
+
+ai4se:MigrationAssistant a owl:Class ;
+    rdfs:label "Migration Assistant"@en ;
+    rdfs:comment "AI system assisting in system migrations"@en ;
+    rdfs:subClassOf ai4se:EvolutionIntelligence .
+
+ai4se:LegacyModernizer a owl:Class ;
+    rdfs:label "Legacy Modernizer"@en ;
+    rdfs:comment "AI system for modernizing legacy systems"@en ;
+    rdfs:subClassOf ai4se:EvolutionIntelligence .
+
+ai4se:APIEvolutionManager a owl:Class ;
+    rdfs:label "API Evolution Manager"@en ;
+    rdfs:comment "AI system managing API versioning and evolution"@en ;
+    rdfs:subClassOf ai4se:EvolutionIntelligence .
+
+#=============================================================================
+# SECTION 7: LIFECYCLE INTEGRATION PROPERTIES
+#=============================================================================
+
+# --- Object Properties for Lifecycle ---
+
+ai4se:supportsPhase a owl:ObjectProperty ;
+    rdfs:label "supports phase"@en ;
+    rdfs:comment "Indicates AI system supports a lifecycle phase"@en ;
+    rdfs:domain ai4se:AI4SESSystem ;
+    rdfs:range o4se:LifecyclePhase .
+
+ai4se:transitionsTo a owl:ObjectProperty ;
+    rdfs:label "transitions to"@en ;
+    rdfs:comment "Indicates transition between AI-enhanced phases"@en ;
+    rdfs:domain ai4se:AIEnhancedProcess ;
+    rdfs:range ai4se:AIEnhancedProcess ;
+    owl:TransitiveProperty .
+
+ai4se:feedsInto a owl:ObjectProperty ;
+    rdfs:label "feeds into"@en ;
+    rdfs:comment "Indicates data flow between AI systems in lifecycle"@en ;
+    rdfs:domain ai4se:AI4SESSystem ;
+    rdfs:range ai4se:AI4SESSystem .
+
+ai4se:triggersAction a owl:ObjectProperty ;
+    rdfs:label "triggers action"@en ;
+    rdfs:comment "Indicates AI system triggers lifecycle action"@en ;
+    rdfs:domain ai4se:AI4SESSystem ;
+    rdfs:range o4se:Activity .
+
+ai4se:monitoredBy a owl:ObjectProperty ;
+    rdfs:label "monitored by"@en ;
+    rdfs:comment "Indicates lifecycle phase monitored by AI"@en ;
+    rdfs:domain o4se:LifecyclePhase ;
+    rdfs:range ai4se:AI4SESSystem ;
+    owl:inverseOf ai4se:monitors .
+
+# --- Data Properties for Lifecycle ---
+
+ai4se:phaseAutomationLevel a owl:DatatypeProperty ;
+    rdfs:label "phase automation level"@en ;
+    rdfs:comment "Level of automation in lifecycle phase (0-100%)"@en ;
+    rdfs:domain o4se:LifecyclePhase ;
+    rdfs:range xsd:decimal .
+
+ai4se:phaseDuration a owl:DatatypeProperty ;
+    rdfs:label "phase duration"@en ;
+    rdfs:comment "Duration of AI-enhanced phase"@en ;
+    rdfs:domain ai4se:AIEnhancedProcess ;
+    rdfs:range xsd:duration .
+
+ai4se:phaseEfficiencyGain a owl:DatatypeProperty ;
+    rdfs:label "phase efficiency gain"@en ;
+    rdfs:comment "Efficiency improvement from AI enhancement"@en ;
+    rdfs:domain ai4se:AIEnhancedProcess ;
+    rdfs:range xsd:decimal .
+
+ai4se:defectReductionRate a owl:DatatypeProperty ;
+    rdfs:label "defect reduction rate"@en ;
+    rdfs:comment "Rate of defect reduction through AI"@en ;
+    rdfs:domain ai4se:IntelligentTesting ;
+    rdfs:range xsd:decimal .
+
+#=============================================================================
+# SECTION 8: COMPETENCY QUESTIONS FOR LIFECYCLE
+#=============================================================================
+
+ai4se:CQ_Lifecycle1 a meta:CompetencyQuestion ;
+    rdfs:label "Which AI systems support each SDLC phase?"@en ;
+    meta:hasVerificationQuery """
+        SELECT ?phase ?aisystem WHERE {
+            ?aisystem ai4se:supportsPhase ?phase .
+            ?phase rdfs:subClassOf o4se:LifecyclePhase .
+        }
+    """ .
+
+ai4se:CQ_Lifecycle2 a meta:CompetencyQuestion ;
+    rdfs:label "What is the automation level across phases?"@en ;
+    meta:hasVerificationQuery """
+        SELECT ?phase ?level WHERE {
+            ?phase ai4se:phaseAutomationLevel ?level .
+        }
+    """ .
+
+ai4se:CQ_Lifecycle3 a meta:CompetencyQuestion ;
+    rdfs:label "How do AI systems collaborate across lifecycle?"@en ;
+    meta:hasVerificationQuery """
+        SELECT ?system1 ?system2 WHERE {
+            ?system1 ai4se:feedsInto ?system2 .
+        }
+    """ .
+
+#=============================================================================
+# SECTION 9: FUNCTIONAL REQUIREMENTS FOR LIFECYCLE
+#=============================================================================
+
+ai4se:FR_Lifecycle1 a meta:FunctionalRequirement ;
+    rdfs:label "Complete Lifecycle Coverage"@en ;
+    rdfs:comment "AI enhancement must cover all SDLC phases"@en ;
+    meta:hasPriority "Critical" ;
+    meta:hasTestCase ai4se:TC_LifecycleCoverage .
+
+ai4se:FR_Lifecycle2 a meta:FunctionalRequirement ;
+    rdfs:label "Phase Transition Support"@en ;
+    rdfs:comment "Support smooth transitions between AI-enhanced phases"@en ;
+    meta:hasPriority "High" ;
+    meta:hasTestCase ai4se:TC_PhaseTransition .
+
+ai4se:FR_Lifecycle3 a meta:FunctionalRequirement ;
+    rdfs:label "Lifecycle Metrics Tracking"@en ;
+    rdfs:comment "Track metrics for each AI-enhanced phase"@en ;
+    meta:hasPriority "High" ;
+    meta:hasTestCase ai4se:TC_LifecycleMetrics .
+
+#=============================================================================
+# SECTION 10: DISJOINTNESS AXIOMS FOR LIFECYCLE
+#=============================================================================
+
+[ a owl:AllDisjointClasses ;
+  owl:members ( ai4se:RequirementsIntelligence
+                ai4se:DesignIntelligence
+                ai4se:CodingIntelligence
+                ai4se:TestingIntelligence
+                ai4se:DeploymentIntelligence
+                ai4se:MaintenanceIntelligence ) ] .
+
+[ a owl:AllDisjointClasses ;
+  owl:members ( ai4se:CodeSynthesizer
+                ai4se:CodeCompleter
+                ai4se:CodeTranslator
+                ai4se:RefactoringAssistant
+                ai4se:CodeReviewer
+                ai4se:BugFixer ) ] .
+
+#=============================================================================
+# END OF LIFECYCLE MODULE
+#=============================================================================

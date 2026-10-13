@@ -1,0 +1,557 @@
+@prefix ai4se: <http://www.semanticweb.org/ontologies/2025/AI4SE#> .
+@prefix o4se: <http://www.semanticweb.org/ontologies/2025/O4SE#> .
+@prefix ai: <http://example.org/o4ai#> .
+@prefix meta: <http://example.org/ontology-engineering#> .
+@prefix qc: <http://example.org/quality#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+
+#=============================================================================
+# AI4SE - AI TOOLS AND INFRASTRUCTURE FOR SOFTWARE ENGINEERING  
+# MODULE 4: TOOLS, PLATFORMS, FRAMEWORKS AND INFRASTRUCTURE
+#=============================================================================
+# This module defines AI-powered tools, platforms, development environments,
+# and infrastructure components for software engineering.
+#=============================================================================
+
+<http://www.semanticweb.org/ontologies/2025/AI4SE/Infrastructure> rdf:type owl:Ontology ;
+    owl:imports <http://www.semanticweb.org/ontologies/2025/AI4SE> ;
+    dcterms:title "AI4SE Infrastructure - Tools and Platforms"@en ;
+    dcterms:created "2025-10-27"^^xsd:date ;
+    dcterms:description "Comprehensive representation of AI tools, platforms, and infrastructure for software engineering"@en .
+
+#=============================================================================
+# SECTION 1: AI-POWERED DEVELOPMENT TOOLS
+#=============================================================================
+
+# --- Core AI Tool Categories ---
+
+ai4se:AIPoweredTool a owl:Class ;
+    rdfs:label "AI-Powered Tool"@en ;
+    rdfs:comment "Software tool enhanced with AI capabilities"@en ;
+    rdfs:subClassOf ai4se:AI4SESSystem ,
+                    o4se:DevelopmentTool ;
+    skos:definition "Development tool that leverages AI to assist software engineering tasks"@en .
+
+ai4se:IntelligentIDE a owl:Class ;
+    rdfs:label "Intelligent IDE"@en ;
+    rdfs:comment "Integrated Development Environment with AI features"@en ;
+    rdfs:subClassOf ai4se:AIPoweredTool ,
+                    o4se:IDE ;
+    owl:equivalentClass ai4se:AIEnhancedDevelopmentEnvironment .
+
+ai4se:AICodeEditor a owl:Class ;
+    rdfs:label "AI Code Editor"@en ;
+    rdfs:comment "Code editor with AI-powered features"@en ;
+    rdfs:subClassOf ai4se:AIPoweredTool ,
+                    o4se:CodeEditor .
+
+ai4se:IntelligentDebugger a owl:Class ;
+    rdfs:label "Intelligent Debugger"@en ;
+    rdfs:comment "Debugger enhanced with AI analysis"@en ;
+    rdfs:subClassOf ai4se:AIPoweredTool ,
+                    o4se:Debugger .
+
+ai4se:AIProfiler a owl:Class ;
+    rdfs:label "AI Profiler"@en ;
+    rdfs:comment "Performance profiler with AI insights"@en ;
+    rdfs:subClassOf ai4se:AIPoweredTool ,
+                    o4se:Profiler .
+
+ai4se:SmartVersionControl a owl:Class ;
+    rdfs:label "Smart Version Control"@en ;
+    rdfs:comment "Version control system with AI features"@en ;
+    rdfs:subClassOf ai4se:AIPoweredTool ,
+                    o4se:VersionControlSystem .
+
+# --- Specialized AI Tools ---
+
+ai4se:CodeCompletionTool a owl:Class ;
+    rdfs:label "Code Completion Tool"@en ;
+    rdfs:comment "Tool providing AI-powered code completion"@en ;
+    rdfs:subClassOf ai4se:AIPoweredTool ;
+    skos:example "GitHub Copilot"@en , "TabNine"@en .
+
+ai4se:CodeAnalysisTool a owl:Class ;
+    rdfs:label "Code Analysis Tool"@en ;
+    rdfs:comment "Tool for AI-driven code analysis"@en ;
+    rdfs:subClassOf ai4se:AIPoweredTool ;
+    skos:example "DeepCode"@en , "CodeGuru"@en .
+
+ai4se:TestGenerationTool a owl:Class ;
+    rdfs:label "Test Generation Tool"@en ;
+    rdfs:comment "Tool for automatic test generation"@en ;
+    rdfs:subClassOf ai4se:AIPoweredTool ;
+    skos:example "Diffblue Cover"@en , "EvoSuite"@en .
+
+ai4se:DocumentationTool a owl:Class ;
+    rdfs:label "Documentation Tool"@en ;
+    rdfs:comment "Tool for AI-assisted documentation"@en ;
+    rdfs:subClassOf ai4se:AIPoweredTool ;
+    skos:example "Mintlify"@en , "Kite"@en .
+
+ai4se:SecurityAnalysisTool a owl:Class ;
+    rdfs:label "Security Analysis Tool"@en ;
+    rdfs:comment "Tool for AI-powered security analysis"@en ;
+    rdfs:subClassOf ai4se:AIPoweredTool ;
+    skos:example "Snyk"@en , "GitGuardian"@en .
+
+ai4se:PerformanceOptimizationTool a owl:Class ;
+    rdfs:label "Performance Optimization Tool"@en ;
+    rdfs:comment "Tool for AI-driven performance optimization"@en ;
+    rdfs:subClassOf ai4se:AIPoweredTool .
+
+#=============================================================================
+# SECTION 2: AI PLATFORMS AND FRAMEWORKS
+#=============================================================================
+
+# --- AI Development Platforms ---
+
+ai4se:AIDevelopmentPlatform a owl:Class ;
+    rdfs:label "AI Development Platform"@en ;
+    rdfs:comment "Platform for developing AI-enhanced software"@en ;
+    rdfs:subClassOf ai4se:IntelligentSoftwareEngineeringPlatform ,
+                    o4se:DevelopmentPlatform ;
+    skos:definition "Integrated platform providing AI capabilities for software development"@en .
+
+ai4se:MLOpsPlatform a owl:Class ;
+    rdfs:label "MLOps Platform"@en ;
+    rdfs:comment "Platform for ML operations in software engineering"@en ;
+    rdfs:subClassOf ai4se:AIDevelopmentPlatform ;
+    skos:example "MLflow"@en , "Kubeflow"@en , "SageMaker"@en .
+
+ai4se:AutoMLPlatform a owl:Class ;
+    rdfs:label "AutoML Platform"@en ;
+    rdfs:comment "Platform for automated machine learning"@en ;
+    rdfs:subClassOf ai4se:AIDevelopmentPlatform ;
+    skos:example "AutoML"@en , "H2O.ai"@en .
+
+ai4se:AIAssistedCodingPlatform a owl:Class ;
+    rdfs:label "AI-Assisted Coding Platform"@en ;
+    rdfs:comment "Platform providing AI assistance for coding"@en ;
+    rdfs:subClassOf ai4se:AIDevelopmentPlatform .
+
+ai4se:NeuralArchitectureSearchPlatform a owl:Class ;
+    rdfs:label "Neural Architecture Search Platform"@en ;
+    rdfs:comment "Platform for automated neural network design"@en ;
+    rdfs:subClassOf ai4se:AIDevelopmentPlatform .
+
+# --- AI Frameworks ---
+
+ai4se:AIFramework a owl:Class ;
+    rdfs:label "AI Framework"@en ;
+    rdfs:comment "Software framework for building AI applications"@en ;
+    rdfs:subClassOf o4se:Framework ;
+    skos:definition "Reusable framework providing AI functionality"@en .
+
+ai4se:DeepLearningFramework a owl:Class ;
+    rdfs:label "Deep Learning Framework"@en ;
+    rdfs:comment "Framework for deep learning development"@en ;
+    rdfs:subClassOf ai4se:AIFramework ;
+    skos:example "TensorFlow"@en , "PyTorch"@en , "Keras"@en .
+
+ai4se:NLPFramework a owl:Class ;
+    rdfs:label "NLP Framework"@en ;
+    rdfs:comment "Framework for natural language processing"@en ;
+    rdfs:subClassOf ai4se:AIFramework ;
+    skos:example "spaCy"@en , "NLTK"@en , "Transformers"@en .
+
+ai4se:ComputerVisionFramework a owl:Class ;
+    rdfs:label "Computer Vision Framework"@en ;
+    rdfs:comment "Framework for computer vision applications"@en ;
+    rdfs:subClassOf ai4se:AIFramework ;
+    skos:example "OpenCV"@en , "YOLO"@en .
+
+ai4se:ReinforcementLearningFramework a owl:Class ;
+    rdfs:label "Reinforcement Learning Framework"@en ;
+    rdfs:comment "Framework for reinforcement learning"@en ;
+    rdfs:subClassOf ai4se:AIFramework ;
+    skos:example "OpenAI Gym"@en , "Stable Baselines"@en .
+
+#=============================================================================
+# SECTION 3: AI INFRASTRUCTURE COMPONENTS
+#=============================================================================
+
+# --- Computational Infrastructure ---
+
+ai4se:AIInfrastructure a owl:Class ;
+    rdfs:label "AI Infrastructure"@en ;
+    rdfs:comment "Infrastructure supporting AI-enhanced SE"@en ;
+    rdfs:subClassOf ai:ComputationalInfrastructure ;
+    skos:definition "Hardware and software infrastructure for AI4SE systems"@en .
+
+ai4se:GPUCluster a owl:Class ;
+    rdfs:label "GPU Cluster"@en ;
+    rdfs:comment "GPU cluster for AI computation"@en ;
+    rdfs:subClassOf ai4se:AIInfrastructure ,
+                    ai:GPUInfrastructure .
+
+ai4se:TPUInfrastructure a owl:Class ;
+    rdfs:label "TPU Infrastructure"@en ;
+    rdfs:comment "Tensor Processing Unit infrastructure"@en ;
+    rdfs:subClassOf ai4se:AIInfrastructure .
+
+ai4se:EdgeComputingInfrastructure a owl:Class ;
+    rdfs:label "Edge Computing Infrastructure"@en ;
+    rdfs:comment "Edge computing for distributed AI"@en ;
+    rdfs:subClassOf ai4se:AIInfrastructure .
+
+ai4se:CloudAIInfrastructure a owl:Class ;
+    rdfs:label "Cloud AI Infrastructure"@en ;
+    rdfs:comment "Cloud-based AI infrastructure"@en ;
+    rdfs:subClassOf ai4se:AIInfrastructure ,
+                    o4se:CloudInfrastructure .
+
+ai4se:HybridInfrastructure a owl:Class ;
+    rdfs:label "Hybrid Infrastructure"@en ;
+    rdfs:comment "Hybrid cloud-edge AI infrastructure"@en ;
+    rdfs:subClassOf ai4se:AIInfrastructure .
+
+# --- Data Infrastructure ---
+
+ai4se:DataInfrastructure a owl:Class ;
+    rdfs:label "Data Infrastructure"@en ;
+    rdfs:comment "Infrastructure for AI training data"@en ;
+    rdfs:subClassOf ai4se:AIInfrastructure ;
+    skos:definition "Storage and processing infrastructure for AI datasets"@en .
+
+ai4se:DataLake a owl:Class ;
+    rdfs:label "Data Lake"@en ;
+    rdfs:comment "Large-scale data storage for AI"@en ;
+    rdfs:subClassOf ai4se:DataInfrastructure ,
+                    dcat:Dataset .
+
+ai4se:FeatureStore a owl:Class ;
+    rdfs:label "Feature Store"@en ;
+    rdfs:comment "Centralized repository for ML features"@en ;
+    rdfs:subClassOf ai4se:DataInfrastructure .
+
+ai4se:DataPipeline a owl:Class ;
+    rdfs:label "Data Pipeline"@en ;
+    rdfs:comment "Pipeline for data processing and transformation"@en ;
+    rdfs:subClassOf ai4se:DataInfrastructure .
+
+ai4se:ModelRegistry a owl:Class ;
+    rdfs:label "Model Registry"@en ;
+    rdfs:comment "Registry for AI model versions"@en ;
+    rdfs:subClassOf ai4se:DataInfrastructure .
+
+#=============================================================================
+# SECTION 4: AI SERVICES AND APIS
+#=============================================================================
+
+# --- AI Services ---
+
+ai4se:AIService a owl:Class ;
+    rdfs:label "AI Service"@en ;
+    rdfs:comment "Service providing AI capabilities"@en ;
+    rdfs:subClassOf ai4se:AI4SESSystem ,
+                    o4se:WebService ;
+    skos:definition "Web service offering AI functionality for SE"@en .
+
+ai4se:CodeGenerationService a owl:Class ;
+    rdfs:label "Code Generation Service"@en ;
+    rdfs:comment "Service for AI-powered code generation"@en ;
+    rdfs:subClassOf ai4se:AIService ;
+    skos:example "OpenAI Codex"@en , "Amazon CodeWhisperer"@en .
+
+ai4se:CodeReviewService a owl:Class ;
+    rdfs:label "Code Review Service"@en ;
+    rdfs:comment "Service for automated code review"@en ;
+    rdfs:subClassOf ai4se:AIService .
+
+ai4se:BugDetectionService a owl:Class ;
+    rdfs:label "Bug Detection Service"@en ;
+    rdfs:comment "Service for AI-powered bug detection"@en ;
+    rdfs:subClassOf ai4se:AIService .
+
+ai4se:PerformancePredictionService a owl:Class ;
+    rdfs:label "Performance Prediction Service"@en ;
+    rdfs:comment "Service predicting software performance"@en ;
+    rdfs:subClassOf ai4se:AIService .
+
+ai4se:SecurityScanningService a owl:Class ;
+    rdfs:label "Security Scanning Service"@en ;
+    rdfs:comment "Service for security vulnerability scanning"@en ;
+    rdfs:subClassOf ai4se:AIService .
+
+# --- AI APIs ---
+
+ai4se:AIAPI a owl:Class ;
+    rdfs:label "AI API"@en ;
+    rdfs:comment "API providing AI functionality"@en ;
+    rdfs:subClassOf o4se:API ;
+    skos:definition "Application Programming Interface for AI services"@en .
+
+ai4se:LanguageModelAPI a owl:Class ;
+    rdfs:label "Language Model API"@en ;
+    rdfs:comment "API for large language models"@en ;
+    rdfs:subClassOf ai4se:AIAPI ;
+    skos:example "GPT API"@en , "Claude API"@en .
+
+ai4se:ComputerVisionAPI a owl:Class ;
+    rdfs:label "Computer Vision API"@en ;
+    rdfs:comment "API for computer vision services"@en ;
+    rdfs:subClassOf ai4se:AIAPI .
+
+ai4se:PredictiveAnalyticsAPI a owl:Class ;
+    rdfs:label "Predictive Analytics API"@en ;
+    rdfs:comment "API for predictive analytics"@en ;
+    rdfs:subClassOf ai4se:AIAPI .
+
+#=============================================================================
+# SECTION 5: DEVELOPMENT ENVIRONMENTS
+#=============================================================================
+
+# --- Cloud Development Environments ---
+
+ai4se:CloudDevelopmentEnvironment a owl:Class ;
+    rdfs:label "Cloud Development Environment"@en ;
+    rdfs:comment "Cloud-based AI development environment"@en ;
+    rdfs:subClassOf ai4se:AIEnhancedDevelopmentEnvironment ,
+                    o4se:CloudIDE ;
+    skos:example "GitHub Codespaces"@en , "Gitpod"@en .
+
+ai4se:CollaborativeAIEnvironment a owl:Class ;
+    rdfs:label "Collaborative AI Environment"@en ;
+    rdfs:comment "Environment for collaborative AI development"@en ;
+    rdfs:subClassOf ai4se:CloudDevelopmentEnvironment ;
+    skos:example "Google Colab"@en , "Deepnote"@en .
+
+ai4se:NotebookEnvironment a owl:Class ;
+    rdfs:label "Notebook Environment"@en ;
+    rdfs:comment "Interactive notebook for AI development"@en ;
+    rdfs:subClassOf ai4se:AIEnhancedDevelopmentEnvironment ;
+    skos:example "Jupyter"@en , "Databricks"@en .
+
+# --- Specialized Environments ---
+
+ai4se:LowCodeAIEnvironment a owl:Class ;
+    rdfs:label "Low-Code AI Environment"@en ;
+    rdfs:comment "Low-code environment for AI development"@en ;
+    rdfs:subClassOf ai4se:AIEnhancedDevelopmentEnvironment ,
+                    o4se:LowCodePlatform .
+
+ai4se:NoCodeAIEnvironment a owl:Class ;
+    rdfs:label "No-Code AI Environment"@en ;
+    rdfs:comment "No-code environment for AI applications"@en ;
+    rdfs:subClassOf ai4se:AIEnhancedDevelopmentEnvironment ,
+                    o4se:NoCodePlatform .
+
+ai4se:VisualProgrammingEnvironment a owl:Class ;
+    rdfs:label "Visual Programming Environment"@en ;
+    rdfs:comment "Visual environment for AI workflow design"@en ;
+    rdfs:subClassOf ai4se:AIEnhancedDevelopmentEnvironment .
+
+#=============================================================================
+# SECTION 6: TOOL INTEGRATION AND ECOSYSTEMS
+#=============================================================================
+
+# --- Tool Integration ---
+
+ai4se:ToolIntegration a owl:Class ;
+    rdfs:label "Tool Integration"@en ;
+    rdfs:comment "Integration between AI tools"@en ;
+    rdfs:subClassOf meta:Integration ;
+    skos:definition "Mechanism for integrating multiple AI tools"@en .
+
+ai4se:PluginSystem a owl:Class ;
+    rdfs:label "Plugin System"@en ;
+    rdfs:comment "Plugin system for AI tool extensions"@en ;
+    rdfs:subClassOf ai4se:ToolIntegration ,
+                    o4se:PluginArchitecture .
+
+ai4se:ToolChain a owl:Class ;
+    rdfs:label "Tool Chain"@en ;
+    rdfs:comment "Chain of integrated AI tools"@en ;
+    rdfs:subClassOf ai4se:ToolIntegration .
+
+ai4se:APIIntegration a owl:Class ;
+    rdfs:label "API Integration"@en ;
+    rdfs:comment "Integration through APIs"@en ;
+    rdfs:subClassOf ai4se:ToolIntegration .
+
+# --- Tool Ecosystems ---
+
+ai4se:ToolEcosystem a owl:Class ;
+    rdfs:label "Tool Ecosystem"@en ;
+    rdfs:comment "Ecosystem of AI development tools"@en ;
+    rdfs:subClassOf meta:Ecosystem ;
+    skos:definition "Collection of interoperable AI tools"@en .
+
+ai4se:IDEEcosystem a owl:Class ;
+    rdfs:label "IDE Ecosystem"@en ;
+    rdfs:comment "Ecosystem around an AI-enhanced IDE"@en ;
+    rdfs:subClassOf ai4se:ToolEcosystem ;
+    skos:example "VS Code ecosystem"@en , "IntelliJ ecosystem"@en .
+
+ai4se:CloudEcosystem a owl:Class ;
+    rdfs:label "Cloud Ecosystem"@en ;
+    rdfs:comment "Cloud-based AI tool ecosystem"@en ;
+    rdfs:subClassOf ai4se:ToolEcosystem ;
+    skos:example "AWS AI ecosystem"@en , "Azure AI ecosystem"@en .
+
+#=============================================================================
+# SECTION 7: INFRASTRUCTURE PROPERTIES
+#=============================================================================
+
+# --- Object Properties ---
+
+ai4se:providesTool a owl:ObjectProperty ;
+    rdfs:label "provides tool"@en ;
+    rdfs:comment "Platform provides AI tool"@en ;
+    rdfs:domain ai4se:AIDevelopmentPlatform ;
+    rdfs:range ai4se:AIPoweredTool .
+
+ai4se:hostsService a owl:ObjectProperty ;
+    rdfs:label "hosts service"@en ;
+    rdfs:comment "Infrastructure hosts AI service"@en ;
+    rdfs:domain ai4se:AIInfrastructure ;
+    rdfs:range ai4se:AIService .
+
+ai4se:integratesWith a owl:ObjectProperty ;
+    rdfs:label "integrates with"@en ;
+    rdfs:comment "Tool integrates with another tool"@en ;
+    rdfs:domain ai4se:AIPoweredTool ;
+    rdfs:range ai4se:AIPoweredTool ;
+    owl:SymmetricProperty .
+
+ai4se:supportsFramework a owl:ObjectProperty ;
+    rdfs:label "supports framework"@en ;
+    rdfs:comment "Platform supports AI framework"@en ;
+    rdfs:domain ai4se:AIDevelopmentPlatform ;
+    rdfs:range ai4se:AIFramework .
+
+ai4se:requiresInfrastructure a owl:ObjectProperty ;
+    rdfs:label "requires infrastructure"@en ;
+    rdfs:comment "Tool requires specific infrastructure"@en ;
+    rdfs:domain ai4se:AIPoweredTool ;
+    rdfs:range ai4se:AIInfrastructure .
+
+ai4se:exposesAPI a owl:ObjectProperty ;
+    rdfs:label "exposes API"@en ;
+    rdfs:comment "Service exposes API"@en ;
+    rdfs:domain ai4se:AIService ;
+    rdfs:range ai4se:AIAPI .
+
+ai4se:consumesAPI a owl:ObjectProperty ;
+    rdfs:label "consumes API"@en ;
+    rdfs:comment "Tool consumes API"@en ;
+    rdfs:domain ai4se:AIPoweredTool ;
+    rdfs:range ai4se:AIAPI .
+
+# --- Data Properties ---
+
+ai4se:computeCapacity a owl:DatatypeProperty ;
+    rdfs:label "compute capacity"@en ;
+    rdfs:comment "Computational capacity (TFLOPS)"@en ;
+    rdfs:domain ai4se:AIInfrastructure ;
+    rdfs:range xsd:decimal .
+
+ai4se:storageCapacity a owl:DatatypeProperty ;
+    rdfs:label "storage capacity"@en ;
+    rdfs:comment "Storage capacity (TB)"@en ;
+    rdfs:domain ai4se:DataInfrastructure ;
+    rdfs:range xsd:decimal .
+
+ai4se:apiLatency a owl:DatatypeProperty ;
+    rdfs:label "API latency"@en ;
+    rdfs:comment "API response latency (ms)"@en ;
+    rdfs:domain ai4se:AIAPI ;
+    rdfs:range xsd:decimal .
+
+ai4se:toolVersion a owl:DatatypeProperty ;
+    rdfs:label "tool version"@en ;
+    rdfs:comment "Version of AI tool"@en ;
+    rdfs:domain ai4se:AIPoweredTool ;
+    rdfs:range xsd:string .
+
+ai4se:platformLicense a owl:DatatypeProperty ;
+    rdfs:label "platform license"@en ;
+    rdfs:comment "License type of platform"@en ;
+    rdfs:domain ai4se:AIDevelopmentPlatform ;
+    rdfs:range xsd:string .
+
+ai4se:maxConcurrentUsers a owl:DatatypeProperty ;
+    rdfs:label "max concurrent users"@en ;
+    rdfs:comment "Maximum concurrent users supported"@en ;
+    rdfs:domain ai4se:CloudDevelopmentEnvironment ;
+    rdfs:range xsd:integer .
+
+#=============================================================================
+# SECTION 8: COMPETENCY QUESTIONS FOR INFRASTRUCTURE
+#=============================================================================
+
+ai4se:CQ_Infra1 a meta:CompetencyQuestion ;
+    rdfs:label "What tools are available for AI code generation?"@en ;
+    meta:hasVerificationQuery """
+        SELECT ?tool WHERE {
+            ?tool rdfs:subClassOf ai4se:CodeGenerationService .
+        }
+    """ .
+
+ai4se:CQ_Infra2 a meta:CompetencyQuestion ;
+    rdfs:label "Which platforms support AutoML?"@en ;
+    meta:hasVerificationQuery """
+        SELECT ?platform WHERE {
+            ?platform rdfs:subClassOf ai4se:AutoMLPlatform .
+        }
+    """ .
+
+ai4se:CQ_Infra3 a meta:CompetencyQuestion ;
+    rdfs:label "What infrastructure is required for deep learning?"@en ;
+    meta:hasVerificationQuery """
+        SELECT ?infra ?framework WHERE {
+            ?framework rdfs:subClassOf ai4se:DeepLearningFramework .
+            ?framework ai4se:requiresInfrastructure ?infra .
+        }
+    """ .
+
+#=============================================================================
+# SECTION 9: FUNCTIONAL REQUIREMENTS FOR INFRASTRUCTURE
+#=============================================================================
+
+ai4se:FR_Infra1 a meta:FunctionalRequirement ;
+    rdfs:label "Tool Interoperability"@en ;
+    rdfs:comment "AI tools must integrate with existing SE tools"@en ;
+    meta:hasPriority "Critical" ;
+    meta:hasTestCase ai4se:TC_ToolInterop .
+
+ai4se:FR_Infra2 a meta:FunctionalRequirement ;
+    rdfs:label "Scalable Infrastructure"@en ;
+    rdfs:comment "Infrastructure must scale with demand"@en ;
+    meta:hasPriority "High" ;
+    meta:hasTestCase ai4se:TC_Scalability .
+
+ai4se:FR_Infra3 a meta:FunctionalRequirement ;
+    rdfs:label "API Availability"@en ;
+    rdfs:comment "Services must provide stable APIs"@en ;
+    meta:hasPriority "High" ;
+    meta:hasTestCase ai4se:TC_APIAvailability .
+
+#=============================================================================
+# SECTION 10: DISJOINTNESS AXIOMS FOR INFRASTRUCTURE
+#=============================================================================
+
+[ a owl:AllDisjointClasses ;
+  owl:members ( ai4se:AIPoweredTool
+                ai4se:AIDevelopmentPlatform
+                ai4se:AIFramework
+                ai4se:AIInfrastructure
+                ai4se:AIService ) ] .
+
+[ a owl:AllDisjointClasses ;
+  owl:members ( ai4se:GPUCluster
+                ai4se:TPUInfrastructure
+                ai4se:EdgeComputingInfrastructure
+                ai4se:CloudAIInfrastructure ) ] .
+
+#=============================================================================
+# END OF INFRASTRUCTURE MODULE
+#=============================================================================

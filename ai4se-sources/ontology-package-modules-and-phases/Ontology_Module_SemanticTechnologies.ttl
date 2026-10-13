@@ -1,0 +1,406 @@
+@prefix : <http://ai4se.org/ontology/v4#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#################################################################
+#    MODULE: SEMANTIC TECHNOLOGIES
+#################################################################
+
+:SemanticTechnologiesModule rdf:type owl:Ontology ;
+    dcterms:title "Semantic Technologies Module"@en ;
+    dcterms:description "Comprehensive ontology covering semantic web technologies, triple stores, SPARQL, knowledge graphs, and practical implementation for AI4SE systems"@en ;
+    dcterms:created "2025-11-17"^^xsd:date ;
+    dcterms:creator "AI4SE Research Team"@en ;
+    :hasBookReference "Chapter 15, Part 2.5: Practical Semantic Technology Implementation"^^xsd:string ;
+    :moduleVersion "1.0"^^xsd:string ;
+    owl:versionInfo "Initial release with stack configuration, query optimization, and CI/CD integration" .
+
+#################################################################
+#    CLASSES
+#################################################################
+
+# Top-Level Semantic Technology Concept
+:SemanticTechnologyConcept rdf:type owl:Class ;
+    rdfs:subClassOf :AI4SEConcept ;
+    rdfs:label "Semantic Technology Concept"@en ;
+    skos:definition "Any concept related to semantic web technologies, RDF, OWL, SPARQL, knowledge graphs, and their application in AI4SE"@en ;
+    :hasBookReference "Chapter 15"^^xsd:string ;
+    :hasV4ID "V4_NEW_120"^^xsd:string .
+
+# Technology Stack
+
+:SemanticTechnologyStack rdf:type owl:Class ;
+    rdfs:subClassOf :SemanticTechnologyConcept ;
+    rdfs:label "Semantic Technology Stack"@en ;
+    skos:definition "Layered architecture of semantic technologies including data layer (ontologies), storage (triple store), query (SPARQL endpoint), and application layers"@en ;
+    skos:example "Data: OWL ontologies → Storage: Apache Jena Fuseki → Query: SPARQL endpoint → Application: Python RDFLib client"@en ;
+    :hasBookReference "Chapter 15, Part 2.5, Setting Up"^^xsd:string ;
+    :hasV4ID "V4_NEW_121"^^xsd:string ;
+    :hasLayer :DataLayer ;
+    :hasLayer :StorageLayer ;
+    :hasLayer :QueryLayer ;
+    :hasLayer :ApplicationLayer .
+
+:DataLayer rdf:type owl:Class ;
+    rdfs:subClassOf :SemanticTechnologyStack ;
+    rdfs:label "Data Layer"@en ;
+    skos:definition "Bottom layer containing ontologies and knowledge graph data in RDF/OWL formats"@en ;
+    :hasV4ID "V4_NEW_122"^^xsd:string .
+
+:StorageLayer rdf:type owl:Class ;
+    rdfs:subClassOf :SemanticTechnologyStack ;
+    rdfs:label "Storage Layer"@en ;
+    skos:definition "Triple store database managing RDF triples with indexing and persistence"@en ;
+    :hasV4ID "V4_NEW_123"^^xsd:string .
+
+:QueryLayer rdf:type owl:Class ;
+    rdfs:subClassOf :SemanticTechnologyStack ;
+    rdfs:label "Query Layer"@en ;
+    skos:definition "SPARQL endpoint providing query and update interface to knowledge graph"@en ;
+    :hasV4ID "V4_NEW_124"^^xsd:string .
+
+:ApplicationLayer rdf:type owl:Class ;
+    rdfs:subClassOf :SemanticTechnologyStack ;
+    rdfs:label "Application Layer"@en ;
+    skos:definition "Tools, IDEs, and applications consuming semantic data via APIs"@en ;
+    :hasV4ID "V4_NEW_125"^^xsd:string .
+
+# Core Technologies
+
+:TripleStore rdf:type owl:Class ;
+    rdfs:subClassOf :SemanticTechnologyConcept ;
+    rdfs:label "Triple Store"@en ;
+    skos:definition "Purpose-built database for storing and retrieving RDF triples with optimized indexing for subject-predicate-object queries"@en ;
+    skos:example "Apache Jena Fuseki, GraphDB, Blazegraph, Amazon Neptune"@en ;
+    :hasBookReference "Chapter 15, Part 2.5"^^xsd:string ;
+    :hasV4ID "V4_NEW_126"^^xsd:string ;
+    :stores :RDFTriple .
+
+:SPARQLEndpoint rdf:type owl:Class ;
+    rdfs:subClassOf :SemanticTechnologyConcept ;
+    rdfs:label "SPARQL Endpoint"@en ;
+    skos:definition "HTTP-based service providing SPARQL query and update interface to RDF data"@en ;
+    skos:example "http://localhost:3030/ai4se/sparql accepting SPARQL queries via POST"@en ;
+    :hasBookReference "Chapter 15, Part 2.5"^^xsd:string ;
+    :hasV4ID "V4_NEW_127"^^xsd:string ;
+    :acceptsQueryLanguage :SPARQL .
+
+:RDFTriple rdf:type owl:Class ;
+    rdfs:subClassOf :SemanticTechnologyConcept ;
+    rdfs:label "RDF Triple"@en ;
+    skos:definition "Fundamental unit of semantic data: subject-predicate-object statement"@en ;
+    skos:example "<:TestAutomation> <:hasROI> '300%' - subject: TestAutomation, predicate: hasROI, object: '300%'"@en ;
+    :hasV4ID "V4_NEW_128"^^xsd:string .
+
+:SPARQL rdf:type owl:Class ;
+    rdfs:subClassOf :QueryLanguage ;
+    rdfs:label "SPARQL"@en ;
+    skos:definition "W3C standard query language for RDF data, providing pattern matching, filtering, aggregation, and reasoning capabilities"@en ;
+    skos:example "SELECT ?technique WHERE { ?technique rdf:type ai4se:TestingTechnique . FILTER(?technique != ai4se:UnitTesting) }"@en ;
+    :hasBookReference "Chapter 15, Part 2.5"^^xsd:string ;
+    :hasV4ID "V4_NEW_129"^^xsd:string ;
+    :hasVersion "SPARQL 1.1"^^xsd:string .
+
+# Query Patterns
+
+:SPARQLQueryPattern rdf:type owl:Class ;
+    rdfs:subClassOf :SemanticTechnologyConcept ;
+    rdfs:label "SPARQL Query Pattern"@en ;
+    skos:definition "Common SPARQL query structure for specific AI4SE use case"@en ;
+    :hasBookReference "Chapter 15, Part 2.5, 10 Practical Queries"^^xsd:string ;
+    :hasV4ID "V4_NEW_130"^^xsd:string .
+
+:TechniqueDiscoveryQuery rdf:type owl:Class ;
+    rdfs:subClassOf :SPARQLQueryPattern ;
+    rdfs:label "Technique Discovery Query"@en ;
+    skos:definition "SPARQL query to find applicable techniques for given technology or context"@en ;
+    skos:example "Find all testing techniques for Python microservices"@en ;
+    :hasV4ID "V4_NEW_131"^^xsd:string .
+
+:PrerequisiteQuery rdf:type owl:Class ;
+    rdfs:subClassOf :SPARQLQueryPattern ;
+    rdfs:label "Prerequisite Query"@en ;
+    skos:definition "Query to find prerequisites for implementing a technique"@en ;
+    :hasV4ID "V4_NEW_132"^^xsd:string .
+
+:ToolDiscoveryQuery rdf:type owl:Class ;
+    rdfs:subClassOf :SPARQLQueryPattern ;
+    rdfs:label "Tool Discovery Query"@en ;
+    skos:definition "Query to find tools implementing specific technique"@en ;
+    :hasV4ID "V4_NEW_133"^^xsd:string .
+
+:MaturityAssessmentQuery rdf:type owl:Class ;
+    rdfs:subClassOf :SPARQLQueryPattern ;
+    rdfs:label "Maturity Assessment Query"@en ;
+    skos:definition "Query to calculate organizational maturity level"@en ;
+    :hasV4ID "V4_NEW_134"^^xsd:string .
+
+:ROICalculationQuery rdf:type owl:Class ;
+    rdfs:subClassOf :SPARQLQueryPattern ;
+    rdfs:label "ROI Calculation Query"@en ;
+    skos:definition "Query to retrieve ROI data for techniques"@en ;
+    :hasV4ID "V4_NEW_135"^^xsd:string .
+
+# Optimization
+
+:QueryOptimization rdf:type owl:Class ;
+    rdfs:subClassOf :SemanticTechnologyConcept ;
+    rdfs:label "Query Optimization"@en ;
+    skos:definition "Techniques for improving SPARQL query performance including indexing, caching, query rewriting"@en ;
+    skos:note "Well-optimized queries can be 10-100x faster than naive queries"@en ;
+    :hasBookReference "Chapter 15, Part 2.5, Performance Optimization"^^xsd:string ;
+    :hasV4ID "V4_NEW_136"^^xsd:string .
+
+:IndexStrategy rdf:type owl:Class ;
+    rdfs:subClassOf :QueryOptimization ;
+    rdfs:label "Index Strategy"@en ;
+    skos:definition "Approach to indexing RDF triples for fast query performance"@en ;
+    skos:example "SPO, PSO, OSP index combinations for different query patterns"@en ;
+    :hasV4ID "V4_NEW_137"^^xsd:string .
+
+:CachingStrategy rdf:type owl:Class ;
+    rdfs:subClassOf :QueryOptimization ;
+    rdfs:label "Caching Strategy"@en ;
+    skos:definition "Caching frequently-accessed query results to reduce database load"@en ;
+    :hasV4ID "V4_NEW_138"^^xsd:string .
+
+:QueryRewriting rdf:type owl:Class ;
+    rdfs:subClassOf :QueryOptimization ;
+    rdfs:label "Query Rewriting"@en ;
+    skos:definition "Automatically transforming queries into more efficient forms"@en ;
+    skos:example "Push FILTER clauses down into WHERE patterns, use specific predicates instead of ?p"@en ;
+    :hasV4ID "V4_NEW_139"^^xsd:string .
+
+# Integration
+
+:CICDIntegration rdf:type owl:Class ;
+    rdfs:subClassOf :IntegrationPattern ;
+    rdfs:label "CI/CD Integration"@en ;
+    skos:definition "Integrating semantic technologies into continuous integration and deployment pipelines"@en ;
+    skos:example "Jenkins pipeline validates ontology syntax, runs reasoner, uploads to production triple store"@en ;
+    :hasBookReference "Chapter 15, Part 2.5, CI/CD Integration"^^xsd:string ;
+    :hasV4ID "V4_NEW_140"^^xsd:string .
+
+:OntologyValidationPipeline rdf:type owl:Class ;
+    rdfs:subClassOf :CICDIntegration ;
+    rdfs:label "Ontology Validation Pipeline"@en ;
+    skos:definition "CI/CD stage validating ontology syntax and consistency"@en ;
+    :hasV4ID "V4_NEW_141"^^xsd:string .
+
+:ReasoningPipeline rdf:type owl:Class ;
+    rdfs:subClassOf :CICDIntegration ;
+    rdfs:label "Reasoning Pipeline"@en ;
+    skos:definition "CI/CD stage running OWL reasoner to check for inconsistencies"@en ;
+    :hasV4ID "V4_NEW_142"^^xsd:string .
+
+:DocumentationGeneration rdf:type owl:Class ;
+    rdfs:subClassOf :CICDIntegration ;
+    rdfs:label "Documentation Generation"@en ;
+    skos:definition "Automatically generating API/ontology documentation from RDF"@en ;
+    :hasV4ID "V4_NEW_143"^^xsd:string .
+
+# Tools
+
+:SemanticTechnologyTool rdf:type owl:Class ;
+    rdfs:subClassOf :Tool ;
+    rdfs:label "Semantic Technology Tool"@en ;
+    skos:definition "Software tool for working with semantic technologies"@en ;
+    :hasBookReference "Chapter 15"^^xsd:string ;
+    :hasV4ID "V4_NEW_144"^^xsd:string .
+
+:ApacheJenaFuseki rdf:type owl:Class ;
+    rdfs:subClassOf :TripleStore ;
+    rdfs:label "Apache Jena Fuseki"@en ;
+    skos:definition "Open-source SPARQL server providing REST API and web UI"@en ;
+    :hasToolURL "https://jena.apache.org/documentation/fuseki2/"^^xsd:anyURI ;
+    :hasV4ID "V4_NEW_145"^^xsd:string .
+
+:GraphDB rdf:type owl:Class ;
+    rdfs:subClassOf :TripleStore ;
+    rdfs:label "GraphDB"@en ;
+    skos:definition "Enterprise semantic graph database with advanced reasoning"@en ;
+    :hasV4ID "V4_NEW_146"^^xsd:string .
+
+:RDFLib rdf:type owl:Class ;
+    rdfs:subClassOf :SemanticTechnologyTool ;
+    rdfs:label "RDFLib"@en ;
+    skos:definition "Python library for working with RDF"@en ;
+    :hasToolURL "https://rdflib.readthedocs.io/"^^xsd:anyURI ;
+    :supportsLanguage "Python"@en ;
+    :hasV4ID "V4_NEW_147"^^xsd:string .
+
+:SPARQLWrapper rdf:type owl:Class ;
+    rdfs:subClassOf :SemanticTechnologyTool ;
+    rdfs:label "SPARQLWrapper"@en ;
+    skos:definition "Python library for SPARQL endpoint interaction"@en ;
+    :supportsLanguage "Python"@en ;
+    :hasV4ID "V4_NEW_148"^^xsd:string .
+
+# Best Practices
+
+:SemanticTechnologyBestPractice rdf:type owl:Class ;
+    rdfs:subClassOf :BestPractice ;
+    rdfs:label "Semantic Technology Best Practice"@en ;
+    skos:definition "Recommended practice for implementing semantic technologies"@en ;
+    :hasBookReference "Chapter 15, Part 2.5"^^xsd:string ;
+    :hasV4ID "V4_NEW_149"^^xsd:string .
+
+:ValidateOntologyBeforeLoading rdf:type owl:Class ;
+    rdfs:subClassOf :SemanticTechnologyBestPractice ;
+    rdfs:label "Validate Ontology Before Loading"@en ;
+    skos:definition "Always validate ontology syntax and consistency before uploading to production"@en ;
+    :hasV4ID "V4_NEW_150"^^xsd:string .
+
+:IndexStrategically rdf:type owl:Class ;
+    rdfs:subClassOf :SemanticTechnologyBestPractice ;
+    rdfs:label "Index Strategically"@en ;
+    skos:definition "Focus indexing on frequently queried properties"@en ;
+    :hasV4ID "V4_NEW_151"^^xsd:string .
+
+:CacheIntelligently rdf:type owl:Class ;
+    rdfs:subClassOf :SemanticTechnologyBestPractice ;
+    rdfs:label "Cache Intelligently"@en ;
+    skos:definition "Cache query results, not raw data"@en ;
+    :hasV4ID "V4_NEW_152"^^xsd:string .
+
+:MonitorPerformance rdf:type owl:Class ;
+    rdfs:subClassOf :SemanticTechnologyBestPractice ;
+    rdfs:label "Monitor Performance"@en ;
+    skos:definition "Log slow queries and optimize iteratively"@en ;
+    :hasV4ID "V4_NEW_153"^^xsd:string .
+
+:VersionControlOntologies rdf:type owl:Class ;
+    rdfs:subClassOf :SemanticTechnologyBestPractice ;
+    rdfs:label "Version Control Ontologies"@en ;
+    skos:definition "Use Git for ontology versioning"@en ;
+    :hasV4ID "V4_NEW_154"^^xsd:string .
+
+#################################################################
+#    OBJECT PROPERTIES
+#################################################################
+
+:hasLayer rdf:type owl:ObjectProperty ;
+    rdfs:label "has layer"@en ;
+    rdfs:domain :SemanticTechnologyStack ;
+    rdfs:range owl:Class .
+
+:stores rdf:type owl:ObjectProperty ;
+    rdfs:label "stores"@en ;
+    rdfs:domain :TripleStore ;
+    rdfs:range :RDFTriple .
+
+:acceptsQueryLanguage rdf:type owl:ObjectProperty ;
+    rdfs:label "accepts query language"@en ;
+    rdfs:domain :SPARQLEndpoint ;
+    rdfs:range :QueryLanguage .
+
+:optimizedBy rdf:type owl:ObjectProperty ;
+    rdfs:label "optimized by"@en ;
+    rdfs:domain :SPARQLQueryPattern ;
+    rdfs:range :QueryOptimization .
+
+#################################################################
+#    DATA PROPERTIES
+#################################################################
+
+:hasVersion rdf:type owl:DatatypeProperty ;
+    rdfs:label "has version"@en ;
+    skos:definition "Version identifier for technology or standard"@en ;
+    rdfs:range xsd:string .
+
+:hasPerformanceImprovement rdf:type owl:DatatypeProperty ;
+    rdfs:label "has performance improvement"@en ;
+    skos:definition "Performance gain from optimization"@en ;
+    rdfs:range xsd:string .
+
+#################################################################
+#    INDIVIDUALS (Examples)
+#################################################################
+
+:ExampleSPARQLQuery1 rdf:type owl:NamedIndividual, :TechniqueDiscoveryQuery ;
+    rdfs:label "Find Testing Techniques for Python"@en ;
+    :hasSPARQLQuery """
+PREFIX ai4se: <http://ai4se.org/ontology/v4#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?technique ?label ?description
+WHERE {
+    ?technique rdf:type ai4se:TestingTechnique ;
+               rdfs:label ?label ;
+               skos:definition ?description ;
+               ai4se:applicableToTechnology "Python" .
+}
+ORDER BY ?label
+"""^^xsd:string .
+
+:ExampleSPARQLQuery2 rdf:type owl:NamedIndividual, :ToolDiscoveryQuery ;
+    rdfs:label "Find Mutation Testing Tools"@en ;
+    :hasSPARQLQuery """
+PREFIX ai4se: <http://ai4se.org/ontology/v4#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?tool ?label ?url
+WHERE {
+    ?tool ai4se:implements ai4se:MutationTesting ;
+          rdfs:label ?label .
+    OPTIONAL { ?tool ai4se:hasToolURL ?url }
+}
+ORDER BY ?label
+"""^^xsd:string .
+
+:FusekiInstance rdf:type owl:NamedIndividual, :ApacheJenaFuseki ;
+    rdfs:label "AI4SE Production Fuseki"@en ;
+    :hasEndpointURL "http://localhost:3030/ai4se/sparql"^^xsd:anyURI ;
+    :hasDatasetSize "50000"^^xsd:integer ;
+    skos:note "Production triple store for AI4SE knowledge graph"@en .
+
+#################################################################
+#    AXIOMS
+#################################################################
+
+# Every Semantic Technology Stack must have at least one layer
+:SemanticTechnologyStack rdfs:subClassOf [
+    rdf:type owl:Restriction ;
+    owl:onProperty :hasLayer ;
+    owl:minCardinality "1"^^xsd:nonNegativeInteger
+] .
+
+# Every Triple Store must store RDF triples
+:TripleStore rdfs:subClassOf [
+    rdf:type owl:Restriction ;
+    owl:onProperty :stores ;
+    owl:someValuesFrom :RDFTriple
+] .
+
+# Every SPARQL Endpoint accepts SPARQL
+:SPARQLEndpoint rdfs:subClassOf [
+    rdf:type owl:Restriction ;
+    owl:onProperty :acceptsQueryLanguage ;
+    owl:hasValue :SPARQL
+] .
+
+#################################################################
+#    DATA PROPERTY DEFINITIONS
+#################################################################
+
+:hasSPARQLQuery rdf:type owl:DatatypeProperty ;
+    rdfs:label "has SPARQL query"@en ;
+    skos:definition "Contains SPARQL query text"@en ;
+    rdfs:domain :SPARQLQueryPattern ;
+    rdfs:range xsd:string .
+
+:hasEndpointURL rdf:type owl:DatatypeProperty ;
+    rdfs:label "has endpoint URL"@en ;
+    skos:definition "URL of SPARQL endpoint"@en ;
+    rdfs:domain :SPARQLEndpoint ;
+    rdfs:range xsd:anyURI .
+
+:hasDatasetSize rdf:type owl:DatatypeProperty ;
+    rdfs:label "has dataset size"@en ;
+    skos:definition "Number of triples in dataset"@en ;
+    rdfs:domain :TripleStore ;
+    rdfs:range xsd:integer .

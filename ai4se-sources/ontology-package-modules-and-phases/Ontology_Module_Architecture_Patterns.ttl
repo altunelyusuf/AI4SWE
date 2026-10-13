@@ -1,0 +1,380 @@
+@prefix : <http://ai4se.org/ontology/v4#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#################################################################
+#    MODULE: ARCHITECTURE PATTERNS & DESIGN
+#################################################################
+
+:ArchitecturePatternsModule rdf:type owl:Ontology ;
+    dcterms:title "Architecture Patterns and Design Module"@en ;
+    dcterms:description "Comprehensive ontology of software architecture patterns, design patterns, and architectural styles for modern software systems"@en ;
+    dcterms:created "2025-11-17"^^xsd:date ;
+    :hasBookReference "Chapters 7-9: Design, Architecture"^^xsd:string ;
+    :moduleVersion "1.0"^^xsd:string ;
+    owl:versionInfo "Phase 3 expansion - architecture and design patterns" .
+
+#################################################################
+#    CLASSES
+#################################################################
+
+:ArchitectureConcept rdf:type owl:Class ;
+    rdfs:subClassOf :AI4SEConcept ;
+    rdfs:label "Architecture Concept"@en ;
+    skos:definition "Concept related to software architecture including patterns, styles, principles, and quality attributes"@en ;
+    :hasV4ID "V4_NEW_160"^^xsd:string .
+
+# Architectural Styles
+
+:ArchitecturalStyle rdf:type owl:Class ;
+    rdfs:subClassOf :ArchitectureConcept ;
+    rdfs:label "Architectural Style"@en ;
+    skos:definition "High-level structural organization pattern that defines system components and their interactions"@en ;
+    :hasV4ID "V4_NEW_161"^^xsd:string .
+
+:MicroservicesArchitecture rdf:type owl:Class ;
+    rdfs:subClassOf :ArchitecturalStyle ;
+    rdfs:label "Microservices Architecture"@en ;
+    skos:definition "Architectural style structuring application as collection of loosely coupled, independently deployable services"@en ;
+    skos:example "Netflix, Uber, Amazon decompose monoliths into 100s of microservices"@en ;
+    :hasBenefit "Independent deployment and scaling"@en ;
+    :hasBenefit "Technology diversity"@en ;
+    :hasBenefit "Fault isolation"@en ;
+    :hasChallenge "Distributed system complexity"@en ;
+    :hasChallenge "Data consistency"@en ;
+    :hasChallenge "Testing complexity"@en ;
+    :appropriateFor "Large-scale systems with multiple teams"@en ;
+    :requiresTechnique :ServiceMesh ;
+    :requiresTechnique :ContractTesting ;
+    :requiresTechnique :DistributedTracing ;
+    :hasV4ID "V4_NEW_162"^^xsd:string .
+
+:MonolithicArchitecture rdf:type owl:Class ;
+    rdfs:subClassOf :ArchitecturalStyle ;
+    rdfs:label "Monolithic Architecture"@en ;
+    skos:definition "Traditional unified architecture where all functionality in single deployable unit"@en ;
+    :hasBenefit "Simple to develop and deploy initially"@en ;
+    :hasBenefit "Easier to test end-to-end"@en ;
+    :hasChallenge "Difficult to scale"@en ;
+    :hasChallenge "Technology lock-in"@en ;
+    :appropriateFor "Small teams, simple applications, MVPs"@en ;
+    :hasV4ID "V4_NEW_163"^^xsd:string .
+
+:EventDrivenArchitecture rdf:type owl:Class ;
+    rdfs:subClassOf :ArchitecturalStyle ;
+    rdfs:label "Event-Driven Architecture"@en ;
+    skos:definition "Architecture where components communicate through events, enabling loose coupling and asynchronous processing"@en ;
+    skos:example "E-commerce: OrderPlaced event triggers inventory, shipping, notification services"@en ;
+    :hasBenefit "Loose coupling between services"@en ;
+    :hasBenefit "High scalability"@en ;
+    :hasBenefit "Real-time processing"@en ;
+    :requiresTechnology :MessageBroker ;
+    :usesTool :Kafka ;
+    :usesTool :RabbitMQ ;
+    :hasV4ID "V4_NEW_164"^^xsd:string .
+
+:ServerlessArchitecture rdf:type owl:Class ;
+    rdfs:subClassOf :ArchitecturalStyle ;
+    rdfs:label "Serverless Architecture"@en ;
+    skos:definition "Cloud-native architecture using Functions-as-a-Service, eliminating server management"@en ;
+    skos:example "AWS Lambda functions triggered by API Gateway for order processing"@en ;
+    :hasBenefit "No server management"@en ;
+    :hasBenefit "Pay-per-execution pricing"@en ;
+    :hasBenefit "Automatic scaling"@en ;
+    :hasChallenge "Cold start latency"@en ;
+    :hasChallenge "Vendor lock-in"@en ;
+    :hasChallenge "Limited execution time"@en ;
+    :hasV4ID "V4_NEW_165"^^xsd:string .
+
+:LayeredArchitecture rdf:type owl:Class ;
+    rdfs:subClassOf :ArchitecturalStyle ;
+    rdfs:label "Layered Architecture"@en ;
+    skos:definition "Hierarchical organization with presentation, business logic, data access, and database layers"@en ;
+    skos:note "Classic 3-tier or n-tier architecture"@en ;
+    :hasLayer :PresentationLayer ;
+    :hasLayer :BusinessLogicLayer ;
+    :hasLayer :DataAccessLayer ;
+    :hasV4ID "V4_NEW_166"^^xsd:string .
+
+:HexagonalArchitecture rdf:type owl:Class ;
+    rdfs:subClassOf :ArchitecturalStyle ;
+    rdfs:label "Hexagonal Architecture"@en ;
+    skos:definition "Ports and adapters pattern isolating core business logic from external concerns"@en ;
+    skos:altLabel "Ports and Adapters"@en ;
+    :hasBenefit "Technology-independent core"@en ;
+    :hasBenefit "Easy to test"@en ;
+    :hasBenefit "Flexible integration"@en ;
+    :hasV4ID "V4_NEW_167"^^xsd:string .
+
+# Design Patterns
+
+:DesignPattern rdf:type owl:Class ;
+    rdfs:subClassOf :ArchitectureConcept ;
+    rdfs:label "Design Pattern"@en ;
+    skos:definition "Reusable solution to commonly occurring problem in software design"@en ;
+    skos:note "Based on Gang of Four patterns and modern extensions"@en ;
+    :hasV4ID "V4_NEW_168"^^xsd:string .
+
+:CreationalPattern rdf:type owl:Class ;
+    rdfs:subClassOf :DesignPattern ;
+    rdfs:label "Creational Pattern"@en ;
+    skos:definition "Pattern dealing with object creation mechanisms"@en ;
+    :hasV4ID "V4_NEW_169"^^xsd:string .
+
+:SingletonPattern rdf:type owl:Class ;
+    rdfs:subClassOf :CreationalPattern ;
+    rdfs:label "Singleton Pattern"@en ;
+    skos:definition "Ensures class has only one instance and provides global access point"@en ;
+    skos:example "Database connection pool, configuration manager, logger"@en ;
+    :hasCodeExample """
+class DatabaseConnection {
+    private static instance: DatabaseConnection;
+    
+    private constructor() {}
+    
+    static getInstance(): DatabaseConnection {
+        if (!DatabaseConnection.instance) {
+            DatabaseConnection.instance = new DatabaseConnection();
+        }
+        return DatabaseConnection.instance;
+    }
+}
+"""@en ;
+    :hasV4ID "V4_NEW_170"^^xsd:string .
+
+:FactoryPattern rdf:type owl:Class ;
+    rdfs:subClassOf :CreationalPattern ;
+    rdfs:label "Factory Pattern"@en ;
+    skos:definition "Creates objects without specifying exact class to create"@en ;
+    :hasV4ID "V4_NEW_171"^^xsd:string .
+
+:BuilderPattern rdf:type owl:Class ;
+    rdfs:subClassOf :CreationalPattern ;
+    rdfs:label "Builder Pattern"@en ;
+    skos:definition "Constructs complex objects step by step"@en ;
+    :appropriateFor "Objects with many optional parameters"@en ;
+    :hasV4ID "V4_NEW_172"^^xsd:string .
+
+:StructuralPattern rdf:type owl:Class ;
+    rdfs:subClassOf :DesignPattern ;
+    rdfs:label "Structural Pattern"@en ;
+    skos:definition "Pattern dealing with object composition and relationships"@en ;
+    :hasV4ID "V4_NEW_173"^^xsd:string .
+
+:AdapterPattern rdf:type owl:Class ;
+    rdfs:subClassOf :StructuralPattern ;
+    rdfs:label "Adapter Pattern"@en ;
+    skos:definition "Allows incompatible interfaces to work together"@en ;
+    skos:example "Adapter wrapping third-party API to match application interface"@en ;
+    :hasV4ID "V4_NEW_174"^^xsd:string .
+
+:DecoratorPattern rdf:type owl:Class ;
+    rdfs:subClassOf :StructuralPattern ;
+    rdfs:label "Decorator Pattern"@en ;
+    skos:definition "Adds behavior to objects dynamically without modifying their code"@en ;
+    :hasV4ID "V4_NEW_175"^^xsd:string .
+
+:BehavioralPattern rdf:type owl:Class ;
+    rdfs:subClassOf :DesignPattern ;
+    rdfs:label "Behavioral Pattern"@en ;
+    skos:definition "Pattern dealing with object collaboration and responsibility"@en ;
+    :hasV4ID "V4_NEW_176"^^xsd:string .
+
+:ObserverPattern rdf:type owl:Class ;
+    rdfs:subClassOf :BehavioralPattern ;
+    rdfs:label "Observer Pattern"@en ;
+    skos:definition "Defines one-to-many dependency where state change in one object notifies dependents"@en ;
+    skos:example "Event handling systems, model-view controller"@en ;
+    :hasV4ID "V4_NEW_177"^^xsd:string .
+
+:StrategyPattern rdf:type owl:Class ;
+    rdfs:subClassOf :BehavioralPattern ;
+    rdfs:label "Strategy Pattern"@en ;
+    skos:definition "Defines family of algorithms, encapsulates each, makes them interchangeable"@en ;
+    :hasV4ID "V4_NEW_178"^^xsd:string .
+
+# Cloud-Native Patterns
+
+:CloudNativePattern rdf:type owl:Class ;
+    rdfs:subClassOf :ArchitectureConcept ;
+    rdfs:label "Cloud-Native Pattern"@en ;
+    skos:definition "Pattern specific to cloud-native application development and deployment"@en ;
+    :hasV4ID "V4_NEW_179"^^xsd:string .
+
+:CircuitBreakerPattern rdf:type owl:Class ;
+    rdfs:subClassOf :CloudNativePattern ;
+    rdfs:label "Circuit Breaker Pattern"@en ;
+    skos:definition "Prevents cascading failures by stopping calls to failing services"@en ;
+    skos:example "Netflix Hystrix wrapping service calls with circuit breaker"@en ;
+    :hasBenefit "Prevents cascade failures"@en ;
+    :hasBenefit "Fast failure response"@en ;
+    :hasBenefit "Automatic recovery attempts"@en ;
+    :hasState :CircuitClosed ;
+    :hasState :CircuitOpen ;
+    :hasState :CircuitHalfOpen ;
+    :usesTool :Resilience4j ;
+    :usesTool :Hystrix ;
+    :hasV4ID "V4_NEW_180"^^xsd:string .
+
+:RetryPattern rdf:type owl:Class ;
+    rdfs:subClassOf :CloudNativePattern ;
+    rdfs:label "Retry Pattern"@en ;
+    skos:definition "Automatically retries failed operations with exponential backoff"@en ;
+    :hasV4ID "V4_NEW_181"^^xsd:string .
+
+:BulkheadPattern rdf:type owl:Class ;
+    rdfs:subClassOf :CloudNativePattern ;
+    rdfs:label "Bulkhead Pattern"@en ;
+    skos:definition "Isolates resources to prevent total system failure"@en ;
+    skos:example "Separate thread pools for different service dependencies"@en ;
+    :hasV4ID "V4_NEW_182"^^xsd:string .
+
+:SagaPattern rdf:type owl:Class ;
+    rdfs:subClassOf :CloudNativePattern ;
+    rdfs:label "Saga Pattern"@en ;
+    skos:definition "Manages distributed transactions using sequence of local transactions with compensating actions"@en ;
+    skos:example "E-commerce order: Reserve inventory → Charge payment → Schedule shipping (with compensations)"@en ;
+    :hasV4ID "V4_NEW_183"^^xsd:string .
+
+:StranglerFigPattern rdf:type owl:Class ;
+    rdfs:subClassOf :CloudNativePattern ;
+    rdfs:label "Strangler Fig Pattern"@en ;
+    skos:definition "Gradually migrates legacy system by replacing functionality incrementally"@en ;
+    skos:note "Named after strangler fig plant that grows around and eventually replaces host tree"@en ;
+    :appropriateFor "Legacy system modernization"@en ;
+    :hasV4ID "V4_NEW_184"^^xsd:string .
+
+# Quality Attributes
+
+:QualityAttribute rdf:type owl:Class ;
+    rdfs:subClassOf :ArchitectureConcept ;
+    rdfs:label "Quality Attribute"@en ;
+    skos:definition "Measurable property of system indicating how well it satisfies stakeholder needs"@en ;
+    skos:altLabel "Non-functional requirement"@en ;
+    :hasV4ID "V4_NEW_185"^^xsd:string .
+
+:Scalability rdf:type owl:Class ;
+    rdfs:subClassOf :QualityAttribute ;
+    rdfs:label "Scalability"@en ;
+    skos:definition "System's ability to handle increased load by adding resources"@en ;
+    :hasType :HorizontalScaling ;
+    :hasType :VerticalScaling ;
+    :hasMeasure "Requests per second, concurrent users"@en ;
+    :hasV4ID "V4_NEW_186"^^xsd:string .
+
+:Reliability rdf:type owl:Class ;
+    rdfs:subClassOf :QualityAttribute ;
+    rdfs:label "Reliability"@en ;
+    skos:definition "System's ability to function correctly under specified conditions"@en ;
+    :hasMeasure "MTBF (Mean Time Between Failures), uptime percentage"@en ;
+    :hasV4ID "V4_NEW_187"^^xsd:string .
+
+:Maintainability rdf:type owl:Class ;
+    rdfs:subClassOf :QualityAttribute ;
+    rdfs:label "Maintainability"@en ;
+    skos:definition "Ease with which system can be modified to fix defects, improve performance, or adapt to changed environment"@en ;
+    :hasMeasure "Cyclomatic complexity, code duplication"@en ;
+    :hasV4ID "V4_NEW_188"^^xsd:string .
+
+:Performance rdf:type owl:Class ;
+    rdfs:subClassOf :QualityAttribute ;
+    rdfs:label "Performance"@en ;
+    skos:definition "System's responsiveness and throughput under specific workload"@en ;
+    :hasMeasure "Response time, throughput, latency"@en ;
+    :hasV4ID "V4_NEW_189"^^xsd:string .
+
+:Security rdf:type owl:Class ;
+    rdfs:subClassOf :QualityAttribute ;
+    rdfs:label "Security"@en ;
+    skos:definition "Protection of system and data from malicious attacks"@en ;
+    :hasAspect :Confidentiality ;
+    :hasAspect :Integrity ;
+    :hasAspect :Availability ;
+    :hasV4ID "V4_NEW_190"^^xsd:string .
+
+#################################################################
+#    OBJECT PROPERTIES
+#################################################################
+
+:hasLayer rdf:type owl:ObjectProperty ;
+    rdfs:label "has layer"@en ;
+    rdfs:domain :LayeredArchitecture .
+
+:requiresTechnology rdf:type owl:ObjectProperty ;
+    rdfs:label "requires technology"@en ;
+    rdfs:domain :ArchitecturalStyle .
+
+:hasState rdf:type owl:ObjectProperty ;
+    rdfs:label "has state"@en ;
+    rdfs:domain :CircuitBreakerPattern .
+
+:hasType rdf:type owl:ObjectProperty ;
+    rdfs:label "has type"@en .
+
+:hasAspect rdf:type owl:ObjectProperty ;
+    rdfs:label "has aspect"@en .
+
+:hasMeasure rdf:type owl:DatatypeProperty ;
+    rdfs:label "has measure"@en ;
+    rdfs:domain :QualityAttribute ;
+    rdfs:range xsd:string .
+
+:hasCodeExample rdf:type owl:DatatypeProperty ;
+    rdfs:label "has code example"@en ;
+    rdfs:range xsd:string .
+
+#################################################################
+#    INDIVIDUALS
+#################################################################
+
+:CircuitClosed rdf:type owl:NamedIndividual ;
+    rdfs:label "Circuit Closed"@en ;
+    skos:definition "Normal operation, requests flow through"@en .
+
+:CircuitOpen rdf:type owl:NamedIndividual ;
+    rdfs:label "Circuit Open"@en ;
+    skos:definition "Too many failures, requests immediately fail"@en .
+
+:CircuitHalfOpen rdf:type owl:NamedIndividual ;
+    rdfs:label "Circuit Half-Open"@en ;
+    skos:definition "Testing if service recovered, allows limited requests"@en .
+
+:Confidentiality rdf:type owl:NamedIndividual ;
+    rdfs:label "Confidentiality"@en ;
+    skos:definition "Data accessible only to authorized parties"@en .
+
+:Integrity rdf:type owl:NamedIndividual ;
+    rdfs:label "Integrity"@en ;
+    skos:definition "Data remains accurate and unmodified"@en .
+
+:Availability rdf:type owl:NamedIndividual ;
+    rdfs:label "Availability"@en ;
+    skos:definition "System accessible when needed"@en .
+
+:HorizontalScaling rdf:type owl:NamedIndividual ;
+    rdfs:label "Horizontal Scaling"@en ;
+    skos:definition "Adding more machines/instances"@en .
+
+:VerticalScaling rdf:type owl:NamedIndividual ;
+    rdfs:label "Vertical Scaling"@en ;
+    skos:definition "Adding more resources to existing machine"@en .
+
+#################################################################
+#    AXIOMS
+#################################################################
+
+:MicroservicesArchitecture rdfs:subClassOf [
+    rdf:type owl:Restriction ;
+    owl:onProperty :requiresTechnique ;
+    owl:someValuesFrom :ContractTesting
+] .
+
+:CircuitBreakerPattern rdfs:subClassOf [
+    rdf:type owl:Restriction ;
+    owl:onProperty :hasState ;
+    owl:minCardinality "3"^^xsd:nonNegativeInteger
+] .

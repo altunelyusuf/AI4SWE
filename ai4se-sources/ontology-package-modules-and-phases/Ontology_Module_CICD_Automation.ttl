@@ -1,0 +1,374 @@
+@prefix : <http://ai4se.org/ontology/v4#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#################################################################
+#    MODULE: CI/CD & AUTOMATION
+#################################################################
+
+:CICDAutomationModule rdf:type owl:Ontology ;
+    dcterms:title "CI/CD and Automation Module"@en ;
+    dcterms:description "Comprehensive ontology of continuous integration, continuous delivery, deployment pipelines, and automation practices"@en ;
+    dcterms:created "2025-11-17"^^xsd:date ;
+    :hasBookReference "Chapter 22: DevOps, CI/CD, Automation"^^xsd:string ;
+    :moduleVersion "1.0"^^xsd:string .
+
+#################################################################
+#    CLASSES
+#################################################################
+
+:CICDConcept rdf:type owl:Class ;
+    rdfs:subClassOf :AI4SEConcept ;
+    rdfs:label "CI/CD Concept"@en ;
+    skos:definition "Concept related to continuous integration, continuous delivery, and deployment automation"@en ;
+    :hasV4ID "V4_NEW_200"^^xsd:string .
+
+# Core CI/CD Concepts
+
+:ContinuousIntegration rdf:type owl:Class ;
+    rdfs:subClassOf :CICDConcept ;
+    rdfs:label "Continuous Integration"@en ;
+    skos:definition "Practice of frequently integrating code changes into shared repository, with automated build and test"@en ;
+    skos:example "Developers commit multiple times daily, triggering automated builds and tests within minutes"@en ;
+    :hasPrinciple "Maintain single source repository"@en ;
+    :hasPrinciple "Automate the build"@en ;
+    :hasPrinciple "Make build self-testing"@en ;
+    :hasPrinciple "Everyone commits daily"@en ;
+    :hasBenefit "Early bug detection"@en ;
+    :hasBenefit "Reduced integration problems"@en ;
+    :hasBenefit "Faster feedback"@en ;
+    :requiresTool :VersionControlSystem ;
+    :requiresTool :BuildTool ;
+    :requiresTool :CIServer ;
+    :hasV4ID "V4_NEW_201"^^xsd:string .
+
+:ContinuousDelivery rdf:type owl:Class ;
+    rdfs:subClassOf :CICDConcept ;
+    rdfs:label "Continuous Delivery"@en ;
+    skos:definition "Software engineering approach where teams produce software in short cycles, ensuring it can be reliably released at any time"@en ;
+    skos:note "Every commit is deployable but requires manual approval for production"@en ;
+    :hasPrinciple "Build quality in"@en ;
+    :hasPrinciple "Work in small batches"@en ;
+    :hasPrinciple "Automate repetitive tasks"@en ;
+    :hasPrinciple "Pursue continuous improvement"@en ;
+    :hasV4ID "V4_NEW_202"^^xsd:string .
+
+:ContinuousDeployment rdf:type owl:Class ;
+    rdfs:subClassOf :ContinuousDelivery ;
+    rdfs:label "Continuous Deployment"@en ;
+    skos:definition "Practice where every change that passes automated tests is automatically deployed to production"@en ;
+    skos:note "Fully automated pipeline from commit to production, no manual gates"@en ;
+    :hasV4ID "V4_NEW_203"^^xsd:string .
+
+# Pipeline Components
+
+:Pipeline rdf:type owl:Class ;
+    rdfs:subClassOf :CICDConcept ;
+    rdfs:label "Pipeline"@en ;
+    skos:definition "Automated sequence of stages processing code from commit to deployment"@en ;
+    :hasStage :BuildStage ;
+    :hasStage :TestStage ;
+    :hasStage :DeployStage ;
+    :hasV4ID "V4_NEW_204"^^xsd:string .
+
+:PipelineStage rdf:type owl:Class ;
+    rdfs:subClassOf :CICDConcept ;
+    rdfs:label "Pipeline Stage"@en ;
+    skos:definition "Discrete step in CI/CD pipeline performing specific tasks"@en ;
+    :hasV4ID "V4_NEW_205"^^xsd:string .
+
+:BuildStage rdf:type owl:Class ;
+    rdfs:subClassOf :PipelineStage ;
+    rdfs:label "Build Stage"@en ;
+    skos:definition "Compiles source code, resolves dependencies, produces artifacts"@en ;
+    :hasTask "Compile code"@en ;
+    :hasTask "Run linters"@en ;
+    :hasTask "Resolve dependencies"@en ;
+    :hasTask "Package artifacts"@en ;
+    :hasV4ID "V4_NEW_206"^^xsd:string .
+
+:TestStage rdf:type owl:Class ;
+    rdfs:subClassOf :PipelineStage ;
+    rdfs:label "Test Stage"@en ;
+    skos:definition "Executes automated tests to verify code quality and functionality"@en ;
+    :hasTask "Unit tests"@en ;
+    :hasTask "Integration tests"@en ;
+    :hasTask "Security scans"@en ;
+    :hasTask "Code quality analysis"@en ;
+    :hasV4ID "V4_NEW_207"^^xsd:string .
+
+:DeployStage rdf:type owl:Class ;
+    rdfs:subClassOf :PipelineStage ;
+    rdfs:label "Deploy Stage"@en ;
+    skos:definition "Deploys application to target environment"@en ;
+    :hasTask "Deploy to environment"@en ;
+    :hasTask "Run smoke tests"@en ;
+    :hasTask "Health checks"@en ;
+    :hasTask "Traffic routing"@en ;
+    :hasV4ID "V4_NEW_208"^^xsd:string .
+
+# Deployment Strategies
+
+:DeploymentStrategy rdf:type owl:Class ;
+    rdfs:subClassOf :CICDConcept ;
+    rdfs:label "Deployment Strategy"@en ;
+    skos:definition "Approach to releasing new versions of software to production"@en ;
+    :hasV4ID "V4_NEW_209"^^xsd:string .
+
+:BlueGreenDeployment rdf:type owl:Class ;
+    rdfs:subClassOf :DeploymentStrategy ;
+    rdfs:label "Blue-Green Deployment"@en ;
+    skos:definition "Maintains two identical production environments, switches traffic instantly between them"@en ;
+    skos:example "Blue (current) serves users while Green (new) is prepared; traffic switches to Green when ready"@en ;
+    :hasBenefit "Instant rollback"@en ;
+    :hasBenefit "Zero downtime"@en ;
+    :hasBenefit "Easy testing before switch"@en ;
+    :hasChallenge "Doubles infrastructure cost"@en ;
+    :hasChallenge "Database migration complexity"@en ;
+    :hasV4ID "V4_NEW_210"^^xsd:string .
+
+:CanaryDeployment rdf:type owl:Class ;
+    rdfs:subClassOf :DeploymentStrategy ;
+    rdfs:label "Canary Deployment"@en ;
+    skos:definition "Gradually rolls out changes to small subset of users before full deployment"@en ;
+    skos:example "5% users → 25% → 50% → 100% with monitoring at each step"@en ;
+    :hasBenefit "Reduces blast radius"@en ;
+    :hasBenefit "Real-world validation"@en ;
+    :hasBenefit "Gradual rollout control"@en ;
+    :requiresTechnique :FeatureFlags ;
+    :requiresTechnique :Monitoring ;
+    :hasV4ID "V4_NEW_211"^^xsd:string .
+
+:RollingDeployment rdf:type owl:Class ;
+    rdfs:subClassOf :DeploymentStrategy ;
+    rdfs:label "Rolling Deployment"@en ;
+    skos:definition "Incrementally replaces instances of previous version with new version"@en ;
+    :hasV4ID "V4_NEW_212"^^xsd:string .
+
+:RecreateDeployment rdf:type owl:Class ;
+    rdfs:subClassOf :DeploymentStrategy ;
+    rdfs:label "Recreate Deployment"@en ;
+    skos:definition "Shuts down old version completely before starting new version"@en ;
+    :hasChallenge "Downtime during deployment"@en ;
+    :appropriateFor "Non-critical applications, development environments"@en ;
+    :hasV4ID "V4_NEW_213"^^xsd:string .
+
+# Automation Practices
+
+:AutomationPractice rdf:type owl:Class ;
+    rdfs:subClassOf :CICDConcept ;
+    rdfs:label "Automation Practice"@en ;
+    skos:definition "Practice of automating repetitive software engineering tasks"@en ;
+    :hasV4ID "V4_NEW_214"^^xsd:string .
+
+:InfrastructureAsCode rdf:type owl:Class ;
+    rdfs:subClassOf :AutomationPractice ;
+    rdfs:label "Infrastructure as Code"@en ;
+    skos:definition "Managing and provisioning infrastructure through machine-readable definition files"@en ;
+    skos:example "Terraform, CloudFormation, Ansible defining entire infrastructure"@en ;
+    :hasBenefit "Version controlled infrastructure"@en ;
+    :hasBenefit "Reproducible environments"@en ;
+    :hasBenefit "Disaster recovery"@en ;
+    :usesTool :Terraform ;
+    :usesTool :Ansible ;
+    :usesTool :CloudFormation ;
+    :hasV4ID "V4_NEW_215"^^xsd:string .
+
+:ConfigurationAsCode rdf:type owl:Class ;
+    rdfs:subClassOf :AutomationPractice ;
+    rdfs:label "Configuration as Code"@en ;
+    skos:definition "Managing application configuration through code versioned in repository"@en ;
+    :hasV4ID "V4_NEW_216"^^xsd:string .
+
+:PolicyAsCode rdf:type owl:Class ;
+    rdfs:subClassOf :AutomationPractice ;
+    rdfs:label "Policy as Code"@en ;
+    skos:definition "Encoding policies (security, compliance) as executable code"@en ;
+    skos:example "Open Policy Agent (OPA) enforcing Kubernetes admission policies"@en ;
+    :hasV4ID "V4_NEW_217"^^xsd:string .
+
+:GitOps rdf:type owl:Class ;
+    rdfs:subClassOf :AutomationPractice ;
+    rdfs:label "GitOps"@en ;
+    skos:definition "Operational model using Git as single source of truth for declarative infrastructure and applications"@en ;
+    :hasPrinciple "Declarative desired state in Git"@en ;
+    :hasPrinciple "Automated deployment agents"@en ;
+    :hasPrinciple "Continuous reconciliation"@en ;
+    :usesTool :ArgoCD ;
+    :usesTool :FluxCD ;
+    :hasV4ID "V4_NEW_218"^^xsd:string .
+
+# Build Automation
+
+:BuildAutomation rdf:type owl:Class ;
+    rdfs:subClassOf :AutomationPractice ;
+    rdfs:label "Build Automation"@en ;
+    skos:definition "Automating creation of software build including compilation, packaging, testing"@en ;
+    :hasV4ID "V4_NEW_219"^^xsd:string .
+
+:BuildTool rdf:type owl:Class ;
+    rdfs:subClassOf :Tool ;
+    rdfs:label "Build Tool"@en ;
+    skos:definition "Tool automating software build process"@en ;
+    :hasV4ID "V4_NEW_220"^^xsd:string .
+
+:Maven rdf:type owl:Class ;
+    rdfs:subClassOf :BuildTool ;
+    rdfs:label "Maven"@en ;
+    skos:definition "Build automation tool for Java projects"@en ;
+    :supportsLanguage "Java"@en ;
+    :hasV4ID "V4_NEW_221"^^xsd:string .
+
+:Gradle rdf:type owl:Class ;
+    rdfs:subClassOf :BuildTool ;
+    rdfs:label "Gradle"@en ;
+    skos:definition "Build automation tool supporting multiple languages"@en ;
+    :supportsLanguage "Java"@en ;
+    :supportsLanguage "Kotlin"@en ;
+    :supportsLanguage "Groovy"@en ;
+    :hasV4ID "V4_NEW_222"^^xsd:string .
+
+:NPM rdf:type owl:Class ;
+    rdfs:subClassOf :BuildTool ;
+    rdfs:label "NPM"@en ;
+    skos:definition "Package manager and build tool for JavaScript"@en ;
+    :supportsLanguage "JavaScript"@en ;
+    :supportsLanguage "TypeScript"@en ;
+    :hasV4ID "V4_NEW_223"^^xsd:string .
+
+# CI Servers
+
+:CIServer rdf:type owl:Class ;
+    rdfs:subClassOf :Tool ;
+    rdfs:label "CI Server"@en ;
+    skos:definition "Server automating build, test, and deployment processes"@en ;
+    :hasV4ID "V4_NEW_224"^^xsd:string .
+
+:JenkinsServer rdf:type owl:Class ;
+    rdfs:subClassOf :CIServer ;
+    rdfs:label "Jenkins"@en ;
+    skos:definition "Open-source automation server"@en ;
+    :hasBenefit "Extensive plugin ecosystem"@en ;
+    :hasBenefit "Self-hosted"@en ;
+    :hasV4ID "V4_NEW_225"^^xsd:string .
+
+:GitHubActions rdf:type owl:Class ;
+    rdfs:subClassOf :CIServer ;
+    rdfs:label "GitHub Actions"@en ;
+    skos:definition "GitHub-native CI/CD platform"@en ;
+    :hasBenefit "Integrated with GitHub"@en ;
+    :hasBenefit "Marketplace of actions"@en ;
+    :hasV4ID "V4_NEW_226"^^xsd:string .
+
+:GitLabCI rdf:type owl:Class ;
+    rdfs:subClassOf :CIServer ;
+    rdfs:label "GitLab CI"@en ;
+    skos:definition "Built-in CI/CD in GitLab"@en ;
+    :hasV4ID "V4_NEW_227"^^xsd:string .
+
+:CircleCI rdf:type owl:Class ;
+    rdfs:subClassOf :CIServer ;
+    rdfs:label "CircleCI"@en ;
+    skos:definition "Cloud-based CI/CD platform"@en ;
+    :hasV4ID "V4_NEW_228"^^xsd:string .
+
+# Artifact Management
+
+:ArtifactRepository rdf:type owl:Class ;
+    rdfs:subClassOf :Tool ;
+    rdfs:label "Artifact Repository"@en ;
+    skos:definition "Storage for build artifacts, dependencies, and container images"@en ;
+    :hasV4ID "V4_NEW_229"^^xsd:string .
+
+:DockerRegistry rdf:type owl:Class ;
+    rdfs:subClassOf :ArtifactRepository ;
+    rdfs:label "Docker Registry"@en ;
+    skos:definition "Repository for Docker container images"@en ;
+    :hasV4ID "V4_NEW_230"^^xsd:string .
+
+:Nexus rdf:type owl:Class ;
+    rdfs:subClassOf :ArtifactRepository ;
+    rdfs:label "Nexus Repository"@en ;
+    skos:definition "Universal artifact repository manager"@en ;
+    :hasV4ID "V4_NEW_231"^^xsd:string .
+
+# Advanced Concepts
+
+:FeatureFlag rdf:type owl:Class ;
+    rdfs:subClassOf :CICDConcept ;
+    rdfs:label "Feature Flag"@en ;
+    skos:definition "Technique allowing features to be toggled on/off without deploying code"@en ;
+    skos:example "New checkout flow enabled for 10% users, disabled for others"@en ;
+    :hasBenefit "Decouple deployment from release"@en ;
+    :hasBenefit "A/B testing capability"@en ;
+    :hasBenefit "Quick feature rollback"@en ;
+    :hasV4ID "V4_NEW_232"^^xsd:string .
+
+:DeploymentRollback rdf:type owl:Class ;
+    rdfs:subClassOf :CICDConcept ;
+    rdfs:label "Deployment Rollback"@en ;
+    skos:definition "Reverting to previous version when deployment fails"@en ;
+    :hasTrigger "Failed health checks"@en ;
+    :hasTrigger "Error rate spike"@en ;
+    :hasTrigger "Manual intervention"@en ;
+    :hasV4ID "V4_NEW_233"^^xsd:string .
+
+:SmokeTest rdf:type owl:Class ;
+    rdfs:subClassOf :TestingTechnique ;
+    rdfs:label "Smoke Test"@en ;
+    skos:definition "Quick, high-level test verifying critical functionality after deployment"@en ;
+    skos:example "Check homepage loads, login works, database accessible"@en ;
+    :hasV4ID "V4_NEW_234"^^xsd:string .
+
+#################################################################
+#    OBJECT PROPERTIES
+#################################################################
+
+:hasStage rdf:type owl:ObjectProperty ;
+    rdfs:label "has stage"@en ;
+    rdfs:domain :Pipeline ;
+    rdfs:range :PipelineStage .
+
+:hasTask rdf:type owl:DatatypeProperty ;
+    rdfs:label "has task"@en ;
+    rdfs:domain :PipelineStage ;
+    rdfs:range xsd:string .
+
+:hasPrinciple rdf:type owl:DatatypeProperty ;
+    rdfs:label "has principle"@en ;
+    rdfs:range xsd:string .
+
+:hasTrigger rdf:type owl:DatatypeProperty ;
+    rdfs:label "has trigger"@en ;
+    rdfs:range xsd:string .
+
+#################################################################
+#    INDIVIDUALS
+#################################################################
+
+:JenkinsPipelineExample rdf:type owl:NamedIndividual, :Pipeline ;
+    rdfs:label "Jenkins Pipeline Example"@en ;
+    skos:definition "Standard Jenkins declarative pipeline"@en ;
+    :hasStage :BuildStage ;
+    :hasStage :TestStage ;
+    :hasStage :DeployStage .
+
+#################################################################
+#    AXIOMS
+#################################################################
+
+:Pipeline rdfs:subClassOf [
+    rdf:type owl:Restriction ;
+    owl:onProperty :hasStage ;
+    owl:minCardinality "1"^^xsd:nonNegativeInteger
+] .
+
+:ContinuousIntegration rdfs:subClassOf [
+    rdf:type owl:Restriction ;
+    owl:onProperty :requiresTool ;
+    owl:someValuesFrom :CIServer
+] .

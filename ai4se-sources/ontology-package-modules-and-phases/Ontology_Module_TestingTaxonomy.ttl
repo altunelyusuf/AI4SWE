@@ -1,0 +1,377 @@
+@prefix : <http://ai4se.org/ontology/v4#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#################################################################
+#    MODULE: TESTING TAXONOMY
+#################################################################
+
+:TestingTaxonomyModule rdf:type owl:Ontology ;
+    dcterms:title "Testing Taxonomy Module"@en ;
+    dcterms:description "Comprehensive taxonomy of 75+ software testing techniques including advanced approaches like mutation testing, chaos engineering, metamorphic testing, and property-based testing"@en ;
+    dcterms:created "2025-11-17"^^xsd:date ;
+    dcterms:creator "AI4SE Research Team"@en ;
+    :hasBookReference "Chapter 5, Part 8: Comprehensive Testing Taxonomy & Advanced Techniques"^^xsd:string ;
+    :moduleVersion "1.0"^^xsd:string ;
+    owl:versionInfo "Initial release with 4-level hierarchy and detailed technique specifications" .
+
+#################################################################
+#    CLASSES
+#################################################################
+
+# Top-Level Testing Concept
+:TestingConcept rdf:type owl:Class ;
+    rdfs:subClassOf :AI4SEConcept ;
+    rdfs:label "Testing Concept"@en ;
+    skos:definition "Any concept related to software testing including techniques, tools, processes, and artifacts"@en ;
+    :hasBookReference "Chapter 5"^^xsd:string ;
+    :hasV4ID "V4_NEW_060"^^xsd:string .
+
+# Level 1: Testing by Objective
+
+:TestingObjective rdf:type owl:Class ;
+    rdfs:subClassOf :TestingConcept ;
+    rdfs:label "Testing Objective"@en ;
+    skos:definition "High-level goal or purpose of testing activity"@en ;
+    :hasV4ID "V4_NEW_061"^^xsd:string .
+
+:FunctionalTesting rdf:type owl:Class ;
+    rdfs:subClassOf :TestingObjective ;
+    rdfs:label "Functional Testing"@en ;
+    skos:definition "Testing to verify that software functions according to requirements and specifications"@en ;
+    :hasV4ID "V4_NEW_062"^^xsd:string .
+
+:NonFunctionalTesting rdf:type owl:Class ;
+    rdfs:subClassOf :TestingObjective ;
+    rdfs:label "Non-Functional Testing"@en ;
+    skos:definition "Testing quality attributes such as performance, security, usability, reliability"@en ;
+    :hasV4ID "V4_NEW_063"^^xsd:string .
+
+# Advanced Testing Techniques
+
+:AdvancedTestingTechnique rdf:type owl:Class ;
+    rdfs:subClassOf :TestingTechnique ;
+    rdfs:label "Advanced Testing Technique"@en ;
+    skos:definition "Sophisticated testing approach beyond traditional unit/integration/system testing"@en ;
+    :hasBookReference "Chapter 5, Part 8"^^xsd:string ;
+    :hasV4ID "V4_NEW_064"^^xsd:string .
+
+:MutationTesting rdf:type owl:Class ;
+    rdfs:subClassOf :AdvancedTestingTechnique ;
+    rdfs:label "Mutation Testing"@en ;
+    skos:definition "Technique that introduces deliberate bugs (mutations) into code to verify that test suite detects them, measuring test suite effectiveness rather than code coverage"@en ;
+    skos:example "Change 'if (x < 5)' to 'if (x <= 5)' - if tests still pass, they're inadequate"@en ;
+    skos:note "Target mutation score > 80% for critical code. Computationally expensive but reveals test quality issues that coverage metrics miss"@en ;
+    :hasBookReference "Chapter 5, Part 8, Technique 1"^^xsd:string ;
+    :hasV4ID "V4_NEW_065"^^xsd:string ;
+    :hasBenefit "Measures test quality, not just code coverage"@en ;
+    :hasBenefit "Finds gaps in test suites"@en ;
+    :hasBenefit "Ensures tests actually verify behavior"@en ;
+    :hasLimitation "Computationally expensive (can take hours)"@en ;
+    :hasLimitation "Generates many equivalent mutants"@en ;
+    :hasTargetScore "80% mutation score for critical code"^^xsd:string ;
+    :hasToolExample :Mutmut ;
+    :hasToolExample :PIT ;
+    :hasToolExample :Stryker .
+
+:MutationOperator rdf:type owl:Class ;
+    rdfs:subClassOf :TestingConcept ;
+    rdfs:label "Mutation Operator"@en ;
+    skos:definition "Rule for systematically modifying code to create mutants for mutation testing"@en ;
+    skos:example "AOR: Arithmetic Operator Replacement (+ becomes -, *, /, %)"@en ;
+    :hasBookReference "Chapter 5, Part 8"^^xsd:string ;
+    :hasV4ID "V4_NEW_066"^^xsd:string .
+
+:ArithmeticOperatorReplacement rdf:type owl:Class ;
+    rdfs:subClassOf :MutationOperator ;
+    rdfs:label "Arithmetic Operator Replacement"@en ;
+    skos:definition "Replaces arithmetic operators with alternatives: +, -, *, /, %"@en ;
+    :hasAbbreviation "AOR"^^xsd:string ;
+    :hasV4ID "V4_NEW_067"^^xsd:string .
+
+:RelationalOperatorReplacement rdf:type owl:Class ;
+    rdfs:subClassOf :MutationOperator ;
+    rdfs:label "Relational Operator Replacement"@en ;
+    skos:definition "Replaces relational operators: <, <=, >, >=, ==, !="@en ;
+    :hasAbbreviation "ROR"^^xsd:string ;
+    :hasV4ID "V4_NEW_068"^^xsd:string .
+
+:StatementDeletion rdf:type owl:Class ;
+    rdfs:subClassOf :MutationOperator ;
+    rdfs:label "Statement Deletion"@en ;
+    skos:definition "Removes statements to verify tests catch missing functionality"@en ;
+    :hasAbbreviation "SDL"^^xsd:string ;
+    :hasV4ID "V4_NEW_069"^^xsd:string .
+
+:ChaosEngineering rdf:type owl:Class ;
+    rdfs:subClassOf :AdvancedTestingTechnique ;
+    rdfs:label "Chaos Engineering"@en ;
+    skos:definition "Discipline of experimenting on distributed systems by intentionally injecting failures to build confidence in system's resilience and ability to withstand turbulent conditions"@en ;
+    skos:example "Randomly killing microservice pods in production to verify system gracefully degrades and recovers"@en ;
+    skos:note "Pioneered by Netflix with Chaos Monkey. Critical for distributed systems, microservices, cloud-native architectures"@en ;
+    :hasBookReference "Chapter 5, Part 8, Technique 2"^^xsd:string ;
+    :hasV4ID "V4_NEW_070"^^xsd:string ;
+    :hasBenefit "Builds confidence in system resilience"@en ;
+    :hasBenefit "Finds issues before customers do"@en ;
+    :hasBenefit "Improves incident response capabilities"@en ;
+    :hasLimitation "Requires production-like environment"@en ;
+    :hasLimitation "Risk of causing real outages"@en ;
+    :appropriateFor "Distributed systems and microservices"@en ;
+    :appropriateFor "Cloud-native applications"@en ;
+    :hasToolExample :ChaosMesh ;
+    :hasToolExample :GremlinInc ;
+    :hasToolExample :ChaosMonkey .
+
+:ChaosExperiment rdf:type owl:Class ;
+    rdfs:subClassOf :TestingConcept ;
+    rdfs:label "Chaos Experiment"@en ;
+    skos:definition "Controlled experiment that injects specific failure into system to observe behavior and validate resilience"@en ;
+    skos:example "Inject 500ms network latency to database, verify request success rate stays above 95%"@en ;
+    :hasBookReference "Chapter 5, Part 8"^^xsd:string ;
+    :hasV4ID "V4_NEW_071"^^xsd:string .
+
+:NetworkLatencyInjection rdf:type owl:Class ;
+    rdfs:subClassOf :ChaosExperiment ;
+    rdfs:label "Network Latency Injection"@en ;
+    skos:definition "Adds artificial delay to network communications to test timeout handling"@en ;
+    :hasV4ID "V4_NEW_072"^^xsd:string .
+
+:ServiceUnavailability rdf:type owl:Class ;
+    rdfs:subClassOf :ChaosExperiment ;
+    rdfs:label "Service Unavailability"@en ;
+    skos:definition "Makes service temporarily unavailable to test fallback and retry logic"@en ;
+    :hasV4ID "V4_NEW_073"^^xsd:string .
+
+:ResourceExhaustion rdf:type owl:Class ;
+    rdfs:subClassOf :ChaosExperiment ;
+    rdfs:label "Resource Exhaustion"@en ;
+    skos:definition "Consumes CPU, memory, or disk to test behavior under resource pressure"@en ;
+    :hasV4ID "V4_NEW_074"^^xsd:string .
+
+:MetamorphicTesting rdf:type owl:Class ;
+    rdfs:subClassOf :AdvancedTestingTechnique ;
+    rdfs:label "Metamorphic Testing"@en ;
+    skos:definition "Testing technique that verifies relationships between multiple executions of program rather than checking absolute correctness, useful when oracle (expected output) is unknown"@en ;
+    skos:example "Search engine: adding search term should not increase results count (metamorphic relation), even though we don't know exact 'correct' results"@en ;
+    skos:note "Critical for AI/ML systems where exact expected output is unknown but input-output relationships can be verified"@en ;
+    :hasBookReference "Chapter 5, Part 8, Technique 3"^^xsd:string ;
+    :hasV4ID "V4_NEW_075"^^xsd:string ;
+    :hasBenefit "Works when oracle is unknown"@en ;
+    :hasBenefit "Excellent for AI/ML systems"@en ;
+    :hasBenefit "Finds subtle logical errors"@en ;
+    :appropriateFor "Machine learning models"@en ;
+    :appropriateFor "Search engines and recommender systems"@en ;
+    :appropriateFor "Compilers and code generators"@en .
+
+:MetamorphicRelation rdf:type owl:Class ;
+    rdfs:subClassOf :TestingConcept ;
+    rdfs:label "Metamorphic Relation"@en ;
+    skos:definition "Relationship that must hold between inputs and outputs of multiple program executions"@en ;
+    skos:example "Permutation invariance: swapping input order shouldn't change output"@en ;
+    :hasBookReference "Chapter 5, Part 8"^^xsd:string ;
+    :hasV4ID "V4_NEW_076"^^xsd:string .
+
+:PermutationInvariance rdf:type owl:Class ;
+    rdfs:subClassOf :MetamorphicRelation ;
+    rdfs:label "Permutation Invariance"@en ;
+    skos:definition "Output should not change when input order is permuted"@en ;
+    :hasV4ID "V4_NEW_077"^^xsd:string .
+
+:MonotonicityRelation rdf:type owl:Class ;
+    rdfs:subClassOf :MetamorphicRelation ;
+    rdfs:label "Monotonicity Relation"@en ;
+    skos:definition "Output should increase/decrease monotonically with specific input"@en ;
+    skos:example "ML model: increasing income should increase credit limit"@en ;
+    :hasV4ID "V4_NEW_078"^^xsd:string .
+
+:PropertyBasedTesting rdf:type owl:Class ;
+    rdfs:subClassOf :AdvancedTestingTechnique ;
+    rdfs:label "Property-Based Testing"@en ;
+    skos:definition "Testing approach that defines properties that should always hold, then automatically generates random inputs to verify them, finding edge cases humans wouldn't think of"@en ;
+    skos:example "Property: reverse(reverse(list)) == list. Framework generates 100s of random lists to verify"@en ;
+    skos:note "Complements example-based testing. Uses tools like Hypothesis (Python), QuickCheck (Haskell), fast-check (JavaScript)"@en ;
+    :hasBookReference "Chapter 5, Part 8, Technique 4"^^xsd:string ;
+    :hasV4ID "V4_NEW_079"^^xsd:string ;
+    :hasBenefit "Finds edge cases automatically"@en ;
+    :hasBenefit "Less test code than example-based"@en ;
+    :hasBenefit "Provides shrinking (minimizes failing cases)"@en ;
+    :hasLimitation "Requires identifying good properties"@en ;
+    :hasLimitation "Can generate unrealistic inputs"@en ;
+    :hasToolExample :Hypothesis ;
+    :hasToolExample :QuickCheck ;
+    :hasToolExample :FastCheck .
+
+:FuzzTesting rdf:type owl:Class ;
+    rdfs:subClassOf :AdvancedTestingTechnique ;
+    rdfs:label "Fuzz Testing"@en ;
+    skos:definition "Automated testing technique providing invalid, unexpected, or random data as inputs to find crashes, memory leaks, and security vulnerabilities"@en ;
+    skos:example "Feeding random bytes to PDF parser to find buffer overflows and crashes"@en ;
+    :hasBookReference "Chapter 5, Part 8"^^xsd:string ;
+    :hasV4ID "V4_NEW_080"^^xsd:string ;
+    :appropriateFor "Parsers and file format handlers"@en ;
+    :appropriateFor "Network protocol implementations"@en ;
+    :appropriateFor "Security-critical components"@en ;
+    :hasToolExample :AFL ;
+    :hasToolExample :LibFuzzer ;
+    :hasToolExample :Jazzer .
+
+:ContractTesting rdf:type owl:Class ;
+    rdfs:subClassOf :AdvancedTestingTechnique ;
+    rdfs:label "Contract Testing"@en ;
+    skos:definition "Testing technique ensuring API provider and consumer agree on interaction contract, preventing integration issues in microservices"@en ;
+    skos:example "Consumer defines expected API response format, provider verifies it can fulfill contract"@en ;
+    :hasBookReference "Chapter 5, Part 8"^^xsd:string ;
+    :hasV4ID "V4_NEW_081"^^xsd:string ;
+    :appropriateFor "Microservices architectures"@en ;
+    :appropriateFor "API-driven systems"@en ;
+    :hasToolExample :Pact ;
+    :hasToolExample :SpringCloudContract .
+
+:VisualRegressionTesting rdf:type owl:Class ;
+    rdfs:subClassOf :AdvancedTestingTechnique ;
+    rdfs:label "Visual Regression Testing"@en ;
+    skos:definition "Automated comparison of UI screenshots to detect unintended visual changes"@en ;
+    skos:example "Comparing baseline screenshot with current version to catch CSS bugs"@en ;
+    :hasBookReference "Chapter 5, Part 8"^^xsd:string ;
+    :hasV4ID "V4_NEW_082"^^xsd:string ;
+    :appropriateFor "Web applications and mobile apps"@en ;
+    :hasToolExample :Percy ;
+    :hasToolExample :BackstopJS ;
+    :hasToolExample :Chromatic .
+
+# Testing Selection and Strategy
+
+:TestingStrategy rdf:type owl:Class ;
+    rdfs:subClassOf :TestingConcept ;
+    rdfs:label "Testing Strategy"@en ;
+    skos:definition "Overall approach for selecting and applying testing techniques based on project context"@en ;
+    :hasBookReference "Chapter 5, Part 8"^^xsd:string ;
+    :hasV4ID "V4_NEW_083"^^xsd:string .
+
+:TestTechniqueSelectionCriteria rdf:type owl:Class ;
+    rdfs:subClassOf :TestingConcept ;
+    rdfs:label "Test Technique Selection Criteria"@en ;
+    skos:definition "Factors influencing choice of testing techniques: system type, criticality, technology stack, resources"@en ;
+    :hasBookReference "Chapter 5, Part 8"^^xsd:string ;
+    :hasV4ID "V4_NEW_084"^^xsd:string .
+
+:TestingMaturityLevel rdf:type owl:Class ;
+    rdfs:subClassOf :MaturityLevel ;
+    rdfs:label "Testing Maturity Level"@en ;
+    skos:definition "Organization's sophistication in testing practices, from ad-hoc to optimized"@en ;
+    :hasV4ID "V4_NEW_085"^^xsd:string .
+
+#################################################################
+#    OBJECT PROPERTIES
+#################################################################
+
+:usesOperator rdf:type owl:ObjectProperty ;
+    rdfs:label "uses operator"@en ;
+    skos:definition "Relates mutation testing to specific mutation operator"@en ;
+    rdfs:domain :MutationTesting ;
+    rdfs:range :MutationOperator .
+
+:hasExperimentType rdf:type owl:ObjectProperty ;
+    rdfs:label "has experiment type"@en ;
+    skos:definition "Relates chaos engineering to specific experiment"@en ;
+    rdfs:domain :ChaosEngineering ;
+    rdfs:range :ChaosExperiment .
+
+:hasMetamorphicRelation rdf:type owl:ObjectProperty ;
+    rdfs:label "has metamorphic relation"@en ;
+    rdfs:domain :MetamorphicTesting ;
+    rdfs:range :MetamorphicRelation .
+
+:appliesTo rdf:type owl:ObjectProperty ;
+    rdfs:label "applies to"@en ;
+    skos:definition "Indicates which system types or contexts technique applies to"@en ;
+    rdfs:domain :TestingTechnique .
+
+#################################################################
+#    DATA PROPERTIES
+#################################################################
+
+:hasTargetScore rdf:type owl:DatatypeProperty ;
+    rdfs:label "has target score"@en ;
+    skos:definition "Target metric value for testing technique"@en ;
+    rdfs:range xsd:string .
+
+:hasAbbreviation rdf:type owl:DatatypeProperty ;
+    rdfs:label "has abbreviation"@en ;
+    skos:definition "Short form or acronym"@en ;
+    rdfs:range xsd:string .
+
+:hasToolExample rdf:type owl:ObjectProperty ;
+    rdfs:label "has tool example"@en ;
+    skos:definition "Reference to tool implementing technique"@en ;
+    rdfs:domain :TestingTechnique ;
+    rdfs:range :Tool .
+
+#################################################################
+#    INDIVIDUALS (Tool Examples)
+#################################################################
+
+:Mutmut rdf:type owl:NamedIndividual, :Tool ;
+    rdfs:label "mutmut"@en ;
+    skos:definition "Python mutation testing tool"@en ;
+    :hasToolURL "https://github.com/boxed/mutmut"^^xsd:anyURI ;
+    :supportsLanguage "Python"@en .
+
+:PIT rdf:type owl:NamedIndividual, :Tool ;
+    rdfs:label "PIT"@en ;
+    skos:definition "Java mutation testing tool"@en ;
+    :supportsLanguage "Java"@en .
+
+:Stryker rdf:type owl:NamedIndividual, :Tool ;
+    rdfs:label "Stryker"@en ;
+    skos:definition "JavaScript/TypeScript mutation testing"@en ;
+    :supportsLanguage "JavaScript"@en ;
+    :supportsLanguage "TypeScript"@en .
+
+:ChaosMesh rdf:type owl:NamedIndividual, :Tool ;
+    rdfs:label "Chaos Mesh"@en ;
+    skos:definition "Kubernetes-native chaos engineering platform"@en ;
+    :hasToolURL "https://chaos-mesh.org/"^^xsd:anyURI .
+
+:ChaosMonkey rdf:type owl:NamedIndividual, :Tool ;
+    rdfs:label "Chaos Monkey"@en ;
+    skos:definition "Netflix's chaos engineering tool"@en ;
+    :hasToolURL "https://netflix.github.io/chaosmonkey/"^^xsd:anyURI .
+
+:Hypothesis rdf:type owl:NamedIndividual, :Tool ;
+    rdfs:label "Hypothesis"@en ;
+    skos:definition "Python property-based testing framework"@en ;
+    :hasToolURL "https://hypothesis.readthedocs.io/"^^xsd:anyURI ;
+    :supportsLanguage "Python"@en .
+
+:QuickCheck rdf:type owl:NamedIndividual, :Tool ;
+    rdfs:label "QuickCheck"@en ;
+    skos:definition "Haskell property-based testing library"@en ;
+    :supportsLanguage "Haskell"@en .
+
+:Pact rdf:type owl:NamedIndividual, :Tool ;
+    rdfs:label "Pact"@en ;
+    skos:definition "Consumer-driven contract testing framework"@en ;
+    :hasToolURL "https://pact.io/"^^xsd:anyURI .
+
+#################################################################
+#    AXIOMS
+#################################################################
+
+# Every Advanced Testing Technique must have at least one benefit
+:AdvancedTestingTechnique rdfs:subClassOf [
+    rdf:type owl:Restriction ;
+    owl:onProperty :hasBenefit ;
+    owl:minCardinality "1"^^xsd:nonNegativeInteger
+] .
+
+# Mutation Testing must use at least one mutation operator
+:MutationTesting rdfs:subClassOf [
+    rdf:type owl:Restriction ;
+    owl:onProperty :usesOperator ;
+    owl:minCardinality "1"^^xsd:nonNegativeInteger
+] .

@@ -1,0 +1,572 @@
+@prefix ai4se: <http://www.semanticweb.org/ontologies/2025/AI4SE#> .
+@prefix o4se: <http://www.semanticweb.org/ontologies/2025/O4SE#> .
+@prefix ai: <http://example.org/o4ai#> .
+@prefix meta: <http://example.org/ontology-engineering#> .
+@prefix qc: <http://example.org/quality#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+
+#=============================================================================
+# AI4SE - AI-POWERED SOFTWARE ENGINEERING PRACTICES
+# MODULE 3: METHODOLOGIES, TECHNIQUES, AND BEST PRACTICES WITH AI
+#=============================================================================
+# This module defines AI-enhanced software engineering practices, methodologies,
+# and techniques including Agile, DevOps, quality assurance, and project management.
+#=============================================================================
+
+<http://www.semanticweb.org/ontologies/2025/AI4SE/Practices> rdf:type owl:Ontology ;
+    owl:imports <http://www.semanticweb.org/ontologies/2025/AI4SE> ;
+    dcterms:title "AI4SE Practices - AI-Powered SE Methodologies"@en ;
+    dcterms:created "2025-10-27"^^xsd:date ;
+    dcterms:description "Comprehensive representation of AI-enhanced software engineering practices and methodologies"@en .
+
+#=============================================================================
+# SECTION 1: AI-ENHANCED AGILE PRACTICES
+#=============================================================================
+
+# --- Intelligent Agile Systems ---
+
+ai4se:IntelligentAgileSystem a owl:Class ;
+    rdfs:label "Intelligent Agile System"@en ;
+    rdfs:comment "AI system supporting agile software development practices"@en ;
+    rdfs:subClassOf ai4se:AI4SESSystem ;
+    skos:definition "System using AI to enhance agile methodologies and practices"@en .
+
+ai4se:SprintPlanner a owl:Class ;
+    rdfs:label "Sprint Planner"@en ;
+    rdfs:comment "AI system for intelligent sprint planning"@en ;
+    rdfs:subClassOf ai4se:IntelligentAgileSystem ,
+                    ai:PlanningSystem .
+
+ai4se:VelocityPredictor a owl:Class ;
+    rdfs:label "Velocity Predictor"@en ;
+    rdfs:comment "AI system predicting team velocity"@en ;
+    rdfs:subClassOf ai4se:IntelligentAgileSystem ,
+                    ai:PredictiveAnalytics .
+
+ai4se:BacklogOptimizer a owl:Class ;
+    rdfs:label "Backlog Optimizer"@en ;
+    rdfs:comment "AI system optimizing product backlog ordering"@en ;
+    rdfs:subClassOf ai4se:IntelligentAgileSystem ,
+                    ai:OptimizationSystem .
+
+ai4se:StoryPointEstimator a owl:Class ;
+    rdfs:label "Story Point Estimator"@en ;
+    rdfs:comment "AI system estimating user story complexity"@en ;
+    rdfs:subClassOf ai4se:IntelligentAgileSystem ,
+                    ai:EstimationSystem .
+
+ai4se:RetrospectiveAnalyzer a owl:Class ;
+    rdfs:label "Retrospective Analyzer"@en ;
+    rdfs:comment "AI system analyzing sprint retrospectives"@en ;
+    rdfs:subClassOf ai4se:IntelligentAgileSystem ,
+                    ai:TextAnalytics .
+
+ai4se:ScrumMasterAssistant a owl:Class ;
+    rdfs:label "Scrum Master Assistant"@en ;
+    rdfs:comment "AI assistant for Scrum Masters"@en ;
+    rdfs:subClassOf ai4se:IntelligentAgileSystem ,
+                    ai:VirtualAssistant .
+
+# --- AI-Enhanced Agile Practices ---
+
+ai4se:AIEnhancedScrum a owl:Class ;
+    rdfs:label "AI-Enhanced Scrum"@en ;
+    rdfs:comment "Scrum methodology augmented with AI capabilities"@en ;
+    rdfs:subClassOf o4se:Scrum ,
+                    ai4se:AIEnhancedProcess .
+
+ai4se:IntelligentKanban a owl:Class ;
+    rdfs:label "Intelligent Kanban"@en ;
+    rdfs:comment "Kanban system with AI optimization"@en ;
+    rdfs:subClassOf o4se:Kanban ,
+                    ai4se:AIEnhancedProcess .
+
+ai4se:AdaptiveExtremeProgramming a owl:Class ;
+    rdfs:label "Adaptive Extreme Programming"@en ;
+    rdfs:comment "XP practices adapted by AI analysis"@en ;
+    rdfs:subClassOf o4se:ExtremeProgramming ,
+                    ai4se:AIEnhancedProcess .
+
+ai4se:PredictiveAgileMetrics a owl:Class ;
+    rdfs:label "Predictive Agile Metrics"@en ;
+    rdfs:comment "AI-driven predictive metrics for agile teams"@en ;
+    rdfs:subClassOf ai4se:AIEnhancedProcess .
+
+#=============================================================================
+# SECTION 2: AI-POWERED DEVOPS
+#=============================================================================
+
+# --- Intelligent DevOps Systems ---
+
+ai4se:IntelligentDevOpsSystem a owl:Class ;
+    rdfs:label "Intelligent DevOps System"@en ;
+    rdfs:comment "AI system enhancing DevOps practices"@en ;
+    rdfs:subClassOf ai4se:AI4SESSystem ;
+    skos:definition "System applying AI to DevOps automation and optimization"@en ;
+    skos:altLabel "AIOps Platform"@en .
+
+ai4se:CICDOptimizer a owl:Class ;
+    rdfs:label "CI/CD Optimizer"@en ;
+    rdfs:comment "AI system optimizing CI/CD pipelines"@en ;
+    rdfs:subClassOf ai4se:IntelligentDevOpsSystem ,
+                    ai:OptimizationSystem .
+
+ai4se:BuildFailurePredictor a owl:Class ;
+    rdfs:label "Build Failure Predictor"@en ;
+    rdfs:comment "AI system predicting build failures"@en ;
+    rdfs:subClassOf ai4se:IntelligentDevOpsSystem ,
+                    ai:FailurePrediction .
+
+ai4se:DeploymentRiskAnalyzer a owl:Class ;
+    rdfs:label "Deployment Risk Analyzer"@en ;
+    rdfs:comment "AI system analyzing deployment risks"@en ;
+    rdfs:subClassOf ai4se:IntelligentDevOpsSystem ,
+                    ai:RiskAssessment .
+
+ai4se:InfrastructureOptimizer a owl:Class ;
+    rdfs:label "Infrastructure Optimizer"@en ;
+    rdfs:comment "AI system optimizing infrastructure configuration"@en ;
+    rdfs:subClassOf ai4se:IntelligentDevOpsSystem ,
+                    ai:ResourceOptimization .
+
+ai4se:LogAnalyzer a owl:Class ;
+    rdfs:label "Log Analyzer"@en ;
+    rdfs:comment "AI system analyzing system logs"@en ;
+    rdfs:subClassOf ai4se:IntelligentDevOpsSystem ,
+                    ai:LogAnalytics .
+
+ai4se:SecurityScanner a owl:Class ;
+    rdfs:label "Security Scanner"@en ;
+    rdfs:comment "AI-powered security vulnerability scanner"@en ;
+    rdfs:subClassOf ai4se:IntelligentDevOpsSystem ,
+                    ai:SecurityAnalytics .
+
+# --- AI-Enhanced DevOps Practices ---
+
+ai4se:IntelligentContinuousIntegration a owl:Class ;
+    rdfs:label "Intelligent Continuous Integration"@en ;
+    rdfs:comment "CI process enhanced with AI optimization"@en ;
+    rdfs:subClassOf o4se:ContinuousIntegration ,
+                    ai4se:AIEnhancedProcess .
+
+ai4se:SmartContinuousDeployment a owl:Class ;
+    rdfs:label "Smart Continuous Deployment"@en ;
+    rdfs:comment "CD process with AI-driven decision making"@en ;
+    rdfs:subClassOf o4se:ContinuousDeployment ,
+                    ai4se:AIEnhancedProcess .
+
+ai4se:PredictiveMonitoring a owl:Class ;
+    rdfs:label "Predictive Monitoring"@en ;
+    rdfs:comment "System monitoring with predictive AI analytics"@en ;
+    rdfs:subClassOf o4se:Monitoring ,
+                    ai4se:AIEnhancedProcess .
+
+ai4se:IntelligentIncidentResponse a owl:Class ;
+    rdfs:label "Intelligent Incident Response"@en ;
+    rdfs:comment "AI-automated incident response and remediation"@en ;
+    rdfs:subClassOf o4se:IncidentManagement ,
+                    ai4se:AIEnhancedProcess .
+
+#=============================================================================
+# SECTION 3: AI-ENHANCED QUALITY ASSURANCE
+#=============================================================================
+
+# --- Quality Intelligence Systems ---
+
+ai4se:QualityIntelligenceSystem a owl:Class ;
+    rdfs:label "Quality Intelligence System"@en ;
+    rdfs:comment "AI system for software quality assurance"@en ;
+    rdfs:subClassOf ai4se:AI4SESSystem ;
+    skos:definition "System using AI to ensure and improve software quality"@en .
+
+ai4se:CodeQualityAnalyzer a owl:Class ;
+    rdfs:label "Code Quality Analyzer"@en ;
+    rdfs:comment "AI system analyzing code quality metrics"@en ;
+    rdfs:subClassOf ai4se:QualityIntelligenceSystem ,
+                    ai:QualityAnalysis .
+
+ai4se:TechnicalDebtEstimator a owl:Class ;
+    rdfs:label "Technical Debt Estimator"@en ;
+    rdfs:comment "AI system estimating technical debt"@en ;
+    rdfs:subClassOf ai4se:QualityIntelligenceSystem ,
+                    ai:EstimationSystem .
+
+ai4se:CodeSmellDetector a owl:Class ;
+    rdfs:label "Code Smell Detector"@en ;
+    rdfs:comment "AI system detecting code smells and anti-patterns"@en ;
+    rdfs:subClassOf ai4se:QualityIntelligenceSystem ,
+                    ai:PatternRecognition .
+
+ai4se:SecurityVulnerabilityScanner a owl:Class ;
+    rdfs:label "Security Vulnerability Scanner"@en ;
+    rdfs:comment "AI system scanning for security vulnerabilities"@en ;
+    rdfs:subClassOf ai4se:QualityIntelligenceSystem ,
+                    ai:SecurityAnalytics .
+
+ai4se:PerformanceAnalyzer a owl:Class ;
+    rdfs:label "Performance Analyzer"@en ;
+    rdfs:comment "AI system analyzing software performance"@en ;
+    rdfs:subClassOf ai4se:QualityIntelligenceSystem ,
+                    ai:PerformanceAnalytics .
+
+ai4se:UsabilityEvaluator a owl:Class ;
+    rdfs:label "Usability Evaluator"@en ;
+    rdfs:comment "AI system evaluating software usability"@en ;
+    rdfs:subClassOf ai4se:QualityIntelligenceSystem ,
+                    ai:UserExperienceAnalysis .
+
+# --- Quality Assurance Practices with AI ---
+
+ai4se:AIEnhancedCodeReview a owl:Class ;
+    rdfs:label "AI-Enhanced Code Review"@en ;
+    rdfs:comment "Code review process augmented by AI analysis"@en ;
+    rdfs:subClassOf o4se:CodeReview ,
+                    ai4se:AIEnhancedProcess .
+
+ai4se:AutomatedQualityGates a owl:Class ;
+    rdfs:label "Automated Quality Gates"@en ;
+    rdfs:comment "AI-driven quality gates in development pipeline"@en ;
+    rdfs:subClassOf o4se:QualityControl ,
+                    ai4se:AIEnhancedProcess .
+
+ai4se:ContinuousQualityImprovement a owl:Class ;
+    rdfs:label "Continuous Quality Improvement"@en ;
+    rdfs:comment "Ongoing quality improvement through AI analysis"@en ;
+    rdfs:subClassOf o4se:QualityImprovement ,
+                    ai4se:AIEnhancedProcess .
+
+ai4se:PredictiveQualityAssurance a owl:Class ;
+    rdfs:label "Predictive Quality Assurance"@en ;
+    rdfs:comment "QA approach using predictive AI models"@en ;
+    rdfs:subClassOf o4se:QualityAssurance ,
+                    ai4se:AIEnhancedProcess .
+
+#=============================================================================
+# SECTION 4: AI-ENHANCED PROJECT MANAGEMENT
+#=============================================================================
+
+# --- Project Intelligence Systems ---
+
+ai4se:ProjectIntelligenceSystem a owl:Class ;
+    rdfs:label "Project Intelligence System"@en ;
+    rdfs:comment "AI system for software project management"@en ;
+    rdfs:subClassOf ai4se:AI4SESSystem ;
+    skos:definition "System using AI to optimize project planning and execution"@en .
+
+ai4se:ProjectEstimator a owl:Class ;
+    rdfs:label "Project Estimator"@en ;
+    rdfs:comment "AI system estimating project effort and duration"@en ;
+    rdfs:subClassOf ai4se:ProjectIntelligenceSystem ,
+                    ai:EstimationSystem .
+
+ai4se:ResourceAllocator a owl:Class ;
+    rdfs:label "Resource Allocator"@en ;
+    rdfs:comment "AI system optimizing resource allocation"@en ;
+    rdfs:subClassOf ai4se:ProjectIntelligenceSystem ,
+                    ai:ResourceOptimization .
+
+ai4se:RiskPredictor a owl:Class ;
+    rdfs:label "Risk Predictor"@en ;
+    rdfs:comment "AI system predicting project risks"@en ;
+    rdfs:subClassOf ai4se:ProjectIntelligenceSystem ,
+                    ai:RiskPrediction .
+
+ai4se:ScheduleOptimizer a owl:Class ;
+    rdfs:label "Schedule Optimizer"@en ;
+    rdfs:comment "AI system optimizing project schedules"@en ;
+    rdfs:subClassOf ai4se:ProjectIntelligenceSystem ,
+                    ai:SchedulingSystem .
+
+ai4se:TeamPerformanceAnalyzer a owl:Class ;
+    rdfs:label "Team Performance Analyzer"@en ;
+    rdfs:comment "AI system analyzing team performance"@en ;
+    rdfs:subClassOf ai4se:ProjectIntelligenceSystem ,
+                    ai:PerformanceAnalytics .
+
+ai4se:StakeholderCommunicationAssistant a owl:Class ;
+    rdfs:label "Stakeholder Communication Assistant"@en ;
+    rdfs:comment "AI assistant for stakeholder communications"@en ;
+    rdfs:subClassOf ai4se:ProjectIntelligenceSystem ,
+                    ai:CommunicationAssistant .
+
+# --- Project Management Practices with AI ---
+
+ai4se:IntelligentProjectPlanning a owl:Class ;
+    rdfs:label "Intelligent Project Planning"@en ;
+    rdfs:comment "Project planning enhanced with AI predictions"@en ;
+    rdfs:subClassOf o4se:ProjectPlanning ,
+                    ai4se:AIEnhancedProcess .
+
+ai4se:AdaptiveProjectControl a owl:Class ;
+    rdfs:label "Adaptive Project Control"@en ;
+    rdfs:comment "Project control with AI-driven adaptations"@en ;
+    rdfs:subClassOf o4se:ProjectControl ,
+                    ai4se:AIEnhancedProcess .
+
+ai4se:PredictiveRiskManagement a owl:Class ;
+    rdfs:label "Predictive Risk Management"@en ;
+    rdfs:comment "Risk management using predictive AI"@en ;
+    rdfs:subClassOf o4se:RiskManagement ,
+                    ai4se:AIEnhancedProcess .
+
+ai4se:DataDrivenDecisionMaking a owl:Class ;
+    rdfs:label "Data-Driven Decision Making"@en ;
+    rdfs:comment "Project decisions guided by AI analysis"@en ;
+    rdfs:subClassOf o4se:DecisionMaking ,
+                    ai4se:AIEnhancedProcess .
+
+#=============================================================================
+# SECTION 5: AI-ENHANCED COLLABORATION
+#=============================================================================
+
+# --- Collaboration Intelligence Systems ---
+
+ai4se:CollaborationIntelligenceSystem a owl:Class ;
+    rdfs:label "Collaboration Intelligence System"@en ;
+    rdfs:comment "AI system enhancing team collaboration"@en ;
+    rdfs:subClassOf ai4se:AI4SESSystem ;
+    skos:definition "System using AI to improve team collaboration and communication"@en .
+
+ai4se:CodeCollaborationAssistant a owl:Class ;
+    rdfs:label "Code Collaboration Assistant"@en ;
+    rdfs:comment "AI assistant for collaborative coding"@en ;
+    rdfs:subClassOf ai4se:CollaborationIntelligenceSystem ,
+                    ai:CollaborativeAI .
+
+ai4se:KnowledgeSharingSystem a owl:Class ;
+    rdfs:label "Knowledge Sharing System"@en ;
+    rdfs:comment "AI system facilitating knowledge sharing"@en ;
+    rdfs:subClassOf ai4se:CollaborationIntelligenceSystem ,
+                    ai:KnowledgeManagementSystem .
+
+ai4se:TeamSentimentAnalyzer a owl:Class ;
+    rdfs:label "Team Sentiment Analyzer"@en ;
+    rdfs:comment "AI system analyzing team sentiment and morale"@en ;
+    rdfs:subClassOf ai4se:CollaborationIntelligenceSystem ,
+                    ai:SentimentAnalysis .
+
+ai4se:CommunicationOptimizer a owl:Class ;
+    rdfs:label "Communication Optimizer"@en ;
+    rdfs:comment "AI system optimizing team communications"@en ;
+    rdfs:subClassOf ai4se:CollaborationIntelligenceSystem .
+
+ai4se:ConflictResolver a owl:Class ;
+    rdfs:label "Conflict Resolver"@en ;
+    rdfs:comment "AI system helping resolve team conflicts"@en ;
+    rdfs:subClassOf ai4se:CollaborationIntelligenceSystem ,
+                    ai:ConflictResolution .
+
+# --- Collaboration Practices with AI ---
+
+ai4se:AIEnhancedPairProgramming a owl:Class ;
+    rdfs:label "AI-Enhanced Pair Programming"@en ;
+    rdfs:comment "Pair programming with AI partner"@en ;
+    rdfs:subClassOf o4se:PairProgramming ,
+                    ai4se:AIEnhancedProcess .
+
+ai4se:IntelligentCodeSharing a owl:Class ;
+    rdfs:label "Intelligent Code Sharing"@en ;
+    rdfs:comment "Code sharing optimized by AI recommendations"@en ;
+    rdfs:subClassOf ai4se:CollaborationPattern .
+
+ai4se:AdaptiveTeamFormation a owl:Class ;
+    rdfs:label "Adaptive Team Formation"@en ;
+    rdfs:comment "Team formation based on AI analysis"@en ;
+    rdfs:subClassOf ai4se:CollaborationPattern .
+
+#=============================================================================
+# SECTION 6: AI-ENHANCED DOCUMENTATION
+#=============================================================================
+
+# --- Documentation Intelligence Systems ---
+
+ai4se:DocumentationIntelligenceSystem a owl:Class ;
+    rdfs:label "Documentation Intelligence System"@en ;
+    rdfs:comment "AI system for intelligent documentation"@en ;
+    rdfs:subClassOf ai4se:AI4SESSystem ;
+    skos:definition "System using AI to generate and maintain documentation"@en .
+
+ai4se:DocumentationGenerator a owl:Class ;
+    rdfs:label "Documentation Generator"@en ;
+    rdfs:comment "AI system generating documentation from code"@en ;
+    rdfs:subClassOf ai4se:DocumentationIntelligenceSystem ,
+                    ai:TextGeneration .
+
+ai4se:APIDocumentationAssistant a owl:Class ;
+    rdfs:label "API Documentation Assistant"@en ;
+    rdfs:comment "AI assistant for API documentation"@en ;
+    rdfs:subClassOf ai4se:DocumentationIntelligenceSystem .
+
+ai4se:DocumentationQualityChecker a owl:Class ;
+    rdfs:label "Documentation Quality Checker"@en ;
+    rdfs:comment "AI system checking documentation quality"@en ;
+    rdfs:subClassOf ai4se:DocumentationIntelligenceSystem ,
+                    ai:QualityAnalysis .
+
+ai4se:DocumentationUpdater a owl:Class ;
+    rdfs:label "Documentation Updater"@en ;
+    rdfs:comment "AI system keeping documentation synchronized"@en ;
+    rdfs:subClassOf ai4se:DocumentationIntelligenceSystem .
+
+# --- Documentation Practices with AI ---
+
+ai4se:AutomatedDocumentation a owl:Class ;
+    rdfs:label "Automated Documentation"@en ;
+    rdfs:comment "Documentation automatically generated by AI"@en ;
+    rdfs:subClassOf o4se:Documentation ,
+                    ai4se:AIEnhancedProcess .
+
+ai4se:IntelligentCommentGeneration a owl:Class ;
+    rdfs:label "Intelligent Comment Generation"@en ;
+    rdfs:comment "Code comments generated by AI"@en ;
+    rdfs:subClassOf ai4se:AutomatedDocumentation .
+
+ai4se:AdaptiveDocumentationMaintenance a owl:Class ;
+    rdfs:label "Adaptive Documentation Maintenance"@en ;
+    rdfs:comment "Documentation maintenance adapted by AI"@en ;
+    rdfs:subClassOf ai4se:AutomatedDocumentation .
+
+#=============================================================================
+# SECTION 7: PRACTICE INTEGRATION PROPERTIES
+#=============================================================================
+
+# --- Object Properties for Practices ---
+
+ai4se:enhancesPractice a owl:ObjectProperty ;
+    rdfs:label "enhances practice"@en ;
+    rdfs:comment "Indicates AI enhances a software practice"@en ;
+    rdfs:domain ai4se:AI4SESSystem ;
+    rdfs:range o4se:SoftwarePractice ;
+    rdfs:subPropertyOf ai4se:enhances .
+
+ai4se:replacesPractice a owl:ObjectProperty ;
+    rdfs:label "replaces practice"@en ;
+    rdfs:comment "Indicates AI replaces a manual practice"@en ;
+    rdfs:domain ai4se:AI4SESSystem ;
+    rdfs:range o4se:SoftwarePractice .
+
+ai4se:complementsPractice a owl:ObjectProperty ;
+    rdfs:label "complements practice"@en ;
+    rdfs:comment "Indicates AI complements existing practice"@en ;
+    rdfs:domain ai4se:AI4SESSystem ;
+    rdfs:range o4se:SoftwarePractice .
+
+ai4se:enablesMethodology a owl:ObjectProperty ;
+    rdfs:label "enables methodology"@en ;
+    rdfs:comment "Indicates AI enables new methodology"@en ;
+    rdfs:domain ai4se:AI4SESSystem ;
+    rdfs:range o4se:Methodology .
+
+ai4se:improvesMetric a owl:ObjectProperty ;
+    rdfs:label "improves metric"@en ;
+    rdfs:comment "Indicates AI improves a practice metric"@en ;
+    rdfs:domain ai4se:AI4SESSystem ;
+    rdfs:range o4se:Metric .
+
+# --- Data Properties for Practices ---
+
+ai4se:practiceAdoptionRate a owl:DatatypeProperty ;
+    rdfs:label "practice adoption rate"@en ;
+    rdfs:comment "Rate of AI practice adoption"@en ;
+    rdfs:domain ai4se:AIEnhancedProcess ;
+    rdfs:range xsd:decimal .
+
+ai4se:practiceEffectiveness a owl:DatatypeProperty ;
+    rdfs:label "practice effectiveness"@en ;
+    rdfs:comment "Effectiveness measure of AI-enhanced practice"@en ;
+    rdfs:domain ai4se:AIEnhancedProcess ;
+    rdfs:range xsd:decimal .
+
+ai4se:practiceMaturityLevel a owl:DatatypeProperty ;
+    rdfs:label "practice maturity level"@en ;
+    rdfs:comment "Maturity level of AI practice (1-5)"@en ;
+    rdfs:domain ai4se:AIEnhancedProcess ;
+    rdfs:range xsd:integer .
+
+ai4se:learningCurveTime a owl:DatatypeProperty ;
+    rdfs:label "learning curve time"@en ;
+    rdfs:comment "Time to learn AI-enhanced practice"@en ;
+    rdfs:domain ai4se:AIEnhancedProcess ;
+    rdfs:range xsd:duration .
+
+#=============================================================================
+# SECTION 8: COMPETENCY QUESTIONS FOR PRACTICES
+#=============================================================================
+
+ai4se:CQ_Practice1 a meta:CompetencyQuestion ;
+    rdfs:label "Which AI systems enhance agile practices?"@en ;
+    meta:hasVerificationQuery """
+        SELECT ?system ?practice WHERE {
+            ?system rdfs:subClassOf ai4se:IntelligentAgileSystem .
+            ?system ai4se:enhancesPractice ?practice .
+        }
+    """ .
+
+ai4se:CQ_Practice2 a meta:CompetencyQuestion ;
+    rdfs:label "What is the effectiveness of AI-enhanced practices?"@en ;
+    meta:hasVerificationQuery """
+        SELECT ?practice ?effectiveness WHERE {
+            ?practice ai4se:practiceEffectiveness ?effectiveness .
+            ?practice rdfs:subClassOf ai4se:AIEnhancedProcess .
+        }
+    """ .
+
+ai4se:CQ_Practice3 a meta:CompetencyQuestion ;
+    rdfs:label "How do AI systems improve DevOps metrics?"@en ;
+    meta:hasVerificationQuery """
+        SELECT ?system ?metric WHERE {
+            ?system rdfs:subClassOf ai4se:IntelligentDevOpsSystem .
+            ?system ai4se:improvesMetric ?metric .
+        }
+    """ .
+
+#=============================================================================
+# SECTION 9: FUNCTIONAL REQUIREMENTS FOR PRACTICES
+#=============================================================================
+
+ai4se:FR_Practice1 a meta:FunctionalRequirement ;
+    rdfs:label "Methodology Coverage"@en ;
+    rdfs:comment "Support major SE methodologies with AI enhancement"@en ;
+    meta:hasPriority "Critical" ;
+    meta:hasTestCase ai4se:TC_MethodologyCoverage .
+
+ai4se:FR_Practice2 a meta:FunctionalRequirement ;
+    rdfs:label "Practice Metrics"@en ;
+    rdfs:comment "Track effectiveness metrics for AI practices"@en ;
+    meta:hasPriority "High" ;
+    meta:hasTestCase ai4se:TC_PracticeMetrics .
+
+ai4se:FR_Practice3 a meta:FunctionalRequirement ;
+    rdfs:label "Practice Integration"@en ;
+    rdfs:comment "Support integration of multiple AI-enhanced practices"@en ;
+    meta:hasPriority "High" ;
+    meta:hasTestCase ai4se:TC_PracticeIntegration .
+
+#=============================================================================
+# SECTION 10: DISJOINTNESS AXIOMS FOR PRACTICES
+#=============================================================================
+
+[ a owl:AllDisjointClasses ;
+  owl:members ( ai4se:IntelligentAgileSystem
+                ai4se:IntelligentDevOpsSystem
+                ai4se:QualityIntelligenceSystem
+                ai4se:ProjectIntelligenceSystem
+                ai4se:CollaborationIntelligenceSystem
+                ai4se:DocumentationIntelligenceSystem ) ] .
+
+[ a owl:AllDisjointClasses ;
+  owl:members ( ai4se:SprintPlanner
+                ai4se:VelocityPredictor
+                ai4se:BacklogOptimizer
+                ai4se:StoryPointEstimator
+                ai4se:RetrospectiveAnalyzer ) ] .
+
+#=============================================================================
+# END OF PRACTICES MODULE
+#=============================================================================
