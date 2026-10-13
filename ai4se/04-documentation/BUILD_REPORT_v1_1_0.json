@@ -1,0 +1,53 @@
+{
+ "modules": 29,
+ "t_triples": 32762,
+ "a_triples": 3217,
+ "s_triples": 158,
+ "classes": 4444,
+ "individuals": 311,
+ "object_properties": 181,
+ "datatype_properties": 187,
+ "quarantined": {
+  "Q1 template": 6341,
+  "Q4 figure": 153,
+  "Q3 selfscore": 91,
+  "Q2 unsourced": 273
+ },
+ "quarantined_total": 6858,
+ "q1_pairs": 9,
+ "bridges": 11,
+ "stub_classes": 621,
+ "stub_tools": 253,
+ "stub_properties": 65,
+ "bridge_names": [
+  "AI4SEConcept",
+  "SEConcept",
+  "ServerlessArchitecture",
+  "EventDrivenArchitecture",
+  "BlueGreenDeployment",
+  "InfrastructureAsCode",
+  "ContainerOrchestration",
+  "DataWarehouse",
+  "DataLake",
+  "CachingStrategy",
+  "ChaosEngineering"
+ ],
+ "closematch_internal": 9,
+ "closematch_o4se": 383,
+ "closematch_o4se_ambiguous": 108,
+ "closematch_o4se_stubs": 30,
+ "derived_labels": 10,
+ "derived_label_ids": [
+  "http://www.semanticweb.org/ontologies/2025/AI4SE#QualityScoreRestriction",
+  "http://example.org/ai4se/financial#contributesToPortfolioROI",
+  "http://example.org/ai4se/performance#portfolioMetric",
+  "http://example.org/ai4se/governance#subjectToPolicy",
+  "http://example.org/ontology-engineering#indirectlyVerifies",
+  "http://example.org/ai4se#indirectlyOrchestrates",
+  "http://example.org/ai4se/maturity#evolvesTo",
+  "http://example.org/ai4se/strategy#transitivelyAlignsWith",
+  "http://example.org/ai4se/risk#indirectlyAffectedBy",
+  "http://example.org/ontology-engineering#termMapsToClass"
+ ],
+ "extracted_shapes": 5
+}
