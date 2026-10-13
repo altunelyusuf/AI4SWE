@@ -1,0 +1,2449 @@
+@prefix : <http://ai4se.org/ontology/v4#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix v5: <http://ai4se.org/ontology/v5#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+:AFL a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "AFL"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+:AIFairness360 a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "AI Fairness360"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+:ARIS_Process_Mining a :Tool ;
+    rdfs:label "ARIS_Process_Mining"@en ;
+    :hasCategory "Process Mining"@en ;
+    :hasToolURL "https://www.softwareag.com"^^xsd:anyURI ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v4> ;
+    skos:definition "Enterprise process mining"@en .
+
+:Accuracy a owl:NamedIndividual ;
+    rdfs:label "Accuracy"@en ;
+    dcterms:isPartOf :DataEngineeringModule ;
+    skos:definition "Data correctly represents real-world entity"@en .
+
+:AllenNLP a :Tool ;
+    rdfs:label "AllenNLP"@en ;
+    :hasCategory "NLP Tools"@en ;
+    :hasToolURL "https://allennlp.org"^^xsd:anyURI ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v4> ;
+    skos:definition "NLP research on PyTorch"@en .
+
+:AlphaCode a :Tool ;
+    rdfs:label "AlphaCode"@en ;
+    :hasCategory "LLM & Code Generation"@en ;
+    :hasToolURL "https://deepmind.google"^^xsd:anyURI ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v4> ;
+    skos:definition "DeepMind coding AI"@en .
+
+:Ansible a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Ansible"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+:Anthropic_Claude a :Tool ;
+    rdfs:label "Anthropic_Claude"@en ;
+    :hasCategory "LLM & Code Generation"@en ;
+    :hasToolURL "https://www.anthropic.com"^^xsd:anyURI ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v4> ;
+    skos:definition "Claude API"@en .
+
+:ApacheFlink a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Apache Flink"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+:ApacheIceberg a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Apache Iceberg"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+:ApacheKafka a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Apache Kafka"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+:ArgoCD a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Argo CD"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+:Asana a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Asana"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+:AutoGluon a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Auto Gluon"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+:AutomatedReasoning a :OntologyStrength,
+        owl:NamedIndividual ;
+    rdfs:label "Automated Reasoning"@en ;
+    dcterms:isPartOf :HybridSystemsModule ;
+    skos:definition "Reasoners infer implicit knowledge"@en .
+
+:Availability a owl:NamedIndividual ;
+    rdfs:label "Availability"@en ;
+    dcterms:isPartOf :ArchitecturePatternsModule ;
+    skos:definition "System accessible when needed"@en .
+
+:Azure_DevOps a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Azure Dev Ops"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+:BackstopJS a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Backstop JS"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+:Bandit a :Tool ;
+    rdfs:label "Bandit"@en ;
+    :hasCategory "Security"@en ;
+    :hasToolURL "https://bandit.readthedocs.io"^^xsd:anyURI ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v4> ;
+    skos:definition "Python security linter"@en .
+
+:BrittleToChanges a :OntologyWeakness,
+        owl:NamedIndividual ;
+    rdfs:label "Brittle to Changes"@en ;
+    dcterms:isPartOf :HybridSystemsModule ;
+    skos:definition "Modifications require careful refactoring"@en .
+
+:CatBoost a :Tool ;
+    rdfs:label "CatBoost"@en ;
+    :hasCategory "ML Frameworks"@en ;
+    :hasToolURL "https://catboost.ai"^^xsd:anyURI ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v4> ;
+    skos:definition "Yandex gradient boosting"@en .
+
+:Celonis a :Tool ;
+    rdfs:label "Celonis"@en ;
+    :hasCategory "Process Mining"@en ;
+    :hasToolURL "https://www.celonis.com"^^xsd:anyURI ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v4> ;
+    skos:definition "Commercial process mining and execution management platform"@en,
+        "Enterprise process mining platform"@en .
+
+:ChaosMesh a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Chaos Mesh"@en ;
+    :hasToolURL "https://chaos-mesh.org/"^^xsd:anyURI ;
+    dcterms:isPartOf :TestingTaxonomyModule ;
+    skos:definition "Kubernetes-native chaos engineering platform"@en .
+
+:ChaosMonkey a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Chaos Monkey"@en ;
+    :hasToolURL "https://netflix.github.io/chaosmonkey/"^^xsd:anyURI ;
+    dcterms:isPartOf :TestingTaxonomyModule ;
+    skos:definition "Netflix's chaos engineering tool"@en .
+
+:Chromatic a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Chromatic"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+:CircuitClosed a owl:NamedIndividual ;
+    rdfs:label "Circuit Closed"@en ;
+    dcterms:isPartOf :ArchitecturePatternsModule ;
+    skos:definition "Normal operation, requests flow through"@en .
+
+:CircuitHalfOpen a owl:NamedIndividual ;
+    rdfs:label "Circuit Half-Open"@en ;
+    dcterms:isPartOf :ArchitecturePatternsModule ;
+    skos:definition "Testing if service recovered, allows limited requests"@en .
+
+:CircuitOpen a owl:NamedIndividual ;
+    rdfs:label "Circuit Open"@en ;
+    dcterms:isPartOf :ArchitecturePatternsModule ;
+    skos:definition "Too many failures, requests immediately fail"@en .
+
+:Claude a :Technique ;
+    rdfs:label "Claude"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v4> ;
+    skos:definition "Large language model by Anthropic for text and code generation"@en .
+
+:ClaudeAgentForDomainEngineering a :SingleAgentDomainEngineering,
+        owl:NamedIndividual ;
+    rdfs:label "Claude Agent for Domain Engineering"@en ;
+    :produces :ECommerceDomainOntology ;
+    :requiresTool :ClaudeAPI ;
+    dcterms:isPartOf :DomainEngineeringModule ;
+    skos:definition "Single Claude Sonnet instance performing end-to-end domain engineering"@en .
+
+:CloudFormation a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Cloud Formation"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+:CodeBERT a :Technique ;
+    rdfs:label "CodeBERT"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v4> ;
+    skos:definition "Pre-trained model for programming language understanding"@en .
+
+:CodeClimate a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Code Climate"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+:CodeQL a :Tool ;
+    rdfs:label "CodeQL"@en ;
+    :hasCategory "Code Analysis"@en ;
+    :hasToolURL "https://codeql.github.com"^^xsd:anyURI ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v4> ;
+    skos:definition "GitHub semantic analysis"@en .
+
+:CodeScene a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Code Scene"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+:CodeT5 a :Tool ;
+    rdfs:label "CodeT5"@en ;
+    :hasCategory "LLM & Code Generation"@en ;
+    :hasToolURL "https://github.com/salesforce/CodeT5"^^xsd:anyURI ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v4> ;
+    skos:definition "Salesforce code model"@en .
+
+:CodeWhisperer a :Tool ;
+    rdfs:label "CodeWhisperer"@en ;
+    :hasCategory "LLM & Code Generation"@en ;
+    :hasToolURL "https://aws.amazon.com/codewhisperer/"^^xsd:anyURI ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v4> ;
+    skos:definition "AWS AI coding"@en .
+
+:Codex a :Tool ;
+    rdfs:label "Codex"@en ;
+    :hasCategory "LLM & Code Generation"@en ;
+    :hasToolURL "https://openai.com/blog/openai-codex"^^xsd:anyURI ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v4> ;
+    skos:definition "OpenAI code model"@en .
+
+:Completeness a owl:NamedIndividual ;
+    rdfs:label "Completeness"@en ;
+    dcterms:isPartOf :DataEngineeringModule ;
+    skos:definition "All required data is present"@en .
+
+:Confidentiality a owl:NamedIndividual ;
+    rdfs:label "Confidentiality"@en ;
+    dcterms:isPartOf :ArchitecturePatternsModule ;
+    skos:definition "Data accessible only to authorized parties"@en .
+
+:Consistency a owl:NamedIndividual ;
+    rdfs:label "Consistency"@en ;
+    dcterms:isPartOf :DataEngineeringModule ;
+    skos:definition "Data values consistent across datasets"@en .
+
+:ConsistencyGuarantees a :OntologyStrength,
+        owl:NamedIndividual ;
+    rdfs:label "Consistency Guarantees"@en ;
+    dcterms:isPartOf :HybridSystemsModule ;
+    skos:definition "Formal constraints ensure logical consistency"@en .
+
+:ContextualReasoning a :LLMStrength,
+        owl:NamedIndividual ;
+    rdfs:label "Contextual Reasoning"@en ;
+    dcterms:isPartOf :HybridSystemsModule ;
+    skos:definition "LLMs apply common sense and context"@en .
+
+:CreativeProblemSolving a :LLMStrength,
+        owl:NamedIndividual ;
+    rdfs:label "Creative Problem Solving"@en ;
+    dcterms:isPartOf :HybridSystemsModule ;
+    skos:definition "LLMs generate novel solutions"@en .
+
+:DVC a :Tool ;
+    rdfs:label "DVC (Data Version Control)"@en ;
+    :hasCategory "MLOps"@en ;
+    :hasToolURL "https://dvc.org"^^xsd:anyURI ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v4> ;
+    skos:altLabel "DVC"@en ;
+    skos:definition "Data version control"@en,
+        "Version control system for ML projects"@en .
+
+:DataPreparation a owl:NamedIndividual ;
+    rdfs:label "Data Preparation"@en ;
+    dcterms:isPartOf :DataEngineeringModule .
+
+:Datadog a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Datadog"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+:DeltaLake a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Delta Lake"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+:DevLake a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Dev Lake"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+:Disco a :Tool ;
+    rdfs:label "Disco"@en ;
+    :hasCategory "Process Mining"@en ;
+    :hasToolURL "https://fluxicon.com/disco/"^^xsd:anyURI ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v4> ;
+    skos:definition "Automated process discovery"@en .
+
+:ESLint a :Tool ;
+    rdfs:label "ESLint"@en ;
+    :hasCategory "Code Analysis"@en ;
+    :hasToolURL "https://eslint.org"^^xsd:anyURI ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v4> ;
+    skos:definition "JavaScript linter"@en,
+        "JavaScript linting utility"@en .
+
+:EvoSuite a :Tool ;
+    rdfs:label "EvoSuite"@en ;
+    :hasCategory "Testing"@en ;
+    :hasToolURL "https://www.evosuite.org"^^xsd:anyURI ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v4> ;
+    skos:definition "Automated test gen"@en .
+
+:ExampleSPARQLQuery1 a :TechniqueDiscoveryQuery,
+        owl:NamedIndividual ;
+    rdfs:label "Find Testing Techniques for Python"@en ;
+    :hasSPARQLQuery """
+PREFIX ai4se: <http://ai4se.org/ontology/v4#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?technique ?label ?description
+WHERE {
+    ?technique rdf:type ai4se:TestingTechnique ;
+               rdfs:label ?label ;
+               skos:definition ?description ;
+               ai4se:applicableToTechnology "Python" .
+}
+ORDER BY ?label
+"""^^xsd:string ;
+    dcterms:isPartOf :SemanticTechnologiesModule .
+
+:ExampleSPARQLQuery2 a :ToolDiscoveryQuery,
+        owl:NamedIndividual ;
+    rdfs:label "Find Mutation Testing Tools"@en ;
+    :hasSPARQLQuery """
+PREFIX ai4se: <http://ai4se.org/ontology/v4#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?tool ?label ?url
+WHERE {
+    ?tool ai4se:implements ai4se:MutationTesting ;
+          rdfs:label ?label .
+    OPTIONAL { ?tool ai4se:hasToolURL ?url }
+}
+ORDER BY ?label
+"""^^xsd:string ;
+    dcterms:isPartOf :SemanticTechnologiesModule .
+
+:ExpensiveAtScale a :LLMWeakness,
+        owl:NamedIndividual ;
+    rdfs:label "Expensive at Scale"@en ;
+    dcterms:isPartOf :HybridSystemsModule ;
+    skos:definition "API costs grow linearly with usage"@en .
+
+:ExpensiveToCreate a :OntologyWeakness,
+        owl:NamedIndividual ;
+    rdfs:label "Expensive to Create"@en ;
+    dcterms:isPartOf :HybridSystemsModule ;
+    skos:definition "Manual ontology engineering is time-consuming"@en .
+
+:Fairlearn a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Fairlearn"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+:FastAI a :Tool ;
+    rdfs:label "FastAI"@en ;
+    :hasCategory "ML Frameworks"@en ;
+    :hasToolURL "https://www.fast.ai"^^xsd:anyURI ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v4> ;
+    skos:definition "Deep learning on PyTorch"@en .
+
+:FastCheck a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Fast Check"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+:Feast a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Feast"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+:FeatureEngineering a owl:NamedIndividual ;
+    rdfs:label "Feature Engineering"@en ;
+    dcterms:isPartOf :DataEngineeringModule .
+
+:FinancialServicesDomainOntology a :DomainOntology,
+        owl:NamedIndividual ;
+    rdfs:label "Financial Services Domain Ontology"@en ;
+    :hasV4ID "EXAMPLE_002"^^xsd:string ;
+    :reasonerSupport :Pellet ;
+    :serializedAs :RDFXML ;
+    dcterms:isPartOf :DomainEngineeringModule ;
+    skos:definition "Banking and financial services ontology with regulatory compliance support"@en .
+
+:Flair a :Tool ;
+    rdfs:label "Flair"@en ;
+    :hasCategory "NLP Tools"@en ;
+    :hasToolURL "https://github.com/flairNLP/flair"^^xsd:anyURI ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v4> ;
+    skos:definition "State-of-art embeddings"@en .
+
+:FluxCD a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Flux CD"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+:FormalStructure a :OntologyStrength,
+        owl:NamedIndividual ;
+    rdfs:label "Formal Structure"@en ;
+    dcterms:isPartOf :HybridSystemsModule ;
+    skos:definition "Ontologies provide rigorous logical structure"@en .
+
+:FusekiInstance a :ApacheJenaFuseki,
+        owl:NamedIndividual ;
+    rdfs:label "AI4SE Production Fuseki"@en ;
+    :hasDatasetSize 50000 ;
+    :hasEndpointURL "http://localhost:3030/ai4se/sparql"^^xsd:anyURI ;
+    dcterms:isPartOf :SemanticTechnologiesModule ;
+    skos:note "Production triple store for AI4SE knowledge graph"@en .
+
+:GPT4 a :Technique ;
+    rdfs:label "GPT-4"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v4> ;
+    skos:definition "Large language model by OpenAI for text generation and understanding"@en .
+
+:Gensim a :Tool ;
+    rdfs:label "Gensim"@en ;
+    :hasCategory "NLP Tools"@en ;
+    :hasToolURL "https://radimrehurek.com/gensim/"^^xsd:anyURI ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v4> ;
+    skos:definition "Topic modeling"@en .
+
+:GitAnalyzer a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Git Analyzer"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+:GitHub_Copilot a :Tool ;
+    rdfs:label "GitHub_Copilot"@en ;
+    :hasCategory "LLM & Code Generation"@en ;
+    :hasToolURL "https://github.com/features/copilot"^^xsd:anyURI ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v4> ;
+    skos:definition "AI pair programmer"@en .
+
+:Grafana a :Tool ;
+    rdfs:label "Grafana"@en ;
+    :hasCategory "Cloud-Native"@en ;
+    :hasToolURL "https://grafana.com"^^xsd:anyURI ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v4> ;
+    skos:definition "Analytics platform"@en .
+
+:GreatExpectations a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Great Expectations"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+:GremlinInc a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Gremlin Inc"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+:Hallucinations a :LLMWeakness,
+        owl:NamedIndividual ;
+    rdfs:label "Hallucinations"@en ;
+    dcterms:isPartOf :HybridSystemsModule ;
+    skos:definition "LLMs generate plausible but incorrect information"@en .
+
+:HorizontalScaling a owl:NamedIndividual ;
+    rdfs:label "Horizontal Scaling"@en ;
+    dcterms:isPartOf :ArchitecturePatternsModule ;
+    skos:definition "Adding more machines/instances"@en .
+
+:HuggingFace a :Tool ;
+    rdfs:label "Hugging Face"@en ;
+    :hasToolURL "https://huggingface.co"^^xsd:anyURI ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v4> ;
+    skos:definition "Transformers library and model hub"@en .
+
+:HuggingFace_Transformers a :Tool ;
+    rdfs:label "HuggingFace_Transformers"@en ;
+    :hasCategory "NLP Tools"@en ;
+    :hasToolURL "https://huggingface.co"^^xsd:anyURI ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v4> ;
+    skos:definition "Transformers library"@en .
+
+:Hypothesis a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Hypothesis"@en ;
+    :hasCategory "Testing"@en ;
+    :hasToolURL "https://hypothesis.readthedocs.io"^^xsd:anyURI,
+        "https://hypothesis.readthedocs.io/"^^xsd:anyURI ;
+    :supportsLanguage "Python"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v4>,
+        :TestingTaxonomyModule ;
+    skos:definition "Property-based testing"@en,
+        "Python property-based testing framework"@en .
+
+:Hystrix a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Hystrix"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+:Ingestion a owl:NamedIndividual ;
+    rdfs:label "Ingestion"@en ;
+    dcterms:isPartOf :DataEngineeringModule ;
+    skos:definition "Reading data from source systems"@en .
+
+:Integrity a owl:NamedIndividual ;
+    rdfs:label "Integrity"@en ;
+    dcterms:isPartOf :ArchitecturePatternsModule ;
+    skos:definition "Data remains accurate and unmodified"@en .
+
+:InterpretML a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Interpret ML"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+:JAX a :Tool ;
+    rdfs:label "JAX"@en ;
+    :hasCategory "ML Frameworks"@en ;
+    :hasToolURL "https://github.com/google/jax"^^xsd:anyURI ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v4> ;
+    skos:definition "Google numerical computing"@en .
+
+:JUnit a :Tool ;
+    rdfs:label "JUnit"@en ;
+    :hasCategory "Testing"@en ;
+    :hasToolURL "https://junit.org"^^xsd:anyURI ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v4> ;
+    skos:definition "Java testing"@en,
+        "Java testing framework"@en .
+
+:Jazzer a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Jazzer"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+:JenkinsPipelineExample a :Pipeline,
+        owl:NamedIndividual ;
+    rdfs:label "Jenkins Pipeline Example"@en ;
+    :hasStage :BuildStage,
+        :DeployStage,
+        :TestStage ;
+    dcterms:isPartOf :CICDAutomationModule ;
+    skos:definition "Standard Jenkins declarative pipeline"@en .
+
+:Jira a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Jira"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+:Kafka a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Kafka"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+:Keras a :Tool ;
+    rdfs:label "Keras"@en ;
+    :hasCategory "ML Frameworks"@en ;
+    :hasToolURL "https://keras.io"^^xsd:anyURI ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v4> ;
+    skos:definition "High-level neural networks API"@en .
+
+:Kibana a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Kibana"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+:Kubeflow a :Tool ;
+    rdfs:label "Kubeflow"@en ;
+    :hasCategory "MLOps"@en ;
+    :hasToolURL "https://kubeflow.org"^^xsd:anyURI ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v4> ;
+    skos:definition "ML on Kubernetes"@en,
+        "ML toolkit for Kubernetes"@en .
+
+:LLMPlatform a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "LLM Platform"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+:LangChain a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Lang Chain"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+:LibFuzzer a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Lib Fuzzer"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+:LightGBM a :Tool ;
+    rdfs:label "LightGBM"@en ;
+    :hasCategory "ML Frameworks"@en ;
+    :hasToolURL "https://lightgbm.readthedocs.io"^^xsd:anyURI ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v4> ;
+    skos:definition "Microsoft gradient boosting"@en .
+
+:Loading a owl:NamedIndividual ;
+    rdfs:label "Loading"@en ;
+    dcterms:isPartOf :DataEngineeringModule ;
+    skos:definition "Writing data to destination"@en .
+
+:Looker a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Looker"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+:MLflow a :Tool ;
+    rdfs:label "MLflow"@en ;
+    :hasCategory "MLOps"@en ;
+    :hasToolURL "https://mlflow.org"^^xsd:anyURI ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v4> ;
+    skos:definition "ML lifecycle platform"@en,
+        "Platform for ML lifecycle management"@en .
+
+:MXNet a :Tool ;
+    rdfs:label "MXNet"@en ;
+    :hasCategory "ML Frameworks"@en ;
+    :hasToolURL "https://mxnet.apache.org"^^xsd:anyURI ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v4> ;
+    skos:definition "Apache deep learning"@en .
+
+:Minit a :Tool ;
+    rdfs:label "Minit"@en ;
+    :hasCategory "Process Mining"@en ;
+    :hasToolURL "https://www.minit.io"^^xsd:anyURI ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v4> ;
+    skos:definition "Operational excellence mining"@en .
+
+:ModelDeployment a owl:NamedIndividual ;
+    rdfs:label "Model Deployment"@en ;
+    dcterms:isPartOf :DataEngineeringModule .
+
+:ModelEvaluation a owl:NamedIndividual ;
+    rdfs:label "Model Evaluation"@en ;
+    dcterms:isPartOf :DataEngineeringModule .
+
+:ModelTraining a owl:NamedIndividual ;
+    rdfs:label "Model Training"@en ;
+    dcterms:isPartOf :DataEngineeringModule .
+
+:Monday a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Monday"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+:MultiAgentDomainTeam a :MultiAgentDomainEngineering,
+        owl:NamedIndividual ;
+    rdfs:label "Multi-Agent Domain Engineering Team"@en ;
+    :hasArchitecturePattern "Coordinator + 5 specialist agents"^^xsd:string ;
+    dcterms:isPartOf :DomainEngineeringModule ;
+    skos:definition "Coordinated team of 5 specialized agents"@en .
+
+:Mutmut a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "mutmut"@en ;
+    :hasToolURL "https://github.com/boxed/mutmut"^^xsd:anyURI ;
+    :supportsLanguage "Python"@en ;
+    dcterms:isPartOf :TestingTaxonomyModule ;
+    skos:definition "Python mutation testing tool"@en .
+
+:NLTK a :Tool ;
+    rdfs:label "NLTK"@en ;
+    :hasCategory "NLP Tools"@en ;
+    :hasToolURL "https://www.nltk.org"^^xsd:anyURI ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v4> ;
+    skos:definition "NLP toolkit"@en .
+
+:NamedEntityRecognition a :Technique ;
+    rdfs:label "Named Entity Recognition"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v4> ;
+    skos:definition "NLP technique to identify and classify named entities in text"@en .
+
+:NaturalLanguageUnderstanding a :LLMStrength,
+        owl:NamedIndividual ;
+    rdfs:label "Natural Language Understanding"@en ;
+    dcterms:isPartOf :HybridSystemsModule ;
+    skos:definition "LLMs excel at understanding human language nuances"@en .
+
+:NoFormalReasoning a :LLMWeakness,
+        owl:NamedIndividual ;
+    rdfs:label "No Formal Reasoning"@en ;
+    dcterms:isPartOf :HybridSystemsModule ;
+    skos:definition "LLMs cannot perform provable logical inference"@en .
+
+:OWASP_ZAP a :Tool ;
+    rdfs:label "OWASP_ZAP"@en ;
+    :hasCategory "Security"@en ;
+    :hasToolURL "https://www.zaproxy.org"^^xsd:anyURI ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v4> ;
+    skos:definition "Web security scanner"@en .
+
+:OpenAI_API a :Tool ;
+    rdfs:label "OpenAI_API"@en ;
+    :hasCategory "LLM & Code Generation"@en ;
+    :hasToolURL "https://platform.openai.com"^^xsd:anyURI ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v4> ;
+    skos:definition "GPT-4 API"@en .
+
+:OpenNMT a :Tool ;
+    rdfs:label "OpenNMT"@en ;
+    :hasCategory "NLP Tools"@en ;
+    :hasToolURL "https://opennmt.net"^^xsd:anyURI ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v4> ;
+    skos:definition "Neural machine translation"@en .
+
+:PAFnow a :Tool ;
+    rdfs:label "PAFnow"@en ;
+    :hasCategory "Process Mining"@en ;
+    :hasToolURL "https://pafnow.com"^^xsd:anyURI ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v4> ;
+    skos:definition "Automated process discovery"@en .
+
+:PIT a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "PIT"@en ;
+    :supportsLanguage "Java"@en ;
+    dcterms:isPartOf :TestingTaxonomyModule ;
+    skos:definition "Java mutation testing tool"@en .
+
+:PM4Py a :Tool ;
+    rdfs:label "PM4Py"@en ;
+    :hasCategory "Process Mining"@en ;
+    :hasToolURL "https://pm4py.fit.fraunhofer.de"^^xsd:anyURI ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v4> ;
+    skos:definition "Python library for process mining"@en,
+        "Python process mining library"@en .
+
+:Pact a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Pact"@en ;
+    :hasToolURL "https://pact.io/"^^xsd:anyURI ;
+    dcterms:isPartOf :TestingTaxonomyModule ;
+    skos:definition "Consumer-driven contract testing framework"@en .
+
+:Percy a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Percy"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+:PoorAtAmbiguity a :OntologyWeakness,
+        owl:NamedIndividual ;
+    rdfs:label "Poor at Handling Ambiguity"@en ;
+    dcterms:isPartOf :HybridSystemsModule ;
+    skos:definition "Formal systems struggle with vague concepts"@en .
+
+:PowerBI a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Power BI"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+:ProM a :Tool ;
+    rdfs:label "ProM Framework"@en ;
+    :hasCategory "Process Mining"@en ;
+    :hasToolURL "http://www.promtools.org"^^xsd:anyURI ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v4> ;
+    skos:altLabel "ProM"@en ;
+    skos:definition "Open-source extensible framework for process mining research"@en,
+        "Process mining research framework"@en .
+
+:Prometheus a :Tool ;
+    rdfs:label "Prometheus"@en ;
+    :hasCategory "Cloud-Native"@en ;
+    :hasToolURL "https://prometheus.io"^^xsd:anyURI ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v4> ;
+    skos:definition "Monitoring"@en .
+
+:PyTorch a :Tool ;
+    rdfs:label "PyTorch"@en ;
+    :hasCategory "ML Frameworks"@en ;
+    :hasToolURL "https://pytorch.org"^^xsd:anyURI ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v4> ;
+    skos:definition "Deep learning by Meta"@en,
+        "Deep learning framework by Meta"@en .
+
+:Pylint a :Tool ;
+    rdfs:label "Pylint"@en ;
+    :hasCategory "Code Analysis"@en ;
+    :hasToolURL "https://pylint.org"^^xsd:anyURI ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v4> ;
+    skos:definition "Python analyzer"@en .
+
+:Pytest a :Tool ;
+    rdfs:label "Pytest"@en ;
+    :hasCategory "Testing"@en ;
+    :hasToolURL "https://pytest.org"^^xsd:anyURI ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v4> ;
+    skos:definition "Python testing"@en,
+        "Python testing framework"@en .
+
+:QPR_ProcessAnalyzer a :Tool ;
+    rdfs:label "QPR_ProcessAnalyzer"@en ;
+    :hasCategory "Process Mining"@en ;
+    :hasToolURL "https://www.qpr.com"^^xsd:anyURI ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v4> ;
+    skos:definition "Process mining analytics"@en .
+
+:QuickCheck a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "QuickCheck"@en ;
+    :supportsLanguage "Haskell"@en ;
+    dcterms:isPartOf :TestingTaxonomyModule ;
+    skos:definition "Haskell property-based testing library"@en .
+
+:RLlib a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "R Llib"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+:RabbitMQ a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Rabbit MQ"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+:Replit_Ghostwriter a :Tool ;
+    rdfs:label "Replit_Ghostwriter"@en ;
+    :hasCategory "LLM & Code Generation"@en ;
+    :hasToolURL "https://replit.com"^^xsd:anyURI ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v4> ;
+    skos:definition "Replit AI assistant"@en .
+
+:Resilience4j a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Resilience4j"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+:ScikitLearn a :Tool ;
+    rdfs:label "scikit-learn"@en ;
+    :hasCategory "ML Frameworks"@en ;
+    :hasToolURL "https://scikit-learn.org"^^xsd:anyURI ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v4> ;
+    skos:altLabel "ScikitLearn"@en ;
+    skos:definition "Classical ML library"@en,
+        "Machine learning library for Python"@en .
+
+:Selenium a :Tool ;
+    rdfs:label "Selenium"@en ;
+    :hasCategory "Testing"@en ;
+    :hasToolURL "https://selenium.dev"^^xsd:anyURI ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v4> ;
+    skos:definition "Web automation"@en .
+
+:ServiceNow a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Service Now"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+:Signavio a :Tool ;
+    rdfs:label "Signavio"@en ;
+    :hasCategory "Process Mining"@en ;
+    :hasToolURL "https://www.signavio.com"^^xsd:anyURI ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v4> ;
+    skos:definition "Business process intelligence"@en .
+
+:Snyk a :Tool ;
+    rdfs:label "Snyk"@en ;
+    :hasCategory "Security"@en ;
+    :hasToolURL "https://snyk.io"^^xsd:anyURI ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v4> ;
+    skos:definition "Developer security"@en .
+
+:SonarQube a :Tool ;
+    rdfs:label "SonarQube"@en ;
+    :hasCategory "Code Analysis"@en ;
+    :hasToolURL "https://www.sonarqube.org"^^xsd:anyURI ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v4> ;
+    skos:definition "Code quality inspection"@en,
+        "Continuous code quality inspection platform"@en .
+
+:SpringCloudContract a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Spring Cloud Contract"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+:Stable_Baselines3 a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Stable Baselines3"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+:StandardKubernetesCluster a :Kubernetes,
+        owl:NamedIndividual ;
+    rdfs:label "Standard Kubernetes Cluster"@en ;
+    :hasComponent :Deployment,
+        :KubernetesService,
+        :Pod ;
+    dcterms:isPartOf :CloudContainerizationModule .
+
+:Stanford_CoreNLP a :Tool ;
+    rdfs:label "Stanford_CoreNLP"@en ;
+    :hasCategory "NLP Tools"@en ;
+    :hasToolURL "https://stanfordnlp.github.io/CoreNLP/"^^xsd:anyURI ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v4> ;
+    skos:definition "Java NLP toolkit"@en .
+
+:Stanza a :Tool ;
+    rdfs:label "Stanza"@en ;
+    :hasCategory "NLP Tools"@en ;
+    :hasToolURL "https://stanfordnlp.github.io/stanza/"^^xsd:anyURI ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v4> ;
+    skos:definition "Python NLP by Stanford"@en .
+
+:StarCoder a :Tool ;
+    rdfs:label "StarCoder"@en ;
+    :hasCategory "LLM & Code Generation"@en ;
+    :hasToolURL "https://huggingface.co/bigcode/starcoder"^^xsd:anyURI ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v4> ;
+    skos:definition "Open-source code gen"@en .
+
+:Stryker a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Stryker"@en ;
+    :supportsLanguage "JavaScript"@en,
+        "TypeScript"@en ;
+    dcterms:isPartOf :TestingTaxonomyModule ;
+    skos:definition "JavaScript/TypeScript mutation testing"@en .
+
+:SupervisedLearning a :Technique ;
+    rdfs:label "Supervised Learning"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v4> ;
+    skos:definition "ML paradigm learning from labeled training data"@en .
+
+:Tableau a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Tableau"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+:Tabnine a :Tool ;
+    rdfs:label "Tabnine"@en ;
+    :hasCategory "LLM & Code Generation"@en ;
+    :hasToolURL "https://www.tabnine.com"^^xsd:anyURI ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v4> ;
+    skos:definition "AI code completion"@en .
+
+:TensorFlow a :Tool ;
+    rdfs:label "TensorFlow"@en ;
+    :hasCategory "ML Frameworks"@en ;
+    :hasToolURL "https://tensorflow.org"^^xsd:anyURI ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v4> ;
+    skos:definition "Deep learning framework by Google"@en,
+        "ML platform by Google"@en .
+
+:Terraform a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Terraform"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+:TestAutomationROI a :ROICalculationMethod,
+        owl:NamedIndividual ;
+    rdfs:label "Test Automation ROI Example"@en ;
+    :hasAnnualBenefit 200000.0 ;
+    :hasAnnualCost 15000.0 ;
+    :hasExpectedROI 370.0 ;
+    :hasInitialInvestment 50000.0 ;
+    :hasPaybackPeriod 3 ;
+    :hasRegion :USEconomicContext ;
+    dcterms:isPartOf :ROIMetricsModule ;
+    skos:definition "ROI calculation for test automation initiative"@en .
+
+:TestNG a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Test NG"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+:TextBlob a :Tool ;
+    rdfs:label "TextBlob"@en ;
+    :hasCategory "NLP Tools"@en ;
+    :hasToolURL "https://textblob.readthedocs.io"^^xsd:anyURI ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v4> ;
+    skos:definition "Simple NLP"@en .
+
+:TextClassification a :Technique ;
+    rdfs:label "Text Classification"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v4> ;
+    skos:definition "Assigning predefined categories to text documents"@en .
+
+:Timeliness a owl:NamedIndividual ;
+    rdfs:label "Timeliness"@en ;
+    dcterms:isPartOf :DataEngineeringModule ;
+    skos:definition "Data available when needed, up-to-date"@en .
+
+:Transformation a owl:NamedIndividual ;
+    rdfs:label "Transformation"@en ;
+    dcterms:isPartOf :DataEngineeringModule ;
+    skos:definition "Cleaning, enriching, aggregating data"@en .
+
+:TransformerModels a :Technique ;
+    rdfs:label "Transformer Models"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v4> ;
+    skos:definition "Neural network architecture based on attention mechanisms"@en .
+
+:TurkeyTestAutomationROI a :ROICalculationMethod,
+        owl:NamedIndividual ;
+    rdfs:label "Turkey Test Automation ROI"@en ;
+    :hasAnnualBenefit 150000.0 ;
+    :hasAnnualCost 10000.0 ;
+    :hasExpectedROI 467.0 ;
+    :hasInitialInvestment 30000.0 ;
+    :hasPaybackPeriod 2 ;
+    :hasRegion :TurkeyEconomicContext ;
+    dcterms:isPartOf :ROIMetricsModule ;
+    skos:definition "Same initiative adjusted for Turkey"@en .
+
+:UiPath_Process_Mining a :Tool ;
+    rdfs:label "UiPath_Process_Mining"@en ;
+    :hasCategory "Process Mining"@en ;
+    :hasToolURL "https://www.uipath.com"^^xsd:anyURI ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v4> ;
+    skos:definition "Process mining with RPA"@en .
+
+:UnsupervisedLearning a :Technique ;
+    rdfs:label "Unsupervised Learning"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v4> ;
+    skos:definition "ML paradigm finding patterns in unlabeled data"@en .
+
+:VersionControlSystem a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Version Control System"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+:VerticalScaling a owl:NamedIndividual ;
+    rdfs:label "Vertical Scaling"@en ;
+    dcterms:isPartOf :ArchitecturePatternsModule ;
+    skos:definition "Adding more resources to existing machine"@en .
+
+:WeightsAndBiases a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Weights And Biases"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+:Weights_and_Biases a :Tool ;
+    rdfs:label "Weights_and_Biases"@en ;
+    :hasCategory "MLOps"@en ;
+    :hasToolURL "https://wandb.ai"^^xsd:anyURI ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v4> ;
+    skos:definition "Experiment tracking"@en .
+
+:XGBoost a :Tool ;
+    rdfs:label "XGBoost"@en ;
+    :hasCategory "ML Frameworks"@en ;
+    :hasToolURL "https://xgboost.readthedocs.io"^^xsd:anyURI ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v4> ;
+    skos:definition "Gradient boosting"@en .
+
+:spaCy a :Tool ;
+    rdfs:label "spaCy"@en ;
+    :hasCategory "NLP Tools"@en ;
+    :hasToolURL "https://spacy.io"^^xsd:anyURI ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v4> ;
+    skos:definition "Industrial NLP"@en,
+        "Industrial-strength natural language processing"@en .
+
+v5:ARCore a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "AR Core"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:ARCore_Google a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "AR Core Google"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:ARKit a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "AR Kit"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:ARKit_Apple a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "AR Kit Apple"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:AWSAPIGateway a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "AWSAPI Gateway"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:AWSCloudFormation a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "AWS Cloud Formation"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:AWSCloudFront a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "AWS Cloud Front"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:AWSCostExplorer a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "AWS Cost Explorer"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:AWSDynamoDB a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "AWS Dynamo DB"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:AWSIoT a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "AWS Io T"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:AWSIoTGreengrass a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "AWS Io T Greengrass"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:AWSKeyManagementService a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "AWS Key Management Service"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:AWSLambda a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "AWS Lambda"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:AWSRedshift a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "AWS Redshift"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:AWSSecurityHub a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "AWS Security Hub"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:AWSWAF a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "AWSWAF"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:AWSelasticBeanstalk a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "AW Selastic Beanstalk"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:AdobeProductDevelopment a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Adobe Product Development"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:Algolia a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Algolia"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:AmazonAlexa a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Amazon Alexa"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:AmazonCodeWhisperer a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Amazon Code Whisperer"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:AmazonEKS a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Amazon EKS"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:AmazonEventBridge a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Amazon Event Bridge"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:AmazonPersonalize a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Amazon Personalize"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:AmazonRedshift a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Amazon Redshift"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:AmazonSNS a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Amazon SNS"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:AmazonSQS a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Amazon SQS"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:Amplitude a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Amplitude"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:ApacheAirflow a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Apache Airflow"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:ApacheCamel a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Apache Camel"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:ApacheFlink a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Apache Flink"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:ApacheKafka a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Apache Kafka"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:Apigee a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Apigee"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:ApigeeAPIGateway a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Apigee API Gateway"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:ApkTool a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Apk Tool"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:ApolloGraphQL a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Apollo Graph QL"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:AquaSecurity a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Aqua Security"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:ArasCargo a v5:TurkishCargoProvider ;
+    rdfs:label "Aras Kargo"@en ;
+    v5:hasWebsite <https://www.araskargo.com.tr> ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/Phase3Structural> .
+
+v5:AreasCargoIntegration a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Areas Cargo Integration"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:AuroraServerless a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Aurora Serverless"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:Auth0 a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Auth0"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:AutomationAnywhere a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Automation Anywhere"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:AzureAD a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Azure AD"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:AzureFunctions a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Azure Functions"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:AzureIoT a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Azure Io T"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:AzureIoTEdge a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Azure Io T Edge"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:AzureKeyVault a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Azure Key Vault"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:AzureSecurityCenter a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Azure Security Center"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:BigID a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Big ID"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:BlueYonderWMS a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Blue Yonder WMS"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:Bootstrap a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Bootstrap"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:BurpSuite a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Burp Suite"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:Burp_Suite a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Burp Suite"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:CentricPLM a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Centric PLM"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:ChaosMonkey a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Chaos Monkey"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:Checkmarx a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Checkmarx"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:Claude a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Claude"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:CloudFlare a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Cloud Flare"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:Cloudflare a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Cloudflare"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:Confluence a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Confluence"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:Contentful a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Contentful"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:Coverage.py a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Coverage.py"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:Datadog a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Datadog"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:Datadog_Synthetics a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Datadog Synthetics"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:DialogFlow a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Dialog Flow"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:DockerSwarm a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Docker Swarm"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:Dynatrace a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Dynatrace"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:ERWin a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "ER Win"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:ESLint a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "ES Lint"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:EcommerceplatformPlatform a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Ecommerceplatform Platform"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:ElasticSIEM a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Elastic SIEM"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:Elasticsearch a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Elasticsearch"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:Emscripten a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Emscripten"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:Ethereum a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Ethereum"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:FashionRetailResources a owl:NamedIndividual ;
+    rdfs:label "Turkish Fashion Retail Resources"@en ;
+    v5:hasResource [ rdfs:label "Supply Chain Best Practices Guide"@en ;
+            v5:accessDate "2025-11-17"^^xsd:date ;
+            v5:downloadURL <https://www.apics.org/docs/default-source/scor-training/scor-12-0-framework.pdf> ;
+            v5:resourceType "Framework Guide"@en ],
+        [ rdfs:label "Turkish Fashion Industry Report 2024"@en ;
+            v5:accessDate "2025-11-17"^^xsd:date ;
+            v5:downloadURL <https://www.itkib.org.tr/en/reports/fashion-industry-2024.pdf> ;
+            v5:resourceType "Industry Report"@en ],
+        [ rdfs:label "E-Commerce in Turkey Statistics"@en ;
+            v5:accessDate "2025-11-17"^^xsd:date ;
+            v5:downloadURL <https://www.tubisad.org.tr/en/ecommerce-report> ;
+            v5:resourceType "Market Research"@en ] ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/HybridBase> .
+
+v5:FirebaseCloudMessaging a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Firebase Cloud Messaging"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:Flutter a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Flutter"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:Flyway a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Flyway"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:Freshdesk a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Freshdesk"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:Frida a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Frida"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:GISCustomsSoftware a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "GIS Customs Software"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:GPT4 a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "GPT4"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:GitBookIO a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Git Book IO"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:GitHubCopilot a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Git Hub Copilot"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:GitLabSecurityDashboard a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Git Lab Security Dashboard"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:GoogleAnalytics4 a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Google Analytics4"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:GoogleAssistant a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Google Assistant"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:GoogleBigQuery a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Google Big Query"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:GoogleCloudSecurityCommandCenter a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Google Cloud Security Command Center"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:Grafana a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Grafana"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:GremlinChaosEngineering a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Gremlin Chaos Engineering"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:HashiCorpVault a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Hashi Corp Vault"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:Helm a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Helm"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:Hepsiburada a v5:TurkishEcommerceMarketplace ;
+    rdfs:label "Hepsiburada"@en ;
+    v5:hasWebsite <https://www.hepsiburada.com> ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/Phase3Structural> .
+
+v5:HepsiburadaTechStack a owl:NamedIndividual ;
+    rdfs:label "Hepsiburada Technology Stack"@en ;
+    v5:implements v5:EventDrivenArchitecture,
+        v5:MicroservicesArchitecture ;
+    v5:integratesWith "500+ third-party services" ;
+    v5:supportsDomain v5:FashionRetailDomain,
+        v5:MarketplaceEcommerce ;
+    v5:uses v5:Java,
+        v5:Kubernetes,
+        v5:ReactNative ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/Phase3Relationships> .
+
+v5:HubSpotCRM a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Hub Spot CRM"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:HuggingFaceTransformers a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Hugging Face Transformers"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:Hyperledger a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Hyperledger"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:ImageMagick a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Image Magick"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:InfluxDB a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Influx DB"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:Informatica a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Informatica"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:Intercom a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Intercom"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:IstanbulJS a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Istanbul JS"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:JaCoCo a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Ja Co Co"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:KaliLinux a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Kali Linux"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:Kong a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Kong"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:Kotlin a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Kotlin"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:Kubecost a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Kubecost"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:LCWaikikDigitalPlatform a owl:NamedIndividual ;
+    rdfs:label "LC Waikiki Digital Commerce Platform"@en ;
+    v5:implements v5:OmnichannelArchitecture ;
+    v5:integrates "1,100+ physical stores" ;
+    v5:supports "50+ countries" ;
+    v5:supportsDomain v5:FashionRetailDomain ;
+    v5:uses v5:ARTechnology,
+        v5:SAPCommerce ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/Phase3Relationships> .
+
+v5:LaunchDarkly a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Launch Darkly"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:Liquibase a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Liquibase"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:LitmusChaos a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Litmus Chaos"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:Looker a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Looker"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:Lucidchart a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Lucidchart"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:MISPThreatSharing a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "MISP Threat Sharing"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:ManhattanOMS a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Manhattan OMS"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:ManhattanWMS a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Manhattan WMS"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:Mendix a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Mendix"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:MergeMetadata a owl:NamedIndividual ;
+    rdfs:label "Ontology Merge Metadata"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/HybridBase> .
+
+v5:Metasploit a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Metasploit"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:MetasploitFramework a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Metasploit Framework"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:MicrosoftDynamics365 a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Microsoft Dynamics365"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:MicrosoftDynamicsCRM a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Microsoft Dynamics CRM"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:MicrosoftPowerApps a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Microsoft Power Apps"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:MicrosoftPowerAutomate a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Microsoft Power Automate"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:MidjourneyAI a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Midjourney AI"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:Miro a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Miro"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:Mixpanel a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Mixpanel"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:MobileSecurityFramework a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Mobile Security Framework"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:ModSecurity a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Mod Security"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:MongoDB a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Mongo DB"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:MuleSoft a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Mule Soft"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:MySQL a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "My SQL"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:NLTK a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "NLTK"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:Nessus a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Nessus"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:NewRelic a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "New Relic"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:Notion a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Notion"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:OWASP_API_Security_Project a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "OWASP API Security Project"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:OWASP_ZAP a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "OWASP ZAP"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:Okta a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Okta"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:OneSignal a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "One Signal"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:OneTrust a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "One Trust"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:OpenCV a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Open CV"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:OracleNetSuite a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Oracle Net Suite"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:OraclePOS a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Oracle POS"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:OracleSupplyChainCloud a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Oracle Supply Chain Cloud"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:OutSystems a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Out Systems"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:PTTCargo a v5:TurkishCargoProvider ;
+    rdfs:label "PTT Kargo"@en ;
+    v5:hasWebsite <https://www.ptt.gov.tr> ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/Phase3Structural> .
+
+v5:PayTR a v5:TurkishPaymentProvider ;
+    rdfs:label "PayTR"@en ;
+    v5:hasWebsite <https://www.paytr.com> ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/Phase3Structural> .
+
+v5:Pingdom a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Pingdom"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:Postman a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Postman"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:PowerBI a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Power BI"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:Prometheus a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Prometheus"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:Pulumi a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Pulumi"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:PyTorch a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Py Torch"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:Pylint a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Pylint"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:QualysVMDR a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Qualys VMDR"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:RabbitMQ a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Rabbit MQ"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:Rapid7Nexpose a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Rapid7 Nexpose"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:RasaAI a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Rasa AI"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:RecordedFuture a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Recorded Future"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:Riskified a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Riskified"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:Rollbar a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Rollbar"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:Rust_WASM a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Rust WASM"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:SAPBusinessOne a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "SAP Business One"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:SAPGlobalTradeServices a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "SAP Global Trade Services"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:SAPSupplyChain a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "SAP Supply Chain"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:SalesforceCRM a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Salesforce CRM"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:SalesforceOMS a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Salesforce OMS"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:ScikitLearn a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Scikit Learn"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:Sentry a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Sentry"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:ShopifyPOS a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Shopify POS"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:Sift a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Sift"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:Slack a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Slack"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:Snowflake a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Snowflake"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:SnykCodeSecurity a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Snyk Code Security"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:SonarQube a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Sonar Qube"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:Splunk a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Splunk"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:StableDiffusion a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Stable Diffusion"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:Strapi a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Strapi"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:Stripe a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Stripe"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:Swift a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Swift"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:Tableau a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Tableau"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:TailwindCSS a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Tailwind CSS"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:Talend a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Talend"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:TechnicalDocumentation a owl:NamedIndividual ;
+    rdfs:label "AI4SE Technical Documentation"@en ;
+    v5:hasResource [ rdfs:label "SPARQL 1.1 Query Language"@en ;
+            v5:downloadURL <https://www.w3.org/TR/sparql11-query/sparql11-query.pdf> ;
+            v5:resourceType "Technical Specification"@en ],
+        [ rdfs:label "RDF 1.1 Turtle Format"@en ;
+            v5:downloadURL <https://www.w3.org/TR/turtle/turtle.pdf> ;
+            v5:resourceType "Technical Specification"@en ],
+        [ rdfs:label "OWL 2 Web Ontology Language Primer"@en ;
+            v5:downloadURL <https://www.w3.org/TR/owl2-primer/owl2-primer.pdf> ;
+            v5:resourceType "Technical Specification"@en ] ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/HybridBase> .
+
+v5:TensorFlow a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Tensor Flow"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:TensorFlowObjectDetection a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Tensor Flow Object Detection"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:TensorFlowRecommenders a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Tensor Flow Recommenders"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:Terraform a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Terraform"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:ThreatConnect a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Threat Connect"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:TimescaleDB a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Timescale DB"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:Trendyol a v5:TurkishEcommerceMarketplace ;
+    rdfs:label "Trendyol"@en ;
+    v5:hasWebsite <https://www.trendyol.com> ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/Phase3Structural> .
+
+v5:TrendyolArchitecture a owl:NamedIndividual ;
+    rdfs:label "Trendyol Platform Architecture"@en ;
+    v5:handles "500K concurrent users" ;
+    v5:implements v5:MicroservicesArchitecture ;
+    v5:processes "10M orders per month" ;
+    v5:scalesTo "50 million users" ;
+    v5:supportsDomain v5:FashionRetailDomain,
+        v5:MarketplaceEcommerce ;
+    v5:uses v5:Kafka,
+        v5:Kubernetes,
+        v5:PostgreSQL,
+        v5:Redis ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/Phase3Relationships> .
+
+v5:TrustArc a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Trust Arc"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:TwistlockPrismaCloud a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Twistlock Prisma Cloud"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:UiPath a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Ui Path"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:Unleash a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Unleash"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:Varnish a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Varnish"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:WMS a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "WMS"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:WebP a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Web P"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:Workbox a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Workbox"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:YOLOv8 a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "YOL Ov8"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:YurticiCargo a v5:TurkishCargoProvider ;
+    rdfs:label "Yurtiçi Kargo"@en ;
+    v5:hasWebsite <https://www.yurticikargo.com> ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/Phase3Structural> .
+
+v5:YurtiçiCargoAPI a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Yurtiçi Cargo API"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:Zapier a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Zapier"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:Zendesk a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Zendesk"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:Zoom a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Zoom"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:axe_DevTools a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "axe Dev Tools"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:iyzico a v5:TurkishPaymentProvider ;
+    rdfs:label "iyzico"@en ;
+    v5:hasWebsite <https://www.iyzico.com> ;
+    v5:supports3DSecure "Yes"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/Phase3Structural> .
+
+v5:n8n a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "n8n"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:spaCy a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "spa Cy"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+<http://ai4se.org/ontology/v5/abox> a owl:Ontology ;
+    rdfs:label "AI4SE ontology, edition 5.0: individuals"@en ;
+    dcterms:creator "AI4SE Research Community" ;
+    rdfs:comment "Every named individual of the AI4SE ontology (tools and scenario instances)."@en ;
+    owl:imports <http://ai4se.org/ontology/v5> ;
+    owl:versionIRI <http://ai4se.org/ontology/v5/abox/5.0.0> ;
+    owl:versionInfo "5.0.0" .
+
+:ClaudeAPI a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Claude API"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+:ECommerceDomainOntology a :DomainOntology,
+        owl:NamedIndividual ;
+    rdfs:label "E-Commerce Domain Ontology"@en ;
+    :hasV4ID "EXAMPLE_001"^^xsd:string ;
+    :queryLanguage :SPARQL ;
+    :serializedAs :TurtleSyntax ;
+    dcterms:isPartOf :DomainEngineeringModule ;
+    skos:definition "Formal ontology for e-commerce domain including products, orders, customers, payments, and shipments"@en ;
+    skos:example "45 classes: Customer, Product, Order, OrderLine, Payment, Shipment; 67 object properties; 89 data properties"@en .
+
+v5:PostgreSQL a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Postgre SQL"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:ReactNative a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "React Native"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:Redis a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Redis"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+
+v5:Kubernetes a :Tool,
+        owl:NamedIndividual ;
+    rdfs:label "Kubernetes"@en ;
+    dcterms:isPartOf <http://ai4se.org/ontology/v5/module/ReferencedButUndefined> ;
+    rdfs:comment "Stub declared by the package build: the source files use this term but never define it. The label is derived mechanically from the identifier."@en .
+

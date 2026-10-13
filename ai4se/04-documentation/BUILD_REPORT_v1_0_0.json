@@ -1,0 +1,35 @@
+{
+ "modules": 22,
+ "t_triples": 28553,
+ "a_triples": 2040,
+ "s_triples": 60,
+ "classes": 3949,
+ "individuals": 310,
+ "object_properties": 95,
+ "datatype_properties": 117,
+ "quarantined": {
+  "Q1 template": 6236,
+  "Q4 figure": 137,
+  "Q2 unsourced": 273,
+  "Q3 selfscore": 10
+ },
+ "quarantined_total": 6656,
+ "q1_pairs": 5,
+ "bridges": 11,
+ "stub_classes": 364,
+ "stub_tools": 253,
+ "stub_properties": 14,
+ "bridge_names": [
+  "AI4SEConcept",
+  "SEConcept",
+  "ServerlessArchitecture",
+  "EventDrivenArchitecture",
+  "BlueGreenDeployment",
+  "InfrastructureAsCode",
+  "ContainerOrchestration",
+  "DataWarehouse",
+  "DataLake",
+  "CachingStrategy",
+  "ChaosEngineering"
+ ]
+}

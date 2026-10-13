@@ -1,0 +1,16 @@
+AI4SE ontology 5.0.0
+
+82e7506d3ba52605928164cf1b50bfd7c38256b34d14684cbadd2d5c178a8c45  01-ontologies/ai4se_abox_v5_0_0.ttl  (121273b)
+542734a2be2619c9b7c92c15d0278aadb809185cb6aa2c02a7a004205d653eb2  01-ontologies/ai4se_tbox_v5_0_0.ttl  (1241196b)
+2f41d79da7edb41df9c9581c8b3371764b7a4b1c843d0282b4a94ac7c5c8470a  02-shacl/ai4se_shacl_v1_0_0.ttl  (3090b)
+c1e43405ae3813dc75cce3fffe527c76ce8bd13d9a4a6b422a58aabc63eee538  03-tooling/ai4se_build_v1_0_0.py  (21241b)
+ab2455967f73c5c8a374b3a3a1cae96112aac8a3a3bd2649198eeb774af4beb9  03-tooling/ai4se_verify_v1_0_0.py  (3452b)
+16fe52a6c545af3dfae85004df2062ef4361fe0c0071a1832c9898074414df3d  03-tooling/fixtures/negative_class_without_label_v1_0_0.ttl  (268b)
+b17446720dd2c5e494bfdc398e651b902303f58d545fbba40ddebf985966feca  04-documentation/BUILD_REPORT_v1_0_0.json  (673b)
+ad9bfa18cda4b77bae04f5349bff27e971c3ca8e03d71fef5cb0a3de9c6f9d9c  04-documentation/Book_Ontology_Comprehensive_Mapping_v1_0_0.md  (25734b)
+11276e51d7e61d5811bd57dd3f7322cf387c8c2c51131892992d817327f4d08c  04-documentation/FINDINGS_REGISTER_v1_0_0.md  (4331b)
+38b587681cad2d883209270765d783ed95bfea6adfc77a5936ab3c9cbf8f0cce  04-documentation/QUARANTINED_CLAIMS_v1_0_0.tsv  (1875651b)
+3f968d367d6fea75496d147d618e54368af60fb721743aec586210f2875a2494  04-documentation/REPAIR_LOG_v1_0_0.tsv  (5649b)
+adbd88809ffa250c45552dd35bef7c375da0f2ae8b47db7dbb617881f973f830  04-documentation/provenance/ai4se_repaired_sources_v1_0_0.zip  (197238b)
+5f00553a17b1619a5c06268b6d30c1d7313b81ce75b232877887746f1e292948  README.md  (2007b)
+1cc3d76ac7c21a664e79848fd481e9791016451b244e7de5feeeb9bea5fd2184  VERSION.txt  (6b)

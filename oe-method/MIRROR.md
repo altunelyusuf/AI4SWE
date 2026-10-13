@@ -1,6 +1,6 @@
 # Open-access copy of the OE Method
 
-This repository carries the `oe-method` package, version 3.31.0, exactly as published in
+This folder carries the `oe-method` package, version 3.31.0, exactly as published in
 `altunelyusuf/Ontologies`, folder `oe-method/`, commit `dac0164`. Do not edit it here.
 
 | | |
