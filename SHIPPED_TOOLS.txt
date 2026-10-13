@@ -1,0 +1,20 @@
+# The operating tools this edition ships, by name without version (plan v1.14.0, task 26).
+# `oe_release` refreshes each from the highest version in repo-tooling, with identifying names replaced, before it checks the edition.
+BOOTSTRAP.md
+SESSION_OPTIMIZATION.md
+SESSION_PROMPT.md
+oe_ceremony_digest.py
+oe_ceremony.sh
+oe_mirror_sync.sh
+oe_debt_aggregate.py
+oe_gate_receipt.py
+oe_gate_cache.py
+oe_manifest.py
+oe_release.py
+oe_publish.sh
+oe_rehydrate.sh
+oe_resolve.py
+oe_session_usage.py
+oe_structure_check.py
+validate_publish_record.py
+verify_manifest.py

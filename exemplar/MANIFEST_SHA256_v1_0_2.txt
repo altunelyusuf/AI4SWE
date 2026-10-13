@@ -1,0 +1,7 @@
+# library exemplar v1.0.2 — SHA-256 Manifest
+
+156a75e74e5b0758c498aa2dbb0123e9f207eee479d2ba5605f04615766a97ee  01-ontologies/library_abox_v1_0_0.ttl  (500b)
+a59814d22a1de3e09b859e837d2e94c48ae0505610f01af1c369135c572562a7  01-ontologies/library_tbox_v1_0_0.ttl  (845b)
+df1c853b6d00f58fc765f6f00f760606950223b9909427790bd344fd8137483e  02-shacl/library_shacl_v1_0_1.ttl  (829b)
+9fd28642d3aca191e5c7fc2383cfd6fabb2aac8743f029dabb8989ac584e31bc  VERSION.txt  (6b)
+af8d6aefdd56bc183615e6f0967cb933fa2d270d3d24b165aa1e067e8a0f7523  fixtures/negative_undefined_class_v1_0_0.ttl  (983b)

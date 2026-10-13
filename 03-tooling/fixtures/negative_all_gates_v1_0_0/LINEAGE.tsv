@@ -1,0 +1,7 @@
+# LINEAGE.tsv — negative fixture (L-95): declares a DERIVED file whose upstream does not exist,
+# to prove the lineage gate can fail.
+DERIVED	01-vocabularies/orphan_tbox_v1_0_0.ttl	pack:01-ontologies/orphan_tbox_v1_0_0.ttl	generalised
+ORIGINAL	README.md
+ORIGINAL	GETTING_STARTED_v1_0_0.md
+ORIGINAL	NEGATIVE_FIXTURE_TRANSCRIPT.md
+ORIGINAL	plant.md

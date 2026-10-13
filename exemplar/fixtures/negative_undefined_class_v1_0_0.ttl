@@ -1,0 +1,15 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix lib: <http://example.org/library#> .
+<http://example.org/library> a owl:Ontology ; owl:versionInfo "1.0.0" ;
+    owl:versionIRI <http://example.org/library/1.0.0> ;
+    rdfs:comment "Minimal exemplar: the smallest package that passes every gate."@en .
+lib:Book a owl:Class ; rdfs:label "Book"@en ; skos:definition "A published work held by the library."@en .
+lib:Author a owl:Class ; rdfs:label "Author"@en ; skos:definition "A person who wrote a book."@en .
+lib:hasISBN a owl:DatatypeProperty ; rdfs:domain lib:Book ; rdfs:range xsd:string .
+lib:writtenBy a owl:ObjectProperty ; rdfs:domain lib:Book ; rdfs:range lib:Author .
+
+# NEGATIVE FIXTURE (L-95): lib:Shelf has no skos:definition. The suite MUST reject this.
+lib:Shelf a owl:Class ; rdfs:label "Shelf"@en .

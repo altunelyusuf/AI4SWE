@@ -1,0 +1,2701 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ns1: <http://example.org/configuration#> .
+@prefix oe-prov: <http://example.org/oe-prov#> .
+@prefix oepack_release_history: <http://example.org/oepack-release-history#> .
+@prefix ontology_engineering: <http://example.org/knowledge-base#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix pub: <http://example.org/publish-ceremony#> .
+@prefix quality: <http://example.org/quality#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rel: <http://example.org/reliability#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ontology_engineering:Activity_Shape a sh:NodeShape ;
+    rdfs:label "Semantic shape for Activity"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — semantic shape upgrade for ontology-engineering subject per BP-D30."@en ;
+    rdfs:comment "Semantic SHACL NodeShape per BP-D30. Declares 11 property constraint(s) for Activity sourced from rdfs:domain assertions."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:property [ sh:class ontology_engineering:EngineeringPattern ;
+            sh:maxCount 1 ;
+            sh:message "Property appliesPattern should match its declared type."@en ;
+            sh:minCount 0 ;
+            sh:path ontology_engineering:appliesPattern ;
+            sh:severity sh:Warning ],
+        [ sh:class quality:OntologyArtifact ;
+            sh:maxCount 1 ;
+            sh:message "Property transforms should match its declared type."@en ;
+            sh:minCount 0 ;
+            sh:path ontology_engineering:transforms ;
+            sh:severity sh:Warning ],
+        [ sh:class ontology_engineering:TeamConcept ;
+            sh:maxCount 1 ;
+            sh:message "Property organizedBy should match its declared type."@en ;
+            sh:minCount 0 ;
+            sh:path ontology_engineering:organizedBy ;
+            sh:severity sh:Warning ],
+        [ sh:class ns1:ChangeOperation ;
+            sh:maxCount 1 ;
+            sh:message "Property triggersChange should match its declared type."@en ;
+            sh:minCount 0 ;
+            sh:path ontology_engineering:triggersChange ;
+            sh:severity sh:Warning ],
+        [ sh:class ontology_engineering:StakeholderRole ;
+            sh:maxCount 1 ;
+            sh:message "Property assignedTo should match its declared type."@en ;
+            sh:minCount 0 ;
+            sh:path ontology_engineering:assignedTo ;
+            sh:severity sh:Warning ],
+        [ sh:class ontology_engineering:ArchitecturalConcept ;
+            sh:maxCount 1 ;
+            sh:message "Property constrainedByArchitecture should match its declared type."@en ;
+            sh:minCount 0 ;
+            sh:path ontology_engineering:constrainedByArchitecture ;
+            sh:severity sh:Warning ],
+        [ sh:class quality:OntologyArtifact ;
+            sh:maxCount 1 ;
+            sh:message "Property requires should match its declared type."@en ;
+            sh:minCount 0 ;
+            sh:path ontology_engineering:requires ;
+            sh:severity sh:Warning ],
+        [ sh:class ontology_engineering:EngineeringTool ;
+            sh:maxCount 1 ;
+            sh:message "Property usesTool should match its declared type."@en ;
+            sh:minCount 0 ;
+            sh:path ontology_engineering:usesTool ;
+            sh:severity sh:Warning ],
+        [ sh:class quality:OntologyArtifact ;
+            sh:maxCount 1 ;
+            sh:message "Property hasResult should match its declared type."@en ;
+            sh:minCount 0 ;
+            sh:path ontology_engineering:hasResult ;
+            sh:severity sh:Warning ],
+        [ sh:class <http://example.org/core#Role> ;
+            sh:maxCount 1 ;
+            sh:message "Property performedBy should match its declared type."@en ;
+            sh:minCount 0 ;
+            sh:path ontology_engineering:performedBy ;
+            sh:severity sh:Warning ],
+        [ sh:class ontology_engineering:DevelopmentMethodology ;
+            sh:maxCount 1 ;
+            sh:message "Property followsMethodology should match its declared type."@en ;
+            sh:minCount 0 ;
+            sh:path ontology_engineering:followsMethodology ;
+            sh:severity sh:Warning ] ;
+    sh:severity sh:Warning ;
+    sh:targetClass ontology_engineering:Activity .
+
+ontology_engineering:AgileMethodology_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for AgileMethodology"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. AgileMethodology has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:AgileMethodology .
+
+ontology_engineering:AlignmentEvaluation_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for AlignmentEvaluation"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. AlignmentEvaluation has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass <http://example.org/meta#AlignmentEvaluation> .
+
+ontology_engineering:AnalysisActivity_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for AnalysisActivity"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. AnalysisActivity has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:AnalysisActivity .
+
+ontology_engineering:Annotation_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for Annotation"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. Annotation has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:Annotation .
+
+ontology_engineering:ApplicationBasedEvaluation_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for ApplicationBasedEvaluation"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. ApplicationBasedEvaluation has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass <http://example.org/meta#ApplicationBasedEvaluation> .
+
+ontology_engineering:ApplicationIntegration_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for ApplicationIntegration"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. ApplicationIntegration has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:ApplicationIntegration .
+
+ontology_engineering:Application_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for Application"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. Application has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:Application .
+
+ontology_engineering:ArchitecturalConcept_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for ArchitecturalConcept"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. ArchitecturalConcept has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:ArchitecturalConcept .
+
+ontology_engineering:ArchitecturalLayer_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for ArchitecturalLayer"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. ArchitecturalLayer has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:ArchitecturalLayer .
+
+ontology_engineering:ArchitecturalView_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for ArchitecturalView"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. ArchitecturalView has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:ArchitecturalView .
+
+ontology_engineering:AsynchronousCollaboration_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for AsynchronousCollaboration"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. AsynchronousCollaboration has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:AsynchronousCollaboration .
+
+ontology_engineering:AutomatedFeedback_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for AutomatedFeedback"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. AutomatedFeedback has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:AutomatedFeedback .
+
+ontology_engineering:AutomaticMapping_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for AutomaticMapping"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. AutomaticMapping has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:AutomaticMapping .
+
+ontology_engineering:AutomaticModularization_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for AutomaticModularization"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. AutomaticModularization has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:AutomaticModularization .
+
+ontology_engineering:AutomaticPopulation_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for AutomaticPopulation"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. AutomaticPopulation has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:AutomaticPopulation .
+
+ontology_engineering:Axiomatization_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for Axiomatization"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. Axiomatization has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:Axiomatization .
+
+ontology_engineering:BackgroundKnowledgeMapping_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for BackgroundKnowledgeMapping"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. BackgroundKnowledgeMapping has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:BackgroundKnowledgeMapping .
+
+ontology_engineering:BackwardMigration_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for BackwardMigration"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. BackwardMigration has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ns1:BackwardMigration .
+
+ontology_engineering:BlueGreenDeployment_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for BlueGreenDeployment"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. BlueGreenDeployment has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:BlueGreenDeployment .
+
+ontology_engineering:BottomUpDesign_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for BottomUpDesign"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. BottomUpDesign has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:BottomUpDesign .
+
+ontology_engineering:BrainstormingSession_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for BrainstormingSession"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. BrainstormingSession has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:BrainstormingSession .
+
+ontology_engineering:BugFixing_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for BugFixing"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. BugFixing has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:BugFixing .
+
+ontology_engineering:CanaryDeployment_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for CanaryDeployment"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. CanaryDeployment has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:CanaryDeployment .
+
+ontology_engineering:CitationAnalysis_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for CitationAnalysis"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. CitationAnalysis has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:CitationAnalysis .
+
+ontology_engineering:CodeReview_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for CodeReview"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. CodeReview has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:CodeReview .
+
+ontology_engineering:CollaborationPattern_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for CollaborationPattern"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. CollaborationPattern has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:CollaborationPattern .
+
+ontology_engineering:Collaboration_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for Collaboration"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. Collaboration has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:Collaboration .
+
+ontology_engineering:CollocatedTeam_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for CollocatedTeam"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. CollocatedTeam has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:CollocatedTeam .
+
+ontology_engineering:CommunicationChannel_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for CommunicationChannel"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. CommunicationChannel has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:CommunicationChannel .
+
+ontology_engineering:CompactSerialization_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for CompactSerialization"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. CompactSerialization has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:CompactSerialization .
+
+ontology_engineering:CompetencyQuestionAnalysis_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for CompetencyQuestionAnalysis"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. CompetencyQuestionAnalysis has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:CompetencyQuestionAnalysis .
+
+ontology_engineering:ConceptIdentification_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for ConceptIdentification"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. ConceptIdentification has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:ConceptIdentification .
+
+ontology_engineering:ConceptualModeling_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for ConceptualModeling"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. ConceptualModeling has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:ConceptualModeling .
+
+ontology_engineering:ConflictResolution_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for ConflictResolution"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. ConflictResolution has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:ConflictResolution .
+
+ontology_engineering:ConflictType_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for ConflictType"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. ConflictType has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:ConflictType .
+
+ontology_engineering:ConsensusGovernance_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for ConsensusGovernance"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. ConsensusGovernance has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:ConsensusGovernance .
+
+ontology_engineering:ConsistencyChecking_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for ConsistencyChecking"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. ConsistencyChecking has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:ConsistencyChecking .
+
+ontology_engineering:ConsistencyRepair_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for ConsistencyRepair"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. ConsistencyRepair has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:ConsistencyRepair .
+
+ontology_engineering:ContinuousDeployment_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for ContinuousDeployment"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. ContinuousDeployment has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:ContinuousDeployment .
+
+ontology_engineering:ContinuousIntegration_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for ContinuousIntegration"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. ContinuousIntegration has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:ContinuousIntegration .
+
+ontology_engineering:CoordinationMechanism_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for CoordinationMechanism"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. CoordinationMechanism has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:CoordinationMechanism .
+
+ontology_engineering:CrossFunctionalTeam_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for CrossFunctionalTeam"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. CrossFunctionalTeam has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:CrossFunctionalTeam .
+
+ontology_engineering:DailyStandup_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for DailyStandup"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. DailyStandup has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:DailyStandup .
+
+ontology_engineering:DatabaseIntegration_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for DatabaseIntegration"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. DatabaseIntegration has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:DatabaseIntegration .
+
+ontology_engineering:DatabaseToOntology_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for DatabaseToOntology"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. DatabaseToOntology has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:DatabaseToOntology .
+
+ontology_engineering:DecisionMakingProcess_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for DecisionMakingProcess"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. DecisionMakingProcess has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:DecisionMakingProcess .
+
+ontology_engineering:DefaultNamespace_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for DefaultNamespace"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. DefaultNamespace has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:DefaultNamespace .
+
+ontology_engineering:DefinitionWriting_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for DefinitionWriting"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. DefinitionWriting has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:DefinitionWriting .
+
+ontology_engineering:Deliverable_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for Deliverable"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. Deliverable has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:Deliverable .
+
+ontology_engineering:DeploymentActivity_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for DeploymentActivity"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. DeploymentActivity has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:DeploymentActivity .
+
+ontology_engineering:DeploymentPattern_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for DeploymentPattern"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. DeploymentPattern has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:DeploymentPattern .
+
+ontology_engineering:DesignActivity_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for DesignActivity"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. DesignActivity has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:DesignActivity .
+
+ontology_engineering:DesignProcess_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for DesignProcess"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. DesignProcess has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:DesignProcess .
+
+ontology_engineering:DevelopmentMethodology_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for DevelopmentMethodology"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. DevelopmentMethodology has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:DevelopmentMethodology .
+
+ontology_engineering:DevelopmentProcess_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for DevelopmentProcess"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. DevelopmentProcess has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:DevelopmentProcess .
+
+ontology_engineering:DistributedTeam_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for DistributedTeam"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. DistributedTeam has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:DistributedTeam .
+
+ontology_engineering:DocumentAnalysis_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for DocumentAnalysis"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. DocumentAnalysis has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:DocumentAnalysis .
+
+ontology_engineering:DocumentationActivity_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for DocumentationActivity"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. DocumentationActivity has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:DocumentationActivity .
+
+ontology_engineering:DocumentationComponent_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for DocumentationComponent"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. DocumentationComponent has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:DocumentationComponent .
+
+ontology_engineering:Documentation_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for Documentation"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. Documentation has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:Documentation .
+
+ontology_engineering:DomainAnalysis_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for DomainAnalysis"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. DomainAnalysis has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:DomainAnalysis .
+
+ontology_engineering:DomainConflict_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for DomainConflict"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. DomainConflict has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:DomainConflict .
+
+ontology_engineering:EmailThread_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for EmailThread"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. EmailThread has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:EmailThread .
+
+ontology_engineering:Encoding_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for Encoding"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. Encoding has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:Encoding .
+
+ontology_engineering:EngineeringPattern_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for EngineeringPattern"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. EngineeringPattern has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:EngineeringPattern .
+
+ontology_engineering:EngineeringTool_Shape a sh:NodeShape ;
+    rdfs:label "Semantic shape for EngineeringTool"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — semantic shape upgrade for ontology-engineering subject per BP-D30."@en ;
+    rdfs:comment "Semantic SHACL NodeShape per BP-D30. Declares 1 property constraint(s) for EngineeringTool sourced from rdfs:domain assertions."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:property [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:message "Property toolVersion should match its declared type."@en ;
+            sh:minCount 0 ;
+            sh:path ontology_engineering:toolVersion ;
+            sh:severity sh:Warning ] ;
+    sh:severity sh:Warning ;
+    sh:targetClass ontology_engineering:EngineeringTool .
+
+ontology_engineering:EntityLinking_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for EntityLinking"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. EntityLinking has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:EntityLinking .
+
+ontology_engineering:EvaluationActivity_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for EvaluationActivity"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. EvaluationActivity has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:EvaluationActivity .
+
+ontology_engineering:ExpertConsultation_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for ExpertConsultation"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. ExpertConsultation has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:ExpertConsultation .
+
+ontology_engineering:ExpertDecision_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for ExpertDecision"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. ExpertDecision has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:ExpertDecision .
+
+ontology_engineering:ExpertResolution_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for ExpertResolution"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. ExpertResolution has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:ExpertResolution .
+
+ontology_engineering:ExpertReview_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for ExpertReview"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. ExpertReview has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:ExpertReview .
+
+ontology_engineering:ExternalDocumentation_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for ExternalDocumentation"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. ExternalDocumentation has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:ExternalDocumentation .
+
+ontology_engineering:ExtremeProgrammingForOntologies_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for ExtremeProgrammingForOntologies"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. ExtremeProgrammingForOntologies has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:ExtremeProgrammingForOntologies .
+
+ontology_engineering:FeatureToggle_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for FeatureToggle"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. FeatureToggle has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:FeatureToggle .
+
+ontology_engineering:FeedbackMechanism_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for FeedbackMechanism"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. FeedbackMechanism has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:FeedbackMechanism .
+
+ontology_engineering:FormalCommunication_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for FormalCommunication"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. FormalCommunication has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:FormalCommunication .
+
+ontology_engineering:FormalSpecification_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for FormalSpecification"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. FormalSpecification has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:FormalSpecification .
+
+ontology_engineering:FormatConversion_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for FormatConversion"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. FormatConversion has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:FormatConversion .
+
+ontology_engineering:ForwardMigration_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for ForwardMigration"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. ForwardMigration has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ns1:ForwardMigration .
+
+ontology_engineering:FullRegression_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for FullRegression"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. FullRegression has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:FullRegression .
+
+ontology_engineering:FunctionalRequirement_Shape a sh:NodeShape ;
+    rdfs:label "Semantic shape for FunctionalRequirement"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — semantic shape upgrade for ontology-engineering subject per BP-D30."@en ;
+    rdfs:comment "Semantic SHACL NodeShape per BP-D30. Declares 1 property constraint(s) for FunctionalRequirement sourced from rdfs:domain assertions."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:property [ sh:class <http://example.org/core#CompetencyQuestion> ;
+            sh:maxCount 1 ;
+            sh:message "Property hasCompetencyQuestion should match its declared type."@en ;
+            sh:minCount 0 ;
+            sh:path ontology_engineering:hasCompetencyQuestion ;
+            sh:severity sh:Warning ] ;
+    sh:severity sh:Warning ;
+    sh:targetClass ontology_engineering:FunctionalRequirement .
+
+ontology_engineering:GoldStandardEvaluation_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for GoldStandardEvaluation"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. GoldStandardEvaluation has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass <http://example.org/meta#GoldStandardEvaluation> .
+
+ontology_engineering:GovernanceModel_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for GovernanceModel"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. GovernanceModel has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:GovernanceModel .
+
+ontology_engineering:HierarchicalGovernance_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for HierarchicalGovernance"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. HierarchicalGovernance has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:HierarchicalGovernance .
+
+ontology_engineering:HotfixDeployment_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for HotfixDeployment"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. HotfixDeployment has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:HotfixDeployment .
+
+ontology_engineering:IdentityLinking_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for IdentityLinking"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. IdentityLinking has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:IdentityLinking .
+
+ontology_engineering:ImplementationActivity_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for ImplementationActivity"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. ImplementationActivity has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:ImplementationActivity .
+
+ontology_engineering:ImplementationProcess_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for ImplementationProcess"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. ImplementationProcess has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:ImplementationProcess .
+
+ontology_engineering:IncrementalMethodology_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for IncrementalMethodology"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. IncrementalMethodology has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:IncrementalMethodology .
+
+ontology_engineering:InformalCommunication_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for InformalCommunication"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. InformalCommunication has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:InformalCommunication .
+
+ontology_engineering:InspectionTechnique_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for InspectionTechnique"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. InspectionTechnique has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:InspectionTechnique .
+
+ontology_engineering:IntegrationApplication_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for IntegrationApplication"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. IntegrationApplication has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:IntegrationApplication .
+
+ontology_engineering:IntegrationMerge_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for IntegrationMerge"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. IntegrationMerge has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:IntegrationMerge .
+
+ontology_engineering:Integration_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for Integration"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. Integration has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:Integration .
+
+ontology_engineering:IntersectionMerge_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for IntersectionMerge"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. IntersectionMerge has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:IntersectionMerge .
+
+ontology_engineering:KanbanOntologyFlow_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for KanbanOntologyFlow"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. KanbanOntologyFlow has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:KanbanOntologyFlow .
+
+ontology_engineering:KickoffMeeting_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for KickoffMeeting"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. KickoffMeeting has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:KickoffMeeting .
+
+ontology_engineering:KnowledgeBaseConcept_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for KnowledgeBaseConcept"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack v19.0.1 anomaly-C fix — convention-matching umbrella shape."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. KnowledgeBaseConcept is the convention-matching umbrella for kb's discipline catalogue; this shape asserts IRI node-kind. Created v19.0.1 to replace the two retired shapes OntologyEngineeringDiscipline_Shape and OntologyEngineeringConcept_Shape."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:KnowledgeBaseConcept .
+
+ontology_engineering:KnowledgeSharingMechanism_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for KnowledgeSharingMechanism"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. KnowledgeSharingMechanism has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:KnowledgeSharingMechanism .
+
+ontology_engineering:LabelAddition_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for LabelAddition"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. LabelAddition has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:LabelAddition .
+
+ontology_engineering:LeaderDecision_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for LeaderDecision"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. LeaderDecision has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:LeaderDecision .
+
+ontology_engineering:LenientParsing_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for LenientParsing"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. LenientParsing has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:LenientParsing .
+
+ontology_engineering:LessonsLearned_LightShape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for LessonsLearned"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. LessonsLearned has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:LessonsLearned .
+
+ontology_engineering:LexicalMapping_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for LexicalMapping"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. LexicalMapping has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:LexicalMapping .
+
+ontology_engineering:Lifecycle_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for Lifecycle"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. Lifecycle has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:Lifecycle .
+
+ontology_engineering:LinkingStrategy_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for LinkingStrategy"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. LinkingStrategy has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:LinkingStrategy .
+
+ontology_engineering:Linking_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for Linking"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. Linking has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:Linking .
+
+ontology_engineering:LiteratureReview_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for LiteratureReview"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. LiteratureReview has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:LiteratureReview .
+
+ontology_engineering:LiteratureSearch_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for LiteratureSearch"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. LiteratureSearch has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:LiteratureSearch .
+
+ontology_engineering:LogicalValidation_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for LogicalValidation"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. LogicalValidation has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:LogicalValidation .
+
+ontology_engineering:MaintenanceActivity_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for MaintenanceActivity"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. MaintenanceActivity has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:MaintenanceActivity .
+
+ontology_engineering:ManualMapping_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for ManualMapping"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. ManualMapping has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:ManualMapping .
+
+ontology_engineering:ManualModularization_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for ManualModularization"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. ManualModularization has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:ManualModularization .
+
+ontology_engineering:ManualPopulation_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for ManualPopulation"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. ManualPopulation has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:ManualPopulation .
+
+ontology_engineering:ManyToManyMapping_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for ManyToManyMapping"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. ManyToManyMapping has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass <http://example.org/meta#ManyToManyMapping> .
+
+ontology_engineering:ManyToOneMapping_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for ManyToOneMapping"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. ManyToOneMapping has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass <http://example.org/meta#ManyToOneMapping> .
+
+ontology_engineering:MappingTechnique_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for MappingTechnique"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. MappingTechnique has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:MappingTechnique .
+
+ontology_engineering:MeetingType_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for MeetingType"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. MeetingType has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:MeetingType .
+
+ontology_engineering:Mentoring_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for Mentoring"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. Mentoring has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:Mentoring .
+
+ontology_engineering:MergingStrategy_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for MergingStrategy"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. MergingStrategy has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:MergingStrategy .
+
+ontology_engineering:MeritocracyGovernance_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for MeritocracyGovernance"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. MeritocracyGovernance has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:MeritocracyGovernance .
+
+ontology_engineering:Methodology_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for Methodology"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. Methodology has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:Methodology .
+
+ontology_engineering:MiddleOutDesign_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for MiddleOutDesign"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. MiddleOutDesign has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:MiddleOutDesign .
+
+ontology_engineering:MigrationManagement_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for MigrationManagement"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. MigrationManagement has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ns1:MigrationManagement .
+
+ontology_engineering:MigrationStrategy_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for MigrationStrategy"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. MigrationStrategy has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ns1:MigrationStrategy .
+
+ontology_engineering:MilestoneDefinition_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for MilestoneDefinition"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. MilestoneDefinition has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:MilestoneDefinition .
+
+ontology_engineering:MobModeling_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for MobModeling"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. MobModeling has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:MobModeling .
+
+ontology_engineering:ModularizationTechnique_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for ModularizationTechnique"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. ModularizationTechnique has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:ModularizationTechnique .
+
+ontology_engineering:Modularization_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for Modularization"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. Modularization has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:Modularization .
+
+ontology_engineering:NamespaceDefinition_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for NamespaceDefinition"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. NamespaceDefinition has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:NamespaceDefinition .
+
+ontology_engineering:NamespaceManagement_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for NamespaceManagement"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. NamespaceManagement has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:NamespaceManagement .
+
+ontology_engineering:ObservationStudy_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for ObservationStudy"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. ObservationStudy has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:ObservationStudy .
+
+ontology_engineering:OneToManyMapping_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for OneToManyMapping"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. OneToManyMapping has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass <http://example.org/meta#OneToManyMapping> .
+
+ontology_engineering:OneToOneMapping_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for OneToOneMapping"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. OneToOneMapping has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass <http://example.org/meta#OneToOneMapping> .
+
+ontology_engineering:OntologyDocumentation_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for OntologyDocumentation"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. OntologyDocumentation has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:OntologyDocumentation .
+
+ontology_engineering:OntologyEvaluation_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for OntologyEvaluation"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. OntologyEvaluation has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:OntologyEvaluation .
+
+ontology_engineering:OntologyFormat_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for OntologyFormat"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. OntologyFormat has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:OntologyFormat .
+
+ontology_engineering:OntologyMerging_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for OntologyMerging"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. OntologyMerging has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:OntologyMerging .
+
+ontology_engineering:OntologyModularization_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for OntologyModularization"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. OntologyModularization has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:OntologyModularization .
+
+ontology_engineering:OntologyPopulation_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for OntologyPopulation"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. OntologyPopulation has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:OntologyPopulation .
+
+ontology_engineering:OntologyReuse_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for OntologyReuse"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. OntologyReuse has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:OntologyReuse .
+
+ontology_engineering:OntologySelection_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for OntologySelection"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. OntologySelection has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:OntologySelection .
+
+ontology_engineering:OntologyToDatabase_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for OntologyToDatabase"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. OntologyToDatabase has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:OntologyToDatabase .
+
+ontology_engineering:PairModeling_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for PairModeling"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. PairModeling has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:PairModeling .
+
+ontology_engineering:PairProgramming_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for PairProgramming"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. PairProgramming has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:PairProgramming .
+
+ontology_engineering:Parsing_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for Parsing"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. Parsing has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:Parsing .
+
+ontology_engineering:PartialRegression_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for PartialRegression"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. PartialRegression has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:PartialRegression .
+
+ontology_engineering:PatchDeployment_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for PatchDeployment"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. PatchDeployment has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:PatchDeployment .
+
+ontology_engineering:PatternApplication_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for PatternApplication"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. PatternApplication has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:PatternApplication .
+
+ontology_engineering:PeerReviewFeedback_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for PeerReviewFeedback"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. PeerReviewFeedback has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:PeerReviewFeedback .
+
+ontology_engineering:PeerReview_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for PeerReview"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. PeerReview has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:PeerReview .
+
+ontology_engineering:PlanningActivity_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for PlanningActivity"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. PlanningActivity has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:PlanningActivity .
+
+ontology_engineering:Population_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for Population"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. Population has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:Population .
+
+ontology_engineering:PrefixDeclaration_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for PrefixDeclaration"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. PrefixDeclaration has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:PrefixDeclaration .
+
+ontology_engineering:PrescriptiveMethodology_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for PrescriptiveMethodology"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. PrescriptiveMethodology has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:PrescriptiveMethodology .
+
+ontology_engineering:PrettyPrinting_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for PrettyPrinting"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. PrettyPrinting has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:PrettyPrinting .
+
+ontology_engineering:PriorityBasedResolution_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for PriorityBasedResolution"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. PriorityBasedResolution has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:PriorityBasedResolution .
+
+ontology_engineering:ProcessConflict_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for ProcessConflict"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. ProcessConflict has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:ProcessConflict .
+
+ontology_engineering:PrototypeBuilding_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for PrototypeBuilding"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. PrototypeBuilding has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:PrototypeBuilding .
+
+ontology_engineering:PrototypingMethodology_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for PrototypingMethodology"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. PrototypingMethodology has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:PrototypingMethodology .
+
+ontology_engineering:Prototyping_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for Prototyping"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. Prototyping has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:Prototyping .
+
+ontology_engineering:Publication_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for Publication"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. Publication has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:Publication .
+
+ontology_engineering:QuestionAnswering_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for QuestionAnswering"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. QuestionAnswering has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:QuestionAnswering .
+
+ontology_engineering:RampUpLoad_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for RampUpLoad"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. RampUpLoad has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:RampUpLoad .
+
+ontology_engineering:ReasoningBasedMapping_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for ReasoningBasedMapping"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. ReasoningBasedMapping has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:ReasoningBasedMapping .
+
+ontology_engineering:Reasoning_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for Reasoning"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. Reasoning has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:Reasoning .
+
+ontology_engineering:RegressionTest_Shape a sh:NodeShape ;
+    rdfs:label "Semantic shape for RegressionTest"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — semantic shape upgrade for ontology-engineering subject per BP-D30."@en ;
+    rdfs:comment "Semantic SHACL NodeShape per BP-D30. Declares 3 property constraint(s) for RegressionTest sourced from rdfs:domain assertions."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:property [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:message "Property hasExpectedResult should match its declared type."@en ;
+            sh:minCount 0 ;
+            sh:path ontology_engineering:hasExpectedResult ;
+            sh:severity sh:Warning ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:message "Property hasTestType should match its declared type."@en ;
+            sh:minCount 0 ;
+            sh:path ontology_engineering:hasTestType ;
+            sh:severity sh:Warning ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:message "Property hasCheckSPARQL should match its declared type."@en ;
+            sh:minCount 0 ;
+            sh:path ontology_engineering:hasCheckSPARQL ;
+            sh:severity sh:Warning ] ;
+    sh:severity sh:Warning ;
+    sh:targetClass ontology_engineering:RegressionTest .
+
+ontology_engineering:RelatedLinking_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for RelatedLinking"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. RelatedLinking has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:RelatedLinking .
+
+ontology_engineering:RelationshipIdentification_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for RelationshipIdentification"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. RelationshipIdentification has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:RelationshipIdentification .
+
+ontology_engineering:RelationshipModeling_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for RelationshipModeling"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. RelationshipModeling has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:RelationshipModeling .
+
+ontology_engineering:RepositoryPublication_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for RepositoryPublication"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. RepositoryPublication has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:RepositoryPublication .
+
+ontology_engineering:RequirementValidation_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for RequirementValidation"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. RequirementValidation has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:RequirementValidation .
+
+ontology_engineering:RequirementsAnalysis_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for RequirementsAnalysis"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. RequirementsAnalysis has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:RequirementsAnalysis .
+
+ontology_engineering:RequirementsElicitation_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for RequirementsElicitation"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. RequirementsElicitation has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:RequirementsElicitation .
+
+ontology_engineering:RequirementsPrioritization_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for RequirementsPrioritization"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. RequirementsPrioritization has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:RequirementsPrioritization .
+
+ontology_engineering:ResourceAllocation_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for ResourceAllocation"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. ResourceAllocation has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:ResourceAllocation .
+
+ontology_engineering:ResourceCoordination_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for ResourceCoordination"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. ResourceCoordination has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:ResourceCoordination .
+
+ontology_engineering:ResourcePlanning_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for ResourcePlanning"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. ResourcePlanning has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:ResourcePlanning .
+
+ontology_engineering:RetrospectiveMeeting_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for RetrospectiveMeeting"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. RetrospectiveMeeting has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:RetrospectiveMeeting .
+
+ontology_engineering:ReusabilityAnalysis_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for ReusabilityAnalysis"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. ReusabilityAnalysis has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:ReusabilityAnalysis .
+
+ontology_engineering:Reviewer_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for Reviewer"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. Reviewer has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:Reviewer .
+
+ontology_engineering:RiskBasedRegression_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for RiskBasedRegression"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. RiskBasedRegression has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:RiskBasedRegression .
+
+ontology_engineering:RoadmapPlan_Shape a sh:NodeShape ;
+    rdfs:label "Semantic shape for RoadmapPlan"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — semantic shape upgrade for ontology-engineering subject per BP-D30."@en ;
+    rdfs:comment "Semantic SHACL NodeShape per BP-D30. Declares 4 property constraint(s) for RoadmapPlan sourced from rdfs:domain assertions."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:property [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:message "Property hasSteps should match its declared type."@en ;
+            sh:minCount 0 ;
+            sh:path ontology_engineering:hasSteps ;
+            sh:severity sh:Warning ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:message "Property targetsMetric should match its declared type."@en ;
+            sh:minCount 0 ;
+            sh:path ontology_engineering:targetsMetric ;
+            sh:severity sh:Warning ],
+        [ sh:maxCount 1 ;
+            sh:message "Property hasCurrentValue should match its declared type."@en ;
+            sh:minCount 0 ;
+            sh:or ( [ sh:datatype xsd:decimal ] [ sh:datatype xsd:integer ] [ sh:datatype xsd:double ] [ sh:datatype xsd:float ] [ sh:datatype xsd:long ] [ sh:datatype xsd:nonNegativeInteger ] [ sh:datatype xsd:int ] [ sh:datatype xsd:short ] ) ;
+            sh:path ontology_engineering:hasCurrentValue ;
+            sh:severity sh:Warning ],
+        [ sh:maxCount 1 ;
+            sh:message "Property hasTargetValue should match its declared type."@en ;
+            sh:minCount 0 ;
+            sh:or ( [ sh:datatype xsd:decimal ] [ sh:datatype xsd:integer ] [ sh:datatype xsd:double ] [ sh:datatype xsd:float ] [ sh:datatype xsd:long ] [ sh:datatype xsd:nonNegativeInteger ] [ sh:datatype xsd:int ] [ sh:datatype xsd:short ] ) ;
+            sh:path ontology_engineering:hasTargetValue ;
+            sh:severity sh:Warning ] ;
+    sh:severity sh:Warning ;
+    sh:targetClass ontology_engineering:RoadmapPlan .
+
+ontology_engineering:RollbackDeployment_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for RollbackDeployment"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. RollbackDeployment has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:RollbackDeployment .
+
+ontology_engineering:RollbackMigration_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for RollbackMigration"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. RollbackMigration has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ns1:RollbackMigration .
+
+ontology_engineering:SatisfiabilityChecking_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for SatisfiabilityChecking"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. SatisfiabilityChecking has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:SatisfiabilityChecking .
+
+ontology_engineering:ScheduleCoordination_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for ScheduleCoordination"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. ScheduleCoordination has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:ScheduleCoordination .
+
+ontology_engineering:SchedulePlanning_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for SchedulePlanning"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. SchedulePlanning has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:SchedulePlanning .
+
+ontology_engineering:ScrumOntologyDevelopment_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for ScrumOntologyDevelopment"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. ScrumOntologyDevelopment has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:ScrumOntologyDevelopment .
+
+ontology_engineering:SemanticConversion_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for SemanticConversion"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. SemanticConversion has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:SemanticConversion .
+
+ontology_engineering:SemanticMapping_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for SemanticMapping"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. SemanticMapping has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:SemanticMapping .
+
+ontology_engineering:SemanticModularization_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for SemanticModularization"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. SemanticModularization has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:SemanticModularization .
+
+ontology_engineering:Serialization_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for Serialization"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. Serialization has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:Serialization .
+
+ontology_engineering:Shape_BestPracticeAnnotationCompleteness a sh:NodeShape ;
+    rdfs:label "BestPractice annotation completeness"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    rdfs:comment "Every kb:BestPractice individual must have rdfs:label, skos:definition, and dcterms:source."@en ;
+    sh:property [ sh:message "BP must have dcterms:source"@en ;
+            sh:minCount 1 ;
+            sh:path dcterms:source ;
+            sh:severity sh:Violation ],
+        [ sh:message "BP must have skos:definition"@en ;
+            sh:minCount 1 ;
+            sh:path skos:definition ;
+            sh:severity sh:Violation ],
+        [ sh:message "BP must have rdfs:label"@en ;
+            sh:minCount 1 ;
+            sh:path rdfs:label ;
+            sh:severity sh:Violation ] ;
+    sh:targetClass ontology_engineering:BestPractice .
+
+ontology_engineering:Shape_LessonsLearnedAnnotationCompleteness a sh:NodeShape ;
+    rdfs:label "LessonsLearned annotation completeness"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    rdfs:comment "Every kb:LessonsLearned individual must have rdfs:label and dcterms:source."@en ;
+    sh:property [ sh:message "Lesson must have dcterms:source"@en ;
+            sh:minCount 1 ;
+            sh:path dcterms:source ;
+            sh:severity sh:Violation ],
+        [ sh:message "Lesson must have rdfs:label"@en ;
+            sh:minCount 1 ;
+            sh:path rdfs:label ;
+            sh:severity sh:Violation ] ;
+    sh:targetClass ontology_engineering:LessonsLearned .
+
+ontology_engineering:Shape_RefinementAnnotationCompleteness a sh:NodeShape ;
+    rdfs:label "Refinement annotation completeness"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    rdfs:comment "Every kb:Refinement individual must have rdfs:label, skos:definition, and dcterms:source."@en ;
+    sh:property [ sh:message "Refinement must have rdfs:label"@en ;
+            sh:minCount 1 ;
+            sh:path rdfs:label ;
+            sh:severity sh:Violation ],
+        [ sh:message "Refinement must have dcterms:source"@en ;
+            sh:minCount 1 ;
+            sh:path dcterms:source ;
+            sh:severity sh:Violation ],
+        [ sh:message "Refinement must have skos:definition"@en ;
+            sh:minCount 1 ;
+            sh:path skos:definition ;
+            sh:severity sh:Violation ] ;
+    sh:targetClass ontology_engineering:Refinement .
+
+ontology_engineering:SlackDiscussion_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for SlackDiscussion"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. SlackDiscussion has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:SlackDiscussion .
+
+ontology_engineering:SpikeLoad_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for SpikeLoad"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. SpikeLoad has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:SpikeLoad .
+
+ontology_engineering:SpiralMethodology_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for SpiralMethodology"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. SpiralMethodology has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:SpiralMethodology .
+
+ontology_engineering:SpiralOntologyRefinement_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for SpiralOntologyRefinement"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. SpiralOntologyRefinement has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:SpiralOntologyRefinement .
+
+ontology_engineering:StakeholderFeedback_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for StakeholderFeedback"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. StakeholderFeedback has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:StakeholderFeedback .
+
+ontology_engineering:StakeholderInterview_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for StakeholderInterview"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. StakeholderInterview has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:StakeholderInterview .
+
+ontology_engineering:StakeholderRole_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for StakeholderRole"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. StakeholderRole has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:StakeholderRole .
+
+ontology_engineering:StatusMeeting_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for StatusMeeting"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. StatusMeeting has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:StatusMeeting .
+
+ontology_engineering:SteadyStateLoad_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for SteadyStateLoad"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. SteadyStateLoad has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:SteadyStateLoad .
+
+ontology_engineering:StrictParsing_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for StrictParsing"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. StrictParsing has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:StrictParsing .
+
+ontology_engineering:StructuralMapping_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for StructuralMapping"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. StructuralMapping has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:StructuralMapping .
+
+ontology_engineering:SynchronousCollaboration_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for SynchronousCollaboration"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. SynchronousCollaboration has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:SynchronousCollaboration .
+
+ontology_engineering:SyntacticConversion_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for SyntacticConversion"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. SyntacticConversion has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:SyntacticConversion .
+
+ontology_engineering:SyntacticModularization_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for SyntacticModularization"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. SyntacticModularization has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:SyntacticModularization .
+
+ontology_engineering:SyntaxTranslation_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for SyntaxTranslation"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. SyntaxTranslation has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:SyntaxTranslation .
+
+ontology_engineering:SyntaxValidation_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for SyntaxValidation"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. SyntaxValidation has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:SyntaxValidation .
+
+ontology_engineering:TaskCoordination_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for TaskCoordination"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. TaskCoordination has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:TaskCoordination .
+
+ontology_engineering:TaxonomyDesign_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for TaxonomyDesign"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. TaxonomyDesign has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:TaxonomyDesign .
+
+ontology_engineering:TeamConcept_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for TeamConcept"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. TeamConcept has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:TeamConcept .
+
+ontology_engineering:TeamFormation_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for TeamFormation"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. TeamFormation has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:TeamFormation .
+
+ontology_engineering:Team_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for Team"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. Team has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:Team .
+
+ontology_engineering:TechnicalConflict_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for TechnicalConflict"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. TechnicalConflict has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:TechnicalConflict .
+
+ontology_engineering:TechnicalSpecification_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for TechnicalSpecification"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. TechnicalSpecification has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:TechnicalSpecification .
+
+ontology_engineering:ToolSelection_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for ToolSelection"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. ToolSelection has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:ToolSelection .
+
+ontology_engineering:TopDownDesign_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for TopDownDesign"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. TopDownDesign has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:TopDownDesign .
+
+ontology_engineering:Training_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for Training"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. Training has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:Training .
+
+ontology_engineering:UnionMerge_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for UnionMerge"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. UnionMerge has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:UnionMerge .
+
+ontology_engineering:UseCaseAnalysis_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for UseCaseAnalysis"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. UseCaseAnalysis has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:UseCaseAnalysis .
+
+ontology_engineering:UseCaseModeling_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for UseCaseModeling"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. UseCaseModeling has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:UseCaseModeling .
+
+ontology_engineering:UserGuideCreation_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for UserGuideCreation"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. UserGuideCreation has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:UserGuideCreation .
+
+ontology_engineering:VModelOntologyDevelopment_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for VModelOntologyDevelopment"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. VModelOntologyDevelopment has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:VModelOntologyDevelopment .
+
+ontology_engineering:ValidationActivity_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for ValidationActivity"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. ValidationActivity has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:ValidationActivity .
+
+ontology_engineering:Validator_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for Validator"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. Validator has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:Validator .
+
+ontology_engineering:VerificationQuery_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for VerificationQuery"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. VerificationQuery has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:VerificationQuery .
+
+ontology_engineering:VersionConcept_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for VersionConcept"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. VersionConcept has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:VersionConcept .
+
+ontology_engineering:VersioningPattern_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for VersioningPattern"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. VersioningPattern has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:VersioningPattern .
+
+ontology_engineering:VotingDecision_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for VotingDecision"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. VotingDecision has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:VotingDecision .
+
+ontology_engineering:VotingResolution_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for VotingResolution"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. VotingResolution has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:VotingResolution .
+
+ontology_engineering:WalkthroughTechnique_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for WalkthroughTechnique"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. WalkthroughTechnique has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:WalkthroughTechnique .
+
+ontology_engineering:WaterfallMethodology_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for WaterfallMethodology"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. WaterfallMethodology has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:WaterfallMethodology .
+
+ontology_engineering:WaterfallOntologyEngineering_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for WaterfallOntologyEngineering"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. WaterfallOntologyEngineering has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:WaterfallOntologyEngineering .
+
+ontology_engineering:WebPublication_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for WebPublication"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. WebPublication has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:WebPublication .
+
+ontology_engineering:WorkshopMeeting_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for WorkshopMeeting"@en ;
+    dcterms:isPartOf <http://example.org/knowledge-base> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for ontology-engineering per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. WorkshopMeeting has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass ontology_engineering:WorkshopMeeting .
+
+oepack_release_history:Bundle_Shape a sh:NodeShape ;
+    rdfs:label "Semantic shape for Bundle"@en ;
+    dcterms:isPartOf <http://example.org/oepack-release-history> ;
+    dcterms:source "OE Pack Option C — semantic shape upgrade for oepack-release-history subject per BP-D30."@en ;
+    rdfs:comment "Semantic SHACL NodeShape per BP-D30. Declares 2 property constraint(s) for Bundle sourced from rdfs:domain assertions."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:property [ sh:class oepack_release_history:OntologyFile ;
+            sh:maxCount 1 ;
+            sh:message "Property containsFile should match its declared type."@en ;
+            sh:minCount 0 ;
+            sh:path oepack_release_history:containsFile ;
+            sh:severity sh:Warning ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:message "Property hasBundleSHA256 should match its declared type."@en ;
+            sh:minCount 0 ;
+            sh:path oepack_release_history:hasBundleSHA256 ;
+            sh:severity sh:Warning ] ;
+    sh:severity sh:Warning ;
+    sh:targetClass oepack_release_history:Bundle .
+
+oepack_release_history:ConsolidationStep_Shape a sh:NodeShape ;
+    rdfs:label "Semantic shape for ConsolidationStep"@en ;
+    dcterms:isPartOf <http://example.org/oepack-release-history> ;
+    dcterms:source "OE Pack Option C — semantic shape upgrade for oepack-release-history subject per BP-D30."@en ;
+    rdfs:comment "Semantic SHACL NodeShape per BP-D30. Declares 2 property constraint(s) for ConsolidationStep sourced from rdfs:domain assertions."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:property [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:message "Property hasStepNumber should match its declared type."@en ;
+            sh:minCount 0 ;
+            sh:path oepack_release_history:hasStepNumber ;
+            sh:severity sh:Warning ],
+        [ sh:class oepack_release_history:Bundle ;
+            sh:maxCount 1 ;
+            sh:message "Property shipsBundle should match its declared type."@en ;
+            sh:minCount 0 ;
+            sh:path oepack_release_history:shipsBundle ;
+            sh:severity sh:Warning ] ;
+    sh:severity sh:Warning ;
+    sh:targetClass oepack_release_history:ConsolidationStep .
+
+oepack_release_history:FacetRoleShape a sh:NodeShape ;
+    rdfs:label "Facet role + status must use the controlled vocabularies"@en ;
+    dcterms:isPartOf <http://example.org/oepack-release-history> ;
+    sh:property [ sh:in ( "registration" "conformance" "both" "internal" ) ;
+            sh:maxCount 1 ;
+            sh:message "facetRole must be registration|conformance|both|internal."@en ;
+            sh:path oepack_release_history:facetRole ],
+        [ sh:in ( "operational" "partial" "intended" "na" ) ;
+            sh:maxCount 1 ;
+            sh:message "facetRoleStatus must be operational|partial|intended|na."@en ;
+            sh:path oepack_release_history:facetRoleStatus ] ;
+    sh:sparql [ sh:message "A SubjectOntology with facetRole must also declare facetRoleStatus."@en ;
+            sh:select "SELECT $this WHERE { $this <http://example.org/oepack-release-history#facetRole> ?r . FILTER NOT EXISTS { $this <http://example.org/oepack-release-history#facetRoleStatus> ?s } }" ] ;
+    sh:targetClass oepack_release_history:SubjectOntology .
+
+oepack_release_history:OEPackArtifact_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for OEPackArtifact"@en ;
+    dcterms:isPartOf <http://example.org/oepack-release-history> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for oepack-release-history per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. OEPackArtifact has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass oepack_release_history:OEPackArtifact .
+
+oepack_release_history:OntologyFile_Shape a sh:NodeShape ;
+    rdfs:label "Semantic shape for OntologyFile"@en ;
+    dcterms:isPartOf <http://example.org/oepack-release-history> ;
+    dcterms:source "OE Pack Option C — semantic shape upgrade for oepack-release-history subject per BP-D30."@en ;
+    rdfs:comment "Semantic SHACL NodeShape per BP-D30. Declares 4 property constraint(s) for OntologyFile sourced from rdfs:domain assertions."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:property [ sh:class oepack_release_history:SubjectOntology ;
+            sh:maxCount 1 ;
+            sh:message "Property belongsToSubject should match its declared type."@en ;
+            sh:minCount 0 ;
+            sh:path oepack_release_history:belongsToSubject ;
+            sh:severity sh:Warning ],
+        [ sh:class oepack_release_history:OntologyFile ;
+            sh:maxCount 1 ;
+            sh:message "Property priorVersion should match its declared type."@en ;
+            sh:minCount 0 ;
+            sh:path oepack_release_history:priorVersion ;
+            sh:severity sh:Warning ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:message "Property hasVersionInfo should match its declared type."@en ;
+            sh:minCount 0 ;
+            sh:path oepack_release_history:hasVersionInfo ;
+            sh:severity sh:Warning ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:message "Property hasFileSHA256 should match its declared type."@en ;
+            sh:minCount 0 ;
+            sh:path oepack_release_history:hasFileSHA256 ;
+            sh:severity sh:Warning ] ;
+    sh:severity sh:Warning ;
+    sh:targetClass oepack_release_history:OntologyFile .
+
+oepack_release_history:ReleaseEvent_Shape a sh:NodeShape ;
+    rdfs:label "Semantic shape for ReleaseEvent"@en ;
+    dcterms:isPartOf <http://example.org/oepack-release-history> ;
+    dcterms:source "OE Pack Option C — semantic shape upgrade for oepack-release-history subject per BP-D30."@en ;
+    rdfs:comment "Semantic SHACL NodeShape per BP-D30. Declares 1 property constraint(s) for ReleaseEvent sourced from rdfs:domain assertions."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:property [ sh:datatype xsd:dateTime ;
+            sh:maxCount 1 ;
+            sh:message "Property hasReleaseDate should match its declared type."@en ;
+            sh:minCount 0 ;
+            sh:path oepack_release_history:hasReleaseDate ;
+            sh:severity sh:Warning ] ;
+    sh:severity sh:Warning ;
+    sh:targetClass oepack_release_history:ReleaseEvent .
+
+oepack_release_history:Shape_SupersessionCompleteness a sh:NodeShape ;
+    rdfs:label "Supersession endpoint completeness"@en ;
+    dcterms:isPartOf <http://example.org/oepack-release-history> ;
+    rdfs:comment "Every Supersession must declare both its supersededFile (old) and supersedes (new) endpoints."@en ;
+    sh:property [ sh:message "Supersession must declare orh:supersedes (new file)"@en ;
+            sh:minCount 1 ;
+            sh:path oepack_release_history:supersedes ;
+            sh:severity sh:Violation ],
+        [ sh:message "Supersession must declare orh:supersededFile (old file)"@en ;
+            sh:minCount 1 ;
+            sh:path oepack_release_history:supersededFile ;
+            sh:severity sh:Violation ] ;
+    sh:targetClass oepack_release_history:Supersession .
+
+oepack_release_history:SubjectLifecycleShape a sh:NodeShape ;
+    rdfs:label "Subject lifecycle: status required; retired implies a successor"@en ;
+    dcterms:isPartOf <http://example.org/oepack-release-history> ;
+    sh:property [ sh:in ( "active" "retired" ) ;
+            sh:maxCount 1 ;
+            sh:message "SubjectOntology must declare exactly one lifecycleStatus (active|retired)."@en ;
+            sh:minCount 1 ;
+            sh:path oepack_release_history:lifecycleStatus ] ;
+    sh:sparql [ sh:message "A retired SubjectOntology must declare supersededBySubject."@en ;
+            sh:select "SELECT $this WHERE { $this <http://example.org/oepack-release-history#lifecycleStatus> \"retired\" . FILTER NOT EXISTS { $this <http://example.org/oepack-release-history#supersededBySubject> ?s } }" ] ;
+    sh:targetClass oepack_release_history:SubjectOntology .
+
+oepack_release_history:SubjectOntology_Shape a sh:NodeShape ;
+    rdfs:label "Lightweight semantic shape for SubjectOntology"@en ;
+    dcterms:isPartOf <http://example.org/oepack-release-history> ;
+    dcterms:source "OE Pack Option C — lightweight semantic upgrade for oepack-release-history per BP-D30."@en ;
+    rdfs:comment "Lightweight semantic SHACL NodeShape per BP-D30. SubjectOntology has no direct rdfs:domain assertions; constraints inherit via OWL subClassOf entailment. Direct: sh:nodeKind sh:IRI."@en ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Info ;
+    sh:targetClass oepack_release_history:SubjectOntology .
+
+pub:EvidenceShape a sh:NodeShape ;
+    rdfs:label "Evidence must carry a transcript digest, not a summary"@en ;
+    dcterms:isPartOf <http://example.org/publish-ceremony/shapes> ;
+    sh:property [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:message "Evidence must record the SHA-256 of the raw gate transcript (BP-D2)." ;
+            sh:minCount 1 ;
+            sh:path pub:transcriptSHA256 ;
+            sh:pattern "^[0-9a-f]{64}$" ] ;
+    sh:targetClass quality:Evidence .
+
+pub:ManifestCompleteShape a sh:NodeShape ;
+    rdfs:label "Verified counts must equal total counts"@en ;
+    dcterms:isPartOf <http://example.org/publish-ceremony/shapes> ;
+    sh:sparql [ sh:message "Manifest or Turtle verification is incomplete — verified count does not equal total." ;
+            sh:prefixes <http://example.org/publish-ceremony/shapes> ;
+            sh:select """
+            SELECT $this WHERE {
+              { $this <http://example.org/publish-ceremony#manifestVerified> ?v .
+                $this <http://example.org/publish-ceremony#manifestTotal>    ?t .
+                FILTER (?v != ?t) }
+              UNION
+              { $this <http://example.org/publish-ceremony#turtleParsed> ?v .
+                $this <http://example.org/publish-ceremony#turtleTotal>  ?t .
+                FILTER (?v != ?t) }
+            }""" ] ;
+    sh:targetClass quality:GateDecision .
+
+pub:PublishDecisionShape a sh:NodeShape ;
+    rdfs:label "A publish decision must carry the measured evidence, not a claim of it"@en ;
+    dcterms:isPartOf <http://example.org/publish-ceremony/shapes> ;
+    sh:property [ sh:datatype xsd:boolean ;
+            sh:hasValue true ;
+            sh:maxCount 1 ;
+            sh:message "A published record must record a passing gate; a failing run is not published." ;
+            sh:minCount 1 ;
+            sh:path quality:passesGate ],
+        [ sh:datatype xsd:integer ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path pub:turtleTotal ],
+        [ sh:datatype xsd:string ;
+            sh:in ( "PASS"^^xsd:string "NONE_SHIPPED"^^xsd:string ) ;
+            sh:maxCount 1 ;
+            sh:message "The package's own release gate must have passed, or be recorded as not shipped." ;
+            sh:minCount 1 ;
+            sh:path pub:packageGate ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:message "The publishing session must be named. Set OE_SESSION. Attribution is not authentication — nothing verifies the claim — but an ABSENT claim leaves ParallelSessionLineageFork and CrossSessionContamination undiagnosable, which is what this record exists to support." ;
+            sh:minCount 1 ;
+            sh:not [ sh:in ( "unattributed"^^xsd:string "" ) ] ;
+            sh:path rel:authoringSession ],
+        [ sh:message "The decision must point at the Evidence artifact holding the raw transcript." ;
+            sh:minCount 1 ;
+            sh:path quality:evidencedBy ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:message "The package slug must be recorded." ;
+            sh:minCount 1 ;
+            sh:path dcterms:identifier ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:message "The published version must be SemVer (BP-D7)." ;
+            sh:minCount 1 ;
+            sh:path owl:versionInfo ;
+            sh:pattern "^[0-9]+\\.[0-9]+\\.[0-9]+$" ],
+        [ sh:datatype xsd:dateTime ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path prov:generatedAtTime ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:message "The governing discipline file's SHA-256 must be measured and recorded (B4/BP-D2)." ;
+            sh:minCount 1 ;
+            sh:path pub:disciplineSHA256 ;
+            sh:pattern "^[0-9a-f]{64}$" ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:message "The highest-SemVer knowledge-base ABox actually resolved must be named." ;
+            sh:minCount 1 ;
+            sh:path pub:governanceSource ],
+        [ sh:datatype xsd:integer ;
+            sh:maxCount 1 ;
+            sh:message "Manifest-verified file count must be recorded and greater than zero." ;
+            sh:minCount 1 ;
+            sh:minExclusive 0 ;
+            sh:path pub:manifestVerified ],
+        [ sh:datatype xsd:integer ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path pub:manifestTotal ],
+        [ sh:datatype xsd:integer ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path pub:turtleParsed ] ;
+    sh:targetClass quality:GateDecision .
+
+<http://example.org/oemethod-governance> a owl:Ontology ;
+    dcterms:created "2026-10-06T00:00:00"^^xsd:dateTime ;
+    dcterms:creator oe-prov:Agent_MethodAuthor,
+        "the method author" ;
+    dcterms:description "The SHACL shapes of the OE Method's governance unit as ONE file (BP-D54): the knowledge base, release history and publish-record suites, each a module. A pure union, proved."@en ;
+    dcterms:identifier "oemethod-governance" ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    dcterms:modified "2026-10-06T00:00:00"^^xsd:dateTime ;
+    dcterms:publisher oe-prov:Org_IKU_Department_of_ComputerEngineering ;
+    dcterms:rights "Copyright (c) 2025-2026 a university & the method author. Licensed under CC BY 4.0." ;
+    dcterms:rightsHolder oe-prov:Org_IKU_Department_of_ComputerEngineering ;
+    dcterms:title "OE Method governance — SHACL shapes (one file for the unit)"@en ;
+    rdfs:comment "The SHACL shapes of the OE Method's governance unit as ONE file (BP-D54): the knowledge base, release history and publish-record suites, each a module. A pure union, proved."@en ;
+    owl:versionIRI <http://example.org/oemethod-governance/1.0.0> ;
+    owl:versionInfo "1.0.0" .
+
+<http://example.org/publish-ceremony/shapes> dcterms:identifier "publish_record" ;
+    dcterms:isPartOf <http://example.org/oemethod-governance> ;
+    rdfs:comment "Module membership added for the package consolidation (BP-D54): every named subject says dcterms:isPartOf its module. No other change."@en,
+        """Shapes for the publish-ceremony GateDecision emitted by oe_publish.sh.
+
+Reuses quality:GateDecision / quality:Evidence rather than minting a publication
+vocabulary (L-110: do not mint governance structure on a single producer's evidence;
+the OE quality TBox already models gate runs). The pub: namespace carries only the
+evidence-value predicates that record WHAT WAS MEASURED — it declares no classes.
+
+The shape's purpose is L-95: it makes a publish record that omits or fakes a ceremony
+step non-conformant, so the record cannot be a bare claim of compliance."""@en ;
+    owl:priorVersion <http://example.org/publish-ceremony/shapes/1.0.0> ;
+    owl:versionIRI <http://example.org/publish-ceremony/shapes/1.0.1> ;
+    owl:versionInfo "1.0.1" .
+
+<http://example.org/oepack-release-history> dcterms:created "2026-05-16T00:00:00"^^xsd:dateTime ;
+    dcterms:creator oe-prov:Agent_MethodAuthor ;
+    dcterms:identifier "oepack-release-history" ;
+    dcterms:isPartOf <http://example.org/oemethod-governance> ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    dcterms:modified "2026-10-06T00:00:00"^^xsd:dateTime ;
+    dcterms:publisher oe-prov:Org_IKU_Department_of_ComputerEngineering ;
+    dcterms:rights "Copyright (c) 2025-2026 a university & the method author. Licensed under CC BY 4.0."@en ;
+    dcterms:rightsHolder oe-prov:Org_IKU_Department_of_ComputerEngineering ;
+    rdfs:comment "SHACL role of OEPack-Release-History 3-file canonical set. Annotation-completeness shape on Supersession individuals (every supersession must declare both endpoints)."@en,
+        "oepack-release-history PATCH v1.0.1. Sprint F1 ghost-reference cleanup: 0 dangling class references redirected to canonical homes; 0 dangling subClassOf claims dropped per L-47 (cross-subject methodological-vs-subsumption discipline). Per BP-D4/D5 gates: HermiT PASS, SHACL no new violations."@en,
+        "oepack-release-history SHACL v1.0.2 (PATCH) — DRIFT-19 fix on hasReleaseDate (xsd:date → xsd:dateTime) per BP-D18."@en,
+        "oepack-release-history SHACL v1.1.0 (MINOR) per v17.32.0 Option B — added 6 auto-generated skeleton NodeShapes for owl:Class declarations lacking SHACL coverage. Per BP-D27 each skeleton carries kb:isSkeletonShape true. Mechanical Roadmap Step 1; semantic constraints in Step 2."@en,
+        "oepack-release-history SHACL v1.2.0 (MINOR) per Option C — 6 skeletons upgraded: 4 full-semantic + 2 lightweight per BP-D30."@en,
+        "oepack_release_history_shacl v1.0.3 (PATCH) per v17.28.0 industrial-hardening — added CC BY 4.0 license, copyright, publisher/rightsHolder (IKÜ Computer Engineering), PROV-O wasGeneratedBy + wasAttributedTo (the method author). Additive ontology metadata only — no semantic changes."@en,
+        "v1.5.0 (2026-10-06, MINOR): every named subject now carries dcterms:isPartOf <http://example.org/oepack-release-history> (its module), the first step of the consolidation of this package's files into one file per role. No term, label or definition changed."@en ;
+    owl:priorVersion <http://example.org/oepack-release-history/1.0.0>,
+        <http://example.org/oepack-release-history/1.0.1>,
+        <http://example.org/oepack-release-history/1.0.2>,
+        <http://example.org/oepack-release-history/1.0.3>,
+        <http://example.org/oepack-release-history/1.1.0>,
+        <http://example.org/oepack-release-history/1.4.0> ;
+    owl:versionIRI <http://example.org/oepack-release-history/1.5.0> ;
+    owl:versionInfo "1.5.0" ;
+    prov:wasAttributedTo oe-prov:Agent_MethodAuthor ;
+    prov:wasGeneratedBy oe-prov:Activity_OEPackRelease_v17_28_0 .
+
+<http://example.org/knowledge-base> ns1:integratesInto <http://example.org/knowledge-base> ;
+    dcterms:created "2026-05-16T00:00:00"^^xsd:dateTime ;
+    dcterms:creator oe-prov:Agent_MethodAuthor,
+        "the method author"@en ;
+    dcterms:identifier "ontology-engineering" ;
+    dcterms:isPartOf <http://example.org/oemethod-governance> ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    dcterms:modified "2026-10-06T00:00:00"^^xsd:dateTime ;
+    dcterms:publisher oe-prov:Org_IKU_Department_of_ComputerEngineering ;
+    dcterms:rights "Copyright (c) 2025-2026 a university & the method author. Licensed under CC BY 4.0."@en ;
+    dcterms:rightsHolder oe-prov:Org_IKU_Department_of_ComputerEngineering ;
+    rdfs:comment "OE catalogue SHACL v1.14.0 — version aligned; no shape changes."@en,
+        "OE catalogue SHACL v1.15.0 — version aligned with ABox."@en,
+        "OE catalogue SHACL v1.20.0 — version sync."@en,
+        "oe PATCH v1.6.1. Sprint F1 ghost-reference cleanup: 0 dangling class references redirected to canonical homes; 0 dangling subClassOf claims dropped per L-47 (cross-subject methodological-vs-subsumption discipline). Per BP-D4/D5 gates: HermiT PASS, SHACL no new violations."@en,
+        "oe SHACL v1.5.0 (version-aligned)"@en,
+        "oe SHACL v1.6.0 (version-aligned)"@en,
+        "oe SHACL v1.6.2 (version-aligned)"@en,
+        "oe v1.4.0 (MAJOR from v1.3.0): deleted duplicate class declarations kb:NamingConvention + kb:ArtifactNamingSchema (canonical home is amod per step 13 AMOD consolidation). Per user rule 2026-05-14 'use the ORIGINAL class.' Per BP-D19 (now empirically refined): bidirectional equivalentClass under OWL 2 RL creates strongly-connected components in the subClassOf graph (46 SCCs measured on the 11-subject corpus); the disciplined response is canonical-IRI consolidation, not bridging axioms."@en,
+        "ontology-engineering SHACL v1.11.0 (version-aligned; no shape changes)."@en,
+        "ontology-engineering SHACL v1.12.0 (version-aligned)"@en,
+        "ontology-engineering SHACL v1.13.0 (version-aligned)"@en,
+        "ontology-engineering SHACL v1.20.0 (MINOR) per v17.32.0 Option B — added 239 auto-generated skeleton NodeShapes for owl:Class declarations lacking SHACL coverage. Per BP-D27 each skeleton carries kb:isSkeletonShape true. Mechanical Roadmap Step 1; semantic constraints in Step 2."@en,
+        "ontology-engineering SHACL v1.30.0 (MINOR) per Option C — 239 skeletons upgraded: 5 full-semantic + 234 lightweight per BP-D30."@en,
+        "ontology_engineering shacl v1.10.0 (version-aligned)"@en,
+        "ontology_engineering shacl v1.8.0 (version-aligned to TBox)"@en,
+        "ontology_engineering shacl v1.9.0 (version-aligned to TBox)"@en,
+        "ontology_engineering_shacl v1.16.1 (PATCH) per v17.28.0 industrial-hardening — added CC BY 4.0 license, copyright, publisher/rightsHolder (IKÜ Computer Engineering), PROV-O wasGeneratedBy + wasAttributedTo (the method author). Additive ontology metadata only — no semantic changes."@en,
+        "ontology_engineering_shacl v1.7.0 (version-aligned to TBox; no content changes)"@en,
+        "v1.3.0 (2026-10-06, MINOR): every named subject now carries dcterms:isPartOf <http://example.org/knowledge-base> (its module), the first step of the consolidation of this package's files into one file per role. No term, label or definition changed."@en ;
+    owl:priorVersion <http://example.org/knowledge-base/1.10.0>,
+        <http://example.org/knowledge-base/1.11.0>,
+        <http://example.org/knowledge-base/1.12.0>,
+        <http://example.org/knowledge-base/1.13.0>,
+        <http://example.org/knowledge-base/1.14.0>,
+        <http://example.org/knowledge-base/1.15.0>,
+        <http://example.org/knowledge-base/1.15.1>,
+        <http://example.org/knowledge-base/1.16.0>,
+        <http://example.org/knowledge-base/1.17.0>,
+        <http://example.org/knowledge-base/1.17.1>,
+        <http://example.org/knowledge-base/1.18.0>,
+        <http://example.org/knowledge-base/1.19.0>,
+        <http://example.org/knowledge-base/1.19.1>,
+        <http://example.org/knowledge-base/1.19.2>,
+        <http://example.org/knowledge-base/1.20.0>,
+        <http://example.org/knowledge-base/1.21.1>,
+        <http://example.org/knowledge-base/1.22.0>,
+        <http://example.org/knowledge-base/1.23.0>,
+        <http://example.org/knowledge-base/1.29.0>,
+        <http://example.org/knowledge-base/1.31.0>,
+        <http://example.org/knowledge-base/1.32.1>,
+        <http://example.org/knowledge-base/1.34.0>,
+        <http://example.org/knowledge-base/1.4.0>,
+        <http://example.org/knowledge-base/1.4.1>,
+        <http://example.org/knowledge-base/1.5.0>,
+        <http://example.org/knowledge-base/1.6.0>,
+        <http://example.org/knowledge-base/1.6.1>,
+        <http://example.org/knowledge-base/1.6.2>,
+        <http://example.org/knowledge-base/1.7.0>,
+        <http://example.org/knowledge-base/1.8.0>,
+        <http://example.org/knowledge-base/1.9.0> ;
+    owl:versionIRI <http://example.org/knowledge-base/1.3.0> ;
+    owl:versionInfo "1.3.0" ;
+    prov:wasAttributedTo oe-prov:Agent_MethodAuthor ;
+    prov:wasGeneratedBy oe-prov:Activity_OEPackRelease_v17_28_0 ;
+    prov:wasRevisionOf <http://example.org/ontology-engineering/1.34.1> .
+

@@ -1,0 +1,12 @@
+# STRUCTURE DEBT REGISTER (this package's own) v1.0.1 -- the lines of oe-method, and of no other package.
+# The owner ruled on 2026-10-07 that a package carries its own register and clears its own lines in its own release, which is
+# what BP-D54 always said; the governance aggregate (in the governing pack) carries the ceilings and the ecosystem-wide view.
+# A line may be removed here, and a count lowered here, with nobody else involved: debt may always shrink. A count may NOT be
+# raised here, a line the aggregate does not carry may NOT be added, and a status may NOT be raised to `exception`: the checker
+# fails the run, and the aggregate generator refuses it and keeps the previous ceiling. Those go through the owner's ruling,
+# recorded in the aggregate line as `ruling: ...`.
+# rule	path	status	note
+D1	oe-method	enforce	copies=0 ruling: owner, 2026-10-07, approved plan v1.10.0 item 38(a): the package opts in to rule D1
+M1	oe-method	enforce	missing=0
+D1	oe-method/09-governance	enforce	copies=0 ruling: owner, 2026-10-07, approved plan v1.10.0 item 38(a): the package opts in to rule D1
+M1	oe-method/09-governance	enforce	missing=0

@@ -1,0 +1,30 @@
+{
+  "_comment": "v1.4.0: adds `recorded_suite_violations`, a ceiling of suite violations per shape module (release_check v3.2.0). v1.3.0: the exclusion pattern is gone; the release check reads what it does not scan from the class table (OE_STRUCTURE_CLASSES_v*.tsv) through oe_structure_classes_v1_0_0.py. v1.2.0: the exclusion pattern also skips an archive folder (retired history is not live corpus, BP-D54); adds the three keys that read the consolidated layout (module_pairs, suite_subject_additional_modules, full_corpus_modules), keyed by module IRI; the old keys stay for the old layout. v1.1.0: suites are named by stem (redo_shacl), so a new version of the file still matches. release_check's 4 configuration points, externalized (Obj_Configurability, T6.1.1). Values below are the exact defaults release_check_v2_1_0.py shipped as inline Python literals before this file existed — behaviour-preserving by construction. See release_check_v2_1_0.py's own comments for the reasoning behind each entry; this file carries values only, not rationale.",
+  "suite_subject_override": {},
+  "suite_subject_override_full_corpus": [
+    "redo_shacl"
+  ],
+  "suite_subject_additional": {
+    "reliability_shacl": [
+      "configuration_tbox_",
+      "configuration_abox_"
+    ]
+  },
+  "module_pairs": {
+    "http://example.org/artifact-capability-shapes": "http://example.org/artifact-capability",
+    "http://example.org/risk-shapes": "http://example.org/risk",
+    "http://example.org/risk-abox": "http://example.org/risk"
+  },
+  "suite_subject_additional_modules": {
+    "http://example.org/reliability": [
+      "http://example.org/configuration"
+    ]
+  },
+  "full_corpus_modules": [
+    "http://example.org/redo"
+  ],
+  "recorded_suite_violations": {
+    "http://example.org/oepack-registrations/an originating project deposit": 11
+  },
+  "recorded_suite_violations_note": "The registrant's own shape ProductBacklogItemShape (a Done item needs VERIFIED evidence) finds 11 of its own backlog items (PBI_EP_033, PBI_US_015, 024, 028, 060, 062, 065, 079, 087, 088, 089) lacking it. Measured 2026-10-07 on the registrant's original files as well as on the merged unit (11 each), so the merge did not cause it. The data is another party's and is held for the record; the number can only fall."
+}

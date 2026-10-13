@@ -1,0 +1,12 @@
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix lib: <http://example.org/library#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+<http://example.org/library-shapes> a owl:Ontology ; owl:versionInfo "1.0.1" ;
+    owl:versionIRI <http://example.org/library-shapes/1.0.1> ;
+    owl:priorVersion <http://example.org/library-shapes/1.0.0> ;
+    rdfs:comment "Minimal exemplar constraint: every class needs a definition. v1.0.1: the file now has its own ontology header, which every SHACL file of a package needs."@en .
+lib:ClassDefinitionShape a sh:NodeShape ; sh:targetClass owl:Class ;
+    sh:property [ sh:path skos:definition ; sh:minCount 1 ;
+                  sh:message "Every class needs a definition." ] .

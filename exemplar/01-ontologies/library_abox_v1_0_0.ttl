@@ -1,0 +1,7 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix lib: <http://example.org/library#> .
+<http://example.org/library/instances> a owl:Ontology ; owl:versionInfo "1.0.0" .
+lib:Book_PrincipiaMathematica a lib:Book , owl:NamedIndividual ; rdfs:label "Principia Mathematica"@en ;
+    lib:hasISBN "978-0521067911" ; lib:writtenBy lib:Author_Whitehead .
+lib:Author_Whitehead a lib:Author , owl:NamedIndividual ; rdfs:label "A. N. Whitehead"@en .
